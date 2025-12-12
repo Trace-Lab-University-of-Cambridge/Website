@@ -1,7 +1,7 @@
 name: Deploy website to GitHub Pages
 
 env:
-  WC_HUGO_VERSION: '0.139.0'
+  WC_HUGO_VERSION: '0.140.2'
 
 on:
   # Trigger the workflow every time you push to the `main` branch
@@ -39,22 +39,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.21'
-      - name: Download Hugo modules
-        run: |
-          rm -rf /home/runner/.cache/hugo_cache
-          hugo mod clean
-          hugo mod get -u
-          hugo mod tidy
-          echo "=== Module Graph ==="
-          hugo mod graph
-          echo "=== go.mod ==="
-          cat go.mod
-          echo "=== module.yaml ==="
-          cat config/_default/module.yaml
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
