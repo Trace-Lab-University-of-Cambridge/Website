@@ -1,7 +1,7 @@
 # Configuration of Hugo
 
 title: TRACE Lab # Website name
-baseURL: 'https://tracelab.github.io/' # Website URL
+baseURL: 'https://trace-lab-university-of-cambridge.github.io/Website/' # Website URL
 
 ############################
 ## LANGUAGE
