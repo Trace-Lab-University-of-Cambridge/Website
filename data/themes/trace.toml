@@ -1,0 +1,48 @@
+# TRACE Lab Theme
+# Inspired by astroautomata.com - Dark navy/teal academic style
+
+[light]
+  # Primary - Dark navy blue
+  primary = "#1a365d"
+
+  # Backgrounds
+  background = "#ffffff"
+  home_section_odd = "#f7fafc"
+  home_section_even = "#ffffff"
+
+  # Text
+  text = "#1a202c"
+  text_muted = "#4a5568"
+
+  # Links - Teal accent
+  link = "#0d9488"
+  link_hover = "#0f766e"
+
+  # Menu
+  menu_primary = "#1a365d"
+  menu_text = "#ffffff"
+  menu_text_active = "#5eead4"
+  menu_title = "#ffffff"
+
+[dark]
+  # Primary - Teal/cyan accent
+  primary = "#14b8a6"
+
+  # Backgrounds - Dark navy
+  background = "#0f172a"
+  home_section_odd = "#1e293b"
+  home_section_even = "#0f172a"
+
+  # Text
+  text = "#e2e8f0"
+  text_muted = "#94a3b8"
+
+  # Links - Teal accent
+  link = "#2dd4bf"
+  link_hover = "#5eead4"
+
+  # Menu
+  menu_primary = "#0f172a"
+  menu_text = "#e2e8f0"
+  menu_text_active = "#2dd4bf"
+  menu_title = "#ffffff"
