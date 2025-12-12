@@ -38,8 +38,8 @@ jobs:
           extended: true
       - uses: actions/cache@v4
         with:
-          path: /tmp/hugo_cache_runner/
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.mod') }}
+          path: /home/runner/.cache/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.mod', '**/go.sum', '**/module.yaml') }}-v2
           restore-keys: |
             ${{ runner.os }}-hugomod-
       - name: Setup Pages
@@ -51,7 +51,8 @@ jobs:
           go-version: '1.21'
       - name: Download Hugo modules
         run: |
-          hugo mod get
+          hugo mod clean
+          hugo mod get -u
           hugo mod tidy
       - name: Build with Hugo
         env:
