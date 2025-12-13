@@ -236,24 +236,35 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Software Grid
-.software-grid {
+// Software Grid - 5 columns (matching research/publications)
+.software-grid-five {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  max-width: 900px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
   margin: 0 auto;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
 }
 
 .software-card {
+  display: block;
   padding: 1.25rem;
   background: var(--global-background);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
   transition: all 0.2s ease;
 
   &:hover {
@@ -262,52 +273,31 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
   }
 
-  .software-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
+  .software-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.4rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
 
-    h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .software-lang {
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.2rem 0.5rem;
-      background: rgba(0,0,0,0.05);
-      border-radius: 4px;
-    }
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--global-text);
+    line-height: 1.3;
   }
 
   p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0 0 1rem 0;
-    opacity: 0.7;
-  }
-
-  .software-links {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .software-btn {
     font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.4rem 0.75rem;
-    background: var(--global-text);
-    color: var(--global-background);
-    border-radius: 4px;
-    text-decoration: none;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.8;
-    }
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.7;
   }
 }
 
@@ -352,14 +342,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Section Titles
+// Section Titles and Spacing
 .home-section {
+  padding: 2rem 0 !important;
+
   .section-heading h1 {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
+}
+
+// Reduce default section padding
+section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
 // Team section styling - 6 column horizontal grid
@@ -467,7 +465,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #60a5fa;
   }
 
-  .software-card .software-lang {
+  .software-card .software-badge {
     background: rgba(255,255,255,0.1);
   }
 

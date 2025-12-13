@@ -144,29 +144,17 @@ sections:
       title: Software
       subtitle: ''
       text: |
-        <div class="software-grid">
-          <div class="software-card">
-            <div class="software-header">
-              <h3>Fabric</h3>
-              <span class="software-lang">Python</span>
-            </div>
-            <p>A repository and toolkit for documenting real-world AI deployment and governance practices.</p>
-            <div class="software-links">
-              <a href="#" class="software-btn">GitHub</a>
-              <a href="#" class="software-btn">Docs</a>
-            </div>
-          </div>
-          <div class="software-card">
-            <div class="software-header">
-              <h3>Modiste</h3>
-              <span class="software-lang">Python</span>
-            </div>
-            <p>Framework for orchestrating and coordinating multiple AI agents in human-centric environments.</p>
-            <div class="software-links">
-              <a href="#" class="software-btn">GitHub</a>
-              <a href="#" class="software-btn">Docs</a>
-            </div>
-          </div>
+        <div class="software-grid-five">
+          <a href="#" class="software-card">
+            <span class="software-badge">Python</span>
+            <h3>Fabric</h3>
+            <p>Toolkit for documenting real-world AI deployment.</p>
+          </a>
+          <a href="#" class="software-card">
+            <span class="software-badge">Python</span>
+            <h3>Modiste</h3>
+            <p>Framework for orchestrating AI agents.</p>
+          </a>
         </div>
     design:
       columns: '1'
