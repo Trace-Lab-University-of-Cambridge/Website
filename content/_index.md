@@ -51,28 +51,28 @@ sections:
       title: Research
       subtitle: ''
       text: |
-        <div class="research-grid">
+        <div class="research-grid-five">
           <a href="project/deployment-as-a-science/" class="research-card">
             <span class="research-badge">Fabric</span>
             <h3>Deployment as a Science</h3>
-            <p>How do people use AI systems around the world? Building tools and methodologies for documenting real-world AI deployment.</p>
+            <p>How do people use AI systems around the world?</p>
           </a>
           <a href="project/externalities-human-ai/" class="research-card">
             <h3>Externalities of Human-AI Interaction</h3>
-            <p>What is the impact of AI use? Studying the broader effects and unintended consequences of human-AI collaboration.</p>
+            <p>What is the impact of AI use on people and society?</p>
           </a>
           <a href="project/affordances-ai-use/" class="research-card">
             <h3>Affordances of AI Use</h3>
-            <p>How do people interact with AI systems? Understanding how AI capabilities shape usage patterns and behaviors.</p>
+            <p>How do people interact with AI systems?</p>
           </a>
           <a href="project/agent-orchestration/" class="research-card">
             <span class="research-badge">Modiste</span>
             <h3>Agent Orchestration</h3>
-            <p>How do we deploy AI agents among humans? Developing methods for coordinating multiple AI agents effectively.</p>
+            <p>How do we deploy AI agents among humans?</p>
           </a>
-          <a href="project/fundamentals-trustworthy-ai/" class="research-card research-card-wide">
+          <a href="project/fundamentals-trustworthy-ai/" class="research-card">
             <h3>Fundamentals of Trustworthy AI</h3>
-            <p>Core research on reliability, fairness, transparency, and evaluation in AI systems.</p>
+            <p>Core research on reliability, fairness, and transparency.</p>
           </a>
         </div>
     design:
@@ -83,12 +83,8 @@ sections:
     content:
       title: Team
       user_groups:
-        - Principal Investigator
-        - PhD Students
-        - Research Staff
-        - Students
-        - Visitors
-        - Affiliates
+        - Principal Investigators
+        - PhD Candidates
       sort_by: Params.last_name
       sort_ascending: true
     design:
@@ -97,40 +93,47 @@ sections:
       show_social: true
       columns: '1'
 
+  - block: markdown
+    content:
+      title:
+      subtitle: ''
+      text: |
+        <div style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">
+          <a href="people/" class="view-all-link">View all team →</a>
+        </div>
+    design:
+      columns: '1'
+
   # Publications
   - block: markdown
     content:
       title: Recent Publications
       subtitle: ''
       text: |
-        <div class="publications-grid">
+        <div class="pub-grid-five">
           <a href="publication/fabric-deployment/" class="pub-card">
             <span class="pub-year">2025</span>
-            <h3>Documenting Deployment with Fabric: A Repository of Real-World AI Governance</h3>
-            <p class="pub-authors">Umang Bhatt</p>
-            <p class="pub-venue">AAAI/ACM Conference on AI, Ethics, and Society (AIES)</p>
+            <h3>Documenting Deployment with Fabric</h3>
+            <p class="pub-venue">AIES</p>
           </a>
           <a href="publication/algorithms-resign/" class="pub-card">
             <span class="pub-year">2024</span>
-            <h3>When Should Algorithms Resign? A Proposal for AI Governance</h3>
-            <p class="pub-authors">Umang Bhatt, Holli Sargeant</p>
+            <h3>When Should Algorithms Resign?</h3>
             <p class="pub-venue">IEEE Computer</p>
           </a>
           <a href="publication/building-machines-learn-think/" class="pub-card">
             <span class="pub-year">2024</span>
             <h3>Building Machines that Learn and Think with People</h3>
-            <p class="pub-authors">Katherine Collins, Ilia Sucholutsky, Umang Bhatt, et al.</p>
             <p class="pub-venue">Nature Human Behavior</p>
           </a>
           <a href="publication/learning-personalized-decision-support/" class="pub-card">
             <span class="pub-year">2024</span>
             <h3>Learning Personalized Decision Support Policies</h3>
-            <p class="pub-authors">Umang Bhatt, et al.</p>
             <p class="pub-venue">Conference Paper</p>
           </a>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="publication/" class="view-all-link">View all publications →</a>
+          <a href="publication/" class="pub-card pub-card-more">
+            <h3>View all →</h3>
+          </a>
         </div>
     design:
       columns: '1'
