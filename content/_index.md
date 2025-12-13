@@ -4,88 +4,81 @@ date: 2024-01-01
 type: landing
 
 sections:
+  # Hero - Full screen with background
   - block: markdown
     content:
       title:
       subtitle:
       text: |
-        <div style="text-align: center; padding: 5rem 0 3rem 0; max-width: 700px; margin: 0 auto;">
-          <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.03em; line-height: 1.1;">TRACE Lab</h1>
-          <p style="font-size: 1.1rem; margin-bottom: 0.5rem; opacity: 0.6; font-weight: 500;">TRustworthy Artificial IntelligenCE Laboratory</p>
-          <p style="font-size: 0.9rem; opacity: 0.5;">University of Cambridge</p>
+        <div class="hero-fullscreen">
+          <h1>TRACE Lab</h1>
+          <p class="hero-tagline">Trustworthy AI for High-Stakes Decisions</p>
+          <p class="hero-subtitle">TRustworthy Artificial IntelligenCE Laboratory · University of Cambridge</p>
         </div>
     design:
       columns: '1'
+      background:
+        image:
+          filename: hero-bg.jpg
+          filters:
+            brightness: 0.4
+          parallax: false
+          position: center
+          size: cover
+        text_color_light: true
+      spacing:
+        padding: ["200px", "0", "200px", "0"]
 
+  # About
   - block: markdown
     content:
       title:
       subtitle: ''
       text: |
-        <div style="max-width: 650px; margin: 0 auto; text-align: center; padding: 0 0 3rem 0; font-size: 1.05rem; line-height: 1.7;">
+        <div class="about-section">
 
-        We build trustworthy AI systems for high-stakes settings like healthcare, education, and public safety. Our research spans **machine learning**, **human-computer interaction**, and **social science**.
+        We build trustworthy AI systems for high-stakes settings like **healthcare**, **education**, and **public safety**. Drawing from machine learning, human-computer interaction, and social science, we investigate when and how AI can be trusted, integrated into decision-making, and evaluated in ecologically valid settings.
+
+        We partner with [Partnership on AI](https://partnershiponai.org/), [Mozilla](https://mozilla.org/), [RAII](https://raii.org/), and [OECD](https://oecd.org/).
 
         </div>
     design:
       columns: '1'
 
+  # Research
   - block: markdown
     content:
       title: Research
       subtitle: ''
       text: |
-        <div style="max-width: 800px; margin: 2rem auto 0 auto;">
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-            <a href="project/deployment-as-a-science/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Deployment as a Science</h3>
-              <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do people use AI systems around the world?</p>
-            </a>
-            <a href="project/externalities-human-ai/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Externalities of Human-AI Interaction</h3>
-              <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">What is the impact of AI use?</p>
-            </a>
-            <a href="project/affordances-ai-use/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Affordances of AI Use</h3>
-              <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do people interact with AI systems?</p>
-            </a>
-            <a href="project/agent-orchestration/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Agent Orchestration</h3>
-              <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do we deploy AI agents among humans?</p>
-            </a>
-          </div>
-          <a href="project/fundamentals-trustworthy-ai/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease; margin-top: 1rem;">
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Fundamentals of Trustworthy AI</h3>
-            <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">Bridging research in transparency, collaboration, and evaluation</p>
+        <div class="research-grid">
+          <a href="project/deployment-as-a-science/" class="research-card">
+            <span class="research-badge">Fabric</span>
+            <h3>Deployment as a Science</h3>
+            <p>How do people use AI systems around the world? Building tools and methodologies for documenting real-world AI deployment.</p>
+          </a>
+          <a href="project/externalities-human-ai/" class="research-card">
+            <h3>Externalities of Human-AI Interaction</h3>
+            <p>What is the impact of AI use? Studying the broader effects and unintended consequences of human-AI collaboration.</p>
+          </a>
+          <a href="project/affordances-ai-use/" class="research-card">
+            <h3>Affordances of AI Use</h3>
+            <p>How do people interact with AI systems? Understanding how AI capabilities shape usage patterns and behaviors.</p>
+          </a>
+          <a href="project/agent-orchestration/" class="research-card">
+            <span class="research-badge">Modiste</span>
+            <h3>Agent Orchestration</h3>
+            <p>How do we deploy AI agents among humans? Developing methods for coordinating multiple AI agents effectively.</p>
+          </a>
+          <a href="project/fundamentals-trustworthy-ai/" class="research-card research-card-wide">
+            <h3>Fundamentals of Trustworthy AI</h3>
+            <p>Core research on reliability, fairness, transparency, and evaluation in AI systems.</p>
           </a>
         </div>
-        <style>
-          .research-card:hover {
-            border-color: rgba(0,0,0,0.2) !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-          }
-          .dark .research-card {
-            border-color: rgba(255,255,255,0.1) !important;
-          }
-          .dark .research-card:hover {
-            border-color: rgba(255,255,255,0.2) !important;
-          }
-        </style>
     design:
       columns: '1'
 
-  - block: collection
-    content:
-      title: Publications
-      text: ""
-      count: 5
-      filters:
-        folders:
-          - publication
-    design:
-      view: citation
-      columns: '1'
-
+  # Team
   - block: people
     content:
       title: Team
@@ -101,34 +94,95 @@ sections:
     design:
       show_interests: false
       show_role: true
-      show_social: false
+      show_social: true
       columns: '1'
 
+  # Publications
   - block: markdown
     content:
-      title:
-      subtitle:
+      title: Recent Publications
+      subtitle: ''
       text: |
-        <div style="text-align: center; padding: 2rem 0;">
-          <a href="./people/" style="font-weight: 500; font-size: 0.9rem;">View all team members →</a>
+        <div class="publications-grid">
+          <a href="publication/fabric-deployment/" class="pub-card">
+            <span class="pub-year">2025</span>
+            <h3>Documenting Deployment with Fabric: A Repository of Real-World AI Governance</h3>
+            <p class="pub-authors">Umang Bhatt</p>
+            <p class="pub-venue">AAAI/ACM Conference on AI, Ethics, and Society (AIES)</p>
+          </a>
+          <a href="publication/algorithms-resign/" class="pub-card">
+            <span class="pub-year">2024</span>
+            <h3>When Should Algorithms Resign? A Proposal for AI Governance</h3>
+            <p class="pub-authors">Umang Bhatt, Holli Sargeant</p>
+            <p class="pub-venue">IEEE Computer</p>
+          </a>
+          <a href="publication/building-machines-learn-think/" class="pub-card">
+            <span class="pub-year">2024</span>
+            <h3>Building Machines that Learn and Think with People</h3>
+            <p class="pub-authors">Katherine Collins, Ilia Sucholutsky, Umang Bhatt, et al.</p>
+            <p class="pub-venue">Nature Human Behavior</p>
+          </a>
+          <a href="publication/learning-personalized-decision-support/" class="pub-card">
+            <span class="pub-year">2024</span>
+            <h3>Learning Personalized Decision Support Policies</h3>
+            <p class="pub-authors">Umang Bhatt, et al.</p>
+            <p class="pub-venue">Conference Paper</p>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="publication/" class="view-all-link">View all publications →</a>
         </div>
     design:
       columns: '1'
 
+  # Software
+  - block: markdown
+    content:
+      title: Software
+      subtitle: ''
+      text: |
+        <div class="software-grid">
+          <div class="software-card">
+            <div class="software-header">
+              <h3>Fabric</h3>
+              <span class="software-lang">Python</span>
+            </div>
+            <p>A repository and toolkit for documenting real-world AI deployment and governance practices.</p>
+            <div class="software-links">
+              <a href="#" class="software-btn">GitHub</a>
+              <a href="#" class="software-btn">Docs</a>
+            </div>
+          </div>
+          <div class="software-card">
+            <div class="software-header">
+              <h3>Modiste</h3>
+              <span class="software-lang">Python</span>
+            </div>
+            <p>Framework for orchestrating and coordinating multiple AI agents in human-centric environments.</p>
+            <div class="software-links">
+              <a href="#" class="software-btn">GitHub</a>
+              <a href="#" class="software-btn">Docs</a>
+            </div>
+          </div>
+        </div>
+    design:
+      columns: '1'
+
+  # Affiliations
   - block: markdown
     content:
       title:
       subtitle: ''
       text: |
-        <div style="display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap; padding: 3rem 0; opacity: 0.5;">
-          <a href="https://www.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
-            <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge" style="height: 60px; width: auto; filter: grayscale(100%);">
+        <div class="affiliations-row">
+          <a href="https://www.cam.ac.uk/" target="_blank">
+            <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge">
           </a>
-          <a href="https://www.chia.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
-            <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA" style="height: 45px; width: auto; filter: grayscale(100%);">
+          <a href="https://www.chia.cam.ac.uk/" target="_blank">
+            <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA">
           </a>
-          <a href="https://www.kings.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Kingscollegearms.svg/200px-Kingscollegearms.svg.png" alt="King's College Cambridge" style="height: 60px; width: auto; filter: grayscale(100%);">
+          <a href="https://www.kings.cam.ac.uk/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Kingscollegearms.svg/200px-Kingscollegearms.svg.png" alt="King's College Cambridge">
           </a>
         </div>
     design:

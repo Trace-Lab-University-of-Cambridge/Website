@@ -1,12 +1,11 @@
 /* TRACE Lab Custom Styles */
-/* Clean, minimal academic design */
+/* Clean, minimal design like astroautomata.com */
 
-// Typography improvements
+// Typography
 body {
   font-feature-settings: "kern" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.011em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,276 +13,376 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
+// Hero Section - Full screen centered
+.hero-fullscreen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
 
-h2 {
-  font-size: 1.875rem;
-  line-height: 1.3;
-}
-
-// Navbar - Clean and minimal
-.navbar {
-  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
-  backdrop-filter: blur(10px);
-
-  .navbar-brand {
-    font-weight: 600;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
-  }
-
-  .nav-link {
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem !important;
-    transition: color 0.15s ease;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-}
-
-// Hero section - Clean and spacious
-.wg-hero {
-  padding: 6rem 0 !important;
-
-  .hero-title {
-    font-size: 3.5rem !important;
-    font-weight: 700 !important;
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
     letter-spacing: -0.03em;
-    line-height: 1.1 !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem;
+    color: #fff;
   }
 
-  .hero-lead {
-    font-size: 1.25rem !important;
-    line-height: 1.6 !important;
-    opacity: 0.8;
-    max-width: 600px;
+  .hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    color: #fff;
   }
-}
 
-// Section styling
-.home-section {
-  padding: 4rem 0;
-
-  .section-heading {
-    h1 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
+  .hero-subtitle {
+    font-size: 1rem;
+    opacity: 0.7;
+    color: #fff;
   }
 }
 
-// Cards - Clean with subtle shadows
-.card {
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+// About Section
+.about-section {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 3rem 1rem;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+// Research Grid
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-card {
+  display: block;
+  padding: 1.75rem;
+  background: var(--global-background);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
   transition: all 0.2s ease;
+  position: relative;
 
   &:hover {
+    border-color: rgba(0,0,0,0.2);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transform: translateY(-2px);
   }
-}
-
-// Publication cards
-.pub-list-item {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  .article-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  .article-metadata {
-    font-size: 0.875rem;
-    color: var(--global-text-muted);
-  }
-}
-
-// Team member cards
-.avatar {
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.portrait-title {
-  h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-  }
 
   h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: var(--global-text);
+  }
+
+  p {
     font-size: 0.9rem;
-    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
     opacity: 0.7;
   }
-}
 
-// Buttons - Clean and minimal
-.btn {
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.5rem 1.25rem;
-  transition: all 0.15s ease;
-
-  &.btn-primary {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    }
-  }
-
-  &.btn-outline-primary {
-    border-width: 1.5px;
+  .research-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
   }
 }
 
-// Links
-a {
-  text-decoration: none;
-  transition: color 0.15s ease;
+.research-card-wide {
+  grid-column: 1 / -1;
+}
 
-  &:hover {
-    text-decoration: none;
+// Publications Grid
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 }
 
-// Footer - Clean
-.site-footer {
-  padding: 3rem 0;
-  font-size: 0.875rem;
-
-  .powered-by {
-    font-size: 0.8rem;
-    opacity: 0.6;
-  }
-}
-
-// Research initiative boxes (homepage)
-.research-box {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px;
+.pub-card {
+  display: block;
   padding: 1.5rem;
+  background: var(--global-background);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
   transition: all 0.2s ease;
-  height: 100%;
 
   &:hover {
-    border-color: rgba(0,0,0,0.15);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transform: translateY(-2px);
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .pub-year {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.4;
+    color: var(--global-text);
+  }
+
+  .pub-authors {
+    font-size: 0.85rem;
+    margin: 0 0 0.25rem 0;
+    opacity: 0.7;
+  }
+
+  .pub-venue {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.5;
+    font-style: italic;
+  }
+}
+
+.view-all-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Software Grid
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.software-card {
+  padding: 1.5rem;
+  background: var(--global-background);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .software-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .software-lang {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.5rem;
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
   }
 
   p {
     font-size: 0.9rem;
     line-height: 1.5;
-    opacity: 0.8;
-    margin-bottom: 0;
+    margin: 0 0 1rem 0;
+    opacity: 0.7;
   }
 
-  i {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    opacity: 0.6;
+  .software-links {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .software-btn {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    background: var(--global-text);
+    color: var(--global-background);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
-// Dark mode adjustments
-.dark {
-  .card {
-    border-color: rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.02);
-  }
+// Affiliations
+.affiliations-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding: 3rem 1rem;
 
-  .research-box {
-    background: rgba(255,255,255,0.03);
-    border-color: rgba(255,255,255,0.08);
+  a {
+    opacity: 0.4;
+    transition: opacity 0.2s;
 
     &:hover {
-      border-color: rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.05);
+      opacity: 0.8;
     }
+  }
+
+  img {
+    height: 60px;
+    width: auto;
+    filter: grayscale(100%);
+  }
+}
+
+// Navbar
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+
+// Section Titles
+.home-section {
+  .section-heading h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// Team section styling
+.people-widget {
+  .col-md-12 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+// Dark mode
+.dark {
+  .research-card,
+  .pub-card,
+  .software-card {
+    background: rgba(255,255,255,0.02);
+    border-color: rgba(255,255,255,0.1);
+
+    &:hover {
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.04);
+    }
+  }
+
+  .research-badge {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+  }
+
+  .pub-year {
+    color: #60a5fa;
+  }
+
+  .software-card .software-lang {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .affiliations-row img {
+    filter: grayscale(100%) invert(1);
   }
 
   .navbar {
-    box-shadow: 0 1px 0 rgba(255,255,255,0.05);
-  }
-
-  .pub-list-item {
-    border-color: rgba(255,255,255,0.08);
+    border-bottom-color: rgba(255,255,255,0.06);
   }
 }
 
-// Affiliations section
-.affiliations-section {
-  padding: 3rem 0;
-
-  img {
-    max-height: 50px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-    filter: grayscale(100%);
-
-    &:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
-  }
+// Footer
+.site-footer {
+  padding: 2rem 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 
-// Responsive adjustments
+// Responsive
 @media (max-width: 768px) {
-  .wg-hero {
-    padding: 4rem 0 !important;
+  .hero-fullscreen h1 {
+    font-size: 2.5rem;
+  }
 
-    .hero-title {
-      font-size: 2.5rem !important;
+  .hero-fullscreen .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .affiliations-row {
+    gap: 2rem;
+
+    img {
+      height: 40px;
     }
   }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-// Remove excess decoration
-.wg-hero .hero-media {
-  display: none;
-}
-
-// Clean section dividers
-.home-section:not(:first-child) {
-  border-top: 1px solid rgba(0,0,0,0.05);
-}
-
-.dark .home-section:not(:first-child) {
-  border-top-color: rgba(255,255,255,0.05);
 }
