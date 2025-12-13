@@ -5,8 +5,8 @@
 appearance:
   theme_day: trace
   theme_night: trace
-  font: native
-  font_size: L
+  font: trace
+  font_size: M
 
 # SEO
 

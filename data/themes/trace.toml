@@ -1,48 +1,48 @@
 # TRACE Lab Theme
-# Inspired by astroautomata.com - Dark navy/teal academic style
+# Clean, minimal academic design inspired by astroautomata.com
 
 [light]
-  # Primary - Dark navy blue
-  primary = "#1a365d"
+  # Primary - Subtle dark blue
+  primary = "#111827"
 
-  # Backgrounds
+  # Backgrounds - Clean whites with subtle grays
   background = "#ffffff"
-  home_section_odd = "#f7fafc"
+  home_section_odd = "#fafafa"
   home_section_even = "#ffffff"
 
-  # Text
-  text = "#1a202c"
-  text_muted = "#4a5568"
+  # Text - High contrast, readable
+  text = "#111827"
+  text_muted = "#6b7280"
 
-  # Links - Teal accent
-  link = "#0d9488"
-  link_hover = "#0f766e"
+  # Links - Subtle blue accent
+  link = "#2563eb"
+  link_hover = "#1d4ed8"
 
-  # Menu
-  menu_primary = "#1a365d"
-  menu_text = "#ffffff"
-  menu_text_active = "#5eead4"
-  menu_title = "#ffffff"
+  # Menu - Clean white navbar
+  menu_primary = "#ffffff"
+  menu_text = "#374151"
+  menu_text_active = "#111827"
+  menu_title = "#111827"
 
 [dark]
-  # Primary - Teal/cyan accent
-  primary = "#14b8a6"
+  # Primary - Clean accent
+  primary = "#60a5fa"
 
-  # Backgrounds - Dark navy
-  background = "#0f172a"
-  home_section_odd = "#1e293b"
-  home_section_even = "#0f172a"
+  # Backgrounds - Deep dark
+  background = "#0a0a0a"
+  home_section_odd = "#111111"
+  home_section_even = "#0a0a0a"
 
   # Text
-  text = "#e2e8f0"
-  text_muted = "#94a3b8"
+  text = "#f3f4f6"
+  text_muted = "#9ca3af"
 
-  # Links - Teal accent
-  link = "#2dd4bf"
-  link_hover = "#5eead4"
+  # Links
+  link = "#60a5fa"
+  link_hover = "#93c5fd"
 
   # Menu
-  menu_primary = "#0f172a"
-  menu_text = "#e2e8f0"
-  menu_text_active = "#2dd4bf"
+  menu_primary = "#0a0a0a"
+  menu_text = "#d1d5db"
+  menu_text_active = "#ffffff"
   menu_title = "#ffffff"

@@ -1,0 +1,12 @@
+# TRACE Lab Custom Font
+# Clean, modern sans-serif typography
+name = "Trace"
+
+# Google Fonts
+google_fonts = "family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400"
+
+# Font families
+heading_font = "Inter"
+body_font = "Inter"
+nav_font = "Inter"
+mono_font = "JetBrains Mono"

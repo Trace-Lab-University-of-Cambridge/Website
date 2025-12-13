@@ -9,33 +9,22 @@ sections:
       title:
       subtitle:
       text: |
-        <div style="text-align: center; padding: 4rem 0 2rem 0;">
-          <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em;">TRACE Lab</h1>
-          <p style="font-size: 1.25rem; margin-bottom: 1rem; opacity: 0.9;">TRustworthy Artificial IntelligenCE Laboratory</p>
-          <p style="font-size: 1rem; opacity: 0.7;">University of Cambridge · Centre for Human-Inspired Artificial Intelligence · Institute of Technology and Humanity</p>
+        <div style="text-align: center; padding: 5rem 0 3rem 0; max-width: 700px; margin: 0 auto;">
+          <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.03em; line-height: 1.1;">TRACE Lab</h1>
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem; opacity: 0.6; font-weight: 500;">TRustworthy Artificial IntelligenCE Laboratory</p>
+          <p style="font-size: 0.9rem; opacity: 0.5;">University of Cambridge</p>
         </div>
     design:
       columns: '1'
-      background:
-        image:
-          filename: hero-bg.jpg
-          filters:
-            brightness: 0.3
-          parallax: false
-          position: center
-          size: cover
-        text_color_light: true
 
   - block: markdown
     content:
       title:
       subtitle: ''
       text: |
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; padding-bottom: 2rem;">
+        <div style="max-width: 650px; margin: 0 auto; text-align: center; padding: 0 0 3rem 0; font-size: 1.05rem; line-height: 1.7;">
 
-        We build trustworthy AI systems for high-stakes settings like healthcare, education, and public safety. Drawing from **machine learning**, **human-computer interaction**, and **social science**, we investigate when and how AI can be trusted, integrated into decision-making, and evaluated in ecologically valid settings.
-
-        We partner with [Partnership on AI](https://partnershiponai.org/), [Mozilla](https://mozilla.org/), [RAII](https://raii.org/), and [OECD](https://oecd.org/).
+        We build trustworthy AI systems for high-stakes settings like healthcare, education, and public safety. Our research spans **machine learning**, **human-computer interaction**, and **social science**.
 
         </div>
     design:
@@ -43,79 +32,51 @@ sections:
 
   - block: markdown
     content:
-      title: Research Initiatives
-      subtitle: 'For 2026, we have four broad initiatives that capture the breadth of our work'
+      title: Research
+      subtitle: ''
       text: |
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-          <a href="project/deployment-as-a-science/" style="text-decoration: none; color: inherit;">
-            <div style="border-radius: 8px; padding: 2rem; min-height: 160px; background: linear-gradient(135deg, rgba(20,184,166,0.1) 0%, rgba(20,184,166,0.05) 100%); border-left: 3px solid #14b8a6;">
-              <i class="fas fa-globe" style="font-size: 1.5rem; color: #14b8a6; margin-bottom: 1rem; display: block;"></i>
+        <div style="max-width: 800px; margin: 2rem auto 0 auto;">
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+            <a href="project/deployment-as-a-science/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
               <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Deployment as a Science</h3>
               <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do people use AI systems around the world?</p>
-            </div>
-          </a>
-          <a href="project/externalities-human-ai/" style="text-decoration: none; color: inherit;">
-            <div style="border-radius: 8px; padding: 2rem; min-height: 160px; background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(99,102,241,0.05) 100%); border-left: 3px solid #6366f1;">
-              <i class="fas fa-chart-line" style="font-size: 1.5rem; color: #6366f1; margin-bottom: 1rem; display: block;"></i>
+            </a>
+            <a href="project/externalities-human-ai/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
               <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Externalities of Human-AI Interaction</h3>
               <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">What is the impact of AI use?</p>
-            </div>
-          </a>
-          <a href="project/affordances-ai-use/" style="text-decoration: none; color: inherit;">
-            <div style="border-radius: 8px; padding: 2rem; min-height: 160px; background: linear-gradient(135deg, rgba(244,114,182,0.1) 0%, rgba(244,114,182,0.05) 100%); border-left: 3px solid #f472b6;">
-              <i class="fas fa-comments" style="font-size: 1.5rem; color: #f472b6; margin-bottom: 1rem; display: block;"></i>
+            </a>
+            <a href="project/affordances-ai-use/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
               <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Affordances of AI Use</h3>
               <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do people interact with AI systems?</p>
-            </div>
-          </a>
-          <a href="project/agent-orchestration/" style="text-decoration: none; color: inherit;">
-            <div style="border-radius: 8px; padding: 2rem; min-height: 160px; background: linear-gradient(135deg, rgba(251,146,60,0.1) 0%, rgba(251,146,60,0.05) 100%); border-left: 3px solid #fb923c;">
-              <i class="fas fa-network-wired" style="font-size: 1.5rem; color: #fb923c; margin-bottom: 1rem; display: block;"></i>
+            </a>
+            <a href="project/agent-orchestration/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease;">
               <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Agent Orchestration</h3>
               <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">How do we deploy AI agents among humans?</p>
-            </div>
+            </a>
+          </div>
+          <a href="project/fundamentals-trustworthy-ai/" class="research-card" style="text-decoration: none; color: inherit; display: block; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; transition: all 0.2s ease; margin-top: 1rem;">
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Fundamentals of Trustworthy AI</h3>
+            <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">Bridging research in transparency, collaboration, and evaluation</p>
           </a>
         </div>
-        <div style="max-width: 900px; margin: 1rem auto 0 auto;">
-          <a href="project/fundamentals-trustworthy-ai/" style="text-decoration: none; color: inherit;">
-            <div style="border-radius: 8px; padding: 2rem; min-height: 120px; background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(139,92,246,0.05) 100%); border-left: 3px solid #8b5cf6;">
-              <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 1rem; display: block;"></i>
-              <h3 style="margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600;">Fundamentals of Trustworthy AI</h3>
-              <p style="margin: 0; opacity: 0.6; font-size: 0.875rem; line-height: 1.5;">Bridging research in transparency, collaboration, and evaluation</p>
-            </div>
-          </a>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-
-        [Learn more about our research →](research/)
-
-        </div>
+        <style>
+          .research-card:hover {
+            border-color: rgba(0,0,0,0.2) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+          }
+          .dark .research-card {
+            border-color: rgba(255,255,255,0.1) !important;
+          }
+          .dark .research-card:hover {
+            border-color: rgba(255,255,255,0.2) !important;
+          }
+        </style>
     design:
       columns: '1'
 
   - block: collection
     content:
-      title: Latest News
-      subtitle:
-      text:
-      count: 5
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc
-      page_type: post
-    design:
-      view: card
-      columns: '1'
-
-  - block: collection
-    content:
-      title: Recent Publications
+      title: Publications
       text: ""
       count: 5
       filters:
@@ -125,29 +86,46 @@ sections:
       view: citation
       columns: '1'
 
+  - block: people
+    content:
+      title: Team
+      user_groups:
+        - Principal Investigator
+        - PhD Students
+        - Research Staff
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: false
+      columns: '1'
+
   - block: markdown
     content:
       title:
       subtitle:
       text: |
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+        <div style="text-align: center; padding: 2rem 0;">
+          <a href="./people/" style="font-weight: 500; font-size: 0.9rem;">View all team members →</a>
+        </div>
     design:
       columns: '1'
 
   - block: markdown
     content:
-      title: Affiliations
+      title:
       subtitle: ''
       text: |
-        <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; padding: 1rem 0;">
-          <a href="https://www.cam.ac.uk/" target="_blank">
-            <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge" style="height: 80px; width: auto;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap; padding: 3rem 0; opacity: 0.5;">
+          <a href="https://www.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
+            <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge" style="height: 60px; width: auto; filter: grayscale(100%);">
           </a>
-          <a href="https://www.chia.cam.ac.uk/" target="_blank">
-            <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA" style="height: 60px; width: auto;">
+          <a href="https://www.chia.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
+            <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA" style="height: 45px; width: auto; filter: grayscale(100%);">
           </a>
-          <a href="https://www.kings.cam.ac.uk/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Kingscollegearms.svg/200px-Kingscollegearms.svg.png" alt="King's College Cambridge" style="height: 80px; width: auto;">
+          <a href="https://www.kings.cam.ac.uk/" target="_blank" style="transition: opacity 0.2s;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Kingscollegearms.svg/200px-Kingscollegearms.svg.png" alt="King's College Cambridge" style="height: 60px; width: auto; filter: grayscale(100%);">
           </a>
         </div>
     design:
