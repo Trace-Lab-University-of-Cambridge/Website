@@ -8,6 +8,10 @@ appearance:
   font: trace
   font_size: M
 
+# Site icon (favicon)
+icon:
+  filename: icon.svg
+
 # SEO
 
 marketing:

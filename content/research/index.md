@@ -10,58 +10,61 @@ sections:
       subtitle: ''
       text: |
         For 2026, we have four broad initiatives that capture the breadth of our work, bridged by our fundamental technical research into trustworthy AI.
+    design:
+      columns: '1'
 
-        ---
+  # Projects Grid
+  - block: markdown
+    content:
+      title: ''
+      subtitle: ''
+      text: |
+        <div class="research-grid-full">
+          <a href="../project/deployment-as-a-science/" class="research-card-full">
+            <span class="research-badge">Fabric</span>
+            <h3>Deployment as a Science</h3>
+            <p class="research-question">How do people use AI systems around the world?</p>
+            <p>Fabric is a public catalog of AI systems deployed in real-world contexts. We capture how individual and institutional oversight help integrate AI into existing workflows. We are building a community of deployers to share best practices and patterns of AI use.</p>
+          </a>
+          <a href="../project/externalities-human-ai/" class="research-card-full">
+            <h3>Externalities of Human-AI Interaction</h3>
+            <p class="research-question">What is the impact of AI use?</p>
+            <p>We are building a large-scale, multi-domain study and open-source platform to track the longitudinal effects of AI use on productivity, confidence, and equity. We conduct focused evaluations within single domains and cross-cultural settings.</p>
+          </a>
+          <a href="../project/affordances-ai-use/" class="research-card-full">
+            <h3>Affordances of AI Use</h3>
+            <p class="research-question">How do people interact with AI systems?</p>
+            <p>We examine how the interaction medium changes user cognition, behavior, and performance. We collect in-situ data on how users engage with AI in physical spaces to understand context-dependent behavior.</p>
+          </a>
+          <a href="../project/agent-orchestration/" class="research-card-full">
+            <span class="research-badge">Modiste</span>
+            <h3>Agent Orchestration</h3>
+            <p class="research-question">How do we deploy AI agents among humans?</p>
+            <p>Modiste is our platform to learn policies for when the use of AI agents is appropriate, given user state, task requirements, and organizational constraints.</p>
+          </a>
+          <a href="../project/fundamentals-trustworthy-ai/" class="research-card-full research-card-wide">
+            <h3>Fundamentals of Trustworthy AI</h3>
+            <p class="research-question">Bridging all initiatives with core technical research</p>
+            <p>Spanning transparency & explanations, human-AI collaboration, and evaluation. We design collaboration mechanisms, develop uncertainty-aware explanations, and conduct interactive evaluations uncovering failure modes invisible to benchmarks.</p>
+          </a>
+        </div>
+    design:
+      columns: '1'
 
-        ## [Deployment as a Science](../project/deployment-as-a-science/)
-        **How do people use AI systems around the world?**
-
-        **Fabric** is a public catalog of AI systems deployed in real-world contexts. We capture how individual and institutional oversight help integrate AI into existing workflows. We are building a community of deployers to share best practices and patterns of AI use. We use field experiments to understand deployment strategies, such as when selective access to AI agents improves outcomes and for whom.
-
-        ---
-
-        ## [Externalities of Human-AI Interaction](../project/externalities-human-ai/)
-        **What is the impact of AI use?**
-
-        We are building a large-scale, multi-domain study and open-source platform to track the longitudinal effects of AI use on productivity, confidence, and equity. In parallel, we conduct focused evaluations within single domains and cross-cultural settings to understand heterogeneous impacts of using AI assistance. We investigate moral development by studying how short-story reading, with and without AI mediation, shapes moral acquisition and downstream behavior.
-
-        ---
-
-        ## [Affordances of AI Use](../project/affordances-ai-use/)
-        **How do people interact with AI systems?**
-
-        We examine how the interaction medium, such as speech, text, or multimodal interfaces, changes user cognition, behavior, and performance. We collect in-situ data on how users engage with AI in physical spaces (e.g., art galleries) to understand context-dependent behavior. We are tracking how workplaces evolve as AI is adopted, including risks like misaligned incentives and failure modes reminiscent of the Peter Principle. We seek to build AI thought partners and investigate how LLM use surfaces new forms of harm and bias.
-
-        ---
-
-        ## [Agent Orchestration](../project/agent-orchestration/)
-        **How do we deploy AI agents among humans?**
-
-        **Modiste** is our platform to learn policies for when the use of AI agents is appropriate, given user state, task requirements, and organizational constraints. We modulate access to agents by combining dynamic prices, richer objective functions, and purposeful frictions so that assistance aligns with safety, equity, and cost goals. We are extending this to treat humans as high-value information sources, designing protocols for agents to acquire information to improve performance and strengthen oversight.
-
-        ---
-
-        ## [Fundamentals of Trustworthy AI](../project/fundamentals-trustworthy-ai/)
-
-        Bridging all of these initiatives is our fundamental technical research into trustworthy AI, spanning **transparency**, **collaboration**, and **evaluation**.
-
-        ### Transparency & Explanations
-        Our research showed traditional explainability techniques have had limited value in real-world deployments. In response, we developed uncertainty-aware explanations and adaptive methods to support users in practice.
-
-        ### Human-AI Collaboration
-        We design human-AI collaboration mechanisms to improve user performance, incorporate algorithmic resignation when appropriate, and introduce frictions to reduce overreliance and prevent skill atrophy.
-
-        ### Evaluation
-        Our interactive evaluation of LLMs in theorem proving uncovered failure modes invisible to benchmarks. We align models via soft label collection, latent factor selection, and stakeholder-informed hyperparameter tuning.
-
-        We have ongoing work in all of these areas and are actively seeking strong candidates for our degree programs in this space.
-
+  # Publications
+  - block: markdown
+    content:
+      title: Publications
+      subtitle: ''
+      text: |
+        <div class="pub-grid-full">
+        </div>
     design:
       columns: '1'
 
   - block: collection
     content:
-      title: Publications
+      title: ''
       text: ""
       filters:
         folders:

@@ -140,6 +140,75 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Research page - Full size cards
+.research-grid-full {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-card-full {
+  display: block;
+  padding: 1.5rem;
+  background: var(--global-background);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .research-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--global-text);
+  }
+
+  .research-question {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0 0 0.75rem 0;
+    opacity: 0.8;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.7;
+  }
+}
+
+.research-card-wide {
+  grid-column: 1 / -1;
+}
+
 // Publications Grid - 5 columns
 .pub-grid-five {
   display: grid;
@@ -448,6 +517,7 @@ section {
 // Dark mode
 .dark {
   .research-card,
+  .research-card-full,
   .pub-card,
   .software-card,
   .people-person {
