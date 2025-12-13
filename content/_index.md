@@ -93,6 +93,9 @@ sections:
         - Principal Investigator
         - PhD Students
         - Research Staff
+        - Students
+        - Visitors
+        - Affiliates
       sort_by: Params.last_name
       sort_ascending: true
     design:
