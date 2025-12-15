@@ -8,20 +8,14 @@ main:
     url: /
     weight: 10
   - name: Research
-    url: research/
+    url: /#research
     weight: 20
-  - name: Projects
-    url: project/
-    weight: 25
   - name: Software
-    url: software/
+    url: /#software
     weight: 40
   - name: Team
-    url: people/
+    url: /#team
     weight: 50
   - name: Join Us
     url: join/
     weight: 60
-  - name: Contact
-    url: contact/
-    weight: 70
