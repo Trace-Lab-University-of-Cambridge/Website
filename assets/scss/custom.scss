@@ -60,23 +60,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Research Grid - 5 equal columns
+// Research Grid - 3 columns for larger cards with images
 .research-grid-five {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1000px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     grid-template-columns: 1fr;
   }
 }
@@ -95,11 +91,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .research-card {
-  display: block;
-  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
   background: var(--global-background);
   border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none !important;
   color: inherit;
   transition: all 0.2s ease;
@@ -107,23 +104,43 @@ h1, h2, h3, h4, h5, h6 {
 
   &:hover {
     border-color: rgba(0,0,0,0.2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
   }
 
   h3 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
     color: var(--global-text);
-    line-height: 1.3;
+    line-height: 1.35;
   }
 
   p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
     opacity: 0.7;
+    flex-grow: 1;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
   }
 
   .research-badge {
@@ -132,13 +149,22 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.5rem;
     background: rgba(37, 99, 235, 0.1);
     color: #2563eb;
     border-radius: 4px;
-    margin-bottom: 0.5rem;
   }
 }
+
+// Category tag colors
+.tag-trustworthy { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
+.tag-hci { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+.tag-healthcare { background: rgba(16, 185, 129, 0.15); color: #047857; }
+.tag-deployment { background: rgba(139, 92, 246, 0.15); color: #6d28d9; }
+.tag-agents { background: rgba(236, 72, 153, 0.15); color: #be185d; }
+.tag-fairness { background: rgba(6, 182, 212, 0.15); color: #0891b2; }
+.tag-explainability { background: rgba(249, 115, 22, 0.15); color: #c2410c; }
+.tag-society { background: rgba(107, 114, 128, 0.15); color: #4b5563; }
 
 // Research page - Full size cards
 .research-grid-full {
@@ -209,23 +235,15 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 1 / -1;
 }
 
-// Publications Grid - 5 columns
+// Publications Grid - 2 columns for larger cards with images
 .pub-grid-five {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 900px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }
 }
@@ -244,42 +262,76 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pub-card {
-  display: block;
-  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
   background: var(--global-background);
   border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none !important;
   color: inherit;
   transition: all 0.2s ease;
 
   &:hover {
     border-color: rgba(0,0,0,0.2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
   }
 
   .pub-year {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #2563eb;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   h3 {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0 0 0.5rem 0;
-    line-height: 1.3;
+    line-height: 1.35;
     color: var(--global-text);
+  }
+
+  .pub-authors {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    flex-grow: 1;
   }
 
   .pub-venue {
     font-size: 0.75rem;
-    margin: 0;
+    margin: 0 0 0.75rem 0;
     opacity: 0.5;
     font-style: italic;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
   }
 }
 
@@ -305,41 +357,40 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Software Grid - 5 columns (matching research/publications)
-.software-grid-five {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-}
-
 .software-card {
-  display: block;
-  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
   background: var(--global-background);
   border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none !important;
   color: inherit;
   transition: all 0.2s ease;
 
   &:hover {
     border-color: rgba(0,0,0,0.2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .software-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .software-icon {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--global-text);
+    line-height: 1.3;
   }
 
   .software-badge {
@@ -348,25 +399,99 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.5rem;
     background: rgba(0,0,0,0.05);
     border-radius: 4px;
-    margin-bottom: 0.5rem;
+    margin-left: auto;
   }
 
-  h3 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    color: var(--global-text);
-    line-height: 1.3;
+  .software-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-bottom: 0.75rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
   }
 
-  p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin: 0;
+  .software-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
     opacity: 0.7;
+    flex-grow: 1;
+  }
+
+  .software-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+
+    span {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(0,0,0,0.04);
+      border-radius: 4px;
+      opacity: 0.7;
+    }
+  }
+
+  .software-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &.btn-github {
+        background: rgba(0,0,0,0.05);
+        color: var(--global-text);
+
+        &:hover {
+          background: rgba(0,0,0,0.1);
+        }
+      }
+
+      &.btn-docs {
+        color: #2563eb;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Software grid - 3 columns for larger cards
+.software-grid-five {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -530,6 +655,14 @@ section {
     }
   }
 
+  .card-icon {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(129, 140, 248, 0.15) 100%);
+  }
+
+  .pub-card .card-icon {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(34, 211, 238, 0.15) 100%);
+  }
+
   .research-badge {
     background: rgba(96, 165, 250, 0.15);
     color: #60a5fa;
@@ -539,8 +672,36 @@ section {
     color: #60a5fa;
   }
 
-  .software-card .software-badge {
-    background: rgba(255,255,255,0.1);
+  // Dark mode tag colors
+  .tag-trustworthy { background: rgba(96, 165, 250, 0.2); color: #93c5fd; }
+  .tag-hci { background: rgba(251, 191, 36, 0.2); color: #fcd34d; }
+  .tag-healthcare { background: rgba(52, 211, 153, 0.2); color: #6ee7b7; }
+  .tag-deployment { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; }
+  .tag-agents { background: rgba(244, 114, 182, 0.2); color: #f9a8d4; }
+  .tag-fairness { background: rgba(34, 211, 238, 0.2); color: #67e8f9; }
+  .tag-explainability { background: rgba(251, 146, 60, 0.2); color: #fdba74; }
+  .tag-society { background: rgba(156, 163, 175, 0.2); color: #d1d5db; }
+
+  .software-card {
+    .software-badge {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .software-tags span {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .software-links .btn-github {
+      background: rgba(255,255,255,0.1);
+
+      &:hover {
+        background: rgba(255,255,255,0.15);
+      }
+    }
+
+    .btn-docs {
+      color: #60a5fa;
+    }
   }
 
   .affiliations-row img {
@@ -549,6 +710,243 @@ section {
 
   .navbar {
     border-bottom-color: rgba(255,255,255,0.06);
+  }
+}
+
+// Team Modal Styles
+.team-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.team-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: var(--global-background);
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header {
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+
+    .modal-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      object-fit: cover;
+    }
+
+    .modal-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+
+    .modal-role {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin: 0 0 0.5rem;
+    }
+
+    .modal-org {
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem 2rem;
+
+    .modal-bio {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-interests {
+      h4 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        opacity: 0.5;
+        margin: 0 0 0.75rem;
+      }
+
+      .interest-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+
+        span {
+          font-size: 0.75rem;
+          padding: 0.3rem 0.6rem;
+          background: rgba(37, 99, 235, 0.1);
+          color: #2563eb;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    padding: 1rem 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.05);
+      color: var(--global-text);
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &:hover {
+        background: rgba(0,0,0,0.1);
+      }
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(0,0,0,0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// Team grid for custom cards
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-card {
+  width: 160px;
+  padding: 1.25rem;
+  background: var(--global-background);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 0.75rem;
+    object-fit: cover;
+    background: rgba(0,0,0,0.05);
+  }
+
+  .team-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+  }
+
+  .team-role {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin: 0;
+  }
+}
+
+// Dark mode for modals
+.dark {
+  .team-modal {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+
+    .modal-header {
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+
+    .modal-body .modal-interests .interest-tags span {
+      background: rgba(96, 165, 250, 0.2);
+      color: #93c5fd;
+    }
+
+    .modal-footer a,
+    .modal-close {
+      background: rgba(255,255,255,0.1);
+
+      &:hover {
+        background: rgba(255,255,255,0.15);
+      }
+    }
+  }
+
+  .team-card {
+    &:hover {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .team-avatar {
+      background: rgba(255,255,255,0.05);
+    }
   }
 }
 
