@@ -13,7 +13,7 @@ sections:
         <div class="hero-fullscreen">
           <h1>TRACE Lab</h1>
           <p class="hero-tagline">Trustworthy AI for High-Stakes Decisions</p>
-          <p class="hero-subtitle">TRustworthy Artificial IntelligenCE Laboratory · University of Cambridge</p>
+          <p class="hero-subtitle"><strong>T</strong>rustworthy A<strong>R</strong>tifici<strong>A</strong>l Intelligen<strong>CE</strong> Laboratory · University of Cambridge</p>
         </div>
     design:
       columns: '1'
@@ -27,7 +27,7 @@ sections:
           size: cover
         text_color_light: true
       spacing:
-        padding: ["200px", "0", "200px", "0"]
+        padding: ["120px", "0", "120px", "0"]
 
   # About
   - block: markdown
@@ -52,7 +52,7 @@ sections:
       text: |
         <div class="research-grid-five">
           <a href="project/deployment-as-a-science/" class="research-card">
-            <div class="card-icon">📋</div>
+            <div class="card-icon">⬡</div>
             <h3>Deployment as a Science</h3>
             <p>Developing systematic approaches to document and understand how AI systems are deployed and used across diverse real-world contexts.</p>
             <div class="card-tags">
@@ -61,7 +61,7 @@ sections:
             </div>
           </a>
           <a href="project/externalities-human-ai/" class="research-card">
-            <div class="card-icon">🌍</div>
+            <div class="card-icon">◎</div>
             <h3>Externalities of Human-AI Interaction</h3>
             <p>Investigating the broader impacts of AI use on individuals, communities, and society—both intended and unintended consequences.</p>
             <div class="card-tags">
@@ -70,7 +70,7 @@ sections:
             </div>
           </a>
           <a href="project/affordances-ai-use/" class="research-card">
-            <div class="card-icon">🤝</div>
+            <div class="card-icon">◈</div>
             <h3>Affordances of AI Use</h3>
             <p>Understanding how people perceive, interpret, and interact with AI systems in their daily lives and professional workflows.</p>
             <div class="card-tags">
@@ -79,7 +79,7 @@ sections:
             </div>
           </a>
           <a href="project/agent-orchestration/" class="research-card">
-            <div class="card-icon">🤖</div>
+            <div class="card-icon">⬢</div>
             <h3>Agent Orchestration</h3>
             <p>Designing frameworks for deploying and coordinating AI agents that work alongside humans in complex, dynamic environments.</p>
             <div class="card-tags">
@@ -88,7 +88,7 @@ sections:
             </div>
           </a>
           <a href="project/fundamentals-trustworthy-ai/" class="research-card">
-            <div class="card-icon">🔬</div>
+            <div class="card-icon">△</div>
             <h3>Fundamentals of Trustworthy AI</h3>
             <p>Core research on building AI systems that are reliable, fair, transparent, and aligned with human values and expectations.</p>
             <div class="card-tags">
@@ -124,27 +124,15 @@ sections:
             <p class="team-org">Cambridge · CHIA</p>
             <p class="team-topics">Trustworthy AI, HCI</p>
           </div>
-          <!-- Research Associates -->
-          <div class="team-card"
-               data-name="Katherine Collins"
-               data-role="Research Associate (Postdoc @ MIT)"
-               data-org="MIT"
-               data-bio="Katherine is a Research Associate working on human-AI collaboration and interpretable machine learning systems."
-               data-interests="Human-AI Collaboration,Interpretable ML,Cognitive Science">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Katherine+Collins&background=e0e7ff&color=4338ca&size=200" alt="Katherine Collins">
-            <h3 class="team-name">Katherine Collins</h3>
-            <p class="team-role">Research Associate</p>
-            <p class="team-org">MIT</p>
-            <p class="team-topics">Human-AI Collaboration</p>
-          </div>
           <!-- PhD Students -->
           <div class="team-card"
                data-name="Drew Calcagno"
                data-role="PhD Student"
                data-org="University of Cambridge"
-               data-bio="Drew is a PhD student researching trustworthy AI deployment and human-AI interaction in high-stakes domains."
-               data-interests="AI Deployment,Human-AI Interaction,Trustworthy ML">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Drew+Calcagno&background=e0e7ff&color=4338ca&size=200" alt="Drew Calcagno">
+               data-bio="Drew is a PhD student with the TRACE lab researching trustworthy AI deployment and human-AI interaction in high-stakes domains. Previously, Drew worked at Google Research, focusing on strategic narratives for artificial intelligence and quantum computing. He's a former government official and Naval officer, having served at the White House, at the Pentagon, and on a forward-deployed warship. At those posts, he wrote artificial intelligence policy for the Chief Technology Officer of the U.S. and managed machine learning programs for the Undersecretary of Defense for Intelligence. A Boston native, he graduated from the University of Oxford as a Rotary Scholar, the University of London - SOAS as a Fulbright Scholar, and the U.S. Naval Academy with distinction."
+               data-interests="AI Deployment,Human-AI Interaction,Trustworthy ML"
+               data-website="https://drewcalcagno.com/">
+            <img class="team-avatar" src="media/team/drew-calcagno.png" alt="Drew Calcagno">
             <h3 class="team-name">Drew Calcagno</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
@@ -154,9 +142,9 @@ sections:
                data-name="Noah Broestl"
                data-role="PhD Student"
                data-org="University of Cambridge"
-               data-bio="Noah is a PhD student working on aspects of trustworthy AI and machine learning."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Noah+Broestl&background=e0e7ff&color=4338ca&size=200" alt="Noah Broestl">
+               data-bio="Noah is a PhD student with the TRACE lab working on aspects of trustworthy AI and machine learning. He is a partner at Boston Consulting Group, where he leads the firm's responsible AI practice. Prior to joining BCG, Noah spent nearly 15 years working at Google after serving as an Intelligence Analyst with the U.S. Air Force. Noah graduated with distinction from the University of Oxford with his Master's degree in practical ethics and from Colorado State University with his Bachelor's degree in Sociology and Diversity in Law and Liberal Arts and History."
+               data-interests="Trustworthy AI,Machine Learning,Responsible AI">
+            <img class="team-avatar" src="media/team/noah-broestl.jpeg" alt="Noah Broestl">
             <h3 class="team-name">Noah Broestl</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
@@ -166,9 +154,9 @@ sections:
                data-name="Bernardo Villegas"
                data-role="PhD Student (co-advised with Anna Korhonen)"
                data-org="University of Cambridge"
-               data-bio="Bernardo is a PhD student researching trustworthy AI systems."
-               data-interests="Trustworthy AI,NLP">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Bernardo+Villegas&background=e0e7ff&color=4338ca&size=200" alt="Bernardo Villegas">
+               data-bio="Bernardo is a PhD student with the TRACE lab researching trustworthy AI systems. He focuses on the intersection of AI research, social science, and tech development and draws from his background in sociology. From Ecuador, Bernardo graduated from Pontifical Catholic University of Ecuador with a degree in Sociology and from the University of Edinburgh with his Master's degree in Data Science with distinction."
+               data-interests="Trustworthy AI,NLP,Social Science">
+            <img class="team-avatar" src="media/team/bernardo-villegas.png" alt="Bernardo Villegas">
             <h3 class="team-name">Bernardo Villegas</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
@@ -178,125 +166,13 @@ sections:
                data-name="Elaf Almahmoud"
                data-role="PhD Student (co-advised with Mateja Jamnik)"
                data-org="University of Cambridge"
-               data-bio="Elaf is a PhD student working on AI systems and reasoning."
-               data-interests="AI Systems,Reasoning,HCI">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Elaf+Almahmoud&background=e0e7ff&color=4338ca&size=200" alt="Elaf Almahmoud">
+               data-bio="Elaf is a PhD student with the TRACE lab researching AI systems and reasoning. Elaf formerly conducted research at the Center for Complex Systems in Riyadh and MIT in Cambridge, Massachusetts, and worked as a machine learning engineer at TAHAKOM. Elaf graduated from NYU with her Master's in Computer Science and from King Saud University with her Bachelor's degree in Computer Science."
+               data-interests="AI Systems,Reasoning,Machine Learning">
+            <img class="team-avatar" src="media/team/elaf-almahmoud.png" alt="Elaf Almahmoud">
             <h3 class="team-name">Elaf Almahmoud</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
             <p class="team-topics">AI Systems, Reasoning</p>
-          </div>
-          <!-- Research Staff -->
-          <div class="team-card"
-               data-name="Yung-Hsuan Wu"
-               data-role="Research Staff"
-               data-org="University of Cambridge"
-               data-bio="Yung-Hsuan works on research related to AI systems evaluation and deployment."
-               data-interests="AI Evaluation,Deployment,HCI">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Yung-Hsuan+Wu&background=e0e7ff&color=4338ca&size=200" alt="Yung-Hsuan Wu">
-            <h3 class="team-name">Yung-Hsuan Wu</h3>
-            <p class="team-role">Research Staff</p>
-            <p class="team-org">Cambridge</p>
-            <p class="team-topics">AI Evaluation</p>
-          </div>
-          <div class="team-card"
-               data-name="Siobhan Hall"
-               data-role="Research Staff"
-               data-org="University of Cambridge"
-               data-bio="Siobhan conducts research on human-computer interaction and AI systems."
-               data-interests="HCI,AI Systems,User Studies">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Siobhan+Hall&background=e0e7ff&color=4338ca&size=200" alt="Siobhan Hall">
-            <h3 class="team-name">Siobhan Hall</h3>
-            <p class="team-role">Research Staff</p>
-            <p class="team-org">Cambridge</p>
-            <p class="team-topics">HCI, User Studies</p>
-          </div>
-          <!-- Students -->
-          <div class="team-card"
-               data-name="Rigel Cierniak"
-               data-role="Undergraduate Researcher (BA, Linguistics @ King's)"
-               data-org="King's College, Cambridge"
-               data-bio="Rigel is an undergraduate researcher studying linguistics and AI."
-               data-interests="Linguistics,AI,NLP">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Rigel+Cierniak&background=e0e7ff&color=4338ca&size=200" alt="Rigel Cierniak">
-            <h3 class="team-name">Rigel Cierniak</h3>
-            <p class="team-role">Undergraduate Researcher</p>
-            <p class="team-org">King's College</p>
-            <p class="team-topics">Linguistics, NLP</p>
-          </div>
-          <!-- Visitors -->
-          <div class="team-card"
-               data-name="Rose Guingrich"
-               data-role="Visiting Student (PhD @ Princeton)"
-               data-org="Princeton University"
-               data-bio="Rose is a visiting PhD student from Princeton University."
-               data-interests="AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Rose+Guingrich&background=e0e7ff&color=4338ca&size=200" alt="Rose Guingrich">
-            <h3 class="team-name">Rose Guingrich</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">Princeton</p>
-            <p class="team-topics">AI, ML</p>
-          </div>
-          <div class="team-card"
-               data-name="Hamza Alshamy"
-               data-role="Visiting Student (MS @ NYU)"
-               data-org="New York University"
-               data-bio="Hamza is a visiting master's student from NYU."
-               data-interests="AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Hamza+Alshamy&background=e0e7ff&color=4338ca&size=200" alt="Hamza Alshamy">
-            <h3 class="team-name">Hamza Alshamy</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">NYU</p>
-            <p class="team-topics">AI, ML</p>
-          </div>
-          <div class="team-card"
-               data-name="Mihir Upadhyay"
-               data-role="Visiting Student (MS @ NYU)"
-               data-org="New York University"
-               data-bio="Mihir is a visiting master's student from NYU."
-               data-interests="AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Mihir+Upadhyay&background=e0e7ff&color=4338ca&size=200" alt="Mihir Upadhyay">
-            <h3 class="team-name">Mihir Upadhyay</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">NYU</p>
-            <p class="team-topics">AI, ML</p>
-          </div>
-          <div class="team-card"
-               data-name="Mohamed Hendy"
-               data-role="Visiting Student (MS @ MBZUAI)"
-               data-org="MBZUAI"
-               data-bio="Mohamed is a visiting master's student from MBZUAI."
-               data-interests="AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Mohamed+Hendy&background=e0e7ff&color=4338ca&size=200" alt="Mohamed Hendy">
-            <h3 class="team-name">Mohamed Hendy</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">MBZUAI</p>
-            <p class="team-topics">AI, ML</p>
-          </div>
-          <div class="team-card"
-               data-name="Dvija Mehta"
-               data-role="Visiting Student (RA @ IIT Bombay)"
-               data-org="IIT Bombay"
-               data-bio="Dvija is a visiting research assistant from IIT Bombay."
-               data-interests="AI,Machine Learning">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Dvija+Mehta&background=e0e7ff&color=4338ca&size=200" alt="Dvija Mehta">
-            <h3 class="team-name">Dvija Mehta</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">IIT Bombay</p>
-            <p class="team-topics">AI, ML</p>
-          </div>
-          <!-- Affiliates -->
-          <div class="team-card"
-               data-name="Francesco Quinzan"
-               data-role="Affiliated Scholar (Postdoc @ Oxford)"
-               data-org="University of Oxford"
-               data-bio="Francesco is an affiliated scholar and postdoc at Oxford."
-               data-interests="AI,Machine Learning,Trustworthy AI">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Francesco+Quinzan&background=e0e7ff&color=4338ca&size=200" alt="Francesco Quinzan">
-            <h3 class="team-name">Francesco Quinzan</h3>
-            <p class="team-role">Affiliated Scholar</p>
-            <p class="team-org">Oxford</p>
-            <p class="team-topics">Trustworthy AI</p>
           </div>
         </div>
 
