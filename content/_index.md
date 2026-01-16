@@ -53,27 +53,27 @@ sections:
           <a href="project/deployment-as-a-science/" class="research-card">
             <div class="card-icon">○</div>
             <h3>Deployment as a Science</h3>
-            <p>Developing systematic approaches to document and understand how AI systems are deployed and used across diverse real-world contexts.</p>
+            <p>Systematic approaches to document how AI systems are deployed across diverse real-world contexts.</p>
           </a>
           <a href="project/externalities-human-ai/" class="research-card">
             <div class="card-icon">□</div>
-            <h3>Externalities of Human-AI Interaction</h3>
-            <p>Investigating the broader impacts of AI use on individuals, communities, and society—both intended and unintended consequences.</p>
+            <h3>Human-AI Externalities</h3>
+            <p>Investigating the broader impacts of AI on individuals and society—both intended and unintended.</p>
           </a>
           <a href="project/affordances-ai-use/" class="research-card">
             <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
-            <p>Understanding how people perceive, interpret, and interact with AI systems in their daily lives and professional workflows.</p>
+            <p>Understanding how people perceive and interact with AI systems in daily life and work.</p>
           </a>
           <a href="project/agent-orchestration/" class="research-card">
             <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
-            <p>Designing frameworks for deploying and coordinating AI agents that work alongside humans in complex, dynamic environments.</p>
+            <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
           </a>
           <a href="project/fundamentals-trustworthy-ai/" class="research-card">
             <div class="card-icon">▽</div>
-            <h3>Fundamentals of Trustworthy AI</h3>
-            <p>Core research on building AI systems that are reliable, fair, transparent, and aligned with human values and expectations.</p>
+            <h3>Trustworthy AI</h3>
+            <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
           </a>
         </div>
     design:
@@ -252,21 +252,21 @@ sections:
             <span class="pub-year">2024</span>
             <h3>When Should Algorithms Resign?</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
-            <p class="pub-description">Exploring when AI systems should defer to human judgment, examining the boundaries of algorithmic decision-making in high-stakes contexts.</p>
+            <p class="pub-description">Exploring when AI systems should defer to human judgment in high-stakes decision-making contexts.</p>
             <p class="pub-venue">IEEE Computer</p>
           </a>
           <a href="publication/building-machines-learn-think/" class="pub-card">
             <span class="pub-year">2024</span>
-            <h3>Building Machines that Learn and Think with People</h3>
+            <h3>Building Machines that Think with People</h3>
             <p class="pub-authors">Collins, K., et al.</p>
-            <p class="pub-description">A vision for human-AI collaboration that leverages complementary strengths of human cognition and machine learning capabilities.</p>
+            <p class="pub-description">A vision for human-AI collaboration leveraging complementary strengths of cognition and machine learning.</p>
             <p class="pub-venue">Nature Human Behavior</p>
           </a>
           <a href="publication/learning-personalized-decision-support/" class="pub-card">
             <span class="pub-year">2024</span>
-            <h3>Learning Personalized Decision Support Policies</h3>
+            <h3>Personalized Decision Support Policies</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
-            <p class="pub-description">Methods for learning decision support policies that adapt to individual users, improving human-AI team performance.</p>
+            <p class="pub-description">Learning decision support policies that adapt to individual users, improving team performance.</p>
             <p class="pub-venue">Conference Paper</p>
           </a>
         </div>

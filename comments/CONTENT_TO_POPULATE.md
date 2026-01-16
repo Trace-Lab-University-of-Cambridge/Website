@@ -38,7 +38,7 @@ Please provide a short bio (2-4 sentences) for each team member.
 ### Drew Calcagno (PhD Student)
 **Bio:**
 ```
-[Add bio here]
+Drew 
 ```
 **Research interests:**
 ```
@@ -389,6 +389,17 @@ Any other content that should be added to the website:
 ```
 
 ---
+
+## 11. Bug detection
+
+Any other content that should be added to the website:
+
+```
+[Add notes here]
+```
+
+---
+
 
 ## How to Submit
 
