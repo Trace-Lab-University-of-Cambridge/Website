@@ -243,6 +243,7 @@ sections:
 
   # Publications
   - block: markdown
+    id: publications
     content:
       title: Recent Publications
       subtitle: ''

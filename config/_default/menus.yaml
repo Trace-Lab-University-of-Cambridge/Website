@@ -10,11 +10,14 @@ main:
   - name: Research
     url: /#research
     weight: 20
-  - name: Software
-    url: /#software
-    weight: 40
   - name: Team
     url: /#team
+    weight: 30
+  - name: Publications
+    url: /#publications
+    weight: 40
+  - name: Software
+    url: /#software
     weight: 50
   - name: Join Us
     url: join/
