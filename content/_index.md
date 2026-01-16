@@ -13,6 +13,7 @@ sections:
         <div class="hero-fullscreen">
           <h1>TRACE Lab</h1>
           <p class="hero-tagline">Trustworthy AI for High-Stakes Decisions</p>
+          <p class="hero-university">University of Cambridge</p>
         </div>
     design:
       columns: '1'

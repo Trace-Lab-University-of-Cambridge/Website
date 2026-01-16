@@ -203,11 +203,20 @@ h1, h2, h3, h4, h5, h6 {
   .hero-tagline {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     color: #fff;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.2s forwards;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-university {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+    letter-spacing: 0.05em;
   }
 
   .hero-subtitle {
