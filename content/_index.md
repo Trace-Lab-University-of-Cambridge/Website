@@ -13,13 +13,12 @@ sections:
         <div class="hero-fullscreen">
           <h1>TRACE Lab</h1>
           <p class="hero-tagline">Trustworthy AI for High-Stakes Decisions</p>
-          <p class="hero-subtitle"><strong>T</strong>rustworthy A<strong>R</strong>tifici<strong>A</strong>l Intelligen<strong>CE</strong> Laboratory · University of Cambridge</p>
         </div>
     design:
       columns: '1'
       background:
         image:
-          filename: hero-bg.jpg
+          filename: hero-bg.png
           filters:
             brightness: 0.4
           parallax: false
@@ -52,50 +51,29 @@ sections:
       text: |
         <div class="research-grid-five">
           <a href="project/deployment-as-a-science/" class="research-card">
-            <div class="card-icon">⬡</div>
+            <div class="card-icon">○</div>
             <h3>Deployment as a Science</h3>
             <p>Developing systematic approaches to document and understand how AI systems are deployed and used across diverse real-world contexts.</p>
-            <div class="card-tags">
-              <span class="research-badge tag-deployment">Deployment</span>
-              <span class="research-badge tag-hci">HCI</span>
-            </div>
           </a>
           <a href="project/externalities-human-ai/" class="research-card">
-            <div class="card-icon">◎</div>
+            <div class="card-icon">□</div>
             <h3>Externalities of Human-AI Interaction</h3>
             <p>Investigating the broader impacts of AI use on individuals, communities, and society—both intended and unintended consequences.</p>
-            <div class="card-tags">
-              <span class="research-badge tag-society">Society</span>
-              <span class="research-badge tag-fairness">Fairness</span>
-            </div>
           </a>
           <a href="project/affordances-ai-use/" class="research-card">
-            <div class="card-icon">◈</div>
+            <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
             <p>Understanding how people perceive, interpret, and interact with AI systems in their daily lives and professional workflows.</p>
-            <div class="card-tags">
-              <span class="research-badge tag-hci">HCI</span>
-              <span class="research-badge tag-trustworthy">Trust</span>
-            </div>
           </a>
           <a href="project/agent-orchestration/" class="research-card">
-            <div class="card-icon">⬢</div>
+            <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
             <p>Designing frameworks for deploying and coordinating AI agents that work alongside humans in complex, dynamic environments.</p>
-            <div class="card-tags">
-              <span class="research-badge tag-agents">Agents</span>
-              <span class="research-badge tag-deployment">Deployment</span>
-            </div>
           </a>
           <a href="project/fundamentals-trustworthy-ai/" class="research-card">
-            <div class="card-icon">△</div>
+            <div class="card-icon">▽</div>
             <h3>Fundamentals of Trustworthy AI</h3>
             <p>Core research on building AI systems that are reliable, fair, transparent, and aligned with human values and expectations.</p>
-            <div class="card-tags">
-              <span class="research-badge tag-trustworthy">Trust</span>
-              <span class="research-badge tag-explainability">Explainability</span>
-              <span class="research-badge tag-fairness">Fairness</span>
-            </div>
           </a>
         </div>
     design:
@@ -118,11 +96,10 @@ sections:
                data-interests="Trustworthy AI,Human-AI Interaction,Machine Learning,Explainability"
                data-email="ub@umangbhatt.com"
                data-scholar="https://scholar.google.com/citations?user=PLACEHOLDER">
-            <img class="team-avatar" src="https://ui-avatars.com/api/?name=Umang+Bhatt&background=e0e7ff&color=4338ca&size=200" alt="Umang Bhatt">
+            <img class="team-avatar" src="media/team/umang-bhatt.jpg" alt="Umang Bhatt">
             <h3 class="team-name">Umang Bhatt</h3>
             <p class="team-role">PI, Assistant Professor</p>
             <p class="team-org">Cambridge · CHIA</p>
-            <p class="team-topics">Trustworthy AI, HCI</p>
           </div>
           <!-- PhD Students -->
           <div class="team-card"
@@ -136,7 +113,6 @@ sections:
             <h3 class="team-name">Drew Calcagno</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <p class="team-topics">AI Deployment, HCI</p>
           </div>
           <div class="team-card"
                data-name="Noah Broestl"
@@ -148,7 +124,6 @@ sections:
             <h3 class="team-name">Noah Broestl</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <p class="team-topics">Trustworthy AI</p>
           </div>
           <div class="team-card"
                data-name="Bernardo Villegas"
@@ -160,7 +135,6 @@ sections:
             <h3 class="team-name">Bernardo Villegas</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <p class="team-topics">Trustworthy AI, NLP</p>
           </div>
           <div class="team-card"
                data-name="Elaf Almahmoud"
@@ -172,7 +146,6 @@ sections:
             <h3 class="team-name">Elaf Almahmoud</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <p class="team-topics">AI Systems, Reasoning</p>
           </div>
         </div>
 
@@ -184,9 +157,11 @@ sections:
           <button class="modal-close">×</button>
           <div class="modal-header">
             <img class="modal-avatar" src="" alt="">
-            <h2 class="modal-name"></h2>
-            <p class="modal-role"></p>
-            <p class="modal-org"></p>
+            <div class="modal-header-text">
+              <h2 class="modal-name"></h2>
+              <p class="modal-role"></p>
+              <p class="modal-org"></p>
+            </div>
           </div>
           <div class="modal-body">
             <p class="modal-bio"></p>
@@ -235,11 +210,11 @@ sections:
 
               const footer = modal.querySelector('.modal-footer');
               footer.innerHTML = '';
-              if (email) footer.innerHTML += '<a href="mailto:' + email + '" title="Email">✉️</a>';
-              if (scholar) footer.innerHTML += '<a href="' + scholar + '" target="_blank" title="Google Scholar">🎓</a>';
-              if (github) footer.innerHTML += '<a href="' + github + '" target="_blank" title="GitHub">💻</a>';
-              if (twitter) footer.innerHTML += '<a href="' + twitter + '" target="_blank" title="Twitter">🐦</a>';
-              if (website) footer.innerHTML += '<a href="' + website + '" target="_blank" title="Website">🌐</a>';
+              if (email) footer.innerHTML += '<a href="mailto:' + email + '" title="Email">Email</a>';
+              if (scholar) footer.innerHTML += '<a href="' + scholar + '" target="_blank" title="Google Scholar">Scholar</a>';
+              if (github) footer.innerHTML += '<a href="' + github + '" target="_blank" title="GitHub">GitHub</a>';
+              if (twitter) footer.innerHTML += '<a href="' + twitter + '" target="_blank" title="Twitter">Twitter</a>';
+              if (website) footer.innerHTML += '<a href="' + website + '" target="_blank" title="Website">Web</a>';
 
               modalOverlay.classList.add('active');
               modal.classList.add('active');
@@ -273,53 +248,26 @@ sections:
       subtitle: ''
       text: |
         <div class="pub-grid-five">
-          <a href="publication/fabric-deployment/" class="pub-card">
-            <div class="card-icon">📄</div>
-            <span class="pub-year">2025</span>
-            <h3>Documenting Deployment with Fabric</h3>
-            <p class="pub-authors">Bhatt, U., et al.</p>
-            <p class="pub-description">A toolkit for systematically documenting AI deployment contexts, enabling better understanding and comparison of real-world AI implementations.</p>
-            <p class="pub-venue">AIES 2025</p>
-            <div class="card-tags">
-              <span class="research-badge tag-deployment">Deployment</span>
-              <span class="research-badge tag-hci">HCI</span>
-            </div>
-          </a>
           <a href="publication/algorithms-resign/" class="pub-card">
-            <div class="card-icon">📄</div>
             <span class="pub-year">2024</span>
             <h3>When Should Algorithms Resign?</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
             <p class="pub-description">Exploring when AI systems should defer to human judgment, examining the boundaries of algorithmic decision-making in high-stakes contexts.</p>
             <p class="pub-venue">IEEE Computer</p>
-            <div class="card-tags">
-              <span class="research-badge tag-trustworthy">Trust</span>
-              <span class="research-badge tag-healthcare">Healthcare</span>
-            </div>
           </a>
           <a href="publication/building-machines-learn-think/" class="pub-card">
-            <div class="card-icon">📄</div>
             <span class="pub-year">2024</span>
             <h3>Building Machines that Learn and Think with People</h3>
             <p class="pub-authors">Collins, K., et al.</p>
             <p class="pub-description">A vision for human-AI collaboration that leverages complementary strengths of human cognition and machine learning capabilities.</p>
             <p class="pub-venue">Nature Human Behavior</p>
-            <div class="card-tags">
-              <span class="research-badge tag-hci">HCI</span>
-              <span class="research-badge tag-trustworthy">Trust</span>
-            </div>
           </a>
           <a href="publication/learning-personalized-decision-support/" class="pub-card">
-            <div class="card-icon">📄</div>
             <span class="pub-year">2024</span>
             <h3>Learning Personalized Decision Support Policies</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
             <p class="pub-description">Methods for learning decision support policies that adapt to individual users, improving human-AI team performance.</p>
             <p class="pub-venue">Conference Paper</p>
-            <div class="card-tags">
-              <span class="research-badge tag-explainability">Explainability</span>
-              <span class="research-badge tag-hci">HCI</span>
-            </div>
           </a>
         </div>
         <div style="text-align: center; margin-top: 1.5rem;">
@@ -338,21 +286,11 @@ sections:
         <div class="software-grid-five">
           <div class="software-card">
             <div class="software-header">
-              <span class="software-icon">📦</span>
+              <span class="software-icon">○</span>
               <h3>Fabric</h3>
               <span class="software-badge">Python</span>
             </div>
-            <div class="software-stats">
-              <span>⭐ 45</span>
-              <span>🍴 12</span>
-            </div>
             <p class="software-description">A comprehensive toolkit for systematically documenting real-world AI deployments, enabling researchers and practitioners to capture deployment contexts and compare implementations.</p>
-            <div class="software-tags">
-              <span>deployment</span>
-              <span>documentation</span>
-              <span>ai-ethics</span>
-              <span>toolkit</span>
-            </div>
             <div class="software-links">
               <a href="https://github.com/TRACE-Lab/fabric" class="btn-github" target="_blank">View on GitHub</a>
               <a href="#" class="btn-docs">Documentation</a>
@@ -360,21 +298,11 @@ sections:
           </div>
           <div class="software-card">
             <div class="software-header">
-              <span class="software-icon">🤖</span>
+              <span class="software-icon">□</span>
               <h3>Modiste</h3>
               <span class="software-badge">Python</span>
             </div>
-            <div class="software-stats">
-              <span>⭐ 28</span>
-              <span>🍴 8</span>
-            </div>
             <p class="software-description">A framework for orchestrating AI agents in complex environments, providing tools for agent coordination, communication, and deployment alongside human teams.</p>
-            <div class="software-tags">
-              <span>agents</span>
-              <span>orchestration</span>
-              <span>multi-agent</span>
-              <span>framework</span>
-            </div>
             <div class="software-links">
               <a href="https://github.com/TRACE-Lab/modiste" class="btn-github" target="_blank">View on GitHub</a>
               <a href="#" class="btn-docs">Documentation</a>
@@ -382,20 +310,11 @@ sections:
           </div>
           <div class="software-card">
             <div class="software-header">
-              <span class="software-icon">🌐</span>
+              <span class="software-icon">◇</span>
               <h3>Externalis.ai</h3>
               <span class="software-badge">Platform</span>
             </div>
-            <div class="software-stats">
-              <span>🧪 Beta</span>
-            </div>
             <p class="software-description">A platform for social experimentation of AI, enabling researchers to study the societal impacts and externalities of AI systems in controlled environments.</p>
-            <div class="software-tags">
-              <span>social-ai</span>
-              <span>experimentation</span>
-              <span>externalities</span>
-              <span>platform</span>
-            </div>
             <div class="software-links">
               <a href="https://externalis.ai" class="btn-github" target="_blank">Visit Platform</a>
               <a href="#" class="btn-docs">Documentation</a>
