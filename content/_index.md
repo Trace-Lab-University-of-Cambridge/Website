@@ -131,7 +131,8 @@ sections:
                data-role="PhD Student (co-advised with Anna Korhonen)"
                data-org="University of Cambridge"
                data-bio="Bernardo is a PhD student with the TRACE lab researching trustworthy AI systems. He focuses on the intersection of AI research, social science, and tech development and draws from his background in sociology. From Ecuador, Bernardo graduated from Pontifical Catholic University of Ecuador with a degree in Sociology and from the University of Edinburgh with his Master's degree in Data Science with distinction."
-               data-interests="Trustworthy AI,NLP,Social Science">
+               data-interests="Trustworthy AI,NLP,Social Science"
+               data-website="https://bjv01.github.io">
             <img class="team-avatar" src="media/team/bernardo-villegas.png" alt="Bernardo Villegas">
             <h3 class="team-name">Bernardo Villegas</h3>
             <p class="team-role">PhD Student</p>
