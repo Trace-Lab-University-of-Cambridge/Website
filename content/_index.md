@@ -19,7 +19,7 @@ sections:
       columns: '1'
       background:
         image:
-          filename: hero-bg.png
+          filename: hero-bg.jpg
           filters:
             brightness: 0.4
           parallax: false
