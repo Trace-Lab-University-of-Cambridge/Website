@@ -4,12 +4,12 @@ summary: "How do we deploy AI agents among humans?"
 tags:
   - Agents
   - Modiste
-date: 2024-01-01
+share: false
 ---
 
 ## How do we deploy AI agents among humans?
 
-**Modiste** is our platform to learn policies for when the use of AI agents is appropriate, given user state, task requirements, and organizational constraints. We modulate access to agents by combining dynamic prices, richer objective functions, and purposeful frictions so that assistance aligns with safety, equity, and cost goals. We are extending this to treat humans as high-value information sources, designing protocols for agents to acquire information to improve performance and strengthen oversight.
+**[Modiste](https://modiste.dev)** is our platform to learn policies for when the use of AI agents is appropriate, given user state, task requirements, and organizational constraints. We modulate access to agents by combining dynamic prices, richer objective functions, and purposeful frictions so that assistance aligns with safety, equity, and cost goals. We are extending this to treat humans as high-value information sources, designing protocols for agents to acquire information to improve performance and strengthen oversight.
 
 ### Key Initiatives
 

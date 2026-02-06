@@ -4,7 +4,7 @@ summary: "How do people interact with AI systems?"
 tags:
   - Interaction
   - Affordances
-date: 2024-01-01
+share: false
 ---
 
 ## How do people interact with AI systems?

@@ -691,6 +691,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // ============================================
+// NEWS SECTION
+// ============================================
+
+.news-section {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .news-item {
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #667eea;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--global-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+.dark .news-section .news-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+
+  .news-date {
+    color: #93c5fd;
+  }
+}
+
+// ============================================
 // AFFILIATIONS
 // ============================================
 

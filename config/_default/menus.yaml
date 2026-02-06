@@ -16,6 +16,9 @@ main:
   - name: Publications
     url: /#publications
     weight: 40
+  - name: News
+    url: /#news
+    weight: 45
   - name: Software
     url: /#software
     weight: 50

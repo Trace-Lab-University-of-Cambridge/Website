@@ -4,12 +4,12 @@ summary: "How do people use AI systems around the world?"
 tags:
   - Deployment
   - Fabric
-date: 2024-01-01
+share: false
 ---
 
 ## How do people use AI systems around the world?
 
-**Fabric** is a public catalog of AI systems deployed in real-world contexts. We capture how individual and institutional oversight help integrate AI into existing workflows. We are building a community of deployers to share best practices and patterns of AI use. We use field experiments to understand deployment strategies, such as when selective access to AI agents improves outcomes and for whom.
+**[Fabric](https://deploymentof.ai)** is a public catalog of AI systems deployed in real-world contexts. We capture how individual and institutional oversight help integrate AI into existing workflows. We are building a community of deployers to share best practices and patterns of AI use. We use field experiments to understand deployment strategies, such as when selective access to AI agents improves outcomes and for whom.
 
 ### Key Initiatives
 

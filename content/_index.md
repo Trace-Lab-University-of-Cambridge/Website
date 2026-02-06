@@ -12,7 +12,7 @@ sections:
       text: |
         <div class="hero-fullscreen">
           <h1>TRACE Lab</h1>
-          <p class="hero-tagline">Trustworthy AI for High-Stakes Decisions</p>
+          <p class="hero-subtitle">Trustworthy Artificial Intelligence Laboratory</p>
           <p class="hero-university">University of Cambridge</p>
         </div>
     design:
@@ -37,7 +37,7 @@ sections:
       text: |
         <div class="about-section">
 
-        We build trustworthy AI systems for high-stakes settings like **healthcare**, **education**, and **public safety**. Drawing from machine learning, human-computer interaction, and social science, we investigate when and how AI can be trusted, integrated into decision-making, and evaluated in ecologically valid settings.
+        We build <b>TR</b>ustworthy <b>A</b>rtificial intelligen<b>CE</b> systems for high-stakes settings like **healthcare**, **education**, and **public safety**. Drawing from machine learning, human-computer interaction, and social science, we investigate when and how AI can be trusted, integrated into decision-making, and evaluated in ecologically valid settings.
 
         </div>
     design:
@@ -71,7 +71,7 @@ sections:
             <h3>Agent Orchestration</h3>
             <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
           </a>
-          <a href="publication/" class="research-card">
+          <a href="project/fundamentals-trustworthy-ai/" class="research-card">
             <div class="card-icon">▽</div>
             <h3>Trustworthy AI</h3>
             <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
@@ -279,6 +279,25 @@ sections:
     design:
       columns: '1'
 
+  # News
+  - block: markdown
+    id: news
+    content:
+      title: News
+      subtitle: ''
+      text: |
+        <div class="news-section">
+          <div class="news-item">
+            <span class="news-date">Coming Soon</span>
+            <p>Stay tuned for updates from the TRACE Lab.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="post/" class="view-all-link">View all news →</a>
+        </div>
+    design:
+      columns: '1'
+
   # Software
   - block: markdown
     id: software
@@ -295,8 +314,7 @@ sections:
             </div>
             <p class="software-description">A comprehensive toolkit for systematically documenting real-world AI deployments, enabling researchers and practitioners to capture deployment contexts and compare implementations.</p>
             <div class="software-links">
-              <a href="https://github.com/TRACE-Lab/fabric" class="btn-github" target="_blank">View on GitHub</a>
-              <a href="#" class="btn-docs">Documentation</a>
+              <a href="https://deploymentof.ai" class="btn-github" target="_blank">Visit Website</a>
             </div>
           </div>
           <div class="software-card">
@@ -307,8 +325,7 @@ sections:
             </div>
             <p class="software-description">A framework for orchestrating AI agents in complex environments, providing tools for agent coordination, communication, and deployment alongside human teams.</p>
             <div class="software-links">
-              <a href="https://github.com/TRACE-Lab/modiste" class="btn-github" target="_blank">View on GitHub</a>
-              <a href="#" class="btn-docs">Documentation</a>
+              <a href="https://modiste.dev" class="btn-github" target="_blank">Visit Website</a>
             </div>
           </div>
           <div class="software-card">
@@ -320,7 +337,6 @@ sections:
             <p class="software-description">A platform for social experimentation of AI, enabling researchers to study the societal impacts and externalities of AI systems in controlled environments.</p>
             <div class="software-links">
               <a href="https://externalis.ai" class="btn-github" target="_blank">Visit Platform</a>
-              <a href="#" class="btn-docs">Documentation</a>
             </div>
           </div>
         </div>

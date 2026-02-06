@@ -4,12 +4,12 @@ summary: "What is the impact of AI use?"
 tags:
   - Human-AI Interaction
   - Impact
-date: 2024-01-01
+share: false
 ---
 
 ## What is the impact of AI use?
 
-We are building a large-scale, multi-domain study and open-source platform to track the longitudinal effects of AI use on productivity, confidence, and equity. In parallel, we conduct focused evaluations within single domains and cross-cultural settings to understand heterogeneous impacts of using AI assistance. We investigate moral development by studying how short-story reading, with and without AI mediation, shapes moral acquisition and downstream behavior.
+We are building a large-scale, multi-domain study and open-source platform—**[Externalis.ai](https://externalis.ai)**—to track the longitudinal effects of AI use on productivity, confidence, and equity. In parallel, we conduct focused evaluations within single domains and cross-cultural settings to understand heterogeneous impacts of using AI assistance. We investigate moral development by studying how short-story reading, with and without AI mediation, shapes moral acquisition and downstream behavior.
 
 ### Key Initiatives
 
