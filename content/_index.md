@@ -229,105 +229,18 @@ sections:
           </div>
         </div>
 
-        <!-- Modal Overlay -->
-        <div class="team-modal-overlay"></div>
-
-        <!-- Modal -->
-        <div class="team-modal">
-          <button class="modal-close">×</button>
-          <div class="modal-header">
-            <img class="modal-avatar" src="" alt="">
-            <div class="modal-header-text">
-              <h2 class="modal-name"></h2>
-              <p class="modal-role"></p>
-              <p class="modal-org"></p>
-            </div>
-          </div>
-          <div class="modal-body">
-            <p class="modal-bio"></p>
-            <div class="modal-interests">
-              <h4>Research Interests</h4>
-              <div class="interest-tags"></div>
-            </div>
-          </div>
-          <div class="modal-footer"></div>
-        </div>
-
         <script>
         document.addEventListener('DOMContentLoaded', function() {
           const teamCards = document.querySelectorAll('.team-card');
-          const modalOverlay = document.querySelector('.team-modal-overlay');
-          const modal = document.querySelector('.team-modal');
-
-          if (!modalOverlay || !modal) return;
-
-          // Move modal to body to avoid transform containment issues
-          document.body.appendChild(modalOverlay);
-          document.body.appendChild(modal);
 
           teamCards.forEach(card => {
-            // Add visual indicator for cards with websites
             const website = card.dataset.website || '';
             if (website) {
               card.classList.add('has-website');
-            }
-
-            card.addEventListener('click', function() {
-              const website = this.dataset.website || '';
-
-              // If member has a website, link directly to it
-              if (website) {
+              card.addEventListener('click', function() {
                 window.open(website, '_blank');
-                return;
-              }
-
-              // Otherwise, show the modal
-              const name = this.dataset.name;
-              const role = this.dataset.role;
-              const org = this.dataset.org || '';
-              const bio = this.dataset.bio || '';
-              const interests = this.dataset.interests ? this.dataset.interests.split(',') : [];
-              const avatar = this.querySelector('.team-avatar')?.src || '';
-              const email = this.dataset.email || '';
-              const scholar = this.dataset.scholar || '';
-              const github = this.dataset.github || '';
-              const twitter = this.dataset.twitter || '';
-
-              modal.querySelector('.modal-avatar').src = avatar;
-              modal.querySelector('.modal-name').textContent = name;
-              modal.querySelector('.modal-role').textContent = role;
-              modal.querySelector('.modal-org').textContent = org;
-              modal.querySelector('.modal-bio').textContent = bio;
-
-              const interestTags = modal.querySelector('.interest-tags');
-              interestTags.innerHTML = interests.map(i => '<span>' + i.trim() + '</span>').join('');
-
-              const footer = modal.querySelector('.modal-footer');
-              footer.innerHTML = '';
-              if (email) footer.innerHTML += '<a href="mailto:' + email + '" title="Email">Email</a>';
-              if (scholar) footer.innerHTML += '<a href="' + scholar + '" target="_blank" title="Google Scholar">Scholar</a>';
-              if (github) footer.innerHTML += '<a href="' + github + '" target="_blank" title="GitHub">GitHub</a>';
-              if (twitter) footer.innerHTML += '<a href="' + twitter + '" target="_blank" title="Twitter">Twitter</a>';
-
-              modalOverlay.classList.add('active');
-              modal.classList.add('active');
-              document.body.style.overflow = 'hidden';
-            });
-          });
-
-          function closeModal() {
-            modalOverlay.classList.remove('active');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-          }
-
-          modalOverlay.addEventListener('click', closeModal);
-          modal.querySelector('.modal-close')?.addEventListener('click', closeModal);
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-          });
-          modal.addEventListener('click', function(e) {
-            e.stopPropagation();
+              });
+            }
           });
         });
         </script>
