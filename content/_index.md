@@ -97,7 +97,7 @@ sections:
                data-interests="Trustworthy AI,Human-AI Interaction,Machine Learning,Explainability"
                data-email="ub@umangbhatt.com"
                data-website="https://umangsbhatt.github.io"
-               data-scholar="https://scholar.google.com/citations?user=PLACEHOLDER">
+               data-scholar="https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en">
             <img class="team-avatar" src="media/team/umang-bhatt.jpg" alt="Umang Bhatt">
             <h3 class="team-name">Umang Bhatt</h3>
             <p class="team-role">PI, Assistant Professor</p>
