@@ -23,7 +23,7 @@ sections:
           filters:
             brightness: 0.4
           parallax: false
-          position: center
+          position: center top
           size: cover
         text_color_light: true
       spacing:

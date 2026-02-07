@@ -8,28 +8,47 @@ tags:
 share: false
 ---
 
-## Fundamentals of Trustworthy AI
+<div class="project-intro">
+Bridging all of our initiatives is our fundamental technical research into trustworthy AI, spanning transparency, collaboration, and evaluation. We develop methods that work in practice, not just in theory.
+</div>
 
-Bridging all of our initiatives is our fundamental technical research into trustworthy AI, spanning transparency, collaboration, and evaluation.
+<h2 class="project-section-title">Research Areas</h2>
 
-### Transparency & Explanations
+<div class="initiative-cards">
+  <div class="initiative-card">
+    <span class="initiative-number">01</span>
+    <h3>Transparency & Explanations</h3>
+    <p>Uncertainty-aware explanations and adaptive methods to support users in practice</p>
+  </div>
+  <div class="initiative-card">
+    <span class="initiative-number">02</span>
+    <h3>Human-AI Collaboration</h3>
+    <p>Algorithmic resignation, purposeful frictions, and mechanisms to improve performance</p>
+  </div>
+  <div class="initiative-card">
+    <span class="initiative-number">03</span>
+    <h3>Evaluation</h3>
+    <p>Interactive evaluation methods, soft labels, and stakeholder-informed tuning</p>
+  </div>
+</div>
 
-Our older research showed traditional explainability techniques have had limited value in real-world deployments. In response, we developed **uncertainty-aware explanations** and **adaptive methods** to support users in practice.
+<h2 class="project-section-title">Research Questions</h2>
 
-### Human-AI Collaboration
-
-We design human-AI collaboration mechanisms to:
-- Improve user performance
-- Incorporate **algorithmic resignation** when appropriate
-- Introduce **frictions** to reduce overreliance and prevent skill atrophy
-
-### Evaluation
-
-Our interactive evaluation of LLMs in theorem proving uncovered failure modes invisible to benchmarks. We then aligned models via:
-- Soft label collection
-- Latent factor selection
-- Stakeholder-informed hyperparameter tuning
-
-### Ongoing Work
-
-We have ongoing work in all of these areas and are actively seeking strong candidates for our degree programs in this space.
+<div class="research-questions">
+  <div class="question-item">
+    <span class="question-icon">?</span>
+    <p>How can we develop explainability techniques that provide value in real-world deployments?</p>
+  </div>
+  <div class="question-item">
+    <span class="question-icon">?</span>
+    <p>When should AI systems resign or defer to human judgment?</p>
+  </div>
+  <div class="question-item">
+    <span class="question-icon">?</span>
+    <p>How can we evaluate AI systems to uncover failure modes invisible to benchmarks?</p>
+  </div>
+  <div class="question-item">
+    <span class="question-icon">?</span>
+    <p>How do we prevent skill atrophy and overreliance on AI assistance?</p>
+  </div>
+</div>

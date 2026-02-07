@@ -2,3 +2,11 @@
 {{ if $js }}
 <script src="{{ $js.RelPermalink }}"></script>
 {{ end }}
+
+<script>
+// Force light mode - remove dark class and override localStorage
+(function() {
+  document.documentElement.classList.remove('dark');
+  localStorage.setItem('wc-color-theme', 'light');
+})();
+</script>

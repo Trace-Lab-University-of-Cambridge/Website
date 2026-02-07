@@ -1,13 +1,14 @@
 {{- define "main" -}}
 
-<article class="article article-project project-page-custom">
+{{- $slug := .File.ContentBaseName -}}
+
+<article class="article article-project project-page-custom" data-project="{{ $slug }}">
 
   <div class="project-hero">
+    <div class="project-hero-pattern"></div>
     <div class="project-hero-content">
+      <p class="project-lab-name">TRustworthy Artificial intelligenCE</p>
       <h1>{{ .Title }}</h1>
-      {{ with .Params.summary }}
-      <p class="project-summary">{{ . }}</p>
-      {{ end }}
       {{ with .Params.external_url }}
       <a href="{{ . }}" target="_blank" class="project-cta-btn">
         Visit Website →
