@@ -2,7 +2,7 @@
 
 Website for the **TRustworthy Artificial IntelligenCE Laboratory** at the University of Cambridge.
 
-**Live site:** https://trace-lab-university-of-cambridge.github.io/Website/
+**Live site:** https://trace-lab.ai
 
 ## Quick Start
 
@@ -40,12 +40,35 @@ The site automatically deploys to GitHub Pages when you push to the `main` branc
 3. Hugo builds the site
 4. Site is deployed to GitHub Pages
 
+### DNS Configuration
+
+For the custom domain `trace-lab.ai`:
+
+1. **GitHub Pages Settings** (repo → Settings → Pages):
+   - Custom domain: `trace-lab.ai`
+   - Enable "Enforce HTTPS"
+
+2. **DNS Records** (at your DNS provider):
+   ```
+   Type: A
+   Name: @
+   Values:
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+
+   Type: CNAME
+   Name: www
+   Value: trace-lab-university-of-cambridge.github.io
+   ```
+
 ### Manual deployment:
 If needed, trigger a manual deployment from the [Actions tab](https://github.com/Trace-Lab-University-of-Cambridge/Website/actions).
 
 ### Important: Module Vendoring
 
-This site uses Hugo Blox (formerly Wowchemy) modules. The modules are **vendored** in the `_vendor/` directory to ensure reliable builds. Additionally, some partials are copied to `layouts/partials/` and `layouts/_partials/` for compatibility.
+This site uses Hugo Blox (formerly Wowchemy) modules. The modules are **vendored** in the `_vendor/` directory to ensure reliable builds.
 
 **If you update Hugo Blox modules:**
 ```bash
@@ -76,21 +99,12 @@ git push
 
 ```
 content/
-├── _index.md              # Homepage
-├── research/              # Research overview
+├── _index.md              # Homepage (hero, about, research, team, publications, news)
 ├── project/               # Individual project pages
-│   ├── deployment-as-a-science/
-│   ├── externalities-human-ai/
-│   ├── affordances-ai-use/
-│   ├── agent-orchestration/
-│   └── fundamentals-trustworthy-ai/
-├── software/              # Software tools
-├── people/                # Team listing
-├── join/                  # How to join
-├── contact/               # Contact info
-├── post/                  # News/blog
+├── join/                  # How to join the lab
+├── post/                  # News/blog posts
 ├── publication/           # Publications
-└── authors/               # Team member profiles
+└── authors/               # Team member profiles (for publication attribution)
 
 config/_default/
 ├── hugo.yaml              # Site settings (title, baseURL)
@@ -98,48 +112,57 @@ config/_default/
 ├── menus.yaml             # Navigation menu
 └── module.yaml            # Hugo module imports
 
-data/themes/
-└── trace.toml             # Custom color theme
-
 layouts/
+├── section/
+│   └── publication.html   # Custom publications page layout
 ├── partials/              # Custom partials (blox-core, blox-seo)
 └── _partials/             # Module partials
 
-_vendor/                   # Vendored Hugo modules (DO NOT EDIT)
+assets/
+├── scss/
+│   └── custom.scss        # Custom styles (team cards, research cards, etc.)
+└── media/
+    ├── hero-bg.jpg        # Homepage hero background
+    ├── icon.png           # Site icon
+    └── team/              # Team member photos
 
-assets/media/
-├── hero-bg.jpg            # Homepage hero background
-└── icon.png               # Site icon
+static/media/team/         # Team photos (400x400px recommended)
+
+_vendor/                   # Vendored Hugo modules (DO NOT EDIT)
 ```
 
 ## Adding Content
 
-### New Team Member
-```bash
-mkdir content/authors/firstname-lastname
-# Create _index.md with:
-```
-```yaml
----
-title: Full Name
-role: Role Title
-user_groups:
-  - PhD Students  # or: Principal Investigator, Research Staff, Visitors, Affiliates
-social:
-  - icon: envelope
-    icon_pack: fas
-    link: mailto:email@cam.ac.uk
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/username
----
-Bio text here.
-```
-```bash
-# Add avatar.jpg (square photo, 400x400px recommended)
+### Team Members
+
+Team members are defined directly in `content/_index.md` using HTML with data attributes:
+
+```html
+<div class="team-card"
+     data-name="Full Name"
+     data-role="Role Title"
+     data-org="University of Cambridge"
+     data-bio="Bio text here..."
+     data-interests="Interest 1,Interest 2,Interest 3"
+     data-email="email@cam.ac.uk"
+     data-website="https://personal-website.com"
+     data-scholar="https://scholar.google.com/..."
+     data-github="https://github.com/username">
+  <img class="team-avatar" src="media/team/firstname-lastname.jpg" alt="Full Name">
+  <h3 class="team-name">Full Name</h3>
+  <p class="team-role">Role Title</p>
+  <p class="team-org">Cambridge</p>
+</div>
 ```
 
+**Behavior:**
+- Members **with** `data-website`: clicking opens their website in a new tab
+- Members **without** `data-website`: clicking does nothing
+
+**Photos:** Add to `static/media/team/` (square, 400x400px recommended, faces centered)
+
 ### New Publication
+
 ```bash
 mkdir content/publication/paper-short-name
 # Create index.md with:
@@ -148,35 +171,48 @@ mkdir content/publication/paper-short-name
 ---
 title: "Paper Title"
 authors:
-  - admin  # or author slug
+  - admin  # or author slug from content/authors/
   - External Author Name
 date: "2024-01-01"
 publication_types: ['article-journal']  # or 'paper-conference'
 publication: "Journal Name"
 publication_short: "Short Name"
 abstract: "Abstract text"
+tags:
+  - Machine Learning
+  - Trustworthy AI
 featured: true
 url_pdf: "https://link-to-pdf.com"
+url_code: "https://github.com/..."
 ---
 ```
 
-### New Project/Research Initiative
-```bash
-mkdir content/project/project-name
-# Create index.md with:
-```
-```yaml
----
-title: Project Title
-summary: Brief description
-tags:
-  - Research
-date: "2024-01-01"
----
-Full description here.
+Publications are displayed grouped by year with category filtering on `/publication/`.
+
+### Research Areas
+
+Research cards are defined in `content/_index.md`. Cards can be:
+- **Links** (`<a>` tag): Opens external website
+- **Static** (`<div>` tag): Hover effect only, no action on click
+
+```html
+<!-- Linked research card -->
+<a href="https://example.com" target="_blank" class="research-card">
+  <div class="card-icon">○</div>
+  <h3>Research Area</h3>
+  <p>Description text.</p>
+</a>
+
+<!-- Static research card -->
+<div class="research-card">
+  <div class="card-icon">□</div>
+  <h3>Research Area</h3>
+  <p>Description text.</p>
+</div>
 ```
 
 ### New Blog Post
+
 ```bash
 mkdir content/post/post-name
 # Create index.md with:
@@ -191,10 +227,6 @@ authors:
 Post content here.
 ```
 
-## Content Population Guide
-
-See `CONTENT_TO_POPULATE.md` for a detailed checklist of content that needs to be added (team photos, bios, publications, etc.).
-
 ## Customization
 
 ### Colors
@@ -202,6 +234,9 @@ Edit `data/themes/trace.toml` to change the color scheme.
 
 ### Navigation
 Edit `config/_default/menus.yaml` to change the navigation menu.
+
+### Styles
+Edit `assets/scss/custom.scss` for custom CSS (cards, animations, etc.).
 
 ### Homepage
 Edit `content/_index.md` to modify the homepage sections.
@@ -229,19 +264,6 @@ The modules are vendored, so you shouldn't need to download them. If issues pers
 hugo mod clean
 hugo mod vendor
 ```
-
-## Pending Setup
-
-### Decap CMS (News editing without code)
-
-The admin interface at `/admin` is set up but needs OAuth configuration to work:
-
-1. Register GitHub OAuth App at https://github.com/settings/developers
-   - Client ID: `Ov23liE80XQIiqcDekc8` (already created)
-   - Generate new Client Secret (previous one should be rotated)
-2. Deploy OAuth proxy (e.g., https://github.com/ublabs/netlify-cms-oauth to Vercel)
-3. Update `static/admin/config.yml` with `base_url` pointing to the OAuth proxy
-4. Update GitHub OAuth callback URL to `https://your-proxy.vercel.app/callback`
 
 ## License
 
