@@ -1453,16 +1453,18 @@ section {
 }
 
 .team-card {
-  @include glass-card;
   padding: 1.25rem;
   text-align: center;
-  cursor: pointer;
   height: 190px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  cursor: default;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
 
   .team-avatar {
     width: 70px;
@@ -1491,8 +1493,11 @@ section {
     display: none;
   }
 
-  // Team cards with external website link
+  // Team members with external website link - show as card
   &.has-website {
+    @include glass-card;
+    cursor: pointer;
+
     &::after {
       content: '↗';
       position: absolute;
@@ -1696,7 +1701,7 @@ section {
   .pub-card,
   .software-card,
   .people-person,
-  .team-card {
+  .team-card.has-website {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
