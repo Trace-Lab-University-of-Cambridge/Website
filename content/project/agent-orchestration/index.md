@@ -5,6 +5,7 @@ tags:
   - Agents
   - Modiste
 share: false
+external_url: "https://modiste.dev"
 ---
 
 ## How do we deploy AI agents among humans?

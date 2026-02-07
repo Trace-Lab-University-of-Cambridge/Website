@@ -5,6 +5,7 @@ tags:
   - Human-AI Interaction
   - Impact
 share: false
+external_url: "https://externalis.ai"
 ---
 
 ## What is the impact of AI use?

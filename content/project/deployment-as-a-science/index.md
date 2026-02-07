@@ -5,6 +5,7 @@ tags:
   - Deployment
   - Fabric
 share: false
+external_url: "https://deploymentof.ai"
 ---
 
 ## How do people use AI systems around the world?

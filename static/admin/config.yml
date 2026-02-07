@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: Trace-Lab-University-of-Cambridge/Website
+  branch: main
+
+media_folder: static/media
+public_folder: /media
+
+collections:
+  - name: "news"
+    label: "News"
+    folder: "content/post"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Summary", name: "summary", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
