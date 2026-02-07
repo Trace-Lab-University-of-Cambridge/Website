@@ -1,0 +1,169 @@
+{{ define "main" }}
+<div class="publications-page">
+  <div class="publications-container">
+    <header class="publications-header">
+      <h1>Publications</h1>
+      <p class="publications-subtitle">Research papers from the TRACE Lab</p>
+    </header>
+
+    {{/* Collect all unique tags/categories */}}
+    {{ $allTags := slice }}
+    {{ range .Pages }}
+      {{ with .Params.tags }}
+        {{ range . }}
+          {{ $allTags = $allTags | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ $uniqueTags := $allTags | uniq }}
+
+    {{/* Category filter buttons */}}
+    {{ if $uniqueTags }}
+    <div class="publications-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      {{ range $uniqueTags }}
+      <button class="filter-btn" data-filter="{{ . | urlize }}">{{ . }}</button>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Group publications by year */}}
+    {{ $pages := .Pages.ByDate.Reverse }}
+    {{ $years := slice }}
+    {{ range $pages }}
+      {{ $year := .Date.Format "2006" }}
+      {{ $years = $years | append $year }}
+    {{ end }}
+    {{ $uniqueYears := $years | uniq }}
+
+    <div class="publications-list">
+      {{ range $year := $uniqueYears }}
+      <div class="year-section">
+        <h2 class="year-header">{{ $year }}</h2>
+        <div class="year-publications">
+          {{ range $pages }}
+            {{ if eq (.Date.Format "2006") $year }}
+            {{/* Build tag classes for filtering */}}
+            {{ $tagClasses := "" }}
+            {{ with .Params.tags }}
+              {{ range . }}
+                {{ $tagClasses = printf "%s tag-%s" $tagClasses (. | urlize) }}
+              {{ end }}
+            {{ end }}
+            <article class="publication-item{{ $tagClasses }}">
+              <div class="publication-content">
+                <h3 class="publication-title">
+                  {{ if .Params.url_pdf }}
+                  <a href="{{ .Params.url_pdf }}" target="_blank" rel="noopener">{{ .Title }}</a>
+                  {{ else }}
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  {{ end }}
+                </h3>
+
+                <div class="publication-authors">
+                  {{- $authors := .Params.authors -}}
+                  {{- if $authors -}}
+                    {{- $authorNames := slice -}}
+                    {{- range $authors -}}
+                      {{- $authorPage := site.GetPage (printf "/authors/%s" .) -}}
+                      {{- if $authorPage -}}
+                        {{- $authorNames = $authorNames | append $authorPage.Title -}}
+                      {{- else -}}
+                        {{- $authorNames = $authorNames | append . -}}
+                      {{- end -}}
+                    {{- end -}}
+                    {{- delimit $authorNames ", " -}}
+                  {{- end -}}
+                </div>
+
+                {{ with .Params.abstract }}
+                {{ if ne . "" }}
+                <p class="publication-abstract">{{ . | truncate 300 }}</p>
+                {{ end }}
+                {{ end }}
+
+                <div class="publication-meta">
+                  {{ with .Params.tags }}
+                  <div class="publication-tags">
+                    {{ range . }}
+                    <span class="pub-tag">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+
+                  <div class="publication-venue">
+                    {{ with .Params.publication_short }}{{ . }}{{ else }}{{ .Params.publication }}{{ end }}
+                  </div>
+                </div>
+
+                <div class="publication-links">
+                  {{ with .Params.url_pdf }}
+                  <a href="{{ . }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    Read Paper
+                  </a>
+                  {{ end }}
+                  {{ with .Params.url_code }}
+                  <a href="{{ . }}" class="pub-link pub-link-code" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    Code
+                  </a>
+                  {{ end }}
+                  {{ with .Params.url_dataset }}
+                  <a href="{{ . }}" class="pub-link pub-link-data" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    Dataset
+                  </a>
+                  {{ end }}
+                </div>
+              </div>
+            </article>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <footer class="publications-footer">
+      <p>This list is updated regularly. For the most current information, please visit our team members' individual pages.</p>
+    </footer>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubItems = document.querySelectorAll('.publication-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.dataset.filter;
+
+      pubItems.forEach(item => {
+        if (filter === 'all') {
+          item.style.display = '';
+          item.classList.remove('hidden');
+        } else if (item.classList.contains('tag-' + filter)) {
+          item.style.display = '';
+          item.classList.remove('hidden');
+        } else {
+          item.style.display = 'none';
+          item.classList.add('hidden');
+        }
+      });
+
+      // Hide empty year sections
+      document.querySelectorAll('.year-section').forEach(section => {
+        const visiblePubs = section.querySelectorAll('.publication-item:not(.hidden)');
+        section.style.display = visiblePubs.length > 0 ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+{{ end }}

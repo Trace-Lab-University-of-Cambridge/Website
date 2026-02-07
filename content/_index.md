@@ -51,31 +51,31 @@ sections:
       subtitle: ''
       text: |
         <div class="research-grid-five">
-          <a href="project/deployment-as-a-science/" class="research-card">
+          <div class="research-card research-card-static">
             <div class="card-icon">○</div>
             <h3>Deployment as a Science</h3>
             <p>Systematic approaches to document how AI systems are deployed across diverse real-world contexts.</p>
-          </a>
-          <a href="project/externalities-human-ai/" class="research-card">
+          </div>
+          <div class="research-card research-card-static">
             <div class="card-icon">□</div>
             <h3>Human-AI Externalities</h3>
             <p>Investigating the broader impacts of AI on individuals and society—both intended and unintended.</p>
-          </a>
-          <a href="project/affordances-ai-use/" class="research-card">
+          </div>
+          <div class="research-card research-card-static">
             <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
             <p>Understanding how people perceive and interact with AI systems in daily life and work.</p>
-          </a>
-          <a href="project/agent-orchestration/" class="research-card">
+          </div>
+          <div class="research-card research-card-static">
             <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
             <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
-          </a>
-          <a href="project/fundamentals-trustworthy-ai/" class="research-card">
+          </div>
+          <div class="research-card research-card-static">
             <div class="card-icon">▽</div>
             <h3>Trustworthy AI</h3>
             <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
-          </a>
+          </div>
         </div>
     design:
       columns: '1'
@@ -266,7 +266,22 @@ sections:
           document.body.appendChild(modal);
 
           teamCards.forEach(card => {
+            // Add visual indicator for cards with websites
+            const website = card.dataset.website || '';
+            if (website) {
+              card.classList.add('has-website');
+            }
+
             card.addEventListener('click', function() {
+              const website = this.dataset.website || '';
+
+              // If member has a website, link directly to it
+              if (website) {
+                window.open(website, '_blank');
+                return;
+              }
+
+              // Otherwise, show the modal
               const name = this.dataset.name;
               const role = this.dataset.role;
               const org = this.dataset.org || '';
@@ -277,7 +292,6 @@ sections:
               const scholar = this.dataset.scholar || '';
               const github = this.dataset.github || '';
               const twitter = this.dataset.twitter || '';
-              const website = this.dataset.website || '';
 
               modal.querySelector('.modal-avatar').src = avatar;
               modal.querySelector('.modal-name').textContent = name;
@@ -294,7 +308,6 @@ sections:
               if (scholar) footer.innerHTML += '<a href="' + scholar + '" target="_blank" title="Google Scholar">Scholar</a>';
               if (github) footer.innerHTML += '<a href="' + github + '" target="_blank" title="GitHub">GitHub</a>';
               if (twitter) footer.innerHTML += '<a href="' + twitter + '" target="_blank" title="Twitter">Twitter</a>';
-              if (website) footer.innerHTML += '<a href="' + website + '" target="_blank" title="Website">Web</a>';
 
               modalOverlay.classList.add('active');
               modal.classList.add('active');
@@ -372,48 +385,6 @@ sections:
         </div>
         <div style="text-align: center; margin-top: 1.5rem;">
           <a href="post/" class="view-all-link">View all news →</a>
-        </div>
-    design:
-      columns: '1'
-
-  # Software
-  - block: markdown
-    id: software
-    content:
-      title: Software
-      subtitle: ''
-      text: |
-        <div class="software-grid-five">
-          <div class="software-card">
-            <div class="software-header">
-              <span class="software-icon">○</span>
-              <h3>Fabric</h3>
-            </div>
-            <p class="software-description">A comprehensive toolkit for systematically documenting real-world AI deployments, enabling researchers and practitioners to capture deployment contexts and compare implementations.</p>
-            <div class="software-links">
-              <a href="https://deploymentof.ai" class="btn-github" target="_blank">Visit Website</a>
-            </div>
-          </div>
-          <div class="software-card">
-            <div class="software-header">
-              <span class="software-icon">□</span>
-              <h3>Modiste</h3>
-            </div>
-            <p class="software-description">A framework for orchestrating AI agents in complex environments, providing tools for agent coordination, communication, and deployment alongside human teams.</p>
-            <div class="software-links">
-              <a href="https://modiste.dev" class="btn-github" target="_blank">Visit Website</a>
-            </div>
-          </div>
-          <div class="software-card">
-            <div class="software-header">
-              <span class="software-icon">◇</span>
-              <h3>Externalis.ai</h3>
-            </div>
-            <p class="software-description">A platform for social experimentation of AI, enabling researchers to study the societal impacts and externalities of AI systems in controlled environments.</p>
-            <div class="software-links">
-              <a href="https://externalis.ai" class="btn-github" target="_blank">Visit Platform</a>
-            </div>
-          </div>
         </div>
     design:
       columns: '1'
