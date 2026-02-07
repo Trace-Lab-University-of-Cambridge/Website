@@ -230,6 +230,19 @@ hugo mod clean
 hugo mod vendor
 ```
 
+## Pending Setup
+
+### Decap CMS (News editing without code)
+
+The admin interface at `/admin` is set up but needs OAuth configuration to work:
+
+1. Register GitHub OAuth App at https://github.com/settings/developers
+   - Client ID: `Ov23liE80XQIiqcDekc8` (already created)
+   - Generate new Client Secret (previous one should be rotated)
+2. Deploy OAuth proxy (e.g., https://github.com/ublabs/netlify-cms-oauth to Vercel)
+3. Update `static/admin/config.yml` with `base_url` pointing to the OAuth proxy
+4. Update GitHub OAuth callback URL to `https://your-proxy.vercel.app/callback`
+
 ## License
 
 Content is copyright TRACE Lab, University of Cambridge.
