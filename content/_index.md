@@ -95,7 +95,7 @@ sections:
                data-org="University of Cambridge · CHIA · King's College"
                data-bio="Dr. Umang Bhatt is an Assistant Professor in Trustworthy Artificial Intelligence at the University of Cambridge and its Centre for Human-Inspired AI. He leads the TRACE Lab, focusing on building trustworthy AI systems for high-stakes settings like healthcare, education, and public safety."
                data-interests="Trustworthy AI,Human-AI Interaction,Machine Learning,Explainability"
-               data-email="ub@umangbhatt.com"
+               data-email="usb20@cam.ac.uk"
                data-website="https://umangsbhatt.github.io"
                data-scholar="https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en">
             <img class="team-avatar" src="media/team/umang-bhatt.jpg" alt="Umang Bhatt">
