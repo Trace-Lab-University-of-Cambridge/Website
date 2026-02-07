@@ -51,27 +51,27 @@ sections:
       subtitle: ''
       text: |
         <div class="research-grid-five">
-          <div class="research-card research-card-static research-card-highlight">
+          <div class="research-card">
             <div class="card-icon">○</div>
             <h3>Deployment as a Science</h3>
             <p>Systematic approaches to document how AI systems are deployed across diverse real-world contexts.</p>
           </div>
-          <div class="research-card research-card-static research-card-highlight">
+          <div class="research-card">
             <div class="card-icon">□</div>
             <h3>Human-AI Externalities</h3>
             <p>Investigating the broader impacts of AI on individuals and society—both intended and unintended.</p>
           </div>
-          <div class="research-card research-card-static">
+          <div class="research-card">
             <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
             <p>Understanding how people perceive and interact with AI systems in daily life and work.</p>
           </div>
-          <div class="research-card research-card-static">
+          <div class="research-card">
             <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
             <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
           </div>
-          <div class="research-card research-card-static">
+          <div class="research-card">
             <div class="card-icon">▽</div>
             <h3>Trustworthy AI</h3>
             <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
