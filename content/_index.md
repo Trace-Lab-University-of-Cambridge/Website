@@ -151,68 +151,68 @@ sections:
           </div>
           <div class="team-card"
                data-name="Yung-Hsuan Wu"
-               data-role="PhD Student"
+               data-role="Research Assistant"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Yung-Hsuan Wu">
             <h3 class="team-name">Yung-Hsuan Wu</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Research Assistant</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Shin Zert Phua"
-               data-role="PhD Student"
+               data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Shin Zert Phua">
             <h3 class="team-name">Shin Zert Phua</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Owen O'Malley"
-               data-role="PhD Student"
+               data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Owen O'Malley">
             <h3 class="team-name">Owen O'Malley</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Ariella Shulman"
-               data-role="PhD Student"
+               data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Ariella Shulman">
             <h3 class="team-name">Ariella Shulman</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Afan Handoyo"
-               data-role="PhD Student"
+               data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Afan Handoyo">
             <h3 class="team-name">Afan Handoyo</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Kostadin Devedzhiev"
-               data-role="PhD Student"
+               data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/placeholder.svg" alt="Kostadin Devedzhiev">
             <h3 class="team-name">Kostadin Devedzhiev</h3>
-            <p class="team-role">PhD Student</p>
+            <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
         </div>
