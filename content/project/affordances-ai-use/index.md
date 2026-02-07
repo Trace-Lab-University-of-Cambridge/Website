@@ -8,7 +8,7 @@ share: false
 ---
 
 <div class="project-intro">
-We examine how the interaction medium—speech, text, or multimodal interfaces—changes user cognition, behavior, and performance. We collect in-situ data on how users engage with AI in physical spaces to understand context-dependent behavior, and track how workplaces evolve as AI is adopted.
+We examine how the interaction medium (speech, text, or multimodal interfaces) changes user cognition, behavior, and performance. We collect in-situ data on how users engage with AI in physical spaces to understand context-dependent behavior, and track how workplaces evolve as AI is adopted.
 </div>
 
 <h2 class="project-section-title">Key Initiatives</h2>
