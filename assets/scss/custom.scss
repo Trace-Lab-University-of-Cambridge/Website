@@ -5,20 +5,20 @@
 // FORCE LIGHT MODE
 // ============================================
 
-// Override system dark mode preference
-html {
+html, html.dark {
   color-scheme: light only !important;
-}
-
-// Remove dark class if somehow applied
-html.dark {
   background: #fff !important;
 }
 
-// Prevent dark mode from being applied
+body, body.dark, .dark body {
+  background: #fff !important;
+  color: #1a1a2e !important;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  html, body, :root {
     color-scheme: light !important;
+    background: #fff !important;
   }
 }
 

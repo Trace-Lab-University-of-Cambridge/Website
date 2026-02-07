@@ -1,0 +1,14 @@
+<script>
+// Force light mode immediately before page renders
+document.documentElement.classList.remove('dark');
+document.documentElement.style.colorScheme = 'light';
+localStorage.setItem('wc-color-theme', 'light');
+</script>
+<style>
+/* Force light mode - critical CSS to prevent flash of dark */
+html, html.dark, body, body.dark {
+  background: #fff !important;
+  color: #1a1a2e !important;
+  color-scheme: light !important;
+}
+</style>
