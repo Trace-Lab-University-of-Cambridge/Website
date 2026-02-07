@@ -1416,13 +1416,10 @@ section {
 .team-grid {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-
-  @media (max-width: 700px) {
-    flex-wrap: wrap;
-  }
 }
 
 .team-card {
@@ -1430,8 +1427,7 @@ section {
   padding: 1.25rem;
   text-align: center;
   cursor: pointer;
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 150px;
   height: 180px;
   display: flex;
   flex-direction: column;
