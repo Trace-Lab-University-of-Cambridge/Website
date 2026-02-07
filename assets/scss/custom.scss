@@ -1435,6 +1435,7 @@ section {
 }
 
 .team-card {
+  @include glass-card;
   padding: 1.25rem;
   text-align: center;
   height: 190px;
@@ -1444,9 +1445,6 @@ section {
   justify-content: center;
   position: relative;
   cursor: default;
-  background: transparent;
-  border: none;
-  border-radius: 16px;
 
   .team-avatar {
     width: 70px;
@@ -1475,25 +1473,9 @@ section {
     display: none;
   }
 
-  // Team members with external website link - show as card
+  // Team members with website - clickable
   &.has-website {
-    @include glass-card;
     cursor: pointer;
-
-    &::after {
-      content: '↗';
-      position: absolute;
-      top: 0.6rem;
-      right: 0.6rem;
-      font-size: 0.7rem;
-      color: #5b6dcf;
-      opacity: 0.6;
-      transition: opacity 0.2s ease;
-    }
-
-    &:hover::after {
-      opacity: 1;
-    }
   }
 }
 
@@ -1683,7 +1665,7 @@ section {
   .pub-card,
   .software-card,
   .people-person,
-  .team-card.has-website {
+  .team-card {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
