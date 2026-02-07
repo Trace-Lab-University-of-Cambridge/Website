@@ -155,7 +155,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Yung-Hsuan Wu">
+            <img class="team-avatar" src="media/team/yung-hsuan-wu.png" alt="Yung-Hsuan Wu">
             <h3 class="team-name">Yung-Hsuan Wu</h3>
             <p class="team-role">Research Assistant</p>
             <p class="team-org">Cambridge</p>
@@ -166,7 +166,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Shin Zert Phua">
+            <img class="team-avatar" src="media/team/shin-zert-phua.png" alt="Shin Zert Phua">
             <h3 class="team-name">Shin Zert Phua</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
@@ -177,7 +177,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Owen O'Malley">
+            <img class="team-avatar" src="media/team/owen-omalley.png" alt="Owen O'Malley">
             <h3 class="team-name">Owen O'Malley</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
@@ -188,7 +188,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Ariella Shulman">
+            <img class="team-avatar" src="media/team/ariella-shulman.jpg" alt="Ariella Shulman">
             <h3 class="team-name">Ariella Shulman</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
@@ -199,7 +199,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Afan Handoyo">
+            <img class="team-avatar" src="media/team/afan-handoyo.png" alt="Afan Handoyo">
             <h3 class="team-name">Afan Handoyo</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
@@ -210,7 +210,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Kostadin Devedzhiev">
+            <img class="team-avatar" src="media/team/kostadin-devedzhiev.jpg" alt="Kostadin Devedzhiev">
             <h3 class="team-name">Kostadin Devedzhiev</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
