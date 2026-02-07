@@ -51,16 +51,16 @@ sections:
       subtitle: ''
       text: |
         <div class="research-grid-five">
-          <div class="research-card research-card-static">
+          <a href="https://deploymentof.ai" target="_blank" class="research-card">
             <div class="card-icon">○</div>
             <h3>Deployment as a Science</h3>
             <p>Systematic approaches to document how AI systems are deployed across diverse real-world contexts.</p>
-          </div>
-          <div class="research-card research-card-static">
+          </a>
+          <a href="https://externalis.ai" target="_blank" class="research-card">
             <div class="card-icon">□</div>
             <h3>Human-AI Externalities</h3>
             <p>Investigating the broader impacts of AI on individuals and society—both intended and unintended.</p>
-          </div>
+          </a>
           <div class="research-card research-card-static">
             <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
