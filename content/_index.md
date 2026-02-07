@@ -388,7 +388,6 @@ sections:
             <div class="software-header">
               <span class="software-icon">○</span>
               <h3>Fabric</h3>
-              <span class="software-badge">Python</span>
             </div>
             <p class="software-description">A comprehensive toolkit for systematically documenting real-world AI deployments, enabling researchers and practitioners to capture deployment contexts and compare implementations.</p>
             <div class="software-links">
@@ -399,7 +398,6 @@ sections:
             <div class="software-header">
               <span class="software-icon">□</span>
               <h3>Modiste</h3>
-              <span class="software-badge">Python</span>
             </div>
             <p class="software-description">A framework for orchestrating AI agents in complex environments, providing tools for agent coordination, communication, and deployment alongside human teams.</p>
             <div class="software-links">
@@ -410,7 +408,6 @@ sections:
             <div class="software-header">
               <span class="software-icon">◇</span>
               <h3>Externalis.ai</h3>
-              <span class="software-badge">Platform</span>
             </div>
             <p class="software-description">A platform for social experimentation of AI, enabling researchers to study the societal impacts and externalities of AI systems in controlled environments.</p>
             <div class="software-links">
