@@ -61,11 +61,13 @@ sections:
             <h3>Human-AI Externalities</h3>
             <p>Investigating the broader impacts of AI on individuals and society—both intended and unintended.</p>
           </a>
+          <!-- HIDDEN: Affordances of AI Use
           <div class="research-card">
             <div class="card-icon">◇</div>
             <h3>Affordances of AI Use</h3>
             <p>Understanding how people perceive and interact with AI systems in daily life and work.</p>
           </div>
+          -->
           <div class="research-card">
             <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
