@@ -1,0 +1,42 @@
+# Publications data
+# Each publication links directly to external source (Google Scholar, journal, etc.)
+
+publications:
+  - title: "Learning Personalized Decision Support Policies"
+    authors: "Bhatt, U., Chen, V., Collins, K., Kamalaruban, P., Kallina, E., Weller, A., Talwalkar, A."
+    year: 2025
+    venue: "AAAI 2025"
+    venue_full: "AAAI Conference on Artificial Intelligence"
+    url: "https://ojs.aaai.org/index.php/AAAI/article/view/33555"
+    tags:
+      - Human-AI Interaction
+      - Decision Support
+
+  - title: "Documenting Deployment with Fabric: A Repository of Real-World AI Governance"
+    authors: "Bhatt, U."
+    year: 2025
+    venue: "AIES 2025"
+    venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
+    tags:
+      - AI Governance
+      - Deployment
+
+  - title: "Building Machines that Learn and Think with People"
+    authors: "Collins, K., Sucholutsky, I., Bhatt, U., Chandra, K., Wong, L., Lee, M., Zhang, C., Zhi-Xuan, T., Ho, M., Mansinghka, V., Weller, A., Tenenbaum, J., Griffiths, T."
+    year: 2024
+    venue: "Nature Human Behavior"
+    venue_full: "Nature Human Behavior"
+    url: "https://www.nature.com/articles/s41562-024-01991-9"
+    tags:
+      - Human-AI Interaction
+      - Cognitive Science
+
+  - title: "When Should Algorithms Resign? A Proposal for AI Governance"
+    authors: "Bhatt, U., Sargeant, H."
+    year: 2024
+    venue: "IEEE Computer"
+    venue_full: "IEEE Computer"
+    url: "https://ieeexplore.ieee.org/document/10687308"
+    tags:
+      - AI Governance
+      - Decision Support

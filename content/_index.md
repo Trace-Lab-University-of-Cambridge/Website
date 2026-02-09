@@ -105,14 +105,13 @@ sections:
           </div>
           <!-- PhD Students -->
           <div class="team-card"
-               data-name="Drew Calcagno"
-               data-role="PhD Student"
+               data-name="Elaf Almahmoud"
+               data-role="PhD Student (co-advised with Mateja Jamnik)"
                data-org="University of Cambridge"
-               data-bio="Drew is a PhD student with the TRACE lab researching trustworthy AI deployment and human-AI interaction in high-stakes domains. Previously, Drew worked at Google Research, focusing on strategic narratives for artificial intelligence and quantum computing. He's a former government official and Naval officer, having served at the White House, at the Pentagon, and on a forward-deployed warship. At those posts, he wrote artificial intelligence policy for the Chief Technology Officer of the U.S. and managed machine learning programs for the Undersecretary of Defense for Intelligence. A Boston native, he graduated from the University of Oxford as a Rotary Scholar, the University of London - SOAS as a Fulbright Scholar, and the U.S. Naval Academy with distinction."
-               data-interests="AI Deployment,Human-AI Interaction,Trustworthy ML"
-               data-website="https://drewcalcagno.com/">
-            <img class="team-avatar" src="media/team/drew-calcagno.png" alt="Drew Calcagno">
-            <h3 class="team-name">Drew Calcagno</h3>
+               data-bio="Elaf is a PhD student with the TRACE lab researching AI systems and reasoning. Elaf formerly conducted research at the Center for Complex Systems in Riyadh and MIT in Cambridge, Massachusetts, and worked as a machine learning engineer at TAHAKOM. Elaf graduated from NYU with her Master's in Computer Science and from King Saud University with her Bachelor's degree in Computer Science."
+               data-interests="AI Systems,Reasoning,Machine Learning">
+            <img class="team-avatar" src="media/team/elaf-almahmoud.png" alt="Elaf Almahmoud">
+            <h3 class="team-name">Elaf Almahmoud</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
           </div>
@@ -124,6 +123,18 @@ sections:
                data-interests="Trustworthy AI,Machine Learning,Responsible AI">
             <img class="team-avatar" src="media/team/noah-broestl.jpeg" alt="Noah Broestl">
             <h3 class="team-name">Noah Broestl</h3>
+            <p class="team-role">PhD Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Drew Calcagno"
+               data-role="PhD Student"
+               data-org="University of Cambridge"
+               data-bio="Drew is a PhD student with the TRACE lab researching trustworthy AI deployment and human-AI interaction in high-stakes domains. Previously, Drew worked at Google Research, focusing on strategic narratives for artificial intelligence and quantum computing. He's a former government official and Naval officer, having served at the White House, at the Pentagon, and on a forward-deployed warship. At those posts, he wrote artificial intelligence policy for the Chief Technology Officer of the U.S. and managed machine learning programs for the Undersecretary of Defense for Intelligence. A Boston native, he graduated from the University of Oxford as a Rotary Scholar, the University of London - SOAS as a Fulbright Scholar, and the U.S. Naval Academy with distinction."
+               data-interests="AI Deployment,Human-AI Interaction,Trustworthy ML"
+               data-website="https://drewcalcagno.com/">
+            <img class="team-avatar" src="media/team/drew-calcagno.png" alt="Drew Calcagno">
+            <h3 class="team-name">Drew Calcagno</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
           </div>
@@ -140,17 +151,6 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Elaf Almahmoud"
-               data-role="PhD Student (co-advised with Mateja Jamnik)"
-               data-org="University of Cambridge"
-               data-bio="Elaf is a PhD student with the TRACE lab researching AI systems and reasoning. Elaf formerly conducted research at the Center for Complex Systems in Riyadh and MIT in Cambridge, Massachusetts, and worked as a machine learning engineer at TAHAKOM. Elaf graduated from NYU with her Master's in Computer Science and from King Saud University with her Bachelor's degree in Computer Science."
-               data-interests="AI Systems,Reasoning,Machine Learning">
-            <img class="team-avatar" src="media/team/elaf-almahmoud.png" alt="Elaf Almahmoud">
-            <h3 class="team-name">Elaf Almahmoud</h3>
-            <p class="team-role">PhD Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
                data-name="Yung-Hsuan Wu"
                data-role="Research Assistant"
                data-org="University of Cambridge"
@@ -162,35 +162,13 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Shin Zert Phua"
+               data-name="Kostadin Devedzhiev"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/shin-zert-phua.png" alt="Shin Zert Phua">
-            <h3 class="team-name">Shin Zert Phua</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Owen O'Malley"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/owen-omalley.png" alt="Owen O'Malley">
-            <h3 class="team-name">Owen O'Malley</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Ariella Shulman"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/ariella-shulman.jpg" alt="Ariella Shulman">
-            <h3 class="team-name">Ariella Shulman</h3>
+            <img class="team-avatar" src="media/team/kostadin-devedzhiev.jpg" alt="Kostadin Devedzhiev">
+            <h3 class="team-name">Kostadin Devedzhiev</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
@@ -206,13 +184,35 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Kostadin Devedzhiev"
+               data-name="Owen O'Malley"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/kostadin-devedzhiev.jpg" alt="Kostadin Devedzhiev">
-            <h3 class="team-name">Kostadin Devedzhiev</h3>
+            <img class="team-avatar" src="media/team/owen-omalley.png" alt="Owen O'Malley">
+            <h3 class="team-name">Owen O'Malley</h3>
+            <p class="team-role">Masters Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Shin Zert Phua"
+               data-role="Masters Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/shin-zert-phua.png" alt="Shin Zert Phua">
+            <h3 class="team-name">Shin Zert Phua</h3>
+            <p class="team-role">Masters Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Ariella Shulman"
+               data-role="Masters Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/ariella-shulman.png" alt="Ariella Shulman">
+            <h3 class="team-name">Ariella Shulman</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
@@ -222,7 +222,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Joy Wang">
+            <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
             <h3 class="team-name">Joy Wang</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
@@ -255,30 +255,30 @@ sections:
       subtitle: ''
       text: |
         <div class="pub-grid-five">
-          <a href="publication/algorithms-resign/" class="pub-card">
+          <a href="https://ieeexplore.ieee.org/document/10687308" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
             <h3>When Should Algorithms Resign?</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
             <p class="pub-description">Exploring when AI systems should defer to human judgment in high-stakes decision-making contexts.</p>
             <p class="pub-venue">IEEE Computer</p>
           </a>
-          <a href="publication/building-machines-learn-think/" class="pub-card">
+          <a href="https://www.nature.com/articles/s41562-024-01991-9" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
             <h3>Building Machines that Think with People</h3>
             <p class="pub-authors">Collins, K., et al.</p>
             <p class="pub-description">A vision for human-AI collaboration leveraging complementary strengths of cognition and machine learning.</p>
             <p class="pub-venue">Nature Human Behavior</p>
           </a>
-          <a href="publication/learning-personalized-decision-support/" class="pub-card">
-            <span class="pub-year">2024</span>
+          <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33555" target="_blank" rel="noopener" class="pub-card">
+            <span class="pub-year">2025</span>
             <h3>Personalized Decision Support Policies</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
             <p class="pub-description">Learning decision support policies that adapt to individual users, improving team performance.</p>
-            <p class="pub-venue">Conference Paper</p>
+            <p class="pub-venue">AAAI 2025</p>
           </a>
         </div>
         <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="publication/" class="view-all-link">View all publications →</a>
+          <a href="publications/" class="view-all-link">View all publications →</a>
         </div>
     design:
       columns: '1'
@@ -292,12 +292,9 @@ sections:
       text: |
         <div class="news-section">
           <div class="news-item">
-            <span class="news-date">Coming Soon</span>
-            <p>Stay tuned for updates from the TRACE Lab.</p>
+            <span class="news-date">February 2025</span>
+            <p><strong>Umang Bhatt</strong> and <strong>Ariella Shulman</strong> will represent the University of Cambridge at the <a href="https://indiaaisummit.com/" target="_blank" rel="noopener">India AI Summit</a>.</p>
           </div>
-        </div>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="post/" class="view-all-link">View all news →</a>
         </div>
     design:
       columns: '1'

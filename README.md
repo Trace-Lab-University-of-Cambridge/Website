@@ -103,7 +103,7 @@ content/
 ├── project/               # Individual project pages
 ├── join/                  # How to join the lab
 ├── post/                  # News/blog posts
-├── publication/           # Publications
+├── publications/          # Publications
 └── authors/               # Team member profiles (for publication attribution)
 
 config/_default/
@@ -114,7 +114,7 @@ config/_default/
 
 layouts/
 ├── section/
-│   └── publication.html   # Custom publications page layout
+│   └── publications.html  # Custom publications page layout
 ├── partials/              # Custom partials (blox-core, blox-seo)
 └── _partials/             # Module partials
 
@@ -163,31 +163,21 @@ Team members are defined directly in `content/_index.md` using HTML with data at
 
 ### New Publication
 
-```bash
-mkdir content/publication/paper-short-name
-# Create index.md with:
-```
+Publications are stored in `data/publications.yaml`. To add a new publication, add an entry:
+
 ```yaml
----
-title: "Paper Title"
-authors:
-  - admin  # or author slug from content/authors/
-  - External Author Name
-date: "2024-01-01"
-publication_types: ['article-journal']  # or 'paper-conference'
-publication: "Journal Name"
-publication_short: "Short Name"
-abstract: "Abstract text"
-tags:
-  - Machine Learning
-  - Trustworthy AI
-featured: true
-url_pdf: "https://link-to-pdf.com"
-url_code: "https://github.com/..."
----
+- title: "Paper Title"
+  authors: "Author1, A., Author2, B., Author3, C."
+  year: 2024
+  venue: "Short Venue"
+  venue_full: "Full Venue Name"
+  url: "https://link-to-paper.com"  # Link to Google Scholar, journal, or arXiv
+  tags:
+    - Machine Learning
+    - Trustworthy AI
 ```
 
-Publications are displayed grouped by year with category filtering on `/publication/`.
+Publications are displayed grouped by year with category filtering on `/publications/`. Clicking a publication opens the external link directly.
 
 ### Research Areas
 

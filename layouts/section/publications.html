@@ -6,10 +6,13 @@
       <p class="publications-subtitle">Research papers from the TRACE Lab</p>
     </header>
 
-    {{/* Collect all unique tags/categories */}}
+    {{/* Get publications from data file */}}
+    {{ $publications := site.Data.publications.publications }}
+
+    {{/* Collect all unique tags */}}
     {{ $allTags := slice }}
-    {{ range .Pages }}
-      {{ with .Params.tags }}
+    {{ range $publications }}
+      {{ with .tags }}
         {{ range . }}
           {{ $allTags = $allTags | append . }}
         {{ end }}
@@ -27,25 +30,23 @@
     </div>
     {{ end }}
 
-    {{/* Group publications by year */}}
-    {{ $pages := .Pages.ByDate.Reverse }}
+    {{/* Get unique years and sort descending */}}
     {{ $years := slice }}
-    {{ range $pages }}
-      {{ $year := .Date.Format "2006" }}
-      {{ $years = $years | append $year }}
+    {{ range $publications }}
+      {{ $years = $years | append .year }}
     {{ end }}
-    {{ $uniqueYears := $years | uniq }}
+    {{ $uniqueYears := $years | uniq | sort | reverse }}
 
     <div class="publications-list">
       {{ range $year := $uniqueYears }}
       <div class="year-section">
         <h2 class="year-header">{{ $year }}</h2>
         <div class="year-publications">
-          {{ range $pages }}
-            {{ if eq (.Date.Format "2006") $year }}
+          {{ range $publications }}
+            {{ if eq .year $year }}
             {{/* Build tag classes for filtering */}}
             {{ $tagClasses := "" }}
-            {{ with .Params.tags }}
+            {{ with .tags }}
               {{ range . }}
                 {{ $tagClasses = printf "%s tag-%s" $tagClasses (. | urlize) }}
               {{ end }}
@@ -53,37 +54,17 @@
             <article class="publication-item{{ $tagClasses }}">
               <div class="publication-content">
                 <h3 class="publication-title">
-                  {{ if .Params.url_pdf }}
-                  <a href="{{ .Params.url_pdf }}" target="_blank" rel="noopener">{{ .Title }}</a>
+                  {{ if .url }}
+                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
                   {{ else }}
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <span>{{ .title }}</span>
                   {{ end }}
                 </h3>
 
-                <div class="publication-authors">
-                  {{- $authors := .Params.authors -}}
-                  {{- if $authors -}}
-                    {{- $authorNames := slice -}}
-                    {{- range $authors -}}
-                      {{- $authorPage := site.GetPage (printf "/authors/%s" .) -}}
-                      {{- if $authorPage -}}
-                        {{- $authorNames = $authorNames | append $authorPage.Title -}}
-                      {{- else -}}
-                        {{- $authorNames = $authorNames | append . -}}
-                      {{- end -}}
-                    {{- end -}}
-                    {{- delimit $authorNames ", " -}}
-                  {{- end -}}
-                </div>
-
-                {{ with .Params.abstract }}
-                {{ if ne . "" }}
-                <p class="publication-abstract">{{ . | truncate 300 }}</p>
-                {{ end }}
-                {{ end }}
+                <div class="publication-authors">{{ .authors }}</div>
 
                 <div class="publication-meta">
-                  {{ with .Params.tags }}
+                  {{ with .tags }}
                   <div class="publication-tags">
                     {{ range . }}
                     <span class="pub-tag">{{ . }}</span>
@@ -91,31 +72,17 @@
                   </div>
                   {{ end }}
 
-                  <div class="publication-venue">
-                    {{ with .Params.publication_short }}{{ . }}{{ else }}{{ .Params.publication }}{{ end }}
-                  </div>
+                  <div class="publication-venue">{{ .venue }}</div>
                 </div>
 
+                {{ if .url }}
                 <div class="publication-links">
-                  {{ with .Params.url_pdf }}
-                  <a href="{{ . }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
+                  <a href="{{ .url }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     Read Paper
                   </a>
-                  {{ end }}
-                  {{ with .Params.url_code }}
-                  <a href="{{ . }}" class="pub-link pub-link-code" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                    Code
-                  </a>
-                  {{ end }}
-                  {{ with .Params.url_dataset }}
-                  <a href="{{ . }}" class="pub-link pub-link-data" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                    Dataset
-                  </a>
-                  {{ end }}
                 </div>
+                {{ end }}
               </div>
             </article>
             {{ end }}
