@@ -304,7 +304,7 @@ sections:
         <div class="news-section">
           <div class="news-item">
             <span class="news-date">February 2025</span>
-            <p><strong>Umang Bhatt</strong> and <strong>Ariella Shulman</strong> will represent the University of Cambridge at the <a href="https://indiaaisummit.com/" target="_blank" rel="noopener">India AI Summit</a>.</p>
+            <p><strong>Umang Bhatt</strong> and <strong>Ariella Shulman</strong> will represent the University of Cambridge at the <a href="https://impact.indiaai.gov.in" target="_blank" rel="noopener">India AI Impact Summit 2026</a>.</p>
           </div>
         </div>
     design:
