@@ -162,17 +162,6 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Joy Wang"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
-            <h3 class="team-name">Joy Wang</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
                data-name="Olivia Slack"
                data-role="Lab Manager"
                data-org="University of Cambridge"
@@ -235,6 +224,17 @@ sections:
                data-interests="Trustworthy AI,Machine Learning">
             <img class="team-avatar" src="media/team/ariella-shulman.png" alt="Ariella Shulman">
             <h3 class="team-name">Ariella Shulman</h3>
+            <p class="team-role">Masters Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Joy Wang"
+               data-role="Masters Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
+            <h3 class="team-name">Joy Wang</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
