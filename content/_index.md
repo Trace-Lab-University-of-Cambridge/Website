@@ -103,6 +103,18 @@ sections:
             <p class="team-role">PI, Assistant Professor</p>
             <p class="team-org">Cambridge · CHIA</p>
           </div>
+          <!-- Lab Manager -->
+          <div class="team-card"
+               data-name="Olivia Slack"
+               data-role="Lab Manager"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Lab Operations,Research Administration">
+            <img class="team-avatar" src="media/team/olivia-slack.svg" alt="Olivia Slack">
+            <h3 class="team-name">Olivia Slack</h3>
+            <p class="team-role">Lab Manager</p>
+            <p class="team-org">Cambridge</p>
+          </div>
           <!-- PhD Students -->
           <div class="team-card"
                data-name="Elaf Almahmoud"
