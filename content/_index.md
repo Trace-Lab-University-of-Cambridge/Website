@@ -73,11 +73,11 @@ sections:
             <h3>Agent Orchestration</h3>
             <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
           </div>
-          <div class="research-card">
+          <a href="publications/" class="research-card">
             <div class="card-icon">▽</div>
             <h3>Trustworthy AI</h3>
             <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
-          </div>
+          </a>
         </div>
     design:
       columns: '1'
