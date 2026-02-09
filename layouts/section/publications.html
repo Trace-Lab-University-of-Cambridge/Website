@@ -35,7 +35,8 @@
     {{ range $publications }}
       {{ $years = $years | append .year }}
     {{ end }}
-    {{ $uniqueYears := ($years | uniq | sort).Reverse }}
+    {{ $sortedYears := sort ($years | uniq) }}
+    {{ $uniqueYears := collections.Reverse $sortedYears }}
 
     <div class="publications-list">
       {{ range $year := $uniqueYears }}
