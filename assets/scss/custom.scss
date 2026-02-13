@@ -14,7 +14,8 @@ body, body.dark, .dark body {
   background: #fff !important;
   color: #1a1a2e !important;
   // iOS safe area - prevent content from bleeding behind status bar
-  padding-top: env(safe-area-inset-top);
+  // Add navbar height (70px) + safe area inset for fixed navbar
+  padding-top: calc(70px + env(safe-area-inset-top));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1398,8 +1399,14 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 1) !important;
   z-index: 1030;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  // iOS safe area padding for notch
+  padding-top: env(safe-area-inset-top);
 
   .navbar-brand {
     font-weight: 700;
@@ -2021,6 +2028,8 @@ body::before {
 .home-section:has(.join-page) {
   position: relative;
   background: linear-gradient(135deg, rgba(7, 61, 116, 0.02) 0%, rgba(246, 117, 82, 0.02) 100%) !important;
+  animation: none !important;
+  transition: none !important;
   min-height: 100vh;
 
   &::before {
@@ -2034,11 +2043,22 @@ body::before {
     background-size: 500px 400px;
     pointer-events: none;
     z-index: 0;
+    animation: none !important;
+    transition: none !important;
   }
 
   .container {
     position: relative;
     z-index: 1;
+  }
+
+  // Disable all animations on the section and its children
+  &,
+  & *,
+  &::before,
+  &::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
