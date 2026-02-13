@@ -2046,6 +2046,26 @@ body::before {
   padding: 0 1rem;
   position: relative;
   z-index: 1;
+
+  // Disable all animations and transitions on join page
+  .pathway-card,
+  .research-area-card,
+  .qual-item,
+  .join-cta-btn {
+    transition: none !important;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+
+  .pathway-arrow {
+    transition: none !important;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
 }
 
 .join-hero {
