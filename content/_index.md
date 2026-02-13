@@ -246,7 +246,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Hamza Alshamy">
+            <img class="team-avatar" src="media/team/hamza-alshamy.jpeg" alt="Hamza Alshamy">
             <h3 class="team-name">Hamza Alshamy</h3>
             <p class="team-role">Visiting Student</p>
             <p class="team-org">Cambridge</p>
