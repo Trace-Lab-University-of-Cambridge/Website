@@ -11,7 +11,7 @@ sections:
       subtitle:
       text: |
         <div class="hero-fullscreen">
-          <h1>TRACE Lab</h1>
+          <img src="media/trace-logo-white.svg" alt="TRACE Lab" class="hero-logo">
           <p class="hero-subtitle">Trustworthy Artificial Intelligence Laboratory</p>
           <p class="hero-university">University of Cambridge</p>
         </div>
@@ -68,12 +68,12 @@ sections:
             <p>Understanding how people perceive and interact with AI systems in daily life and work.</p>
           </div>
           -->
-          <div class="research-card">
+          <a href="https://tailorworkflow.com/" target="_blank" class="research-card research-card-triangle">
             <div class="card-icon">△</div>
             <h3>Agent Orchestration</h3>
             <p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p>
-          </div>
-          <a href="publications/" class="research-card">
+          </a>
+          <a href="publications/" class="research-card research-card-triangle">
             <div class="card-icon">▽</div>
             <h3>Trustworthy AI</h3>
             <p>Building AI systems that are reliable, fair, transparent, and aligned with human values.</p>
@@ -240,6 +240,28 @@ sections:
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
+          <div class="team-card"
+               data-name="Hamza"
+               data-role="Visiting Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/placeholder.svg" alt="Hamza">
+            <h3 class="team-name">Hamza</h3>
+            <p class="team-role">Visiting Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Mihir"
+               data-role="Visiting Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/placeholder.svg" alt="Mihir">
+            <h3 class="team-name">Mihir</h3>
+            <p class="team-role">Visiting Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
         </div>
 
         <script>
@@ -312,13 +334,13 @@ sections:
     design:
       columns: '1'
 
-  # Our Partners
+  # Our Supporters
   - block: markdown
     content:
-      title: Our Partners
+      title: Our Supporters
       subtitle: ''
       text: |
-        <div class="affiliations-row">
+        <div class="affiliations-row supporters-row">
           <a href="https://www.aisi.gov.uk/" target="_blank">
             <img src="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/663bd707cb0214d8b72951b5_5a103bfcb506b52b4e099f3dc675c649_AISI%20Logo%20Colour%20Dark.svg" alt="AI Safety Institute UK">
           </a>
@@ -327,6 +349,9 @@ sections:
           </a>
           <a href="https://www.responsible.ai/" target="_blank">
             <img src="https://www.responsible.ai/wp-content/uploads/2024/05/logo-1.png" alt="Responsible AI Institute">
+          </a>
+          <a href="https://www.accenture.com/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture">
           </a>
         </div>
     design:
@@ -338,7 +363,7 @@ sections:
       title:
       subtitle: ''
       text: |
-        <div class="affiliations-row">
+        <div class="affiliations-row affiliations-bottom">
           <a href="https://www.cam.ac.uk/" target="_blank">
             <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge">
           </a>
