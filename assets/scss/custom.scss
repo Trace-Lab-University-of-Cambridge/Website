@@ -13,6 +13,8 @@ html, html.dark {
 body, body.dark, .dark body {
   background: #fff !important;
   color: #1a1a2e !important;
+  // iOS safe area - prevent content from bleeding behind status bar
+  padding-top: env(safe-area-inset-top);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -2047,24 +2049,22 @@ body::before {
   position: relative;
   z-index: 1;
 
-  // Disable all animations and transitions on join page
-  .pathway-card,
-  .research-area-card,
-  .qual-item,
-  .join-cta-btn {
+  // Completely disable ALL animations and transitions on join page
+  &,
+  & * {
+    animation: none !important;
     transition: none !important;
-
-    &:hover {
-      transform: none !important;
-    }
   }
 
-  .pathway-arrow {
-    transition: none !important;
-
-    &:hover {
-      transform: none !important;
-    }
+  // Disable all hover transforms
+  .pathway-card:hover,
+  .research-area-card:hover,
+  .qual-item:hover,
+  .join-cta-btn:hover,
+  .pathway-arrow:hover,
+  *:hover {
+    transform: none !important;
+    animation: none !important;
   }
 }
 
