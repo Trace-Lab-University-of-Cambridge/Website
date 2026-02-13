@@ -16,6 +16,18 @@ body, body.dark, .dark body {
   // iOS safe area - prevent content from bleeding behind status bar
   // Add navbar height (70px) + safe area inset for fixed navbar
   padding-top: calc(70px + env(safe-area-inset-top));
+
+  // Fixed white bar to cover iOS status bar area
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background: #fff;
+    z-index: 9999;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
