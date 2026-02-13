@@ -257,7 +257,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Mihir Upadhyay">
+            <img class="team-avatar" src="media/team/mihir-upadhyay.png" alt="Mihir Upadhyay">
             <h3 class="team-name">Mihir Upadhyay</h3>
             <p class="team-role">Visiting Student</p>
             <p class="team-org">Cambridge</p>
