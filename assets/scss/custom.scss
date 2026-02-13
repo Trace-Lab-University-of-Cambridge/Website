@@ -325,11 +325,11 @@ h1, h2, h3, h4, h5, h6 {
 // RESEARCH SECTION BACKGROUND
 // ============================================
 
-// Triangle pattern background for team section
+// Triangle pattern background for supporters and affiliations
 // Using the actual TRACE "A" triangle with orange accent
-#team {
+.home-section:has(.supporters-row),
+.home-section:has(.affiliations-bottom) {
   position: relative;
-  background: linear-gradient(135deg, rgba(7, 61, 116, 0.015) 0%, rgba(246, 117, 82, 0.015) 100%) !important;
 
   &::before {
     content: '';
@@ -1343,22 +1343,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// Keep supporters section white
+// Supporters section with triangle pattern
 .home-section:has(.supporters-row) {
-  background: #ffffff !important;
+  background: linear-gradient(135deg, rgba(7, 61, 116, 0.02) 0%, rgba(246, 117, 82, 0.02) 100%) !important;
 
   .section-heading h1 {
     color: #1a1a2e !important;
   }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 }
 
-// Bottom affiliations section - larger and different background
+// Bottom affiliations section with triangle pattern
 .home-section:has(.affiliations-bottom) {
-  background: #f8fafc !important;
+  background: linear-gradient(135deg, rgba(7, 61, 116, 0.03) 0%, rgba(246, 117, 82, 0.03) 100%) !important;
   padding: 3rem 0 !important;
 
   .section-heading h1 {
     color: #1a1a2e !important;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
   }
 }
 

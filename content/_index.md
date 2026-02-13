@@ -219,6 +219,17 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
+               data-name="Juan Pablo Ruiz"
+               data-role="Masters Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning">
+            <img class="team-avatar" src="media/team/juan-pablo-ruiz.jpeg" alt="Juan Pablo Ruiz">
+            <h3 class="team-name">Juan Pablo Ruiz</h3>
+            <p class="team-role">Masters Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
                data-name="Ariella Shulman"
                data-role="Masters Student"
                data-org="University of Cambridge"
