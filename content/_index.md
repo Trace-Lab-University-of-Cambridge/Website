@@ -169,7 +169,7 @@ sections:
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Lab Operations,Research Administration">
-            <img class="team-avatar" src="media/team/olivia-slack.svg" alt="Olivia Slack">
+            <img class="team-avatar" src="media/team/olivia-slack.jpg" alt="Olivia Slack">
             <h3 class="team-name">Olivia Slack</h3>
             <p class="team-role">Lab Manager</p>
             <p class="team-org">Cambridge</p>
@@ -241,24 +241,24 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Hamza"
+               data-name="Hamza Alshamy"
                data-role="Visiting Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Hamza">
-            <h3 class="team-name">Hamza</h3>
+            <img class="team-avatar" src="media/team/placeholder.svg" alt="Hamza Alshamy">
+            <h3 class="team-name">Hamza Alshamy</h3>
             <p class="team-role">Visiting Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Mihir"
+               data-name="Mihir Upadhyay"
                data-role="Visiting Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Mihir">
-            <h3 class="team-name">Mihir</h3>
+            <img class="team-avatar" src="media/team/placeholder.svg" alt="Mihir Upadhyay">
+            <h3 class="team-name">Mihir Upadhyay</h3>
             <p class="team-role">Visiting Student</p>
             <p class="team-org">Cambridge</p>
           </div>
@@ -365,12 +365,12 @@ sections:
       text: |
         <div class="affiliations-row affiliations-bottom">
           <a href="https://www.cam.ac.uk/" target="_blank">
-            <img src="https://download.logo.wine/logo/University_of_Cambridge/University_of_Cambridge-Logo.wine.png" alt="University of Cambridge">
+            <img src="media/cambridge-logo.png" alt="University of Cambridge">
           </a>
           <a href="https://www.chia.cam.ac.uk/" target="_blank">
             <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA">
           </a>
-          <a href="https://www.kings.cam.ac.uk/" target="_blank">
+          <a href="https://www.kings.cam.ac.uk/" target="_blank" class="kings-logo">
             <img src="https://images.squarespace-cdn.com/content/v1/5e260fc81324310e95f2a712/1592507050732-IKRW45KPH520W6RLHASV/Kings_logo_WPPT_CENTRLSD_FULLCOLOUR.png" alt="King's College Cambridge">
           </a>
         </div>
