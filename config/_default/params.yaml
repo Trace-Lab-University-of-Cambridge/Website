@@ -23,10 +23,10 @@ marketing:
     description: 'TRACE Lab (TRustworthy Artificial IntelligenCE Laboratory) at the University of Cambridge builds trustworthy AI systems for high-stakes settings like healthcare, education, and public safety.'
     twitter: ''
   analytics:
-    google_analytics: ''
+    google_analytics: 'G-PS5YFSJ4W6'
     baidu_tongji: ''
     google_tag_manager: ''
-    microsoft_clarity: ''
+    microsoft_clarity: 'XXXXXXXXXX'  # Replace with your Clarity Project ID
   verification:
     google: ''
     baidu: ''
