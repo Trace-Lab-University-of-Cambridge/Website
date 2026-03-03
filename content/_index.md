@@ -379,7 +379,7 @@ sections:
             <img src="media/cambridge-logo.png" alt="University of Cambridge">
           </a>
           <a href="https://www.chia.cam.ac.uk/" target="_blank">
-            <img src="https://securesustain.org/wp-content/uploads/2023/12/Centre-for-Human-Inspired-Artificial-Intelligence-CHIA.png" alt="CHIA">
+            <img src="media/chia-logo.png" alt="CHIA">
           </a>
           <a href="https://www.kings.cam.ac.uk/" target="_blank" class="kings-logo">
             <img src="https://images.squarespace-cdn.com/content/v1/5e260fc81324310e95f2a712/1592507050732-IKRW45KPH520W6RLHASV/Kings_logo_WPPT_CENTRLSD_FULLCOLOUR.png" alt="King's College Cambridge">
