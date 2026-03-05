@@ -338,6 +338,10 @@ sections:
       text: |
         <div class="news-section">
           <div class="news-item">
+            <span class="news-date">March 2025</span>
+            <p><strong>Umang Bhatt</strong> wrote an essay for Noema Magazine: <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/" target="_blank" rel="noopener">AI Agents Are Recruiting Humans To Observe The Offline World</a>. Agents need us — as sensors, as verifiers, as bearers of liability — in ways we have barely begun to account for.</p>
+          </div>
+          <div class="news-item">
             <span class="news-date">February 2025</span>
             <p><strong>Umang Bhatt</strong> and <strong>Ariella Shulman</strong> will represent the University of Cambridge at the <a href="https://impact.indiaai.gov.in" target="_blank" rel="noopener">India AI Impact Summit 2026</a>.</p>
           </div>
