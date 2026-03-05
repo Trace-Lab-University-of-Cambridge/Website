@@ -339,7 +339,7 @@ sections:
         <div class="news-section">
           <div class="news-item">
             <span class="news-date">March 2025</span>
-            <p><strong>Umang Bhatt</strong> wrote an essay for Noema Magazine: <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/" target="_blank" rel="noopener">AI Agents Are Recruiting Humans To Observe The Offline World</a>. Agents need us — as sensors, as verifiers, as bearers of liability — in ways we have barely begun to account for.</p>
+            <p>The hidden costs of agentic AI: humans recruited to sense the physical world on an agent's behalf, potentially without their consent. We're all sensors. <strong>Umang Bhatt</strong> explores this in <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/" target="_blank" rel="noopener">Noema Magazine</a>.</p>
           </div>
           <div class="news-item">
             <span class="news-date">February 2025</span>
