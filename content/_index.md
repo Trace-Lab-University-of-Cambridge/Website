@@ -339,7 +339,7 @@ sections:
         <div class="news-section">
           <div class="news-item">
             <span class="news-date">March 2025</span>
-            <p>The hidden costs of agentic AI: humans recruited to sense the physical world on an agent's behalf, potentially without their consent. We're all sensors. <strong>Umang Bhatt</strong> explores this in <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/" target="_blank" rel="noopener">Noema Magazine</a>.</p>
+            <p>The hidden costs of agentic AI: humans recruited to sense the physical world on an agent's behalf, potentially without their consent. We're all sensors. <strong>Umang</strong> explores this in <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/" target="_blank" rel="noopener">Noema Magazine</a>.</p>
           </div>
           <div class="news-item">
             <span class="news-date">February 2025</span>
