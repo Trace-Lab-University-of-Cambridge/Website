@@ -2,41 +2,306 @@
 # Each publication links directly to external source (Google Scholar, journal, etc.)
 
 publications:
-  - title: "Learning Personalized Decision Support Policies"
-    authors: "Bhatt, U., Chen, V., Collins, K., Kamalaruban, P., Kallina, E., Weller, A., Talwalkar, A."
+  - title: "When Should We Orchestrate Multiple Agents?"
+    authors: "Bhatt, U., Kapoor, S., Upadhyay, M., Sucholutsky, I., Quinzan, F., Collins, K.M., ..."
     year: 2025
-    venue: "AAAI 2025"
-    venue_full: "AAAI Conference on Artificial Intelligence"
-    url: "https://ojs.aaai.org/index.php/AAAI/article/view/33555"
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2503.13577"
+    url: "https://arxiv.org/abs/2503.13577"
     tags:
       - Human-AI Interaction
+      - Agentic AI
+
+  - title: "Faster, Cheaper, Better: Multi-Objective Hyperparameter Optimization for LLM and RAG Systems"
+    authors: "Barker, M., Bell, A., Thomas, E., Carr, J., Andrews, T., Bhatt, U."
+    year: 2025
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2502.18635"
+    url: "https://arxiv.org/abs/2502.18635"
+    tags:
+      - Machine Learning
+
+  - title: "Measuring and Mitigating Overreliance is Necessary for Building Human-Compatible AI"
+    authors: "Ibrahim, L., Collins, K.M., Kim, S.S.Y., Reuel, A., Lamparth, M., Feng, K., Ahmad, L., ..."
+    year: 2025
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2509.08010"
+    url: "https://arxiv.org/abs/2509.08010"
+    tags:
+      - Human-AI Interaction
+
+  - title: "Beyond Quantification: Navigating Uncertainty in Professional AI Systems"
+    authors: "Delacroix, S., Robinson, D., Bhatt, U., Domenicucci, J., Montgomery, J., ..."
+    year: 2025
+    venue: "RSS: Data Science and AI"
+    venue_full: "RSS: Data Science and Artificial Intelligence"
+    url: "https://doi.org/10.1093/jrssig/udaf002"
+    tags:
+      - Uncertainty
+
+  - title: "Unequal Uncertainty: Rethinking Algorithmic Interventions for Mitigating Discrimination from AI"
+    authors: "Sargeant, H., Jorgensen, M., Shah, A., Weller, A., Bhatt, U."
+    year: 2025
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2508.07872"
+    url: "https://arxiv.org/abs/2508.07872"
+    tags:
+      - Uncertainty
+      - Fairness
+
+  - title: "AI Impact on Human Proof Formalization Workflows"
+    authors: "Collins, K.M., Frieder, S., Bayer, J., Loader, J., Lim, J., Song, P., Zaiser, F., Zhou, L., ..."
+    year: 2025
+    venue: "NeurIPS 2025 Workshop"
+    venue_full: "The 5th Workshop on Mathematical Reasoning and AI at NeurIPS 2025"
+    url: "https://arxiv.org/abs/2410.14708"
+    tags:
+      - Mathematics
+
+  - title: "Enhancing Football Refereeing with AI: VARS and X-VARS for Assisted Decision-Making"
+    authors: "Held, J., Cioppa, A., Giancola, S., Almahmoud, E., Collins, K.M., Bhatt, U., ..."
+    year: 2025
+    venue: "MathSport Conference"
+    venue_full: "MathSport Conference"
+    url: "https://arxiv.org/abs/2504.14609"
+    tags:
       - Decision Support
+      - Sports AI
+
+  - title: "Revisiting Rogers' Paradox in the Context of Human-AI Interaction"
+    authors: "Collins, K.M., Bhatt, U., Sucholutsky, I."
+    year: 2025
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2501.10476"
+    url: "https://arxiv.org/abs/2501.10476"
+    tags:
+      - Human-AI Interaction
+      - Cognitive Science
+
+  - title: "Representational Alignment Supports Effective Teaching"
+    authors: "Sucholutsky, I., Collins, K.M., Malaviya, M., Jacoby, N., Liu, W., Sumers, T.R., ..."
+    year: 2025
+    venue: "PMLR"
+    venue_full: "Proceedings of Machine Learning Research"
+    url: "https://arxiv.org/abs/2406.04302"
+    tags:
+      - Cognitive Science
+
+  - title: "Context-Specific Certification of AI Systems: A Pilot in the Financial Industry"
+    authors: "Brogle, K., Kallina, E., Sargeant, H., Shankar, V., Weller, A., Casovan, A., Bhatt, U."
+    year: 2025
+    venue: "AI and Ethics"
+    venue_full: "AI and Ethics"
+    url: "https://doi.org/10.1007/s43681-024-00628-x"
+    tags:
+      - AI Governance
 
   - title: "Documenting Deployment with Fabric: A Repository of Real-World AI Governance"
-    authors: "Bhatt, U."
+    authors: "Jorgensen, M., Brogle, K., Collins, K.M., Ibrahim, L., Shah, A., Ivanovic, P., ..."
     year: 2025
     venue: "AIES 2025"
     venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
+    url: "https://arxiv.org/abs/2412.09677"
     tags:
       - AI Governance
       - Deployment
 
+  - title: "Towards Interactive Evaluations for Interaction Harms in Human-AI Systems"
+    authors: "Ibrahim, L., Huang, S., Ahmad, L., Bhatt, U., Anderljung, M."
+    year: 2025
+    venue: "AIES 2025"
+    venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
+    url: "https://arxiv.org/abs/2404.12994"
+    tags:
+      - Human-AI Interaction
+
+  - title: "Learning Personalized Decision Support Policies"
+    authors: "Bhatt, U., Chen, V., Collins, K.M., Kamalaruban, P., Kallina, E., Weller, A., Talwalkar, A."
+    year: 2025
+    venue: "AAAI 2025"
+    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
+    url: "https://arxiv.org/abs/2404.15495"
+    tags:
+      - Human-AI Interaction
+      - Decision Support
+
   - title: "Building Machines that Learn and Think with People"
-    authors: "Collins, K., Sucholutsky, I., Bhatt, U., Chandra, K., Wong, L., Lee, M., Zhang, C., Zhi-Xuan, T., Ho, M., Mansinghka, V., Weller, A., Tenenbaum, J., Griffiths, T."
+    authors: "Collins, K.M., Sucholutsky, I., Bhatt, U., Chandra, K., Wong, L., Lee, M., Zhang, C.E., ..."
     year: 2024
-    venue: "Nature Human Behavior"
-    venue_full: "Nature Human Behavior"
-    url: "https://www.nature.com/articles/s41562-024-01991-9"
+    venue: "Nature Human Behaviour"
+    venue_full: "Nature Human Behaviour"
+    url: "https://doi.org/10.1038/s41562-024-01991-9"
     tags:
       - Human-AI Interaction
       - Cognitive Science
+
+  - title: "Evaluating Language Models for Mathematics through Interactions"
+    authors: "Collins, K.M., Jiang, A.Q., Frieder, S., Wong, L., Zilka, M., Bhatt, U., Lukasiewicz, T., ..."
+    year: 2024
+    venue: "PNAS"
+    venue_full: "Proceedings of the National Academy of Sciences"
+    url: "https://doi.org/10.1073/pnas.2318124121"
+    tags:
+      - Machine Learning
+      - Mathematics
+
+  - title: "Large Language Models Must Be Taught to Know What They Don't Know"
+    authors: "Kapoor, S., Gruver, N., Roberts, M., Collins, K., Pal, A., Bhatt, U., Weller, A., ..."
+    year: 2024
+    venue: "NeurIPS 2024"
+    venue_full: "Advances in Neural Information Processing Systems"
+    url: "https://arxiv.org/abs/2308.12436"
+    tags:
+      - Machine Learning
 
   - title: "When Should Algorithms Resign? A Proposal for AI Governance"
     authors: "Bhatt, U., Sargeant, H."
     year: 2024
     venue: "IEEE Computer"
     venue_full: "IEEE Computer"
-    url: "https://ieeexplore.ieee.org/document/10687308"
+    url: "https://doi.org/10.1109/MC.2024.3444471"
     tags:
       - AI Governance
+
+  - title: "Modulating Language Model Experiences through Frictions"
+    authors: "Collins, K.M., Chen, V., Sucholutsky, I., Kirk, H.R., Sadek, M., Sargeant, H., ..."
+    year: 2024
+    venue: "NeurIPS 2024 Workshop"
+    venue_full: "NeurIPS 2024 Workshop on Behavioral Machine Learning"
+    url: "https://arxiv.org/abs/2407.10264"
+    tags:
+      - Human-AI Interaction
+      - Machine Learning
+
+  - title: "Trustworthy Machine Learning: From Algorithmic Transparency to Decision Support"
+    authors: "Bhatt, U."
+    year: 2024
+    venue: "PhD Thesis"
+    venue_full: "University of Cambridge"
+    url: "https://doi.org/10.17863/CAM.113707"
+    tags:
+      - Human-AI Interaction
+      - Trust
       - Decision Support
+
+  - title: "Comparing Abstraction in Humans and Machines Using Multimodal Serial Reproduction"
+    authors: "Kumar, S., Marjieh, R., Zhang, B., Campbell, D., Hu, M.Y., Bhatt, U., Lake, B., ..."
+    year: 2024
+    venue: "CogSci 2024"
+    venue_full: "Proceedings of the Annual Meeting of the Cognitive Science Society"
+    url: "https://arxiv.org/abs/2402.13806"
+    tags:
+      - Cognitive Science
+
+  - title: "Harms from Increasingly Agentic Algorithmic Systems"
+    authors: "Chan, A., Salganik, R., Markelius, A., Pang, C., Rajkumar, N., Krasheninnikov, D., ..."
+    year: 2023
+    venue: "FAccT 2023"
+    venue_full: "Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency"
+    url: "https://arxiv.org/abs/2302.10329"
+    tags:
+      - Agentic AI
+
+  - title: "Towards Robust Metrics for Concept Representation Evaluation"
+    authors: "Zarlenga, M.E., Barbiero, P., Shams, Z., Kazhdan, D., Bhatt, U., Weller, A., ..."
+    year: 2023
+    venue: "AAAI 2023"
+    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
+    url: "https://arxiv.org/abs/2301.10367"
+    tags:
+      - Cognitive Science
+
+  - title: "Human Uncertainty in Concept-Based AI Systems"
+    authors: "Collins, K.M., Barker, M., Espinosa Zarlenga, M., Raman, N., Bhatt, U., Jamnik, M., ..."
+    year: 2023
+    venue: "AIES 2023"
+    venue_full: "Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society"
+    url: "https://arxiv.org/abs/2303.12872"
+    tags:
+      - Uncertainty
+      - Cognitive Science
+
+  - title: "On the Informativeness of Supervision Signals"
+    authors: "Sucholutsky, I., Battleday, R.M., Collins, K.M., Marjieh, R., Peterson, J., Singh, P., ..."
+    year: 2023
+    venue: "UAI 2023"
+    venue_full: "Uncertainty in Artificial Intelligence"
+    url: "https://arxiv.org/abs/2211.09429"
+    tags:
+      - Cognitive Science
+
+  - title: "Approximating Full Conformal Prediction at Scale via Influence Functions"
+    authors: "Martinez, J.A., Bhatt, U., Weller, A., Cherubin, G."
+    year: 2023
+    venue: "AAAI 2023"
+    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
+    url: "https://arxiv.org/abs/2202.01315"
+    tags:
+      - Uncertainty
+
+  - title: "Algorithmic Loafing and Mitigation Strategies in Human-AI Teams"
+    authors: "Inuwa-Dutse, I., Toniolo, A., Weller, A., Bhatt, U."
+    year: 2023
+    venue: "Computers in Human Behavior: AI"
+    venue_full: "Computers in Human Behavior: Artificial Humans"
+    url: "https://doi.org/10.1016/j.chbah.2023.100024"
+    tags:
+      - Human-AI Interaction
+
+  - title: "Feedbacklogs: Recording and Incorporating Stakeholder Feedback into Machine Learning Pipelines"
+    authors: "Barker, M., Kallina, E., Ashok, D., Collins, K., Casovan, A., Weller, A., Talwalkar, A., ..."
+    year: 2023
+    venue: "EAAMO 2023"
+    venue_full: "Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization"
+    url: "https://arxiv.org/abs/2307.15475"
+    tags:
+      - Human-AI Interaction
+      - Feedback
+
+  - title: "Human-in-the-Loop Mixup"
+    authors: "Collins, K.M., Bhatt, U., Liu, W., Piratla, V., Sucholutsky, I., Love, B., Weller, A."
+    year: 2023
+    venue: "UAI 2023"
+    venue_full: "Uncertainty in Artificial Intelligence"
+    url: "https://arxiv.org/abs/2211.12735"
+    tags:
+      - Human-AI Interaction
+      - Machine Learning
+
+  - title: "Iterative Teaching by Data Hallucination"
+    authors: "Qiu, Z., Liu, W., Xiao, T.Z., Liu, Z., Bhatt, U., Luo, Y., Weller, A., Schölkopf, B."
+    year: 2023
+    venue: "AISTATS 2023"
+    venue_full: "International Conference on Artificial Intelligence and Statistics"
+    url: "https://arxiv.org/abs/2210.17467"
+    tags:
+      - Cognitive Science
+      - Machine Learning
+
+  - title: "Selective Concept Models: Permitting Stakeholder Customisation at Test-Time"
+    authors: "Barker, M., Collins, K.M., Dvijotham, K., Weller, A., Bhatt, U."
+    year: 2023
+    venue: "HCOMP 2023"
+    venue_full: "Proceedings of the AAAI Conference on Human Computation and Crowdsourcing"
+    url: "https://arxiv.org/abs/2306.05957"
+    tags:
+      - Human-AI Interaction
+      - Cognitive Science
+
+  - title: "Perspectives on Incorporating Expert Feedback into Model Updates"
+    authors: "Chen, V., Bhatt, U., Heidari, H., Weller, A., Talwalkar, A."
+    year: 2023
+    venue: "Patterns"
+    venue_full: "Patterns"
+    url: "https://doi.org/10.1016/j.patter.2023.100757"
+    tags:
+      - Feedback
+
+  - title: "GeValDi: Generative Validation of Discriminative Models"
+    authors: "Palaniappan, V., Ashman, M., Collins, K.M., Heo, J., Weller, A., Bhatt, U."
+    year: 2023
+    venue: "ICLR 2023 Workshop"
+    venue_full: "ICLR 2023 Workshop on Pitfalls of Limited Data and Computation"
+    url: "https://arxiv.org/abs/2211.12510"
+    tags:
+      - Machine Learning
