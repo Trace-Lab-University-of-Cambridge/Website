@@ -436,6 +436,20 @@ sections:
             <img src="media/logos/accenture.svg" alt="Accenture">
           </a>
         </div>
+        <div class="affiliations-row supporters-row">
+          <a href="https://mbzuai.ac.ae/" target="_blank">
+            <img src="media/logos/mbzuai.png" alt="Mohamed Bin Zayed University of Artificial Intelligence">
+          </a>
+          <a href="https://aims.ac.rw/" target="_blank">
+            <img src="media/logos/aims.png" alt="African Institute for Mathematical Sciences">
+          </a>
+          <a href="https://www.udla.edu.ec/" target="_blank">
+            <img src="media/logos/udla.jpeg" alt="Universidad de las Américas">
+          </a>
+          <a href="https://www.purdue.edu/" target="_blank">
+            <img src="media/logos/purdue.png" alt="Purdue University">
+          </a>
+        </div>
     design:
       columns: '1'
 
