@@ -403,6 +403,7 @@ sections:
       title: Our Supporters
       subtitle: ''
       text: |
+        <h3 class="affiliated-title">Industry Partners</h3>
         <div class="affiliations-row supporters-row">
           <a href="https://www.aisi.gov.uk/" target="_blank">
             <img src="media/logos/aisi.svg" alt="AI Safety Institute UK">
@@ -417,6 +418,7 @@ sections:
             <img src="media/logos/accenture.svg" alt="Accenture">
           </a>
         </div>
+        <h3 class="affiliated-title">Global Academic Partners</h3>
         <div class="affiliations-row supporters-row">
           <a href="https://mbzuai.ac.ae/" target="_blank">
             <img src="media/logos/mbzuai.png" alt="Mohamed Bin Zayed University of Artificial Intelligence">
