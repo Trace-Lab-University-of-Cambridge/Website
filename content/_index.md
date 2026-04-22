@@ -196,7 +196,7 @@ sections:
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
-<div class="team-card"
+          <div class="team-card"
                data-name="Shin Zert Phua"
                data-role="Masters Student"
                data-org="University of Cambridge"
@@ -398,32 +398,34 @@ sections:
       title: Our Supporters
       subtitle: ''
       text: |
-        <h3 class="affiliated-title">Industry Partners</h3>
-        <div class="affiliations-row supporters-row">
-          <a href="https://www.aisi.gov.uk/" target="_blank">
-            <img src="media/logos/aisi.svg" alt="AI Safety Institute UK">
-          </a>
-          <a href="https://www.nhs.uk/" target="_blank">
-            <img src="media/logos/nhs.svg" alt="NHS">
-          </a>
-          <a href="https://www.responsible.ai/" target="_blank">
-            <img src="media/logos/raii.png" alt="Responsible AI Institute">
-          </a>
-          <a href="https://www.accenture.com/" target="_blank">
-            <img src="media/logos/accenture.svg" alt="Accenture">
-          </a>
-        </div>
-        <h3 class="affiliated-title">Global Academic Partners</h3>
-        <div class="affiliations-row supporters-row">
-          <a href="https://mbzuai.ac.ae/" target="_blank">
-            <img src="media/logos/mbzuai.png" alt="Mohamed Bin Zayed University of Artificial Intelligence">
-          </a>
-          <a href="https://aims.ac.rw/" target="_blank">
-            <img src="media/logos/aims.png" alt="African Institute for Mathematical Sciences">
-          </a>
-          <a href="https://www.udla.edu.ec/" target="_blank">
-            <img src="media/logos/udla.jpeg" alt="Universidad de las Américas">
-          </a>
+        <div class="supporters-section">
+          <h3 class="affiliated-title">Industry Partners</h3>
+          <div class="affiliations-row supporters-row">
+            <a href="https://www.aisi.gov.uk/" target="_blank">
+              <img src="media/logos/aisi.svg" alt="AI Safety Institute UK">
+            </a>
+            <a href="https://www.nhs.uk/" target="_blank">
+              <img src="media/logos/nhs.svg" alt="NHS">
+            </a>
+            <a href="https://www.responsible.ai/" target="_blank">
+              <img src="media/logos/raii.png" alt="Responsible AI Institute">
+            </a>
+            <a href="https://www.accenture.com/" target="_blank">
+              <img src="media/logos/accenture.svg" alt="Accenture">
+            </a>
+          </div>
+          <h3 class="affiliated-title">Global Academic Partners</h3>
+          <div class="affiliations-row supporters-row">
+            <a href="https://mbzuai.ac.ae/" target="_blank">
+              <img src="media/logos/mbzuai.png" alt="Mohamed Bin Zayed University of Artificial Intelligence">
+            </a>
+            <a href="https://aims.ac.rw/" target="_blank">
+              <img src="media/logos/aims.png" alt="African Institute for Mathematical Sciences">
+            </a>
+            <a href="https://www.udla.edu.ec/" target="_blank">
+              <img src="media/logos/udla.jpeg" alt="Universidad de las Américas">
+            </a>
+          </div>
         </div>
     design:
       columns: '1'
