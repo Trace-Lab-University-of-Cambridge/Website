@@ -281,6 +281,26 @@ sections:
           </div>
         </div>
 
+        <h3 class="affiliated-title">Frequent Collaborators</h3>
+        <div class="affiliated-grid">
+          <div class="affiliated-card">
+            <div class="affiliated-name">Adrian Weller</div>
+            <div class="affiliated-org">University of Cambridge</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Katie Collins</div>
+            <div class="affiliated-org">MIT</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Mateja Jamnik</div>
+            <div class="affiliated-org">University of Cambridge</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Ilia Sucholutsky</div>
+            <div class="affiliated-org">Purdue University</div>
+          </div>
+        </div>
+
         <script>
         document.addEventListener('DOMContentLoaded', function() {
           const teamCards = document.querySelectorAll('.team-card');
@@ -332,15 +352,6 @@ sections:
                 <li>Accenture</li>
                 <li>RAII</li>
                 <li>UK AISI</li>
-              </ul>
-            </div>
-            <div class="partner-category">
-              <h3 class="partner-category-title">Frequent Collaborators</h3>
-              <ul class="partner-list">
-                <li>Adrian Weller <span class="partner-dept">University of Cambridge</span></li>
-                <li>Katie Collins <span class="partner-dept">MIT</span></li>
-                <li>Mateja Jamnik <span class="partner-dept">University of Cambridge</span></li>
-                <li>Ilia Sucholutsky <span class="partner-dept">Purdue University</span></li>
               </ul>
             </div>
           </div>
