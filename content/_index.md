@@ -413,6 +413,9 @@ sections:
             <a href="https://www.accenture.com/" target="_blank">
               <img src="media/logos/accenture.svg" alt="Accenture">
             </a>
+            <a href="https://www.bcg.com/" target="_blank">
+              <img src="media/logos/bcg.png" alt="BCG">
+            </a>
           </div>
           <h3 class="affiliated-title">Global Academic Partners</h3>
           <div class="affiliations-row supporters-row">
