@@ -196,18 +196,7 @@ sections:
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
-          <div class="team-card"
-               data-name="Owen O'Malley"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/owen-omalley.png" alt="Owen O'Malley">
-            <h3 class="team-name">Owen O'Malley</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
+<div class="team-card"
                data-name="Shin Zert Phua"
                data-role="Masters Student"
                data-org="University of Cambridge"
