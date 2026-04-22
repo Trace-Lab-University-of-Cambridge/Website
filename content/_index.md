@@ -281,7 +281,7 @@ sections:
           </div>
         </div>
 
-        <h3 class="affiliated-title">Frequent Collaborators</h3>
+        <h3 class="affiliated-title">Friends of TRACE</h3>
         <div class="affiliated-grid">
           <div class="affiliated-card">
             <div class="affiliated-name">Adrian Weller</div>
