@@ -329,14 +329,6 @@ sections:
         <div class="partners-section">
           <div class="partners-grid">
             <div class="partner-category">
-              <h3 class="partner-category-title">University of Cambridge</h3>
-              <ul class="partner-list">
-                <li>Professor Adrian Weller <span class="partner-dept">Engineering</span></li>
-                <li>Dr. Harin Lee <span class="partner-dept">Music / King's</span></li>
-                <li>King's College Computing & Society Initiative</li>
-              </ul>
-            </div>
-            <div class="partner-category">
               <h3 class="partner-category-title">Global Academic Partners</h3>
               <ul class="partner-list">
                 <li>Mohamed bin Zayed University of Artificial Intelligence <span class="partner-loc">UAE</span></li>
