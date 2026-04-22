@@ -284,10 +284,6 @@ sections:
             <div class="affiliated-name">Mateja Jamnik</div>
             <div class="affiliated-org">University of Cambridge</div>
           </div>
-          <div class="affiliated-card">
-            <div class="affiliated-name">Ilia Sucholutsky</div>
-            <div class="affiliated-org">Purdue University</div>
-          </div>
         </div>
 
         <script>
@@ -323,7 +319,6 @@ sections:
                 <li>Mohamed bin Zayed University of Artificial Intelligence <span class="partner-loc">UAE</span></li>
                 <li>African Institute for Mathematical Sciences <span class="partner-loc">South Africa</span></li>
                 <li>La Universidad de las Americas, UDLA <span class="partner-loc">Ecuador</span></li>
-                <li>AI Thought Partner Lab, Purdue University <span class="partner-loc">USA</span></li>
               </ul>
             </div>
             <div class="partner-category">
@@ -428,9 +423,6 @@ sections:
           </a>
           <a href="https://www.udla.edu.ec/" target="_blank">
             <img src="media/logos/udla.jpeg" alt="Universidad de las Américas">
-          </a>
-          <a href="https://www.purdue.edu/" target="_blank">
-            <img src="media/logos/purdue.png" alt="Purdue University">
           </a>
         </div>
     design:
