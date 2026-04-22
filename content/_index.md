@@ -288,6 +288,10 @@ sections:
             <div class="affiliated-name">Francesco Quinzan</div>
             <div class="affiliated-org">University of Oxford</div>
           </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Ilia Sucholutsky</div>
+            <div class="affiliated-org">Purdue University</div>
+          </div>
         </div>
 
         <script>
