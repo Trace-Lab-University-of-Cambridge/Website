@@ -304,38 +304,6 @@ sections:
     design:
       columns: '1'
 
-  # Partners & Collaborators
-  - block: markdown
-    id: partners
-    content:
-      title: Partners & Collaborators
-      subtitle: ''
-      text: |
-        <div class="partners-section">
-          <div class="partners-grid">
-            <div class="partner-category">
-              <h3 class="partner-category-title">Global Academic Partners</h3>
-              <ul class="partner-list">
-                <li>Mohamed bin Zayed University of Artificial Intelligence <span class="partner-loc">UAE</span></li>
-                <li>African Institute for Mathematical Sciences <span class="partner-loc">South Africa</span></li>
-                <li>La Universidad de las Americas, UDLA <span class="partner-loc">Ecuador</span></li>
-              </ul>
-            </div>
-            <div class="partner-category">
-              <h3 class="partner-category-title">Industry Partners</h3>
-              <ul class="partner-list">
-                <li>BCG</li>
-                <li>Accenture</li>
-                <li>RAII</li>
-                <li>UK AISI</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-    design:
-      columns: '1'
-
   # Publications
   - block: markdown
     id: publications
@@ -412,9 +380,6 @@ sections:
             </a>
             <a href="https://www.accenture.com/" target="_blank">
               <img src="media/logos/accenture.svg" alt="Accenture">
-            </a>
-            <a href="https://www.bcg.com/" target="_blank">
-              <img src="media/logos/bcg.png" alt="BCG">
             </a>
           </div>
           <h3 class="affiliated-title">Global Academic Partners</h3>
