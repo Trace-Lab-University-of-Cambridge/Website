@@ -403,7 +403,7 @@ sections:
               <img src="media/logos/aims.png" alt="African Institute for Mathematical Sciences">
             </a>
             <a href="https://www.udla.edu.ec/" target="_blank">
-              <img src="media/logos/udla.jpeg" alt="Universidad de las Américas">
+              <img src="media/logos/udla.png" alt="Universidad de las Américas">
             </a>
           </div>
         </div>
