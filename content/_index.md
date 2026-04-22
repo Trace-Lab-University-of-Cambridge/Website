@@ -312,12 +312,12 @@ sections:
       subtitle: ''
       text: |
         <div class="pub-grid-five">
-          <a href="https://ieeexplore.ieee.org/document/10687308" target="_blank" rel="noopener" class="pub-card">
-            <span class="pub-year">2024</span>
-            <h3>When Should Algorithms Resign?</h3>
+          <a href="https://arxiv.org/abs/2503.13577" target="_blank" rel="noopener" class="pub-card">
+            <span class="pub-year">2025</span>
+            <h3>When Should We Orchestrate Multiple Agents?</h3>
             <p class="pub-authors">Bhatt, U., et al.</p>
-            <p class="pub-description">Exploring when AI systems should defer to human judgment in high-stakes decision-making contexts.</p>
-            <p class="pub-venue">IEEE Computer</p>
+            <p class="pub-description">Theoretical conditions for when coordinating multiple agents is beneficial under realistic constraints like inference costs and availability.</p>
+            <p class="pub-venue">arXiv 2025</p>
           </a>
           <a href="https://www.nature.com/articles/s41562-024-01991-9" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
