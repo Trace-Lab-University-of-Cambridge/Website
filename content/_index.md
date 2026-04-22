@@ -284,6 +284,10 @@ sections:
             <div class="affiliated-name">Mateja Jamnik</div>
             <div class="affiliated-org">University of Cambridge</div>
           </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Francesco Quinzan</div>
+            <div class="affiliated-org">University of Oxford</div>
+          </div>
         </div>
 
         <script>
