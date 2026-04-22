@@ -251,27 +251,33 @@ sections:
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
-          <div class="team-card"
-               data-name="Hamza Alshamy"
-               data-role="Visiting Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/hamza-alshamy.jpeg" alt="Hamza Alshamy">
-            <h3 class="team-name">Hamza Alshamy</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">Cambridge</p>
+        </div>
+
+        <h3 class="affiliated-title">Affiliated Students</h3>
+        <div class="affiliated-grid">
+          <div class="affiliated-card">
+            <div class="affiliated-name">Hamza Alshamy</div>
+            <div class="affiliated-org">NYU</div>
           </div>
-          <div class="team-card"
-               data-name="Mihir Upadhyay"
-               data-role="Visiting Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
-            <img class="team-avatar" src="media/team/mihir-upadhyay.png" alt="Mihir Upadhyay">
-            <h3 class="team-name">Mihir Upadhyay</h3>
-            <p class="team-role">Visiting Student</p>
-            <p class="team-org">Cambridge</p>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Mihir Upadhyay</div>
+            <div class="affiliated-org">NYU</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Hannah Liu</div>
+            <div class="affiliated-org">Imperial</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Hassan Suliman</div>
+            <div class="affiliated-org">AIMS</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Dagmawi Misker</div>
+            <div class="affiliated-org">AIMS</div>
+          </div>
+          <div class="affiliated-card">
+            <div class="affiliated-name">Ghaida Ibrahim</div>
+            <div class="affiliated-org">AIMS</div>
           </div>
         </div>
 
@@ -290,6 +296,56 @@ sections:
           });
         });
         </script>
+    design:
+      columns: '1'
+
+  # Partners & Collaborators
+  - block: markdown
+    id: partners
+    content:
+      title: Partners & Collaborators
+      subtitle: ''
+      text: |
+        <div class="partners-section">
+          <div class="partners-grid">
+            <div class="partner-category">
+              <h3 class="partner-category-title">University of Cambridge</h3>
+              <ul class="partner-list">
+                <li>Professor Adrian Weller <span class="partner-dept">Engineering</span></li>
+                <li>Dr. Harin Lee <span class="partner-dept">Music / King's</span></li>
+                <li>King's College Computing & Society Initiative</li>
+              </ul>
+            </div>
+            <div class="partner-category">
+              <h3 class="partner-category-title">Global Academic Partners</h3>
+              <ul class="partner-list">
+                <li>Mohamed bin Zayed University of Artificial Intelligence <span class="partner-loc">UAE</span></li>
+                <li>African Institute for Mathematical Sciences <span class="partner-loc">South Africa</span></li>
+                <li>La Universidad de las Americas, UDLA <span class="partner-loc">Ecuador</span></li>
+                <li>AI Thought Partner Lab, Purdue University <span class="partner-loc">USA</span></li>
+              </ul>
+            </div>
+            <div class="partner-category">
+              <h3 class="partner-category-title">Industry Partners</h3>
+              <ul class="partner-list">
+                <li>BCG</li>
+                <li>Accenture</li>
+                <li>RAII</li>
+                <li>UK AISI</li>
+              </ul>
+            </div>
+            <div class="partner-category">
+              <h3 class="partner-category-title">Frequent Collaborators</h3>
+              <ul class="partner-list">
+                <li>Adrian Weller <span class="partner-dept">University of Cambridge</span></li>
+                <li>Katie Collins <span class="partner-dept">MIT</span></li>
+                <li>Mateja Jamnik <span class="partner-dept">University of Cambridge</span></li>
+                <li>Ilia Sucholutsky <span class="partner-dept">Purdue University</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
     design:
       columns: '1'
 
@@ -357,16 +413,16 @@ sections:
       text: |
         <div class="affiliations-row supporters-row">
           <a href="https://www.aisi.gov.uk/" target="_blank">
-            <img src="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/663bd707cb0214d8b72951b5_5a103bfcb506b52b4e099f3dc675c649_AISI%20Logo%20Colour%20Dark.svg" alt="AI Safety Institute UK">
+            <img src="media/logos/aisi.svg" alt="AI Safety Institute UK">
           </a>
           <a href="https://www.nhs.uk/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/National_Health_Service_%28England%29_logo.svg/371px-National_Health_Service_%28England%29_logo.svg.png" alt="NHS">
+            <img src="media/logos/nhs.svg" alt="NHS">
           </a>
           <a href="https://www.responsible.ai/" target="_blank">
-            <img src="https://www.responsible.ai/wp-content/uploads/2024/05/logo-1.png" alt="Responsible AI Institute">
+            <img src="media/logos/raii.png" alt="Responsible AI Institute">
           </a>
           <a href="https://www.accenture.com/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture">
+            <img src="media/logos/accenture.svg" alt="Accenture">
           </a>
         </div>
     design:
@@ -386,7 +442,7 @@ sections:
             <img src="media/chia-logo.png" alt="CHIA">
           </a>
           <a href="https://www.kings.cam.ac.uk/" target="_blank" class="kings-logo">
-            <img src="https://images.squarespace-cdn.com/content/v1/5e260fc81324310e95f2a712/1592507050732-IKRW45KPH520W6RLHASV/Kings_logo_WPPT_CENTRLSD_FULLCOLOUR.png" alt="King's College Cambridge">
+            <img src="media/logos/kings.webp" alt="King's College Cambridge">
           </a>
         </div>
     design:
