@@ -164,6 +164,7 @@ sections:
             <h3 class="team-name">Yung-Hsuan Wu</h3>
             <p class="team-role">Research Assistant</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/yung-hsuan-wu/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Olivia Slack"
