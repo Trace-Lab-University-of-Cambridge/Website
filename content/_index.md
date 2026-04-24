@@ -271,7 +271,7 @@ sections:
             <div class="affiliated-org">AIMS</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Dagmawi Misker</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/dagmaros27/" target="_blank" rel="noopener">Dagmawi Misker</a></div>
             <div class="affiliated-org">AIMS</div>
           </div>
           <div class="affiliated-card">
