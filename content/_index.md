@@ -212,6 +212,7 @@ sections:
             <h3 class="team-name">Shin Zert Phua</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/phuashinzert/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Juan Pablo Ruiz"
