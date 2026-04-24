@@ -236,6 +236,7 @@ sections:
             <h3 class="team-name">Ariella Shulman</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/ariella-shulman/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Joy Wang"
