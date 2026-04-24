@@ -255,7 +255,7 @@ sections:
         <h3 class="affiliated-title">Affiliated Students</h3>
         <div class="affiliated-grid">
           <div class="affiliated-card">
-            <div class="affiliated-name">Hamza Alshamy</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/hamza-alshamy-0933631a5/" target="_blank" rel="noopener">Hamza Alshamy</a></div>
             <div class="affiliated-org">NYU</div>
           </div>
           <div class="affiliated-card">
