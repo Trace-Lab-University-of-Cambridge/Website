@@ -259,7 +259,7 @@ sections:
             <div class="affiliated-org">NYU</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Mihir Upadhyay</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/mihir-upadhyay-434364171/" target="_blank" rel="noopener">Mihir Upadhyay</a></div>
             <div class="affiliated-org">NYU</div>
           </div>
           <div class="affiliated-card">
