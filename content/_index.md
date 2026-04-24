@@ -275,7 +275,7 @@ sections:
             <div class="affiliated-org">AIMS</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Ghaida Ibrahim</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/ghaida-ibrahim-08853221b/" target="_blank" rel="noopener">Ghaida Ibrahim</a></div>
             <div class="affiliated-org">AIMS</div>
           </div>
         </div>
