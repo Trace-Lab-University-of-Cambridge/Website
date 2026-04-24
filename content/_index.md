@@ -111,24 +111,24 @@ sections:
                data-role="PhD Student (co-advised with Mateja Jamnik)"
                data-org="University of Cambridge"
                data-bio="Elaf is a PhD student with the TRACE lab researching AI systems and reasoning. Elaf formerly conducted research at the Center for Complex Systems in Riyadh and MIT in Cambridge, Massachusetts, and worked as a machine learning engineer at TAHAKOM. Elaf graduated from NYU with her Master's in Computer Science and from King Saud University with her Bachelor's degree in Computer Science."
-               data-interests="AI Systems,Reasoning,Machine Learning">
+               data-interests="AI Systems,Reasoning,Machine Learning"
+               data-website="https://www.linkedin.com/in/elafalmahmoud/">
             <img class="team-avatar" src="media/team/elaf-almahmoud.png" alt="Elaf Almahmoud">
             <h3 class="team-name">Elaf Almahmoud</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/elafalmahmoud/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Noah Broestl"
                data-role="PhD Student"
                data-org="University of Cambridge"
                data-bio="Noah is a PhD student with the TRACE lab working on aspects of trustworthy AI and machine learning. He is a partner at Boston Consulting Group, where he leads the firm's responsible AI practice. Prior to joining BCG, Noah spent nearly 15 years working at Google after serving as an Intelligence Analyst with the U.S. Air Force. Noah graduated with distinction from the University of Oxford with his Master's degree in practical ethics and from Colorado State University with his Bachelor's degree in Sociology and Diversity in Law and Liberal Arts and History."
-               data-interests="Trustworthy AI,Machine Learning,Responsible AI">
+               data-interests="Trustworthy AI,Machine Learning,Responsible AI"
+               data-website="https://www.linkedin.com/in/noah-broestl-95340113/">
             <img class="team-avatar" src="media/team/noah-broestl.jpeg" alt="Noah Broestl">
             <h3 class="team-name">Noah Broestl</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/noah-broestl-95340113/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Drew Calcagno"
@@ -159,96 +159,96 @@ sections:
                data-role="Research Assistant"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/yung-hsuan-wu/">
             <img class="team-avatar" src="media/team/yung-hsuan-wu.png" alt="Yung-Hsuan Wu">
             <h3 class="team-name">Yung-Hsuan Wu</h3>
             <p class="team-role">Research Assistant</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/yung-hsuan-wu/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Olivia Slack"
                data-role="Lab Manager"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Lab Operations,Research Administration">
+               data-interests="Lab Operations,Research Administration"
+               data-website="https://www.linkedin.com/in/olivialslack/">
             <img class="team-avatar" src="media/team/olivia-slack.jpg" alt="Olivia Slack">
             <h3 class="team-name">Olivia Slack</h3>
             <p class="team-role">Lab Manager</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/olivialslack/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Kostadin Devedzhiev"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://kostadindev.github.io/">
             <img class="team-avatar" src="media/team/kostadin-devedzhiev.jpg" alt="Kostadin Devedzhiev">
             <h3 class="team-name">Kostadin Devedzhiev</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://kostadindev.github.io/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">Website →</a>
           </div>
           <div class="team-card"
                data-name="Afan Handoyo"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/ahmad-alfani-handoyo/">
             <img class="team-avatar" src="media/team/afan-handoyo.png" alt="Afan Handoyo">
             <h3 class="team-name">Afan Handoyo</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/ahmad-alfani-handoyo/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Shin Zert Phua"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/phuashinzert/">
             <img class="team-avatar" src="media/team/shin-zert-phua.png" alt="Shin Zert Phua">
             <h3 class="team-name">Shin Zert Phua</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/phuashinzert/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Juan Pablo Ruiz"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/juan-pablo-ruiz-partida/">
             <img class="team-avatar" src="media/team/juan-pablo-ruiz.jpeg" alt="Juan Pablo Ruiz">
             <h3 class="team-name">Juan Pablo Ruiz</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/juan-pablo-ruiz-partida/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Ariella Shulman"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/ariella-shulman/">
             <img class="team-avatar" src="media/team/ariella-shulman.png" alt="Ariella Shulman">
             <h3 class="team-name">Ariella Shulman</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/ariella-shulman/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Joy Wang"
                data-role="Masters Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning">
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/xi-joy-wang/">
             <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
             <h3 class="team-name">Joy Wang</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
-            <a href="https://www.linkedin.com/in/xi-joy-wang/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
         </div>
 

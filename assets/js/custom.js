@@ -191,6 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Prevent the tilt effect from interfering
         e.stopPropagation();
 
+        // If card has a website, link directly there
+        if (this.dataset.website) {
+          window.open(this.dataset.website, '_blank', 'noopener');
+          return;
+        }
+
         const name = this.dataset.name;
         const role = this.dataset.role;
         const org = this.dataset.org || '';
