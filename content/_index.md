@@ -283,7 +283,7 @@ sections:
         <h3 class="affiliated-title">Friends of TRACE</h3>
         <div class="affiliated-grid">
           <div class="affiliated-card">
-            <div class="affiliated-name">Adrian Weller</div>
+            <div class="affiliated-name"><a href="https://mlg.eng.cam.ac.uk/adrian/" target="_blank" rel="noopener">Adrian Weller</a></div>
             <div class="affiliated-org">University of Cambridge</div>
           </div>
           <div class="affiliated-card">
