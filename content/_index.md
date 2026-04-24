@@ -287,7 +287,7 @@ sections:
             <div class="affiliated-org">University of Cambridge</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Katie Collins</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/katie-collins-474121175/" target="_blank" rel="noopener">Katie Collins</a></div>
             <div class="affiliated-org">MIT</div>
           </div>
           <div class="affiliated-card">
