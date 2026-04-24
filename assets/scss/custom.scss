@@ -1570,6 +1570,20 @@ section {
   margin: 0 auto;
 }
 
+.team-website-link {
+  display: block;
+  font-size: 0.7rem;
+  color: #073d74;
+  margin-top: 0.3rem;
+  text-decoration: none;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
 .team-grid .team-card {
   flex: 0 0 calc(16.666% - 1rem);
   max-width: calc(16.666% - 1rem);

@@ -184,6 +184,7 @@ sections:
             <h3 class="team-name">Kostadin Devedzhiev</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://kostadindev.github.io/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">Website →</a>
           </div>
           <div class="team-card"
                data-name="Afan Handoyo"
