@@ -176,6 +176,7 @@ sections:
             <h3 class="team-name">Olivia Slack</h3>
             <p class="team-role">Lab Manager</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/olivialslack/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Kostadin Devedzhiev"
