@@ -263,7 +263,7 @@ sections:
             <div class="affiliated-org">NYU</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Hannah Liu</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/hannah-liu-981b33208/" target="_blank" rel="noopener">Hannah Liu</a></div>
             <div class="affiliated-org">Imperial</div>
           </div>
           <div class="affiliated-card">
