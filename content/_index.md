@@ -128,6 +128,7 @@ sections:
             <h3 class="team-name">Noah Broestl</h3>
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/noah-broestl-95340113/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Drew Calcagno"
