@@ -224,6 +224,7 @@ sections:
             <h3 class="team-name">Juan Pablo Ruiz</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
+            <a href="https://www.linkedin.com/in/juan-pablo-ruiz-partida/" target="_blank" rel="noopener" class="team-website-link" onclick="event.stopPropagation()">LinkedIn →</a>
           </div>
           <div class="team-card"
                data-name="Ariella Shulman"
