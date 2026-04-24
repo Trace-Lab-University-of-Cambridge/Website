@@ -291,7 +291,7 @@ sections:
             <div class="affiliated-org">MIT</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Mateja Jamnik</div>
+            <div class="affiliated-name"><a href="https://www.cl.cam.ac.uk/~mj201/" target="_blank" rel="noopener">Mateja Jamnik</a></div>
             <div class="affiliated-org">University of Cambridge</div>
           </div>
           <div class="affiliated-card">
