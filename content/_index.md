@@ -267,7 +267,7 @@ sections:
             <div class="affiliated-org">Imperial</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Hassan Suliman</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/hassanql/" target="_blank" rel="noopener">Hassan Suliman</a></div>
             <div class="affiliated-org">AIMS</div>
           </div>
           <div class="affiliated-card">
