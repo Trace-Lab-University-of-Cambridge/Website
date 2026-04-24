@@ -330,12 +330,12 @@ sections:
       subtitle: ''
       text: |
         <div class="pub-grid-five">
-          <a href="https://arxiv.org/abs/2404.12994" target="_blank" rel="noopener" class="pub-card">
+          <a href="https://arxiv.org/abs/2405.10632" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
-            <h3>Rethinking the Evaluation of Dialogue Systems</h3>
-            <p class="pub-authors">Siro, C., et al.</p>
-            <p class="pub-description">How user feedback influences dialogue system evaluation, with crowdworkers showing greater sensitivity to feedback on usefulness and interestingness.</p>
-            <p class="pub-venue">SIGIR 2024</p>
+            <h3>Towards Interactive Evaluations for Interaction Harms in Human-AI Systems</h3>
+            <p class="pub-authors">Ibrahim, L., et al.</p>
+            <p class="pub-description">A framework for evaluating interaction harms in human-AI systems through interactive, dynamic assessment methods.</p>
+            <p class="pub-venue">arXiv 2024</p>
           </a>
           <a href="https://www.nature.com/articles/s41562-024-01991-9" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
