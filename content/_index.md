@@ -295,7 +295,7 @@ sections:
             <div class="affiliated-org">University of Cambridge</div>
           </div>
           <div class="affiliated-card">
-            <div class="affiliated-name">Francesco Quinzan</div>
+            <div class="affiliated-name"><a href="https://www.linkedin.com/in/francescoquinzan/" target="_blank" rel="noopener">Francesco Quinzan</a></div>
             <div class="affiliated-org">University of Oxford</div>
           </div>
           <div class="affiliated-card">
