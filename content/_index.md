@@ -167,18 +167,6 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Olivia Slack"
-               data-role="Lab Manager"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Lab Operations,Research Administration"
-               data-website="https://www.linkedin.com/in/olivialslack/">
-            <img class="team-avatar" src="media/team/olivia-slack.jpg" alt="Olivia Slack">
-            <h3 class="team-name">Olivia Slack</h3>
-            <p class="team-role">Lab Manager</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
                data-name="Kostadin Devedzhiev"
                data-role="Masters Student"
                data-org="University of Cambridge"
@@ -247,6 +235,18 @@ sections:
                data-website="https://www.linkedin.com/in/xi-joy-wang/">
             <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
             <h3 class="team-name">Joy Wang</h3>
+            <p class="team-role">Masters Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <div class="team-card"
+               data-name="Lan Jiang"
+               data-role="Masters Student"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="">
+            <img class="team-avatar" src="media/team/lan-jiang.jpeg" alt="Lan Jiang">
+            <h3 class="team-name">Lan Jiang</h3>
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
