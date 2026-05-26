@@ -154,6 +154,20 @@ sections:
             <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
           </div>
+          <!-- Research Fellow -->
+          <div class="team-card"
+               data-name="Samuel Selwyn-Bazeley"
+               data-role="Research Fellow"
+               data-org="University of Cambridge"
+               data-bio="Bio coming soon."
+               data-interests="Trustworthy AI,Machine Learning"
+               data-website="https://www.linkedin.com/in/samuel-selwyn-bazeley-frsa-897a75286/">
+            <img class="team-avatar" src="media/team/SS-B.jpeg" alt="Samuel Selwyn-Bazeley">
+            <h3 class="team-name">Samuel Selwyn-Bazeley</h3>
+            <p class="team-role">Research Fellow</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <!-- Research Assistant -->
           <div class="team-card"
                data-name="Yung-Hsuan Wu"
                data-role="Research Assistant"
