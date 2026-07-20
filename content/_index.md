@@ -253,14 +253,14 @@ sections:
           </div>
           <!-- Research Interns -->
           <div class="team-card"
-               data-name="Mare de Witt"
+               data-name="Mare de Wit"
                data-role="Research Intern"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning"
                data-website="">
-            <img class="team-avatar" src="media/team/mare-de-witt.jpg" alt="Mare de Witt">
-            <h3 class="team-name">Mare de Witt</h3>
+            <img class="team-avatar" src="media/team/mare-de-wit.jpg" alt="Mare de Wit">
+            <h3 class="team-name">Mare de Wit</h3>
             <p class="team-role">Research Intern</p>
             <p class="team-org">Cambridge</p>
           </div>
