@@ -1,0 +1,27 @@
+# Companies founded out of lab research.
+#
+# The Spinouts section and its nav link appear automatically once `ventures`
+# has an entry, and stay hidden while it is empty. Ordered newest first.
+#
+# Fields
+#   name     Company name.
+#   url      Company site. Omit for no link.
+#   founded  Year, shown in the left column like a publication year.
+#   body     One or two sentences: what it does and what research it came out
+#            of. Inline HTML allowed, so you can link the underlying paper.
+#   people   Who took it out, e.g. "Founded by Jane Doe (PhD 2027)." Optional.
+#
+# Example — delete the comment markers to see it render:
+#
+# ventures:
+#   - name: Trustwise
+#     url: https://trustwise.ai/
+#     founded: 2024
+#     body: >-
+#       Optimises the cost, latency, and reliability of LLM and RAG systems,
+#       out of the lab's work on
+#       <a href="https://arxiv.org/abs/2502.18635">multi-objective
+#       hyperparameter optimisation</a>.
+#     people: Founded by Matthew Barker.
+
+ventures: []

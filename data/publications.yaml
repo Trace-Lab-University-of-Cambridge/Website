@@ -1,307 +1,590 @@
-# Publications data
-# Each publication links directly to external source (Google Scholar, journal, etc.)
+# Publications — GENERATED FILE, do not edit by hand.
+#
+# Regenerate with:  python3 scripts/sync-publications.py
+# Source: OpenAlex (see the script's docstring for why not Google Scholar).
 
 publications:
-  - title: "When Should We Orchestrate Multiple Agents?"
-    authors: "Bhatt, U., Kapoor, S., Upadhyay, M., Sucholutsky, I., Quinzan, F., Collins, K.M., ..."
-    year: 2025
-    venue: "arXiv"
-    venue_full: "arXiv preprint arXiv:2503.13577"
-    url: "https://arxiv.org/abs/2503.13577"
-    tags:
-      - Human-AI Interaction
-      - Agentic AI
+  - title: "A reporting checklist for large language models in behavioural science"
+    authors:
+      - "Stefan Feuerriegel"
+      - "Christopher Barrie"
+      - "M. J. Crockett"
+      - "Laura K. Globig"
+      - "Killian L. McLoughlin"
+      - "Dan-Mircea Mirea"
+      - "Arthur Spirling"
+      - "Diyi Yang"
+      - "Tim Althoff"
+      - "Maria Antoniak"
+      - "Lisa P. Argyle"
+      - "Ashwini Ashokkumar"
+      - "Mohammad Atari"
+      - "Hannah Bailey"
+      - "Kevin Bauer"
+      - "Umang Bhatt"
+      - "Yidong Chai"
+      - "Tanmoy Chakraborty"
+      - "Yanto Chandra"
+      - "Huimin Chen"
+      - "Hal Daumé III"
+      - "Gianmarco De Francisci Morales"
+      - "Morteza Dehghani"
+      - "Danica Dillion"
+      - "Johannes C. Eichstaedt"
+      - "Kerstin Förster"
+      - "Dominique Geissler"
+      - "Kurt Gray"
+      - "Thomas L. Griffiths"
+      - "Hartmann Jochen"
+      - "Oliver Hauser"
+      - "James K. He"
+      - "Rahul Hemrajani"
+      - "Felix Holzmeister"
+      - "Angel Hsing‐Chi Hwang"
+      - "Tiancheng Hu"
+      - "Anna A. Ivanova"
+      - "Nils Köbis"
+      - "Yara Kyrychenko"
+      - "Himabindu Lakkaraju"
+      - "Jia Liu"
+      - "Abdurahman Maarouf"
+      - "Sebastian Maier"
+      - "Lennart Meincke"
+      - "Rada Mihalcea"
+      - "Brent Mittelstadt"
+      - "Saif M. Mohammad"
+      - "Mor Naaman"
+      - "Oded Netzer"
+      - "Alice Oh"
+      - "Desmond C. Ong"
+      - "Francesco Pierri"
+      - "Barbara Plank"
+      - "Iyad Rahwan"
+      - "Talal Rahwan"
+      - "Pooja S. B. Rao"
+      - "Claire Robertson"
+      - "David M. Rothschild"
+      - "Matthew Salganik"
+      - "Eric Schulz"
+      - "Chirag Shah"
+      - "Yash Raj Shrestha"
+      - "Ekaterina Shutova"
+      - "Alexandra A. Siegel"
+      - "Almog Simchon"
+      - "Huan Sun"
+      - "Malte Toetzke"
+      - "Jay J. Van Bavel"
+      - "Michelle Vaccaro"
+      - "J. Vaughan"
+      - "Effy Vayena"
+      - "Pedro O. S. Vaz-de-Melo"
+      - "Briana Vecchione"
+      - "Angelina Wang"
+      - "Robert West"
+      - "Robb Willer"
+      - "Dirk U. Wulff"
+      - "Renwen Zhang"
+      - "Simone Zhang"
+      - "Steve Rathje"
+      - "Manoel Horta Ribeiro"
+    year: 2026
+    venue: "Nature Human Behaviour"
+    url: "https://doi.org/10.1038/s41562-026-02492-7"
+    citations: 3
 
-  - title: "Faster, Cheaper, Better: Multi-Objective Hyperparameter Optimization for LLM and RAG Systems"
-    authors: "Barker, M., Bell, A., Thomas, E., Carr, J., Andrews, T., Bhatt, U."
-    year: 2025
-    venue: "arXiv"
-    venue_full: "arXiv preprint arXiv:2502.18635"
-    url: "https://arxiv.org/abs/2502.18635"
-    tags:
-      - Machine Learning
+  - title: "RCTs for Frontier AI Governance: Methodological Challenges and Solutions for Human Uplift Studies"
+    authors:
+      - "Patricia Paskov"
+      - "Kevin Wei"
+      - "Shen Zhou Hong"
+      - "Dan Bateyko"
+      - "Xavier Roberts-Gaal"
+      - "Carson Ezell"
+      - "Gailius Praninskas"
+      - "Valerie Chen"
+      - "Umang Bhatt"
+      - "Ella Guest"
+    year: 2026
+    venue: "Forthcoming at AIES 2026"
+    url: "https://doi.org/10.48550/arxiv.2603.11001"
+    citations: 0
 
-  - title: "Measuring and Mitigating Overreliance is Necessary for Building Human-Compatible AI"
-    authors: "Ibrahim, L., Collins, K.M., Kim, S.S.Y., Reuel, A., Lamparth, M., Feng, K., Ahmad, L., ..."
-    year: 2025
-    venue: "arXiv"
-    venue_full: "arXiv preprint arXiv:2509.08010"
-    url: "https://arxiv.org/abs/2509.08010"
-    tags:
-      - Human-AI Interaction
+  - title: "Revisiting Rogers’ Paradox in the context of human–AI interaction"
+    authors:
+      - "Katherine M. Collins"
+      - "Umang Bhatt"
+      - "Ilia Sucholutsky"
+    year: 2026
+    venue: "Phil. Trans. R. Soc. A"
+    url: "https://doi.org/10.1098/rsta.2025.0149"
+    citations: 0
 
-  - title: "Beyond Quantification: Navigating Uncertainty in Professional AI Systems"
-    authors: "Delacroix, S., Robinson, D., Bhatt, U., Domenicucci, J., Montgomery, J., ..."
-    year: 2025
-    venue: "RSS: Data Science and AI"
-    venue_full: "RSS: Data Science and Artificial Intelligence"
-    url: "https://doi.org/10.1093/jrssig/udaf002"
-    tags:
-      - Uncertainty
-
-  - title: "Unequal Uncertainty: Rethinking Algorithmic Interventions for Mitigating Discrimination from AI"
-    authors: "Sargeant, H., Jorgensen, M., Shah, A., Weller, A., Bhatt, U."
-    year: 2025
-    venue: "arXiv"
-    venue_full: "arXiv preprint arXiv:2508.07872"
-    url: "https://arxiv.org/abs/2508.07872"
-    tags:
-      - Uncertainty
-      - Fairness
-
-  - title: "AI Impact on Human Proof Formalization Workflows"
-    authors: "Collins, K.M., Frieder, S., Bayer, J., Loader, J., Lim, J., Song, P., Zaiser, F., Zhou, L., ..."
-    year: 2025
-    venue: "NeurIPS 2025 Workshop"
-    venue_full: "The 5th Workshop on Mathematical Reasoning and AI at NeurIPS 2025"
-    url: "https://openreview.net/forum?id=D7I8fVkMVs"
-    tags:
-      - Mathematics
-
-  - title: "Enhancing Football Refereeing with AI: VARS and X-VARS for Assisted Decision-Making"
-    authors: "Held, J., Cioppa, A., Giancola, S., Almahmoud, E., Collins, K.M., Bhatt, U., ..."
-    year: 2025
-    venue: "MathSport Conference"
-    venue_full: "MathSport Conference"
-    url: "https://arxiv.org/abs/2504.14609"
-    tags:
-      - Decision Support
-      - Sports AI
-
-  - title: "Revisiting Rogers' Paradox in the Context of Human-AI Interaction"
-    authors: "Collins, K.M., Bhatt, U., Sucholutsky, I."
-    year: 2025
-    venue: "arXiv"
-    venue_full: "arXiv preprint arXiv:2501.10476"
-    url: "https://arxiv.org/abs/2501.10476"
-    tags:
-      - Human-AI Interaction
-      - Cognitive Science
-
-  - title: "Representational Alignment Supports Effective Teaching"
-    authors: "Sucholutsky, I., Collins, K.M., Malaviya, M., Jacoby, N., Liu, W., Sumers, T.R., ..."
-    year: 2025
-    venue: "PMLR"
-    venue_full: "Proceedings of Machine Learning Research"
-    url: "https://arxiv.org/abs/2406.04302"
-    tags:
-      - Cognitive Science
-
-  - title: "Context-Specific Certification of AI Systems: A Pilot in the Financial Industry"
-    authors: "Brogle, K., Kallina, E., Sargeant, H., Shankar, V., Weller, A., Casovan, A., Bhatt, U."
-    year: 2025
-    venue: "AI and Ethics"
-    venue_full: "AI and Ethics"
-    url: "https://doi.org/10.1007/s43681-024-00628-x"
-    tags:
-      - AI Governance
-
-  - title: "Documenting Deployment with Fabric: A Repository of Real-World AI Governance"
-    authors: "Jorgensen, M., Brogle, K., Collins, K.M., Ibrahim, L., Shah, A., Ivanovic, P., ..."
-    year: 2025
-    venue: "AIES 2025"
-    venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
-    url: "https://arxiv.org/abs/2412.09677"
-    tags:
-      - AI Governance
-      - Deployment
+  - title: "The next Turing tests: Reimagining conceptions and measures of AI"
+    authors:
+      - "Jose Hernandez-Orallo"
+      - "Katherine M. Collins"
+      - "Lucy Cheke"
+      - "Laura Weidinger"
+      - "Umang Bhatt"
+      - "Thomas L. Griffiths"
+      - "Stephen Cave"
+    year: 2026
+    venue: "Science"
+    url: "https://doi.org/10.1126/science.aee3176"
+    citations: 0
 
   - title: "Towards Interactive Evaluations for Interaction Harms in Human-AI Systems"
-    authors: "Ibrahim, L., Huang, S., Ahmad, L., Bhatt, U., Anderljung, M."
+    authors:
+      - "Lujain Ibrahim"
+      - "Saffron Huang"
+      - "Lama Ahmad"
+      - "Umang Bhatt"
+      - "Markus Anderljung"
     year: 2025
-    venue: "AIES 2025"
-    venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
-    url: "https://arxiv.org/abs/2404.12994"
-    tags:
-      - Human-AI Interaction
+    venue: "AIES"
+    url: "https://doi.org/10.1609/aies.v8i2.36631"
+    citations: 8
+
+  - title: "Beyond Quantification: Navigating Uncertainty in Professional AI Systems"
+    authors:
+      - "Sylvie Delacroix"
+      - "Diana Robinson"
+      - "Umang Bhatt"
+      - "Jacopo Domenicucci"
+      - "Jessica Montgomery"
+      - "Gaël Varoquaux"
+      - "Carl Henrik Ek"
+      - "Vincent Fortuin"
+      - "Yulan He"
+      - "Tom Diethe"
+      - "Neill Campbell"
+      - "Mennatallah El‐Assady"
+      - "Søren Hauberg"
+      - "Ivana Dusparić"
+      - "Neil D. Lawrence"
+    year: 2025
+    venue: "RSS: Data Science and AI"
+    url: "https://doi.org/10.1093/rssdat/udaf002"
+    citations: 5
+
+  - title: "Context-specific certification of AI systems: a pilot in the financial industry"
+    authors:
+      - "Kendall Brogle"
+      - "Emma Kallina"
+      - "Holli Sargeant"
+      - "Var Shankar"
+      - "Adrian Weller"
+      - "Ashley Casovan"
+      - "Umang Bhatt"
+    year: 2025
+    venue: "AI and Ethics"
+    url: "https://doi.org/10.1007/s43681-025-00720-w"
+    citations: 4
 
   - title: "Learning Personalized Decision Support Policies"
-    authors: "Bhatt, U., Chen, V., Collins, K.M., Kamalaruban, P., Kallina, E., Weller, A., Talwalkar, A."
+    authors:
+      - "Umang Bhatt"
+      - "Valerie Chen"
+      - "Katherine M. Collins"
+      - "Parameswaran Kamalaruban"
+      - "Emma Kallina"
+      - "Adrian Weller"
+      - "Ameet Talwalkar"
     year: 2025
-    venue: "AAAI 2025"
-    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
-    url: "https://arxiv.org/abs/2404.15495"
-    tags:
-      - Human-AI Interaction
-      - Decision Support
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v39i13.33555"
+    citations: 4
 
-  - title: "Building Machines that Learn and Think with People"
-    authors: "Collins, K.M., Sucholutsky, I., Bhatt, U., Chandra, K., Wong, L., Lee, M., Zhang, C.E., ..."
+  - title: "Documenting Deployment with Fabric: A Repository of Real-World AI Governance"
+    authors:
+      - "Mackenzie Jorgensen"
+      - "Kendall Brogle"
+      - "Katherine M. Collins"
+      - "Lujain Ibrahim"
+      - "Arina Shah"
+      - "Petra Ivanovic"
+      - "Noah Broestl"
+      - "Gabriel Piles"
+      - "Paul Dongha"
+      - "Hatim Abdulhussein"
+      - "Adrian Weller"
+      - "Jillian Powers"
+      - "Umang Bhatt"
+    year: 2025
+    venue: "AIES"
+    url: "https://doi.org/10.1609/aies.v8i2.36636"
+    citations: 0
+
+  - title: "Building machines that learn and think with people"
+    authors:
+      - "Katherine M. Collins"
+      - "Ilia Sucholutsky"
+      - "Umang Bhatt"
+      - "Kartik Chandra"
+      - "Lionel Wong"
+      - "Mina Lee"
+      - "Cedegao E. Zhang"
+      - "Tan Zhi‐Xuan"
+      - "Mark K. Ho"
+      - "Vikash K. Mansinghka"
+      - "Adrian Weller"
+      - "Joshua B. Tenenbaum"
+      - "Thomas L. Griffiths"
     year: 2024
     venue: "Nature Human Behaviour"
-    venue_full: "Nature Human Behaviour"
     url: "https://doi.org/10.1038/s41562-024-01991-9"
-    tags:
-      - Human-AI Interaction
-      - Cognitive Science
+    citations: 66
 
-  - title: "Evaluating Language Models for Mathematics through Interactions"
-    authors: "Collins, K.M., Jiang, A.Q., Frieder, S., Wong, L., Zilka, M., Bhatt, U., Lukasiewicz, T., ..."
+  - title: "Evaluating language models for mathematics through interactions"
+    authors:
+      - "Katherine M. Collins"
+      - "Albert Q. Jiang"
+      - "Simon Frieder"
+      - "Lionel Wong"
+      - "Miri Zilka"
+      - "Umang Bhatt"
+      - "Thomas Lukasiewicz"
+      - "Yuhuai Wu"
+      - "Joshua B. Tenenbaum"
+      - "William Hart"
+      - "W. T. Gowers"
+      - "Wenda Li"
+      - "Adrian Weller"
+      - "Mateja Jamnik"
     year: 2024
     venue: "PNAS"
-    venue_full: "Proceedings of the National Academy of Sciences"
     url: "https://doi.org/10.1073/pnas.2318124121"
-    tags:
-      - Machine Learning
-      - Mathematics
+    citations: 49
 
-  - title: "Large Language Models Must Be Taught to Know What They Don't Know"
-    authors: "Kapoor, S., Gruver, N., Roberts, M., Collins, K., Pal, A., Bhatt, U., Weller, A., ..."
+  - title: "Large Language Models Must Be Taught to Know What They Don’t Know"
+    authors:
+      - "Sanyam Kapoor"
+      - "Nate Gruver"
+      - "Manley Roberts"
+      - "Katherine M. Collins"
+      - "Arka Pal"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+      - "Samuel Dooley"
+      - "Micah Goldblum"
+      - "Andrew Wilson"
     year: 2024
-    venue: "NeurIPS 2024"
-    venue_full: "Advances in Neural Information Processing Systems"
-    url: "https://arxiv.org/abs/2308.12436"
-    tags:
-      - Machine Learning
+    venue: "NeurIPS"
+    url: "https://doi.org/10.52202/079017-2729"
+    citations: 3
 
   - title: "When Should Algorithms Resign? A Proposal for AI Governance"
-    authors: "Bhatt, U., Sargeant, H."
+    authors:
+      - "Umang Bhatt"
+      - "Holli Sargeant"
     year: 2024
     venue: "IEEE Computer"
-    venue_full: "IEEE Computer"
-    url: "https://doi.org/10.1109/MC.2024.3444471"
-    tags:
-      - AI Governance
-
-  - title: "Modulating Language Model Experiences through Frictions"
-    authors: "Collins, K.M., Chen, V., Sucholutsky, I., Kirk, H.R., Sadek, M., Sargeant, H., ..."
-    year: 2024
-    venue: "NeurIPS 2024 Workshop"
-    venue_full: "NeurIPS 2024 Workshop on Behavioral Machine Learning"
-    url: "https://arxiv.org/abs/2407.10264"
-    tags:
-      - Human-AI Interaction
-      - Machine Learning
-
-  - title: "Trustworthy Machine Learning: From Algorithmic Transparency to Decision Support"
-    authors: "Bhatt, U."
-    year: 2024
-    venue: "PhD Thesis"
-    venue_full: "University of Cambridge"
-    url: "https://doi.org/10.17863/CAM.113707"
-    tags:
-      - Human-AI Interaction
-      - Trust
-      - Decision Support
-
-  - title: "Comparing Abstraction in Humans and Machines Using Multimodal Serial Reproduction"
-    authors: "Kumar, S., Marjieh, R., Zhang, B., Campbell, D., Hu, M.Y., Bhatt, U., Lake, B., ..."
-    year: 2024
-    venue: "CogSci 2024"
-    venue_full: "Proceedings of the Annual Meeting of the Cognitive Science Society"
-    url: "https://arxiv.org/abs/2402.13806"
-    tags:
-      - Cognitive Science
+    url: "https://doi.org/10.1109/mc.2024.3431328"
+    citations: 3
 
   - title: "Harms from Increasingly Agentic Algorithmic Systems"
-    authors: "Chan, A., Salganik, R., Markelius, A., Pang, C., Rajkumar, N., Krasheninnikov, D., ..."
+    authors:
+      - "Alan Chan"
+      - "Rebecca Salganik"
+      - "Alva Markelius"
+      - "Chris Pang"
+      - "Nitarshan Rajkumar"
+      - "Dmitrii Krasheninnikov"
+      - "Lauro Langosco"
+      - "Zhonghao He"
+      - "Yawen Duan"
+      - "Micah Carroll"
+      - "Michelle Lin"
+      - "Alex Mayhew"
+      - "Katherine M. Collins"
+      - "Maryam Molamohammadi"
+      - "John Burden"
+      - "Wanru Zhao"
+      - "Shalaleh Rismani"
+      - "Konstantinos Voudouris"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+      - "David Krueger"
+      - "Tegan Maharaj"
     year: 2023
-    venue: "FAccT 2023"
-    venue_full: "Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency"
-    url: "https://arxiv.org/abs/2302.10329"
-    tags:
-      - Agentic AI
-
-  - title: "Towards Robust Metrics for Concept Representation Evaluation"
-    authors: "Zarlenga, M.E., Barbiero, P., Shams, Z., Kazhdan, D., Bhatt, U., Weller, A., ..."
-    year: 2023
-    venue: "AAAI 2023"
-    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
-    url: "https://arxiv.org/abs/2301.10367"
-    tags:
-      - Cognitive Science
+    venue: "FAccT"
+    url: "https://doi.org/10.1145/3593013.3594033"
+    citations: 122
 
   - title: "Human Uncertainty in Concept-Based AI Systems"
-    authors: "Collins, K.M., Barker, M., Espinosa Zarlenga, M., Raman, N., Bhatt, U., Jamnik, M., ..."
+    authors:
+      - "Katherine M. Collins"
+      - "Matthew L Barker"
+      - "Mateo Espinosa Zarlenga"
+      - "Naveen Raman"
+      - "Umang Bhatt"
+      - "Mateja Jamnik"
+      - "Ilia Sucholutsky"
+      - "Adrian Weller"
+      - "Krishnamurthy Dvijotham"
     year: 2023
-    venue: "AIES 2023"
-    venue_full: "Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society"
-    url: "https://arxiv.org/abs/2303.12872"
-    tags:
-      - Uncertainty
-      - Cognitive Science
+    venue: "AIES"
+    url: "https://doi.org/10.1145/3600211.3604692"
+    citations: 17
 
-  - title: "On the Informativeness of Supervision Signals"
-    authors: "Sucholutsky, I., Battleday, R.M., Collins, K.M., Marjieh, R., Peterson, J., Singh, P., ..."
-    year: 2023
-    venue: "UAI 2023"
-    venue_full: "Uncertainty in Artificial Intelligence"
-    url: "https://arxiv.org/abs/2211.09429"
-    tags:
-      - Cognitive Science
-
-  - title: "Approximating Full Conformal Prediction at Scale via Influence Functions"
-    authors: "Martinez, J.A., Bhatt, U., Weller, A., Cherubin, G."
-    year: 2023
-    venue: "AAAI 2023"
-    venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
-    url: "https://arxiv.org/abs/2202.01315"
-    tags:
-      - Uncertainty
-
-  - title: "Algorithmic Loafing and Mitigation Strategies in Human-AI Teams"
-    authors: "Inuwa-Dutse, I., Toniolo, A., Weller, A., Bhatt, U."
-    year: 2023
-    venue: "Computers in Human Behavior: AI"
-    venue_full: "Computers in Human Behavior: Artificial Humans"
-    url: "https://doi.org/10.1016/j.chbah.2023.100024"
-    tags:
-      - Human-AI Interaction
-
-  - title: "Feedbacklogs: Recording and Incorporating Stakeholder Feedback into Machine Learning Pipelines"
-    authors: "Barker, M., Kallina, E., Ashok, D., Collins, K., Casovan, A., Weller, A., Talwalkar, A., ..."
-    year: 2023
-    venue: "EAAMO 2023"
-    venue_full: "Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization"
-    url: "https://arxiv.org/abs/2307.15475"
-    tags:
-      - Human-AI Interaction
-      - Feedback
-
-  - title: "Human-in-the-Loop Mixup"
-    authors: "Collins, K.M., Bhatt, U., Liu, W., Piratla, V., Sucholutsky, I., Love, B., Weller, A."
-    year: 2023
-    venue: "UAI 2023"
-    venue_full: "Uncertainty in Artificial Intelligence"
-    url: "https://arxiv.org/abs/2211.12735"
-    tags:
-      - Human-AI Interaction
-      - Machine Learning
-
-  - title: "Iterative Teaching by Data Hallucination"
-    authors: "Qiu, Z., Liu, W., Xiao, T.Z., Liu, Z., Bhatt, U., Luo, Y., Weller, A., Schölkopf, B."
-    year: 2023
-    venue: "AISTATS 2023"
-    venue_full: "International Conference on Artificial Intelligence and Statistics"
-    url: "https://arxiv.org/abs/2210.17467"
-    tags:
-      - Cognitive Science
-      - Machine Learning
-
-  - title: "Selective Concept Models: Permitting Stakeholder Customisation at Test-Time"
-    authors: "Barker, M., Collins, K.M., Dvijotham, K., Weller, A., Bhatt, U."
-    year: 2023
-    venue: "HCOMP 2023"
-    venue_full: "Proceedings of the AAAI Conference on Human Computation and Crowdsourcing"
-    url: "https://arxiv.org/abs/2306.05957"
-    tags:
-      - Human-AI Interaction
-      - Cognitive Science
-
-  - title: "Perspectives on Incorporating Expert Feedback into Model Updates"
-    authors: "Chen, V., Bhatt, U., Heidari, H., Weller, A., Talwalkar, A."
+  - title: "Perspectives on incorporating expert feedback into model updates"
+    authors:
+      - "Valerie Chen"
+      - "Umang Bhatt"
+      - "Hoda Heidari"
+      - "Adrian Weller"
+      - "Ameet Talwalkar"
     year: 2023
     venue: "Patterns"
-    venue_full: "Patterns"
-    url: "https://doi.org/10.1016/j.patter.2023.100757"
-    tags:
-      - Feedback
+    url: "https://doi.org/10.1016/j.patter.2023.100780"
+    citations: 8
 
-  - title: "GeValDi: Generative Validation of Discriminative Models"
-    authors: "Palaniappan, V., Ashman, M., Collins, K.M., Heo, J., Weller, A., Bhatt, U."
+  - title: "FeedbackLogs: Recording and Incorporating Stakeholder Feedback into Machine Learning Pipelines"
+    authors:
+      - "Matthew L Barker"
+      - "Emma Kallina"
+      - "Dhananjay Ashok"
+      - "Katherine M. Collins"
+      - "Ashley Casovan"
+      - "Adrian Weller"
+      - "Ameet Talwalkar"
+      - "Valerie Chen"
+      - "Umang Bhatt"
     year: 2023
-    venue: "ICLR 2023 Workshop"
-    venue_full: "ICLR 2023 Workshop on Pitfalls of Limited Data and Computation"
-    url: "https://arxiv.org/abs/2211.12510"
-    tags:
-      - Machine Learning
+    venue: "EAAMO"
+    url: "https://doi.org/10.1145/3617694.3623239"
+    citations: 7
+
+  - title: "Towards Robust Metrics for Concept Representation Evaluation"
+    authors:
+      - "Mateo Espinosa Zarlenga"
+      - "Pietro Barbiero"
+      - "Zohreh Shams"
+      - "Dmitry Kazhdan"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+      - "Mateja Jamnik"
+    year: 2023
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v37i10.26392"
+    citations: 6
+
+  - title: "Approximating Full Conformal Prediction at Scale via Influence Functions"
+    authors:
+      - "Javier Abad Martinez"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+      - "Giovanni Cherubin"
+    year: 2023
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v37i6.25814"
+    citations: 4
+
+  - title: "Selective Concept Models: Permitting Stakeholder Customisation at Test-Time"
+    authors:
+      - "Matthew L Barker"
+      - "Katherine M. Collins"
+      - "Krishnamurthy Dvijotham"
+      - "Adrian Weller"
+      - "Umang Bhatt"
+    year: 2023
+    venue: "HCOMP"
+    url: "https://doi.org/10.1609/hcomp.v11i1.27543"
+    citations: 2
+
+  - title: "How transparency modulates trust in artificial intelligence"
+    authors:
+      - "John Zerilli"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+    year: 2022
+    venue: "Patterns"
+    url: "https://doi.org/10.1016/j.patter.2022.100455"
+    citations: 227
+
+  - title: "On the Fairness of Causal Algorithmic Recourse"
+    authors:
+      - "Julius von Kügelgen"
+      - "Amir-Hossein Karimi"
+      - "Umang Bhatt"
+      - "Isabel Valera"
+      - "Adrian Weller"
+      - "Bernhard Schölkopf"
+    year: 2022
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v36i9.21192"
+    citations: 54
+
+  - title: "Uncertainty Quantification with Pre-trained Language Models: A Large-Scale Empirical Analysis"
+    authors:
+      - "Yuxin Xiao"
+      - "Paul Pu Liang"
+      - "Umang Bhatt"
+      - "Willie Neiswanger"
+      - "Ruslan Salakhutdinov"
+      - "Louis‐Philippe Morency"
+    year: 2022
+    venue: "EMNLP"
+    url: "https://doi.org/10.18653/v1/2022.findings-emnlp.538"
+    citations: 28
+
+  - title: "Eliciting and Learning with Soft Labels from Every Annotator"
+    authors:
+      - "Katherine M. Collins"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+    year: 2022
+    venue: "HCOMP"
+    url: "https://doi.org/10.1609/hcomp.v10i1.21986"
+    citations: 26
+
+  - title: "Diverse, Global and Amortised Counterfactual Explanations for Uncertainty Estimates"
+    authors:
+      - "Dan Ley"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+    year: 2022
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v36i7.20702"
+    citations: 16
+
+  - title: "On the Utility of Prediction Sets in Human-AI Teams"
+    authors:
+      - "Varun Babbar"
+      - "Umang Bhatt"
+      - "Adrian Weller"
+    year: 2022
+    venue: "IJCAI"
+    url: "https://doi.org/10.24963/ijcai.2022/341"
+    citations: 13
+
+  - title: "Uncertainty as a Form of Transparency: Measuring, Communicating, and Using Uncertainty"
+    authors:
+      - "Umang Bhatt"
+      - "Javier Antorán"
+      - "Yunfeng Zhang"
+      - "Q. Vera Liao"
+      - "Prasanna Sattigeri"
+      - "Riccardo Fogliato"
+      - "Gabrielle Gauthier Melançon"
+      - "Ranganath Krishnan"
+      - "Jason Stanley"
+      - "Omesh Tickoo"
+      - "Lama Nachman"
+      - "Rumi Chunara"
+      - "Madhulika Srikumar"
+      - "Adrian Weller"
+      - "Alice Xiang"
+    year: 2021
+    venue: "AIES"
+    url: "https://doi.org/10.1145/3461702.3462571"
+    citations: 220
+
+  - title: "FIMAP: Feature Importance by Minimal Adversarial Perturbation"
+    authors:
+      - "Matt Chapman-Rounds"
+      - "Umang Bhatt"
+      - "Erik Pazos"
+      - "Marc-André Schulz"
+      - "Konstantinos Georgatzis"
+    year: 2021
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v35i13.17362"
+    citations: 15
+
+  - title: "Getting a CLUE: A Method for Explaining Uncertainty Estimates"
+    authors:
+      - "Javier Antorán"
+      - "Umang Bhatt"
+      - "Tameem Adel"
+      - "Adrian Weller"
+      - "José Miguel Hernández-Lobato"
+    year: 2021
+    venue: "ICLR"
+    url: "https://doi.org/10.17863/cam.69929"
+    citations: 12
+
+  - title: "You shouldn’t trust me: Learning models which conceal unfairness from multiple explanation methods."
+    authors:
+      - "Botty Dimanov"
+      - "Umang Bhatt"
+      - "Mateja Jamnik"
+      - "Adrian Weller"
+    year: 2020
+    venue: "ECAI"
+    url: "https://doi.org/10.17863/cam.48825"
+    citations: 54
+
+  - title: "Evaluating and Aggregating Feature-based Model Explanations"
+    authors:
+      - "Umang Bhatt"
+      - "Adrian Weller"
+      - "José M. F. Moura"
+    year: 2020
+    venue: "IJCAI"
+    url: "https://doi.org/10.24963/ijcai.2020/417"
+    citations: 26
+
+  - title: "Explainable machine learning in deployment"
+    authors:
+      - "Umang Bhatt"
+      - "Alice Xiang"
+      - "Shubham Sharma"
+      - "Adrian Weller"
+      - "Ankur Taly"
+      - "Yunhan Jia"
+      - "Joydeep Ghosh"
+      - "Ruchir Puri"
+      - "José M. F. Moura"
+      - "Peter Eckersley"
+    year: 2020
+    venue: "FAccT"
+    url: "https://doi.org/10.1145/3351095.3375624"
+    citations: 16
+
+  - title: "On Network Science and Mutual Information for Explaining Deep Neural Networks"
+    authors:
+      - "Brian M. Davis"
+      - "Umang Bhatt"
+      - "Kartikeya Bhardwaj"
+      - "Radu Mărculescu"
+      - "José M. F. Moura"
+    year: 2020
+    venue: "ICASSP"
+    url: "https://doi.org/10.1109/icassp40776.2020.9053078"
+    citations: 12
+
+  - title: "Building Human-Machine Trust via Interpretability"
+    authors:
+      - "Umang Bhatt"
+      - "Pradeep Ravikumar"
+      - "José M. F. Moura"
+    year: 2019
+    venue: "AAAI"
+    url: "https://doi.org/10.1609/aaai.v33i01.33019919"
+    citations: 20
+
+  - title: "Diagnostic Model Explanations: A Medical Narrative."
+    authors:
+      - "Umang Bhatt"
+      - "Brian M. Davis"
+      - "José M. F. Moura"
+    year: 2019
+    venue: "AAAI"
+    url: "https://openalex.org/W2982476630"
+    citations: 3
+
+  - title: "A Robot’s Expressive Language Affects Human Strategy and Perceptions in a Competitive Game"
+    authors:
+      - "Aaron M. Roth"
+      - "Samantha Reig"
+      - "Umang Bhatt"
+      - "Jonathan Shulgach"
+      - "Tamara Amin"
+      - "Afsaneh Doryab"
+      - "Fei Fang"
+      - "Manuela Veloso"
+    year: 2019
+    venue: "RO-MAN"
+    url: "https://doi.org/10.1109/ro-man46459.2019.8956412"
+    citations: 1

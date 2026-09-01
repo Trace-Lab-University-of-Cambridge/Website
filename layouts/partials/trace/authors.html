@@ -1,0 +1,28 @@
+{{/*
+  Author list for a publication.
+
+  Context: dict "authors" <list of names> "limit" <int, optional>
+
+  Names belonging to the lab are set in bold, so you can see the group's
+  contribution at a glance. Very long lists (the reporting-checklist paper has
+  eighty authors) are cut with a count rather than a bare ellipsis, so the
+  reader knows how many are missing.
+*/}}
+{{- $lab := slice -}}
+{{- range site.Data.people.groups }}{{ range .people }}{{ $lab = $lab | append .name }}{{ end }}{{ end -}}
+{{- range site.Data.people.alumni.groups }}{{ range .people }}{{ $lab = $lab | append .name }}{{ end }}{{ end -}}
+
+{{- $all := .authors -}}
+{{- $limit := .limit | default 14 -}}
+{{- $shown := $all -}}
+{{- $extra := 0 -}}
+{{- if gt (len $all) $limit -}}
+  {{- $shown = first (sub $limit 2) $all -}}
+  {{- $extra = sub (len $all) (sub $limit 2) -}}
+{{- end -}}
+
+{{- range $i, $name := $shown -}}
+  {{- if $i }}, {{ end -}}
+  {{- if in $lab $name }}<b>{{ $name }}</b>{{ else }}{{ $name }}{{ end -}}
+{{- end -}}
+{{- if $extra }}, and {{ $extra }} others{{ end -}}

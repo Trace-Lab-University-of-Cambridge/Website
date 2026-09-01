@@ -1,0 +1,244 @@
+{{/*
+  TRACE Lab homepage.
+
+  Deliberately standalone rather than a HugoBlox block page: the content here is
+  structured data (data/people.yaml, research.yaml, news.yaml, partners.yaml),
+  and rendering it directly is what lets the roster carry flags, cohorts, and
+  alumni without any hand-written HTML.
+*/}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-GB" }}">
+<head>
+  {{ partial "trace/head.html" (dict "page" . "title" "TRACE Lab · Trustworthy AI at the University of Cambridge") }}
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+{{ partial "trace/nav.html" . }}
+
+<main id="main">
+
+  {{/* ---------------------------------------------------------------- Masthead */}}
+  <section class="masthead">
+    <div class="wrap rail masthead__inner">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+      <p class="eyebrow eyebrow--light">
+        <b>TR</b>ustworthy <b>A</b>rtificial intelligen<b>CE</b> Laboratory
+      </p>
+      <h1 class="masthead__thesis">Trustworthy AI @ University of Cambridge</h1>
+      <p class="masthead__sub">
+        We study how AI systems behave once people and institutions depend on
+        them, across three programmes: externalities, human AI orchestration,
+        and deployment in organisations.
+      </p>
+      <p class="masthead__affil">
+        University of Cambridge &nbsp;·&nbsp; Centre for Human-Inspired AI
+        &nbsp;·&nbsp; King's College
+      </p>
+      </div>
+    </div>
+  </section>
+
+  {{/* Bands alternate white and tint. Counted rather than hardcoded, because
+     Alumni and Spinouts drop out when their data is empty. */}}
+  {{- $band := 0 }}
+
+  {{/* --------------------------------------------------------------- Research
+       Prose with sub-headings, in the register the field actually writes in.
+       The programme title links to its project site. */}}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }}" id="research">
+    <div class="wrap rail">
+      <h2 class="rail__label">Research</h2>
+      <div class="rail__body prose">
+        {{- range site.Data.research.areas }}
+        <div class="topic">
+          <h3 class="topic__title">
+            {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>
+            {{- else }}{{ .title }}{{ end -}}
+          </h3>
+          <p>{{ .body | safeHTML }}</p>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ------------------------------------------------------------------ People */}}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }} band--pattern" id="team">
+    <div class="wrap rail">
+      <h2 class="rail__label">People</h2>
+      <div class="rail__body">
+        {{- range site.Data.people.groups }}
+          {{- if .people }}
+          <div class="group">
+            <h3 class="group__label">{{ .label }}</h3>
+            <div class="roster">
+              {{- range .people }}
+                {{ partial "trace/person.html" (dict "person" .) }}
+              {{- end }}
+            </div>
+          </div>
+          {{- end }}
+        {{- end }}
+
+        <div class="group">
+          <h3 class="group__label">Visiting and Affiliated Students</h3>
+          <ul class="namelist">
+            {{- range site.Data.people.affiliated }}
+            <li>
+              {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end -}}
+              <span class="namelist__org">{{ .org }}</span>
+            </li>
+            {{- end }}
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3 class="group__label">Collaborators</h3>
+          <ul class="namelist">
+            {{- range site.Data.people.collaborators }}
+            <li>
+              {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end -}}
+              <span class="namelist__org">{{ .org }}</span>
+            </li>
+            {{- end }}
+          </ul>
+        </div>
+        {{- $hasAlumni := false }}
+        {{- range site.Data.people.alumni.groups }}{{ if .people }}{{ $hasAlumni = true }}{{ end }}{{ end }}
+        {{- if $hasAlumni }}
+        <p class="more"><a href="/alumni/">Alumni</a></p>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ------------------------------------------------------------ Publications */}}
+  {{/* Hand-picked in data/publications_overrides.yaml, in that order. Sorting by
+     date put preprints on the homepage, which is not what belongs there. */}}
+{{- $pubs := slice }}
+{{- range site.Data.publications_overrides.featured }}
+  {{- $needle := lower . }}
+  {{- range site.Data.publications.publications }}
+    {{- if in (lower .title) $needle }}{{ $pubs = $pubs | append . }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- if not $pubs }}{{ $pubs = first 4 (sort site.Data.publications.publications "year" "desc") }}{{ end }}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }}" id="publications">
+    <div class="wrap rail">
+      <h2 class="rail__label">Publications</h2>
+      <div class="rail__body">
+        <ul class="pubs">
+          {{- range $pubs }}
+          <li class="pub">
+            <span class="pub__year code">{{ .year }}</span>
+            <div>
+              <h3 class="pub__title"><a href="{{ .url }}" rel="noopener">{{ .title }}</a></h3>
+              <p class="pub__authors">{{ partial "trace/authors.html" (dict "authors" .authors "limit" 8) }}</p>
+              {{- with .venue }}<p class="pub__venue">{{ . }}</p>{{ end }}
+            </div>
+          </li>
+          {{- end }}
+        </ul>
+        <p class="more"><a href="/publications/">All publications</a></p>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---------------------------------------------------------------- Spinouts
+       Companies founded out of lab research. Same prose register as Research:
+       what it does and who took it out, not a product pitch. */}}
+  {{- with site.Data.spinouts.ventures }}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }}" id="spinouts">
+    <div class="wrap rail">
+      <h2 class="rail__label">Spinouts</h2>
+      <div class="rail__body">
+        <ul class="ventures">
+          {{- range . }}
+          <li class="venture">
+            <span class="venture__year code">{{ .founded }}</span>
+            <div>
+              <h3 class="venture__name">
+                {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end -}}
+              </h3>
+              <p class="venture__body">{{ .body | safeHTML }}</p>
+              {{- with .people }}<p class="venture__people">{{ . | safeHTML }}</p>{{ end }}
+            </div>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+  {{/* -------------------------------------------------------------------- News */}}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }}" id="news">
+    <div class="wrap rail">
+      <h2 class="rail__label">News</h2>
+      <div class="rail__body">
+        <ul class="news">
+          {{- range first 3 site.Data.news.items }}
+          <li class="news__item">
+            <span class="news__date code">{{ .date }}</span>
+            <p>{{ .html | safeHTML }}</p>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---------------------------------------------------------------- Partners */}}
+  {{ $band = add $band 1 }}<section class="band{{ if eq (mod $band 2) 0 }} band--tint{{ end }} band--pattern" id="partners">
+    <div class="wrap rail">
+      <h2 class="rail__label">Partners</h2>
+      <div class="rail__body">
+        {{- range site.Data.partners.groups }}
+        <div class="group">
+          <h3 class="group__label">{{ .label }}</h3>
+          <div class="logos">
+            {{- range .logos }}
+              {{- if .file }}
+            <a href="{{ .url }}" rel="noopener" title="{{ .alt }}">
+              <img src="/media/{{ .file }}" alt="{{ .alt }}" loading="lazy"{{ with .height }} style="height: {{ . }}px"{{ end }}>
+            </a>
+              {{- else }}
+            <a class="logos__name" href="{{ .url }}" rel="noopener">{{ .alt }}</a>
+              {{- end }}
+            {{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ------------------------------------------------------------------ Joining */}}
+  <section class="cta" id="join">
+    <div class="wrap rail">
+      <h2 class="rail__label">Join</h2>
+      <div class="rail__body">
+        <h2>Work with us</h2>
+        <p>
+          We take students through CHIA's MPhil and PhD programmes in
+          Human-Inspired AI. Name Umang in your application. If you are already
+          at Cambridge, or asking about postdoctoral roles, write to us
+          directly.
+        </p>
+        <p class="cta__actions">
+          <a class="btn" href="/join/">How to apply</a>
+          <a class="btn btn--quiet" href="mailto:usb20@cam.ac.uk">usb20@cam.ac.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ partial "trace/footer.html" . }}
+
+</body>
+</html>

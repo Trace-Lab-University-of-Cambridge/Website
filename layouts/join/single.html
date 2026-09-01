@@ -1,0 +1,79 @@
+{{/* Join Us. Content from data/join.yaml, in the same system as every other page. */}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-GB" }}">
+<head>
+  {{ partial "trace/head.html" (dict "page" . "title" "Join Us · TRACE Lab" "description" "How to apply to work with the TRACE Lab at the University of Cambridge.") }}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{{ partial "trace/nav.html" . }}
+
+{{- $join := site.Data.join }}
+<main id="main">
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+        <p class="eyebrow">TRACE Lab</p>
+        <h1 class="pagehead__title">Join us</h1>
+        <p class="pagehead__sub">{{ $join.intro }}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">How to apply</h2>
+      <div class="rail__body">
+        <ul class="routes">
+          {{- range $join.routes }}
+          <li class="route">
+            <h3 class="route__name">{{ .name }}</h3>
+            <p class="route__detail">{{ .detail | safeHTML }}</p>
+            {{- if .url }}
+            <p><a class="route__link" href="{{ .url }}">{{ .url_label | default .url }}</a></p>
+            {{- end }}
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--tint">
+    <div class="wrap rail">
+      <h2 class="rail__label">What we look for</h2>
+      <div class="rail__body">
+        <ul class="topic__points">
+          {{- range $join.looking_for }}<li>{{ . | safeHTML }}</li>{{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">Funding</h2>
+      <div class="rail__body prose">
+        <div class="topic"><p>{{ $join.funding | safeHTML }}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap rail">
+      <h2 class="rail__label">Contact</h2>
+      <div class="rail__body">
+        <h2>Get in touch</h2>
+        <p>{{ $join.contact }}</p>
+        <p class="cta__actions">
+          <a class="btn" href="mailto:usb20@cam.ac.uk">usb20@cam.ac.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ partial "trace/footer.html" . }}
+</body>
+</html>

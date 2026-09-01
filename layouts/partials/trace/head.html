@@ -1,0 +1,28 @@
+{{/*
+  Shared <head> for the hand-built TRACE pages.
+  Context: dict "page" <Page> "title" <string> "description" <string>
+*/}}
+{{- $css := resources.Get "css/trace.css" -}}
+{{- if hugo.IsProduction -}}
+  {{- $css = $css | minify | fingerprint "md5" -}}
+{{- end -}}
+{{- $desc := .description | default site.Params.marketing.seo.description -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ .title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .page.Permalink }}">
+<meta property="og:title" content="{{ .title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .page.Permalink }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/media/trace-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- with site.Params.marketing.analytics.google_analytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ . }}');</script>
+{{- end }}

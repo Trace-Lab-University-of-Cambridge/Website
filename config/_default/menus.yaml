@@ -1,8 +1,7 @@
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-
+# Navigation.
+#
+# Alumni is reached from the People section, Partners is a section on the
+# homepage, and Spinouts is not public — none of them get a tab.
 main:
   - name: Home
     url: /
@@ -13,15 +12,12 @@ main:
   - name: Team
     url: /#team
     weight: 30
-  - name: Partners
-    url: /#partners
-    weight: 35
   - name: Publications
     url: /#publications
     weight: 40
   - name: News
     url: /#news
-    weight: 45
+    weight: 50
   - name: Join Us
-    url: join/
+    url: /join/
     weight: 60

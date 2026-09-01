@@ -1,0 +1,15 @@
+{{/* Site header. The menu is defined in config/_default/menus.yaml. */}}
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="wordmark" href="/" aria-label="TRACE Lab home">
+      <img src="/media/trace-logo.svg" alt="TRACE" height="22">
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      {{- range site.Menus.main }}
+        {{- if ne .Name "Home" }}
+          <a href="{{ .URL }}"{{ if eq .URL $.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{- end -}}
+      {{- end }}
+    </nav>
+  </div>
+</header>

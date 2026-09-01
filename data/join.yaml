@@ -1,0 +1,45 @@
+# The Join Us page.
+
+intro: >-
+  We supervise students through the Centre for Human-Inspired AI (CHIA). If you
+  want to work with us, we want to hear from you!
+
+routes:
+  - name: MPhil in Human-Inspired AI
+    detail: >-
+      A nine-month taught programme combining coursework with a supervised
+      research project. Apply through CHIA and name Dr. Umang Bhatt in your
+      application.
+    url: https://www.postgraduate.study.cam.ac.uk/courses/directory/iethmphia
+    url_label: Course page
+  - name: PhD in Human-Inspired AI
+    detail: >-
+      A four-year research degree. Apply through CHIA and name Dr. Umang Bhatt in
+      your application. Co-supervision with Psychology, Computer Science,
+      Economics, and other departments is possible.
+    url: https://www.postgraduate.study.cam.ac.uk/courses/directory/iethpdhii
+    url_label: Course page
+  - name: Already at Cambridge, or asking about postdocs
+    detail: >-
+      Part III, MEng, and MPhil students elsewhere in the University take
+      projects with us most years, and we take postdoctoral researchers when
+      funding allows. Write directly rather than applying through a programme.
+    url: mailto:usb20@cam.ac.uk
+    url_label: usb20@cam.ac.uk
+
+looking_for:
+  # Quoted: an unquoted colon inside a list item makes YAML read it as a map.
+  - "A background in machine learning, statistics, computer science, or a social science with quantitative training."
+  - "Comfort with empirical work: running studies with people, and reading the results honestly."
+  - "An interest in what AI does outside the benchmark, in the settings where it is actually used."
+
+contact: >-
+  Send a CV and a short note on what you want to work on and why. We read
+  everything, but the volume of outreach means we cannot reply to every
+  message.
+
+funding: >-
+  Departmental, EPSRC, and college awards are considered automatically when you
+  apply, so there is no separate form.
+  <a href="https://www.gatescambridge.org/">Gates Cambridge</a> is a separate
+  application with an earlier deadline, so check its dates before you start.

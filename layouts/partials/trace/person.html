@@ -1,0 +1,54 @@
+{{/*
+  One person in the roster grid.
+
+  Context: dict "person" <entry from data/people.yaml>
+*/}}
+{{- $p := .person -}}
+{{- $photo := $p.photo | default "placeholder.svg" -}}
+
+<div class="person">
+  {{- if $p.url -}}
+    <a class="person__portrait" href="{{ $p.url }}" rel="noopener">
+      <img src="/media/team/{{ $photo }}" alt="{{ $p.name }}" loading="lazy" width="120" height="120">
+    </a>
+  {{- else -}}
+    <span class="person__portrait">
+      <img src="/media/team/{{ $photo }}" alt="{{ $p.name }}" loading="lazy" width="120" height="120">
+    </span>
+  {{- end -}}
+
+  <div class="person__body">
+    <h3 class="person__name">
+      {{- if $p.url -}}
+        <a href="{{ $p.url }}" rel="noopener">{{ $p.name }}</a>
+      {{- else -}}
+        {{ $p.name }}
+      {{- end -}}
+      {{- with $p.flags }}
+        <span class="flags">
+          {{- range . -}}
+            {{- $country := index site.Data.countries . | default . -}}
+            <img class="flag" src="/media/flags/{{ . }}.svg" alt="{{ $country }}" title="{{ $country }}" width="18" height="14" loading="lazy">
+          {{- end -}}
+        </span>
+      {{- end -}}
+    </h3>
+
+    {{- with $p.title }}<p class="person__title">{{ . }}</p>{{ end -}}
+
+    {{/* Meta line: co-supervisor and any qualifiers. Only rendered when there
+         is something to say, so staff entries stay uncluttered. */}}
+    {{- if or $p.year (or $p.advisor $p.tags) }}
+      <p class="person__meta">
+        {{- with $p.year }}<span class="code">{{ . }}</span>{{ end -}}
+        {{- with $p.advisor }}<span class="person__advisor">w/ {{ . }}</span>{{ end -}}
+        {{- range $p.tags -}}
+          {{- $labels := dict "PT" "Part-time" "CST" "Department of Computer Science and Technology" -}}
+          <span class="tag"{{ with index $labels . }} title="{{ . }}"{{ end }}>{{ . }}</span>
+        {{- end -}}
+      </p>
+    {{- end -}}
+
+    {{- with $p.next }}<p class="person__next">{{ . }}</p>{{ end -}}
+  </div>
+</div>

@@ -1,0 +1,41 @@
+# Research programmes.
+#
+# `url` makes the programme title a link to its project site. `body` takes
+# inline HTML so the named projects are linked in the sentence that introduces
+# them, rather than listed in a separate line above.
+
+areas:
+  - title: Externalities
+    url: https://externalis.ai
+    body: >-
+      AI is evaluated on what it does for the person using it. We study what it
+      does to everyone else: the colleague they brief, the patient they advise,
+      the student they teach. We build experimental paradigms and measurement
+      instruments for these second-order effects, and test where they do harm,
+      where they reverse sign, and how they vary across domains and cultures.
+      The studies run on <a href="https://externalis.ai">Externalis</a>;
+      <a href="https://secondhandai.org">Secondhand AI</a> is the public
+      campaign built on what they find.
+
+  - title: Human AI Orchestration
+    url: https://tailorworkflow.com/
+    body: >-
+      Deciding when an AI system should act, defer, escalate, or stay silent
+      means knowing what the person on the other side is actually good at. We
+      develop methods for inferring, representing, and protecting individual
+      expertise, machine-readable profiles of skill and judgment that travel
+      across contexts and resist exploitation, then build orchestration
+      algorithms that route work by those profiles, optimising not just for the
+      task at hand but for what happens downstream. Deployed and tested on
+      <a href="https://tailorworkflow.com/">Tailor</a>.
+
+  - title: Deployment in Organisations
+    url: https://deploymentof.ai
+    body: >-
+      Findings rarely survive contact with an institution. This is our field
+      arm: randomised deployments and large-scale studies inside schools, health
+      systems, firms, and government, examining what happens to expertise,
+      hierarchy, and institutional capability when AI is embedded in real work.
+      We study how organisations keep the ability to develop the people they
+      depend on, and maintain a public repository of
+      <a href="https://deploymentof.ai">deployments and their outcomes</a>.

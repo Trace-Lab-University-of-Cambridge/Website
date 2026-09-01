@@ -1,137 +1,115 @@
-{{ define "main" }}
-<div class="publications-page">
-  <div class="publications-container">
-    <header class="publications-header">
-      <h1>Publications</h1>
-      <p class="publications-subtitle">Research papers from the TRACE Lab</p>
-    </header>
+{{/*
+  Publications.
 
-    {{/* Get publications from data file */}}
-    {{ $publications := site.Data.publications.publications }}
+  Grouped by year, one row per paper: title, authors, venue. The title is the
+  link, so there is no separate button; the tag taxonomy is dropped from the
+  page because thirteen filter pills were louder than the papers they filtered.
+  A single text filter does the same job quietly and scales as the list grows.
+*/}}
+{{- $publications := site.Data.publications.publications -}}
+{{- $years := slice -}}
+{{- range $publications }}{{ $years = $years | append .year }}{{ end -}}
+{{- $uniqueYears := collections.Reverse (sort ($years | uniq)) -}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-GB" }}">
+<head>
+  {{ partial "trace/head.html" (dict "page" . "title" "Publications · TRACE Lab" "description" "Papers from the TRACE Lab at the University of Cambridge.") }}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{{ partial "trace/nav.html" . }}
 
-    {{/* Collect all unique tags */}}
-    {{ $allTags := slice }}
-    {{ range $publications }}
-      {{ with .tags }}
-        {{ range . }}
-          {{ $allTags = $allTags | append . }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    {{ $uniqueTags := $allTags | uniq }}
-
-    {{/* Category filter buttons */}}
-    {{ if $uniqueTags }}
-    <div class="publications-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      {{ range $uniqueTags }}
-      <button class="filter-btn" data-filter="{{ . | urlize }}">{{ . }}</button>
-      {{ end }}
+<main id="main">
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+      <p class="eyebrow">TRACE Lab</p>
+      <h1 class="pagehead__title">Publications</h1>
+      <p class="pagehead__sub">
+        {{ len $publications }} papers. Also on
+        <a href="https://scholar.google.com/citations?user=qq8bxPkAAAAJ&amp;hl=en" rel="noopener">Google Scholar</a>.
+      </p>
     </div>
-    {{ end }}
+    </div>
 
-    {{/* Get unique years and sort descending */}}
-    {{ $years := slice }}
-    {{ range $publications }}
-      {{ $years = $years | append .year }}
-    {{ end }}
-    {{ $sortedYears := sort ($years | uniq) }}
-    {{ $uniqueYears := collections.Reverse $sortedYears }}
+  </header>
 
-    <div class="publications-list">
-      {{ range $year := $uniqueYears }}
-      <div class="year-section">
-        <h2 class="year-header">{{ $year }}</h2>
-        <div class="year-publications">
-          {{ range $publications }}
-            {{ if eq .year $year }}
-            {{/* Build tag classes for filtering */}}
-            {{ $tagClasses := "" }}
-            {{ with .tags }}
-              {{ range . }}
-                {{ $tagClasses = printf "%s tag-%s" $tagClasses (. | urlize) }}
-              {{ end }}
-            {{ end }}
-            <article class="publication-item{{ $tagClasses }}">
-              <div class="publication-content">
-                <h3 class="publication-title">
-                  {{ if .url }}
-                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
-                  {{ else }}
-                  <span>{{ .title }}</span>
-                  {{ end }}
-                </h3>
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">Papers</h2>
+      <div class="rail__body">
 
-                <div class="publication-authors">{{ .authors }}</div>
-
-                <div class="publication-meta">
-                  {{ with .tags }}
-                  <div class="publication-tags">
-                    {{ range . }}
-                    <span class="pub-tag">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                  {{ end }}
-
-                  <div class="publication-venue">{{ .venue }}</div>
-                </div>
-
-                {{ if .url }}
-                <div class="publication-links">
-                  <a href="{{ .url }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    Read Paper
-                  </a>
-                </div>
-                {{ end }}
-              </div>
-            </article>
-            {{ end }}
-          {{ end }}
+        <div class="filter">
+          <label class="filter__label" for="pubfilter">Filter</label>
+          <input id="pubfilter" class="filter__input" type="search" autocomplete="off"
+                 placeholder="Title, author, or venue">
+          <p class="filter__count" id="pubcount" role="status" aria-live="polite"></p>
         </div>
-      </div>
-      {{ end }}
-    </div>
 
-    <footer class="publications-footer">
-      <p>This list is updated regularly. For the most current information, please visit our team members' individual pages.</p>
-    </footer>
-  </div>
-</div>
+        <div id="publist">
+          {{- range $year := $uniqueYears }}
+          <section class="pubyear" data-year="{{ $year }}">
+            <h3 class="pubyear__label code">{{ $year }}</h3>
+            <ul>
+              {{- range $publications }}
+                {{- if eq .year $year }}
+              <li class="pub pub--row" data-search="{{ lower (printf "%s %s %s" .title (delimit .authors " ") .venue) }}">
+                <div>
+                  <h4 class="pub__title">
+                    {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }}</a>
+                    {{- else }}{{ .title }}{{ end -}}
+                  </h4>
+                  <p class="pub__authors">{{ partial "trace/authors.html" (dict "authors" .authors) }}</p>
+                  {{- with .venue }}<p class="pub__venue">{{ . }}</p>{{ end }}
+                </div>
+              </li>
+                {{- end }}
+              {{- end }}
+            </ul>
+          </section>
+          {{- end }}
+        </div>
+
+        <p class="empty" id="pubempty" hidden>No papers match that.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ partial "trace/footer.html" . }}
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const pubItems = document.querySelectorAll('.publication-item');
+// Filter rows by the text baked into data-search, then hide any year that has
+// nothing left to show.
+(function () {
+  var input = document.getElementById('pubfilter');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.pub--row'));
+  var years = Array.prototype.slice.call(document.querySelectorAll('.pubyear'));
+  var count = document.getElementById('pubcount');
+  var empty = document.getElementById('pubempty');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Update active state
-      filterBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
 
-      const filter = this.dataset.filter;
-
-      pubItems.forEach(item => {
-        if (filter === 'all') {
-          item.style.display = '';
-          item.classList.remove('hidden');
-        } else if (item.classList.contains('tag-' + filter)) {
-          item.style.display = '';
-          item.classList.remove('hidden');
-        } else {
-          item.style.display = 'none';
-          item.classList.add('hidden');
-        }
-      });
-
-      // Hide empty year sections
-      document.querySelectorAll('.year-section').forEach(section => {
-        const visiblePubs = section.querySelectorAll('.publication-item:not(.hidden)');
-        section.style.display = visiblePubs.length > 0 ? '' : 'none';
-      });
+    items.forEach(function (item) {
+      var hit = !q || item.dataset.search.indexOf(q) !== -1;
+      item.hidden = !hit;
+      if (hit) { shown++; }
     });
-  });
-});
+
+    years.forEach(function (year) {
+      year.hidden = !year.querySelector('.pub--row:not([hidden])');
+    });
+
+    empty.hidden = shown > 0;
+    count.textContent = q ? shown + (shown === 1 ? ' paper' : ' papers') : '';
+  }
+
+  input.addEventListener('input', apply);
+  apply();
+})();
 </script>
-{{ end }}
+</body>
+</html>

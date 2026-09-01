@@ -1,0 +1,73 @@
+{{/*
+  Alumni.
+
+  Portrait grid grouped by the role people held in the lab, in the same visual
+  system as the People section on the homepage — a person who left looks like a
+  person who is still here, which is the point. On its own page rather than the
+  homepage because this list only grows.
+*/}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en-GB" }}">
+<head>
+  {{ partial "trace/head.html" (dict "page" . "title" "Alumni · TRACE Lab" "description" "Former members of the TRACE Lab at the University of Cambridge.") }}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{{ partial "trace/nav.html" . }}
+
+<main id="main">
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+      <p class="eyebrow">TRACE Lab</p>
+      <h1 class="pagehead__title">Alumni</h1>
+    </div>
+    </div>
+
+  </header>
+
+  {{/* One band with sub-labelled groups, the way the People section stacks on
+       the homepage. A band per group left a single-person group occupying a
+       whole screen. */}}
+  {{- $any := false }}
+  {{- range site.Data.people.alumni.groups }}{{ if .people }}{{ $any = true }}{{ end }}{{ end }}
+  <section class="band band--pattern">
+    <div class="wrap rail">
+      <h2 class="rail__label">Alumni</h2>
+      <div class="rail__body">
+        {{- if $any }}
+          {{- range site.Data.people.alumni.groups }}
+            {{- if .people }}
+        <div class="group">
+          <h3 class="group__label">{{ .label }}</h3>
+          {{- if eq .style "names" }}
+          <ul class="namelist">
+            {{- range .people }}
+            <li>
+              {{- if .url }}<a href="{{ .url }}" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end -}}
+              {{- with .title }}<span class="namelist__org">{{ . }}</span>{{ end -}}
+            </li>
+            {{- end }}
+          </ul>
+          {{- else }}
+          <div class="roster">
+            {{- range .people }}
+              {{ partial "trace/person.html" (dict "person" .) }}
+            {{- end }}
+          </div>
+          {{- end }}
+        </div>
+            {{- end }}
+          {{- end }}
+        {{- else }}
+        <p class="empty">No alumni are listed yet. Add them under <code>alumni</code> in <code>data/people.yaml</code>.</p>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ partial "trace/footer.html" . }}
+</body>
+</html>

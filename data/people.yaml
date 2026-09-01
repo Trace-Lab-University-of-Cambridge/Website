@@ -1,0 +1,182 @@
+# TRACE Lab roster.
+#
+# This file is the single source of truth for everyone on the site. To add a
+# person, add an entry here — no HTML anywhere. To move someone on, cut their
+# entry and paste it under `alumni`.
+#
+# Fields
+#   name     Full name, as they write it.
+#   flags    ISO 3166-1 alpha-2 codes, lowercase. An SVG must exist at
+#            assets/media/flags/<code>.svg. Order is the person's own.
+#   photo    Filename in static/media/team/. Omit for placeholder.
+#   url      Where their name links. Omit for no link.
+#   advisor  Co-supervisor, rendered as "w/ <name>".
+#   tags     Short qualifiers, e.g. CST (Dept. of Computer Science and
+#            Technology). Expanded to tooltips in the person partial.
+
+groups:
+  - id: pi
+    label: Principal Investigator
+    people:
+      - name: Umang Bhatt
+        flags: [us, in]
+        title: Assistant Professor of Trustworthy AI · Fellow of King's College
+        photo: umang-bhatt.jpg
+        url: https://umangsbhatt.github.io
+
+  - id: phd
+    label: PhD Candidates
+    people:
+      - name: Elaf Almahmoud
+        flags: [sa]
+        advisor: Mateja Jamnik
+        photo: elaf-almahmoud.png
+        url: https://www.linkedin.com/in/elafalmahmoud/
+      - name: Noah Broestl
+        flags: [us]
+        advisor: Adrian Weller
+        photo: noah-broestl.jpeg
+        url: https://www.linkedin.com/in/noah-broestl-95340113/
+      - name: Drew Calcagno
+        flags: [us]
+        photo: drew-calcagno.png
+        url: https://drewcalcagno.com/
+      - name: Kostadin Devedzhiev
+        flags: [bg]
+        advisor: Adrian Weller
+        photo: kostadin-devedzhiev.jpg
+        url: https://kostadindev.github.io/
+      - name: Siddarth Mamidanna
+        flags: [us, in]
+        advisor: Mateja Jamnik
+        tags: [CST]
+        photo: siddarth-mamidanna.jpg
+        url: https://siddarth-pm.github.io/
+      - name: Devaki Raj
+        flags: [us, in]
+        photo: devaki-raj.jpg
+        url: https://www.linkedin.com/in/devaki-raj-31205826/
+      - name: Bernardo Villegas
+        flags: [ec]
+        photo: bernardo-villegas.png
+        url: https://bjv01.github.io
+
+  - id: staff
+    label: Staff
+    people:
+      - name: Ariella Shulman
+        flags: [us]
+        title: Research Assistant
+        photo: ariella-shulman.png
+        url: https://ari-shu.github.io/
+
+# Alumni, on their own page at /alumni/, grouped by the role people held here
+# — the way STAIR does it. Empty until Umang supplies the names.
+#
+# Same fields as `groups` above (name, photo, url, flags), plus:
+#   year   Year they finished. Optional; shown as a mono code under the name.
+#
+# Groups with no people are skipped, and both the /alumni/ page link in the nav
+# and the "Alumni" line in the People section stay hidden until at least one
+# group has an entry. Add names and everything appears.
+#
+#   groups:
+#     - label: PhD alumni
+#       people:
+#         - name: Jane Doe
+#           photo: jane-doe.jpg
+#           url: https://example.com
+#           next: Postdoc, MIT
+alumni:
+  groups:
+    - label: PhD Alumni
+      people: []
+
+    - label: MPhil Alumni
+      people:
+        - name: Afan Handoyo
+          flags: [id]
+          photo: afan-handoyo.png
+          url: https://www.linkedin.com/in/ahmad-alfani-handoyo/
+          year: 2026
+        - name: Lan Jiang
+          flags: [cn]
+          photo: lan-jiang.jpeg
+          year: 2026
+        - name: Shin Zert Phua
+          flags: [sg]
+          photo: shin-zert-phua.png
+          url: https://www.linkedin.com/in/phuashinzert/
+          year: 2026
+        - name: Juan Pablo Ruiz Partida
+          flags: [mx]
+          photo: juan-pablo-ruiz.jpeg
+          url: https://www.linkedin.com/in/juan-pablo-ruiz-partida/
+          year: 2026
+        - name: Joy Wang
+          flags: [ca, cn]
+          photo: joy-wang.jpg
+          url: https://www.linkedin.com/in/xi-joy-wang/
+          year: 2026
+
+    # `style: names` renders a plain name list instead of portraits, the way
+    # Collaborators and Affiliated Students appear on the homepage. Portraits
+    # are kept for the degree alumni only.
+    - label: Former Research Assistants, Visitors, and Affiliates
+      style: names
+      people:
+        - name: Hamza Alshamy
+          url: https://www.linkedin.com/in/hamza-alshamy-0933631a5/
+        - name: Ghaida Ibrahim
+          url: https://www.linkedin.com/in/ghaida-ibrahim-08853221b/
+        - name: Dagmawi Misker
+          url: https://www.linkedin.com/in/dagmaros27/
+        - name: Hassan Suliman
+          url: https://www.linkedin.com/in/hassanql/
+        - name: Mihir Upadhyay
+          url: https://www.linkedin.com/in/mihir-upadhyay-434364171/
+        - name: Yung-Hsuan Wu
+          url: https://yunghsuanwu.com/
+
+    - label: Cambridge Undergraduates
+      style: names
+      people:
+        - name: Rigel Cierniak
+          url: https://www.linkedin.com/in/rigel-cierniak/
+          title: Part II, Linguistics
+        - name: Sara Davies
+          url: https://www.linkedin.com/in/sara-c-davies/
+          title: Summer Intern
+        - name: Mare de Wit
+          url: https://www.linkedin.com/in/maredewit/
+          title: Summer Intern
+        - name: Hannah Yang
+          url: https://www.linkedin.com/in/hannahyang22/
+          title: Part III, CS
+
+# Visiting and affiliated students: people who work with us from elsewhere.
+affiliated:
+  - name: Manoj Kahdan
+    org: RWTH Aachen
+    url: https://www.linkedin.com/in/kahdan/
+  - name: Hannah Liu
+    org: Imperial
+    url: https://www.linkedin.com/in/hannah-liu-981b33208/
+
+# Long-running collaborators outside the lab.
+collaborators:
+  - name: Katie Collins
+    org: MIT
+    url: https://www.linkedin.com/in/katie-collins-474121175/
+  - name: Mateja Jamnik
+    org: Cambridge
+    url: https://www.cl.cam.ac.uk/~mj201/
+  - name: Francesco Quinzan
+    org: Oxford
+    url: https://www.linkedin.com/in/francescoquinzan/
+  - name: Ilia Sucholutsky
+    org: Purdue
+    url: https://ilia10000.github.io/
+  - name: Adrian Weller
+    org: Cambridge
+    url: https://mlg.eng.cam.ac.uk/adrian/

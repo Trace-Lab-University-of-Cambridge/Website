@@ -1,0 +1,20 @@
+# Homepage news. Newest first; the layout shows the first three.
+items:
+  - date: April 2025
+    html: >-
+      <strong>Umang</strong> taught a three-week course on Responsible AI at the
+      African Institute for Mathematical Sciences in Cape Town. Three AIMS
+      students, Hassan Suliman, Dagmawi Misker, and Ghaida Ibrahim, have since
+      joined the lab as affiliated researchers.
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7451985562170953729">Read more</a>.
+  - date: March 2025
+    html: >-
+      Agentic AI has a hidden cost: humans recruited to sense the physical world
+      on an agent's behalf, potentially without consenting to it.
+      <strong>Umang</strong> writes on this in
+      <a href="https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world/">Noema Magazine</a>.
+  - date: February 2025
+    html: >-
+      <strong>Umang</strong> and <strong>Ariella</strong> will represent the
+      University of Cambridge at the
+      <a href="https://impact.indiaai.gov.in">India AI Impact Summit 2026</a>.
