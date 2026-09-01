@@ -51,11 +51,13 @@ Hero title `clamp(2.4rem,5vw,4rem)`; section titles `clamp(1.5rem,2.6vw,2rem)` c
 
 - **Structure with hairlines and whitespace**, not glass/shadow. Cards use `--surface` fill or a 1px hairline border; shadow only on hover (offset + blur, never a zero-offset glow).
 - **Nav**: fixed, paper, 1px bottom hairline; active link marked with a short coral underline.
-- **Hero**: `.home-section:has(.trace-hero)` full-bleed `--brand`; two-column (copy left + chapel line image right) → stacks on ≤860px with copy first. Grid children need `min-width:0`.
+- **Hero**: `.home-section:has(.trace-hero)` full-bleed `--brand`; two-column (copy left + chapel line image right). Kept compact — reduced min-height/padding, chapel `img` capped at `max-height:420px` and right-aligned. Stacks on ≤860px with copy first. Grid children need `min-width:0`.
+- **Blue plates (rhythm)**: Research and Publications are full-bleed `--brand` sections with white headings and **translucent** cards (`rgba(255,255,255,.055)` fill, `.16` white border), coral-lite accents — alternating with paper sections. Targeted via `:has(.research-grid-five)` / `:has(.pub-grid-five)`. The publications *page* repeats this as a blue header band.
 - **Buttons**: brand fill / brand-outline; radius `--r` (10px). No gradients, no glow pills.
-- **Research**: `.research-grid-five` = 4 institutional tint tiles; the ○□◇△ `.card-icon` glyphs are hidden.
-- **Publications**: flat bordered cards, coral mono year, mono venue.
-- **Motion**: quiet hover only (the animated chapel draw-on was explored and set aside). Respect `prefers-reduced-motion` (global reset).
+- **Research**: `.research-grid-five` = 4 cards on the blue plate with an "Explore ↗" affordance; the ○□◇△ `.card-icon` glyphs are hidden.
+- **Publications**: flat cards (translucent on the blue plate), coral mono year, mono venue.
+- **Supporters/affiliations**: static, centered logo rows, grayscale → colour on hover (no marquee).
+- **Interactions** (`assets/js/custom.js`, loaded via `layouts/partials/custom_js.html` — the theme's supported hook; the old `extend_footer.html` was never called): scroll-reveal choreography (staggered per container); cursor spotlight + subtle 3D card tilt on the blue plates; team cards show full-colour photos that lift on hover and reveal interests + links. All gated behind `prefers-reduced-motion` (global reset). No logo marquee, no scroll-progress line (both were tried and removed).
 
 ## Build / constraints
 
@@ -69,4 +71,6 @@ Glassmorphism blur cards; animated gradient hero overlays; gradient/shimmer text
 
 ## Status
 
-First pass shipped on branch `redesign/brand-exploration` (home, publications, join, project pages restyled). Not yet on `main`, not pushed. Earlier serif/blue exploration lives in `design-studies/`.
+**Shipped to production** — merged to `main` and deployed to trace-lab.ai via GitHub Pages (`.github/workflows/publish.yaml`). Home (rebrand + blue plates + interactions), publications (blue header band), join and project pages are all on the new system. Earlier serif/blue and offprint explorations live in `design-studies/` (kept as a record; safe to delete from `main` if a lean repo is preferred).
+
+Team roster (home) as shipped: PhD students ordered by surname (Almahmoud, Broestl, Calcagno, Devedzhiev, Villegas); Ariella Shulman & Joy Wang are Research Associates; Mare de Wit is Research Intern.

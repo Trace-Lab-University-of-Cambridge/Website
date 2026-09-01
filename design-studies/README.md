@@ -1,10 +1,17 @@
-# TRACE Lab — Brand & Website Redesign (work in progress)
+# TRACE Lab — Brand & Website Redesign
 
-Exploration branch for the rebrand. **No production site files changed yet** — everything here is a standalone design study (open the `.html` files directly in a browser). Product truth and the durable design system live in `../PRODUCT.md` and `../DESIGN.md` at the repo root.
+> **STATUS: SHIPPED.** The redesign is live on `main` / trace-lab.ai. This folder is the historical record of how we got there — standalone design studies (open the `.html` files in a browser). The production system is documented in `../DESIGN.md`; product truth in `../PRODUCT.md`. These study files are not used by the built site and can be deleted if a lean repo is preferred.
 
-## Where we landed (as of last session)
+## What shipped (final direction)
 
-Direction converged on **Study 03 — "Fresh / King's Chapel"**, with two tuning notes still to apply and one open decision.
+Converged on **Study 03 — "Fresh / King's Chapel"**, then evolved during build:
+- **King's College Chapel** hero rendered as a **static white line drawing on deep blue** (`static/media/kings-chapel.jpg`), copy on the left. (An animated self-drawing SVG variant was built and set aside — see history.)
+- **Deep-blue color-blocking**: Research & Publications are full-bleed blue "plates" alternating with paper, with translucent cards.
+- **Interactions**: scroll reveals, cursor spotlight + card tilt on the plates, team hover (full-colour photos + interests/links). A logo marquee and a scroll-progress line were tried and removed.
+- **Colour**: brand blue `#034285` (matches the chapel image), coral `#F67552` as the single accent, white ground.
+- **Type**: Familjen Grotesk everywhere + Spline Sans Mono for data.
+
+### Original exploration notes (for the record)
 
 **Confirmed by the client:**
 - TRACE keeps its **own identity**; Cambridge = endorsement (footer, affiliations, lockup), not the color system.

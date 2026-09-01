@@ -220,13 +220,27 @@ Post content here.
 ## Customization
 
 ### Colors
-Edit `data/themes/trace.toml` to change the color scheme.
+Edit `data/themes/trace.toml` to change the color scheme. The brand system's
+authoritative tokens (blue `#034285`, coral `#F67552`, neutrals, tints) live in
+the `:root` block at the top of `assets/scss/custom.scss`; keep the two in sync.
+The durable design system is documented in `DESIGN.md`.
+
+### Fonts
+Edit `data/fonts/trace.toml`. The site uses **Familjen Grotesk** (headings/body/UI)
+and **Spline Sans Mono** (data/labels — years, venues, eyebrows).
 
 ### Navigation
 Edit `config/_default/menus.yaml` to change the navigation menu.
 
 ### Styles
-Edit `assets/scss/custom.scss` for custom CSS (cards, animations, etc.).
+Edit `assets/scss/custom.scss` for custom CSS (hero, blue plates, cards, etc.).
+
+### Interactions (JavaScript)
+Custom interactions live in `assets/js/custom.js` and are loaded via
+`layouts/partials/custom_js.html` (the theme's supported hook — note the theme
+does **not** load `extend_footer.html`). Includes scroll reveals, the cursor
+spotlight + card tilt on the blue plates, and the team hover panel. All effects
+respect `prefers-reduced-motion`.
 
 ### Homepage
 Edit `content/_index.md` to modify the homepage sections.
