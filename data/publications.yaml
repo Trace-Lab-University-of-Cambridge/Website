@@ -35,7 +35,7 @@ publications:
     year: 2025
     venue: "RSS: Data Science and AI"
     venue_full: "RSS: Data Science and Artificial Intelligence"
-    url: "https://doi.org/10.1093/jrssig/udaf002"
+    url: "https://doi.org/10.1093/rssdat/udaf002"
     tags:
       - Uncertainty
 
@@ -63,7 +63,7 @@ publications:
     year: 2025
     venue: "MathSport Conference"
     venue_full: "MathSport Conference"
-    url: "https://arxiv.org/abs/2504.14609"
+    url: "https://orbi.uliege.be/handle/2268/328584"
     tags:
       - Decision Support
       - Sports AI
@@ -101,7 +101,7 @@ publications:
     year: 2025
     venue: "AIES 2025"
     venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
-    url: "https://arxiv.org/abs/2412.09677"
+    url: "https://arxiv.org/abs/2508.14119"
     tags:
       - AI Governance
       - Deployment
@@ -111,7 +111,7 @@ publications:
     year: 2025
     venue: "AIES 2025"
     venue_full: "AAAI/ACM Conference on AI, Ethics, and Society"
-    url: "https://arxiv.org/abs/2404.12994"
+    url: "https://arxiv.org/abs/2405.10632"
     tags:
       - Human-AI Interaction
 
@@ -120,7 +120,7 @@ publications:
     year: 2025
     venue: "AAAI 2025"
     venue_full: "Proceedings of the AAAI Conference on Artificial Intelligence"
-    url: "https://arxiv.org/abs/2404.15495"
+    url: "https://arxiv.org/abs/2304.06701"
     tags:
       - Human-AI Interaction
       - Decision Support
@@ -150,7 +150,7 @@ publications:
     year: 2024
     venue: "NeurIPS 2024"
     venue_full: "Advances in Neural Information Processing Systems"
-    url: "https://arxiv.org/abs/2308.12436"
+    url: "https://arxiv.org/abs/2406.08391"
     tags:
       - Machine Learning
 
@@ -159,7 +159,7 @@ publications:
     year: 2024
     venue: "IEEE Computer"
     venue_full: "IEEE Computer"
-    url: "https://doi.org/10.1109/MC.2024.3444471"
+    url: "https://doi.org/10.1109/MC.2024.3431328"
     tags:
       - AI Governance
 
@@ -168,7 +168,7 @@ publications:
     year: 2024
     venue: "NeurIPS 2024 Workshop"
     venue_full: "NeurIPS 2024 Workshop on Behavioral Machine Learning"
-    url: "https://arxiv.org/abs/2407.10264"
+    url: "https://arxiv.org/abs/2407.12804"
     tags:
       - Human-AI Interaction
       - Machine Learning
@@ -178,7 +178,7 @@ publications:
     year: 2024
     venue: "PhD Thesis"
     venue_full: "University of Cambridge"
-    url: "https://doi.org/10.17863/CAM.113707"
+    url: "https://www.repository.cam.ac.uk/items/065ba398-4026-43f1-b925-641fb8d6dd82"
     tags:
       - Human-AI Interaction
       - Trust
@@ -189,7 +189,7 @@ publications:
     year: 2024
     venue: "CogSci 2024"
     venue_full: "Proceedings of the Annual Meeting of the Cognitive Science Society"
-    url: "https://arxiv.org/abs/2402.13806"
+    url: "https://arxiv.org/abs/2402.03618"
     tags:
       - Cognitive Science
 
@@ -226,7 +226,7 @@ publications:
     year: 2023
     venue: "UAI 2023"
     venue_full: "Uncertainty in Artificial Intelligence"
-    url: "https://arxiv.org/abs/2211.09429"
+    url: "https://arxiv.org/abs/2211.01407"
     tags:
       - Cognitive Science
 
@@ -263,7 +263,7 @@ publications:
     year: 2023
     venue: "UAI 2023"
     venue_full: "Uncertainty in Artificial Intelligence"
-    url: "https://arxiv.org/abs/2211.12735"
+    url: "https://arxiv.org/abs/2211.01202"
     tags:
       - Human-AI Interaction
       - Machine Learning
@@ -283,7 +283,7 @@ publications:
     year: 2023
     venue: "HCOMP 2023"
     venue_full: "Proceedings of the AAAI Conference on Human Computation and Crowdsourcing"
-    url: "https://arxiv.org/abs/2306.05957"
+    url: "https://arxiv.org/abs/2306.08424"
     tags:
       - Human-AI Interaction
       - Cognitive Science
@@ -302,6 +302,6 @@ publications:
     year: 2023
     venue: "ICLR 2023 Workshop"
     venue_full: "ICLR 2023 Workshop on Pitfalls of Limited Data and Computation"
-    url: "https://arxiv.org/abs/2211.12510"
+    url: "https://openreview.net/forum?id=zwywBS3GyFs"
     tags:
       - Machine Learning
