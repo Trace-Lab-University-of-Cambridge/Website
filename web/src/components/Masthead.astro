@@ -1,15 +1,9 @@
 ---
 /*
-  THESIS: The opening is the lab's remit drawn as a systematic index — four
-  research verticals that construct themselves on load — not a hero banner with
-  a stock photo. It refuses the centered-headline-over-image default.
-  OWN-WORLD: Umang's navy field, Archivo + IBM Plex Mono, orange as the single
-  signal. Hairline rules on navy; labels in the machine face; one accent tick.
-  STORY: A visitor sees, in seconds, that this is a serious Cambridge lab with
-  four clear programmes — and can step straight into any of them.
-  FIRST VIEWPORT: full navy stage; left = eyebrow + thesis + sub; right = four
-  numbered lanes whose rules draw left-to-right, 01→04, labels arriving after.
-  FORM: an index/spec sheet that animates its own construction.
+  Masthead — the four programmes drawn in as a numbered index (copy left, index
+  right), with a soft line drawing of King's College Chapel cropped against the
+  right edge: only the most recognisable part reads, bleeding off. The index
+  draws itself in on load; the chapel fades in behind it.
 */
 const verticals = [
   { n: '01', label: 'Societal Impacts', meta: 'Externalis', url: 'https://externalis.ai' },
@@ -19,9 +13,10 @@ const verticals = [
 ];
 ---
 <section class="stage">
+  <img class="stage__chapel" src="/media/kings-chapel-3q.jpg" alt="" aria-hidden="true" />
   <div class="wrap stage__grid">
     <div class="stage__copy">
-      <p class="eyebrow eyebrow--light stage__eyebrow"><b>TR</b>ustworthy <b>A</b>rtificial intelligen<b>CE</b> Laboratory</p>
+      <p class="eyebrow eyebrow--light"><b>TR</b>ustworthy <b>A</b>rtificial intelligen<b>CE</b> Laboratory</p>
       <h1 class="stage__thesis">Trustworthy AI @ University of Cambridge</h1>
       <p class="stage__sub">
         We study how AI systems behave once people and institutions depend on them — across four
@@ -32,7 +27,7 @@ const verticals = [
 
     <div class="stage__index" role="list" aria-label="Research programmes">
       {verticals.map((v, i) => (
-        <a class="lane" href={v.url} role="listitem" rel={v.url.startsWith('http') ? 'noopener' : undefined} style={`--i:${i}`}>
+        <a class="lane" role="listitem" href={v.url} rel={v.url.startsWith('http') ? 'noopener' : undefined} style={`--i:${i}`}>
           <span class="lane__rule"><span class="lane__fill"></span></span>
           <span class="lane__row">
             <span class="lane__num code">{v.n}</span>
@@ -61,19 +56,27 @@ const verticals = [
     overflow: hidden;
     padding: 72px 0 96px;
   }
-  /* Faint scattered TRACE "A" texture, same device as the band pattern but low. */
-  .stage::before {
-    content: '';
+
+  /* King's College Chapel, cropped hard against the right edge behind the index:
+     the tall famous end reads, the flank bleeds off. Very soft; its own field is
+     the same navy, so only the white strokes show; its left edge dissolves. */
+  .stage__chapel {
     position: absolute;
-    inset: 0;
-    background: url('/media/trace-pattern-light.svg') repeat;
-    background-size: 560px 448px;
-    opacity: 0.05;
+    right: -17%;
+    bottom: 0;
+    width: min(940px, 52%);
+    height: auto;
+    opacity: 0;
     pointer-events: none;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to left, #000 66%, transparent 99%);
+    mask-image: linear-gradient(to left, #000 66%, transparent 99%);
+    animation: chapel-in 1.6s cubic-bezier(.16, 1, .3, 1) 0.4s forwards;
   }
 
   .stage__grid {
     position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
     gap: 64px;
@@ -81,108 +84,56 @@ const verticals = [
     width: 100%;
   }
 
-  .stage__eyebrow { animation: fade-up 0.7s var(--ease-out, cubic-bezier(.16,1,.3,1)) both; }
+  .stage__copy > * { animation: fade-up 0.8s cubic-bezier(.16, 1, .3, 1) both; }
+  .stage__copy > :nth-child(2) { animation-delay: 0.06s; }
+  .stage__copy > :nth-child(3) { animation-delay: 0.14s; }
+  .stage__copy > :nth-child(4) { animation-delay: 0.22s; }
+
   .stage__thesis {
     margin: 20px 0 0;
-    font-size: clamp(34px, 4.6vw, 60px);
+    font-size: clamp(34px, 4.6vw, 58px);
     font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.05;
     max-width: 15ch;
-    animation: fade-up 0.8s cubic-bezier(.16,1,.3,1) 0.06s both;
   }
-  .stage__sub {
-    margin: 22px 0 0;
-    max-width: 46ch;
-    font-size: var(--fs-lg);
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.78);
-    animation: fade-up 0.8s cubic-bezier(.16,1,.3,1) 0.14s both;
-  }
-  .stage__affil {
-    margin: 34px 0 0;
-    font-family: var(--mono);
-    font-size: var(--fs-xs);
-    letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.5);
-    animation: fade-up 0.8s cubic-bezier(.16,1,.3,1) 0.22s both;
-  }
+  .stage__sub { margin: 22px 0 0; max-width: 44ch; font-size: var(--fs-lg); line-height: 1.5; color: rgba(255, 255, 255, 0.8); }
+  .stage__affil { margin: 34px 0 0; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.5); }
 
-  /* The four verticals as a self-constructing index. */
   .stage__index { display: flex; flex-direction: column; }
-  .lane {
-    position: relative;
-    display: block;
-    padding: 22px 4px 18px;
-    color: #fff;
-    text-decoration: none;
-  }
+  .lane { position: relative; display: block; padding: 22px 4px 18px; color: #fff; text-decoration: none; }
   .lane:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
-  /* Static top hairline drawn instantly; the orange fill draws over it. */
-  .lane__rule {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.14);
-    overflow: hidden;
-  }
-  .lane__fill {
-    position: absolute;
-    inset: 0;
-    background: var(--orange);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: draw 0.7s cubic-bezier(.16,1,.3,1) calc(0.3s + var(--i) * 0.13s) both;
-  }
-  .lane__row {
-    display: grid;
-    grid-template-columns: 44px 1fr auto;
-    align-items: baseline;
-    gap: 18px;
-    animation: fade-up 0.6s cubic-bezier(.16,1,.3,1) calc(0.42s + var(--i) * 0.13s) both;
-  }
+  .lane__rule { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, 0.14); overflow: hidden; }
+  .lane__fill { position: absolute; inset: 0; background: var(--orange); transform: scaleX(0); transform-origin: left; animation: draw 0.7s cubic-bezier(.16, 1, .3, 1) calc(0.3s + var(--i) * 0.13s) both; }
+  .lane__row { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 18px; animation: fade-up 0.6s cubic-bezier(.16, 1, .3, 1) calc(0.42s + var(--i) * 0.13s) both; }
   .lane__num { color: var(--orange); }
-  .lane__label {
-    font-size: clamp(20px, 2.2vw, 30px);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    transition: color 0.18s ease, transform 0.18s ease;
-  }
+  .lane__label { font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -0.02em; transition: color 0.18s ease, transform 0.18s ease; }
   .lane__meta { color: rgba(255, 255, 255, 0.5); }
   .lane:hover .lane__label { color: var(--orange); transform: translateX(4px); }
   .lane:hover .lane__meta { color: rgba(255, 255, 255, 0.8); }
   .lane:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 2px; }
 
-  .stage__scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 26px;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.55);
-    animation: fade-up 0.8s ease 1s both;
-  }
+  .stage__scroll { position: absolute; z-index: 1; left: 50%; bottom: 26px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.55); animation: fade-up 0.8s ease 1s both; text-decoration: none; }
   .stage__scroll:hover { color: #fff; }
   .stage__scroll-label { letter-spacing: 0.12em; text-transform: uppercase; }
-  .stage__scroll-line { width: 1px; height: 30px; background: currentColor; animation: scroll-cue 1.9s ease-in-out infinite; transform-origin: top; }
+  .stage__scroll-line { width: 1px; height: 30px; background: currentColor; animation: cue 1.9s ease-in-out infinite; transform-origin: top; }
 
   @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   @keyframes draw { to { transform: scaleX(1); } }
-  @keyframes scroll-cue { 0%,100% { transform: scaleY(0.4); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
+  @keyframes cue { 0%, 100% { transform: scaleY(0.4); opacity: 0.5; } 50% { transform: scaleY(1); opacity: 1; } }
+  @keyframes chapel-in { to { opacity: 0.26; } }
 
   @media (max-width: 900px) {
     .stage { min-height: 0; padding: 56px 0 72px; }
-    .stage__grid { grid-template-columns: 1fr; gap: 44px; }
+    .stage__grid { grid-template-columns: 1fr; gap: 40px; }
     .stage__scroll { display: none; }
+    .stage__chapel { right: -22%; width: 150%; -webkit-mask-image: linear-gradient(to top, #000 0 46%, transparent 84%); mask-image: linear-gradient(to top, #000 0 46%, transparent 84%); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .stage__eyebrow, .stage__thesis, .stage__sub, .stage__affil,
-    .lane__row, .stage__scroll { animation: none; opacity: 1; transform: none; }
+    .stage__copy > *, .lane__row, .stage__scroll { animation: none; opacity: 1; transform: none; }
     .lane__fill { animation: none; transform: scaleX(1); }
     .stage__scroll-line { animation: none; }
+    .stage__chapel { animation: none; opacity: 0.26; }
   }
 </style>
