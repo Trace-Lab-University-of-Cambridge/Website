@@ -27,7 +27,7 @@ Light-only today (see the force-light block in `custom.scss`). Tokens as CSS cus
 | `--body` | `#333A44` | Body text |
 | `--muted` | `#5B6472` | Secondary text (AA) |
 | `--brand` | `#034285` | Hero/footer field, brand blue |
-| `--brand-deep` | `#0E3A80` | Footer, hover on brand |
+| `--brand-deep` | `#022C57` | Footer, hover on brand |
 | `--link` | `#0C4FA3` | Text links |
 | `--coral` | `#F67552` | The one signal (marks, active state) |
 | `--coral-ink` | `#B44A2C` | Coral **as text** on light (AA) |
@@ -51,11 +51,11 @@ Hero title `clamp(2.4rem,5vw,4rem)`; section titles `clamp(1.5rem,2.6vw,2rem)` c
 
 - **Structure with hairlines and whitespace**, not glass/shadow. Cards use `--surface` fill or a 1px hairline border; shadow only on hover (offset + blur, never a zero-offset glow).
 - **Nav**: fixed, paper, 1px bottom hairline; active link marked with a short coral underline.
-- **Hero**: `.home-section:has(.trace-hero)` full-bleed `--brand`; two-column (copy + self-drawing chapel) → stacks on ≤860px with copy first. Grid children need `min-width:0`.
+- **Hero**: `.home-section:has(.trace-hero)` full-bleed `--brand`; two-column (copy left + chapel line image right) → stacks on ≤860px with copy first. Grid children need `min-width:0`.
 - **Buttons**: brand fill / brand-outline; radius `--r` (10px). No gradients, no glow pills.
 - **Research**: `.research-grid-five` = 4 institutional tint tiles; the ○□◇△ `.card-icon` glyphs are hidden.
 - **Publications**: flat bordered cards, coral mono year, mono venue.
-- **Motion**: the one authored moment is the hero chapel draw-on; everything else is quiet hover. Respect `prefers-reduced-motion` (global reset + SVG-internal fallback).
+- **Motion**: quiet hover only (the animated chapel draw-on was explored and set aside). Respect `prefers-reduced-motion` (global reset).
 
 ## Build / constraints
 
