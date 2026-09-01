@@ -251,6 +251,68 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
 }
 
 // ============================================================
+// DEEP-BLUE PLATES — Research & Publications become full-bleed
+// blue sections that give the page rhythm (alternating with paper).
+// ============================================================
+.home-section:has(.research-grid-five),
+.home-section:has(.pub-grid-five) {
+  background: var(--brand) !important;
+  color: #fff;
+  padding: 5.5rem 0 !important;
+  overflow: hidden;
+  position: relative;
+
+  &::before { display: none !important; }   // kill inherited tints/patterns
+
+  // cursor spotlight (JS sets --mx / --my; opacity toggled by .lit)
+  &::after {
+    content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 0%),
+                rgba(255,255,255,.10), transparent 62%);
+    opacity: 0; transition: opacity .4s ease;
+  }
+  &.lit::after { opacity: 1; }
+  .container { position: relative; z-index: 1; }
+
+  .section-heading {
+    margin-bottom: 3rem;
+    h1 {
+      color: #fff;
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      padding-top: 1.6rem;
+      &::before { background: var(--coral); }
+    }
+    p, .section-subheading { color: #BFD3F4; }
+  }
+
+  .view-all-link {
+    color: #fff;
+    &::after { color: var(--coral-lite); }
+    &:hover { color: #fff; }
+  }
+}
+
+// Publication cards on the blue plate: translucent white on blue.
+.home-section:has(.pub-grid-five) .pub-card {
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.16);
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease), border-color .28s var(--ease);
+
+  .pub-year { color: var(--coral-lite); }
+  h3 { color: #fff; }
+  .pub-authors { color: #BFD3F4; }
+  .pub-description { color: #DCE7FB; opacity: .9; }
+  .pub-venue { color: var(--coral-lite); }
+
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.34);
+    box-shadow: 0 18px 44px -22px rgba(0,0,0,.55);
+  }
+}
+
+// ============================================================
 // ABOUT
 // ============================================================
 .about-section {
@@ -284,59 +346,57 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
   @media (max-width: 520px) { grid-template-columns: 1fr; .research-card { min-height: 0; } }
 }
 
+// Research cards live on the deep-blue plate: translucent white on blue.
 .research-card {
   display: flex;
   flex-direction: column;
-  padding: 1.6rem 1.5rem 1.5rem;
+  padding: 1.7rem 1.6rem 1.55rem;
   border-radius: var(--r);
-  background: var(--tint-sky);
-  color: var(--ink);
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
   text-decoration: none !important;
-  min-height: 13rem;
-  transition: transform .28s var(--ease), box-shadow .28s var(--ease);
+  min-height: 14rem;
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease), border-color .28s var(--ease);
 
   .card-icon { display: none; }   // retire the ○□◇△ glyphs
 
   h3 {
-    font-size: 1.24rem;
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.08;
     margin: 0 0 .6rem;
-    color: var(--ink);
+    color: #fff;
   }
   p {
-    font-size: .875rem;
-    line-height: 1.5;
+    font-size: .9rem;
+    line-height: 1.55;
     margin: 0;
-    color: var(--ink);
-    opacity: .74;
+    color: #DCE7FB;
+    opacity: .9;
   }
 
   // link affordance pinned to the bottom of each linked tile
   &[href]::after {
     content: 'Explore \2197';
     margin-top: auto;
-    padding-top: 1.1rem;
+    padding-top: 1.2rem;
     font-family: var(--mono);
     font-size: .68rem;
-    letter-spacing: .06em;
+    letter-spacing: .08em;
     text-transform: uppercase;
-    color: var(--coral-ink);
-    opacity: .85;
+    color: var(--coral-lite);
     transition: transform .28s var(--ease);
   }
   &[href]:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 34px -18px rgba(3,66,133,.45);
-    &::after { transform: translateX(3px); }
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.34);
+    box-shadow: 0 18px 44px -22px rgba(0,0,0,.55);
+    &::after { transform: translateX(4px); }
   }
 }
-// rotate tile tints across the row
-.research-grid-five .research-card:nth-child(4n+1) { background: var(--tint-sky); }
-.research-grid-five .research-card:nth-child(4n+2) { background: var(--tint-blush); }
-.research-grid-five .research-card:nth-child(4n+3) { background: var(--tint-mint); }
-.research-grid-five .research-card:nth-child(4n+4) { background: var(--tint-sand); }
 
 // generic 2-col research grid (other pages)
 .research-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; max-width:var(--maxw); margin:0 auto;
@@ -724,6 +784,81 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
   .affiliations-row { gap: 1.75rem; img { height: 40px; } }
 }
 
+// ============================================================
+// INTERACTIONS
+// ============================================================
+
+// Scroll-reveal choreography (JS adds .is-in; delay set inline by index)
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+// Cursor tilt on blue-plate cards (JS sets transform; keep it smooth & flat-shaded)
+.home-section:has(.research-grid-five) .research-card,
+.home-section:has(.pub-grid-five) .pub-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+// Team comes alive — quiet photos, colour + detail on hover
+.team-card {
+  position: relative;
+  overflow: hidden;
+  .team-avatar { transition: transform .35s var(--ease); }
+  &:hover .team-avatar { transform: scale(1.04); }
+}
+.team-hover {
+  position: absolute; inset: 0; z-index: 3;
+  background: var(--brand);
+  color: #fff;
+  padding: 1.05rem .9rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .55rem; text-align: center;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .28s var(--ease), transform .28s var(--ease);
+  pointer-events: none;
+
+  .th-name { font-weight: 700; font-size: .82rem; letter-spacing: -0.01em; line-height: 1.15; }
+  .th-tags { display: flex; flex-wrap: wrap; gap: .3rem; justify-content: center; }
+  .th-tags span {
+    font-family: var(--mono); font-size: .55rem; letter-spacing: .03em;
+    padding: .12rem .4rem; border-radius: 4px;
+    background: rgba(255,255,255,.14); color: #DCE7FB;
+  }
+  .th-links { display: flex; gap: .7rem; margin-top: .15rem; }
+  .th-links a { color: var(--coral-lite); font-family: var(--mono); font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; }
+  .th-links a:hover { color: #fff; }
+}
+.team-card:hover .team-hover { opacity: 1; transform: none; pointer-events: auto; }
+
+// Trace-line scroll progress on the left edge (JS sets --p 0..1)
+.trace-progress {
+  position: fixed; top: 0; left: 0; width: 3px; height: 100vh; z-index: 1025;
+  background: var(--hairline); pointer-events: none;
+}
+.trace-progress::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%;
+  height: calc(var(--p, 0) * 100%);
+  background: linear-gradient(var(--coral), var(--coral));
+}
+
+// Partner logo marquee (JS builds .marquee-track)
+.affiliations-row.is-marquee {
+  flex-wrap: nowrap; justify-content: flex-start; overflow: hidden; gap: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.affiliations-row.is-marquee .marquee-track {
+  display: flex; align-items: center; gap: 3.5rem; flex: none;
+  animation: trace-marquee 34s linear infinite;
+}
+.affiliations-row.is-marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes trace-marquee { to { transform: translateX(-50%); } }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .trace-progress { display: none !important; }
+  .home-section:has(.research-grid-five) .research-card,
+  .home-section:has(.pub-grid-five) .pub-card { transform: none !important; }
+  .affiliations-row.is-marquee .marquee-track { animation: none !important; }
 }

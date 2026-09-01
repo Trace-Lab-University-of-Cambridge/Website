@@ -1,350 +1,170 @@
-// ============================================
-// TRACE Lab - Custom JavaScript
-// Modern animations and interactions
-// ============================================
+// ============================================================
+// TRACE Lab — interactions
+// 1) scroll-reveal choreography  2) cursor spotlight + card tilt
+// 3) team hover detail  4) trace-line progress + logo marquee
+// All progressive, all bail out under reduced-motion.
+// ============================================================
 
-document.addEventListener('DOMContentLoaded', function() {
+(function () {
+  'use strict';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ready = (fn) =>
+    document.readyState !== 'loading'
+      ? fn()
+      : document.addEventListener('DOMContentLoaded', fn);
 
-  // ============================================
-  // SCROLL REVEAL ANIMATIONS
-  // ============================================
+  ready(function () {
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
-  };
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        // Unobserve after animation to improve performance
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // Add reveal animation to sections and cards
-  function initScrollReveal() {
-    // Animate section headings
-    document.querySelectorAll('.section-heading h1').forEach((el) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = '0.1s';
-      revealObserver.observe(el);
-    });
-
-    // Animate research cards with stagger
-    document.querySelectorAll('.research-card').forEach((el, index) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${0.1 + (index % 3) * 0.1}s`;
-      revealObserver.observe(el);
-    });
-
-    // Animate publication cards with stagger
-    document.querySelectorAll('.pub-card').forEach((el, index) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${0.1 + (index % 4) * 0.1}s`;
-      revealObserver.observe(el);
-    });
-
-    // Animate software cards with stagger
-    document.querySelectorAll('.software-card').forEach((el, index) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${0.1 + (index % 3) * 0.1}s`;
-      revealObserver.observe(el);
-    });
-
-    // Animate team cards with stagger
-    document.querySelectorAll('.team-card').forEach((el, index) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${0.05 + (index % 4) * 0.08}s`;
-      revealObserver.observe(el);
-    });
-
-    // Animate about section
-    document.querySelectorAll('.about-section').forEach(el => {
-      el.classList.add('reveal');
-      revealObserver.observe(el);
-    });
-
-    // Animate affiliations
-    document.querySelectorAll('.affiliations-row a').forEach((el, index) => {
-      el.classList.add('reveal');
-      el.style.transitionDelay = `${0.1 + index * 0.1}s`;
-      revealObserver.observe(el);
-    });
-  }
-
-  // Initialize scroll reveal
-  initScrollReveal();
-
-  // ============================================
-  // SMOOTH PARALLAX ON HERO (subtle)
-  // ============================================
-
-  const heroSection = document.querySelector('.home-section:first-of-type');
-  const heroContent = document.querySelector('.hero-fullscreen');
-
-  if (heroSection && heroContent) {
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrolled = window.pageYOffset;
-          const heroHeight = heroSection.offsetHeight;
-
-          if (scrolled < heroHeight) {
-            const parallaxSpeed = 0.3;
-            heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-            heroContent.style.opacity = 1 - (scrolled / heroHeight) * 0.5;
-          }
-
-          ticking = false;
+    // ---- 1. Scroll-reveal choreography -----------------------------------
+    (function scrollReveal() {
+      if (reduced || !('IntersectionObserver' in window)) return;
+      const groups = [
+        ['.section-heading', 0],
+        ['.about-section', 0],
+        ['.research-card', 70],
+        ['.pub-card', 70],
+        ['.team-card', 45],
+        ['.affiliated-card', 35],
+        ['.news-item', 90],
+      ];
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
         });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
 
-        ticking = true;
-      }
-    });
-  }
+      groups.forEach(([sel, step]) => {
+        // stagger within each parent container so rows cascade, not the whole page
+        const byParent = new Map();
+        document.querySelectorAll(sel).forEach((el) => {
+          const p = el.parentElement;
+          const idx = byParent.get(p) || 0; byParent.set(p, idx + 1);
+          el.classList.add('reveal');
+          el.style.transitionDelay = (idx * step) + 'ms';
+          io.observe(el);
+        });
+      });
+    })();
 
-  // ============================================
-  // NAVBAR SCROLL EFFECT
-  // ============================================
+    // ---- 2. Cursor spotlight + card tilt on the blue plates ---------------
+    (function plateInteractions() {
+      if (reduced) return;
+      const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!fine) return;
 
-  const navbar = document.querySelector('.navbar');
+      document.querySelectorAll(
+        '.home-section:has(.research-grid-five), .home-section:has(.pub-grid-five)'
+      ).forEach((plate) => {
+        let raf = 0, mx = 50, my = 0;
+        plate.addEventListener('mouseenter', () => plate.classList.add('lit'));
+        plate.addEventListener('mouseleave', () => plate.classList.remove('lit'));
+        plate.addEventListener('mousemove', (e) => {
+          const r = plate.getBoundingClientRect();
+          mx = ((e.clientX - r.left) / r.width) * 100;
+          my = ((e.clientY - r.top) / r.height) * 100;
+          if (!raf) raf = requestAnimationFrame(() => {
+            plate.style.setProperty('--mx', mx + '%');
+            plate.style.setProperty('--my', my + '%');
+            raf = 0;
+          });
+        });
+      });
 
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
+      document.querySelectorAll(
+        '.home-section:has(.research-grid-five) .research-card, .home-section:has(.pub-grid-five) .pub-card'
+      ).forEach((card) => {
+        let raf = 0;
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          if (!raf) raf = requestAnimationFrame(() => {
+            card.style.transform =
+              `perspective(900px) rotateX(${(-py * 5).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg) translateY(-4px)`;
+            raf = 0;
+          });
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    })();
 
-      if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-      } else {
-        navbar.style.boxShadow = 'none';
-      }
-    });
-  }
+    // ---- 3. Team comes alive: build hover detail from data-* -------------
+    (function teamHover() {
+      document.querySelectorAll('.team-card').forEach((card) => {
+        if (card.querySelector('.team-hover')) return;
+        const d = card.dataset;
+        const name = d.name || card.querySelector('.team-name')?.textContent || '';
+        const interests = (d.interests || '').split(',').map((s) => s.trim()).filter(Boolean).slice(0, 3);
+        const links = [];
+        if (d.website) links.push(['Site', d.website]);
+        if (d.scholar) links.push(['Scholar', d.scholar]);
+        if (d.github) links.push(['GitHub', d.github]);
+        if (d.email && links.length < 2) links.push(['Email', 'mailto:' + d.email]);
 
-  // ============================================
-  // CARD TILT EFFECT (subtle 3D)
-  // ============================================
+        const el = document.createElement('div');
+        el.className = 'team-hover';
+        el.setAttribute('aria-hidden', 'true');
+        el.innerHTML =
+          `<div class="th-name">${name}</div>` +
+          (interests.length ? `<div class="th-tags">${interests.map((i) => `<span>${i}</span>`).join('')}</div>` : '') +
+          (links.length ? `<div class="th-links">${links.map(([t, h]) =>
+            `<a href="${h}"${h.startsWith('mailto') ? '' : ' target="_blank" rel="noopener"'}>${t} ↗</a>`).join('')}</div>` : '');
+        // let link clicks work without triggering the card's open-website handler
+        el.querySelectorAll('a').forEach((a) => a.addEventListener('click', (ev) => ev.stopPropagation()));
+        card.appendChild(el);
+      });
+    })();
 
-  const cards = document.querySelectorAll('.research-card, .pub-card, .software-card, .team-card');
+    // ---- 4a. Trace-line scroll progress ----------------------------------
+    (function traceProgress() {
+      if (reduced) return;
+      const bar = document.createElement('div');
+      bar.className = 'trace-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+      let raf = 0;
+      const update = () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+        bar.style.setProperty('--p', p.toFixed(4));
+        raf = 0;
+      };
+      const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
 
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+    // ---- 4b. Partner logo marquee ----------------------------------------
+    (function logoMarquee() {
+      if (reduced) return;
+      document.querySelectorAll('.affiliations-row.supporters-row').forEach((row) => {
+        const items = Array.from(row.children);
+        if (items.length < 2) return;
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+        const track = document.createElement('div');
+        track.className = 'marquee-track';
+        // measure one set width vs container to decide repeats for a full, seamless loop
+        const setWidth = items.reduce((w, el) => w + el.getBoundingClientRect().width + 56, 0); // + gap
+        const need = Math.max(2, Math.ceil((row.getBoundingClientRect().width * 1.4) / setWidth));
+        for (let k = 0; k < need; k++) items.forEach((el) => track.appendChild(el.cloneNode(true)));
+        const half = track.cloneNode(true);           // duplicate the whole track -> translateX(-50%) is seamless
+        Array.from(half.children).forEach((c) => track.appendChild(c));
 
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
+        row.innerHTML = '';
+        row.appendChild(track);
+        row.classList.add('is-marquee');
+      });
+    })();
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-  });
-
-  // ============================================
-  // MAGNETIC BUTTON EFFECT
-  // ============================================
-
-  const buttons = document.querySelectorAll('.view-all-link, .btn-github, .btn-docs');
-
-  buttons.forEach(button => {
-    button.addEventListener('mousemove', (e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-    });
-
-    button.addEventListener('mouseleave', () => {
-      button.style.transform = 'translate(0, 0)';
-    });
-  });
-
-  // ============================================
-  // TEAM MODAL FUNCTIONALITY
-  // ============================================
-
-  const teamCards = document.querySelectorAll('.team-card');
-  const modalOverlay = document.querySelector('.team-modal-overlay');
-  const modal = document.querySelector('.team-modal');
-
-  if (modalOverlay && modal) {
-    // Move modal to body to avoid transform containment issues
-    document.body.appendChild(modalOverlay);
-    document.body.appendChild(modal);
-
-    teamCards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        // Prevent the tilt effect from interfering
-        e.stopPropagation();
-
-        // If card has a website, link directly there
-        if (this.dataset.website) {
-          window.open(this.dataset.website, '_blank', 'noopener');
-          return;
-        }
-
-        const name = this.dataset.name;
-        const role = this.dataset.role;
-        const org = this.dataset.org || '';
-        const bio = this.dataset.bio || '';
-        const interests = this.dataset.interests ? this.dataset.interests.split(',') : [];
-        const avatar = this.querySelector('.team-avatar')?.src || '';
-        const email = this.dataset.email || '';
-        const scholar = this.dataset.scholar || '';
-        const github = this.dataset.github || '';
-        const twitter = this.dataset.twitter || '';
-        const website = this.dataset.website || '';
-
-        // Populate modal
-        modal.querySelector('.modal-avatar').src = avatar;
-        modal.querySelector('.modal-name').textContent = name;
-        modal.querySelector('.modal-role').textContent = role;
-        modal.querySelector('.modal-org').textContent = org;
-        modal.querySelector('.modal-bio').textContent = bio;
-
-        // Populate interests
-        const interestTags = modal.querySelector('.interest-tags');
-        interestTags.innerHTML = interests.map(i => `<span>${i.trim()}</span>`).join('');
-
-        // Populate social links
-        const footer = modal.querySelector('.modal-footer');
-        footer.innerHTML = '';
-        if (email) footer.innerHTML += `<a href="mailto:${email}" title="Email">✉️</a>`;
-        if (scholar) footer.innerHTML += `<a href="${scholar}" target="_blank" title="Google Scholar">🎓</a>`;
-        if (github) footer.innerHTML += `<a href="${github}" target="_blank" title="GitHub">💻</a>`;
-        if (twitter) footer.innerHTML += `<a href="${twitter}" target="_blank" title="Twitter">🐦</a>`;
-        if (website) footer.innerHTML += `<a href="${website}" target="_blank" title="Website">🌐</a>`;
-
-        // Show modal with animation
-        modalOverlay.classList.add('active');
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+    // ---- smooth in-page anchor scrolling (kept) --------------------------
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
+        const t = document.querySelector(href);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); }
       });
     });
-
-    // Close modal
-    function closeModal() {
-      modalOverlay.classList.remove('active');
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    modalOverlay.addEventListener('click', closeModal);
-    modal.querySelector('.modal-close')?.addEventListener('click', closeModal);
-
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    // Prevent modal content click from closing
-    modal.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  }
-
-  // ============================================
-  // SMOOTH SCROLL FOR ANCHOR LINKS
-  // ============================================
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
   });
-
-  // ============================================
-  // CURSOR GLOW EFFECT (optional, for hero)
-  // ============================================
-
-  const hero = document.querySelector('.hero-fullscreen');
-
-  if (hero) {
-    const glowElement = document.createElement('div');
-    glowElement.className = 'cursor-glow';
-    glowElement.style.cssText = `
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    `;
-    document.body.appendChild(glowElement);
-
-    hero.addEventListener('mouseenter', () => {
-      glowElement.style.opacity = '1';
-    });
-
-    hero.addEventListener('mouseleave', () => {
-      glowElement.style.opacity = '0';
-    });
-
-    hero.addEventListener('mousemove', (e) => {
-      glowElement.style.left = e.clientX + 'px';
-      glowElement.style.top = e.clientY + 'px';
-    });
-  }
-
-  // ============================================
-  // TYPING EFFECT FOR TAGLINE (optional)
-  // ============================================
-
-  // Uncomment to enable typing effect
-  /*
-  const tagline = document.querySelector('.hero-tagline');
-  if (tagline) {
-    const text = tagline.textContent;
-    tagline.textContent = '';
-    tagline.style.opacity = '1';
-
-    let i = 0;
-    const typeWriter = () => {
-      if (i < text.length) {
-        tagline.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-      }
-    };
-
-    setTimeout(typeWriter, 1000);
-  }
-  */
-
-});
-
-// ============================================
-// PRELOADER (optional)
-// ============================================
-
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
+})();

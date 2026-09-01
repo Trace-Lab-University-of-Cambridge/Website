@@ -1,0 +1,5 @@
+{{/* Load TRACE custom interactions (scroll reveal, cursor spotlight/tilt, team hover, trace-line, marquee). */}}
+{{ $js := resources.Get "js/custom.js" }}
+{{ if $js }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}

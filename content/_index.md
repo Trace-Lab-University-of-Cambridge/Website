@@ -152,63 +152,15 @@ sections:
           </div>
           <!-- Research Assistant -->
           <div class="team-card"
-               data-name="Yung-Hsuan Wu"
-               data-role="Research Assistant"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="https://www.linkedin.com/in/yung-hsuan-wu/">
-            <img class="team-avatar" src="media/team/yung-hsuan-wu.png" alt="Yung-Hsuan Wu">
-            <h3 class="team-name">Yung-Hsuan Wu</h3>
-            <p class="team-role">Research Assistant</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
                data-name="Kostadin Devedzhiev"
-               data-role="Masters Student"
+               data-role="PhD Student"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning"
                data-website="https://kostadindev.github.io/">
             <img class="team-avatar" src="media/team/kostadin-devedzhiev.jpg" alt="Kostadin Devedzhiev">
             <h3 class="team-name">Kostadin Devedzhiev</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Afan Handoyo"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="https://www.linkedin.com/in/ahmad-alfani-handoyo/">
-            <img class="team-avatar" src="media/team/afan-handoyo.png" alt="Afan Handoyo">
-            <h3 class="team-name">Afan Handoyo</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Shin Zert Phua"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="https://www.linkedin.com/in/phuashinzert/">
-            <img class="team-avatar" src="media/team/shin-zert-phua.png" alt="Shin Zert Phua">
-            <h3 class="team-name">Shin Zert Phua</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Juan Pablo Ruiz"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="https://www.linkedin.com/in/juan-pablo-ruiz-partida/">
-            <img class="team-avatar" src="media/team/juan-pablo-ruiz.jpeg" alt="Juan Pablo Ruiz">
-            <h3 class="team-name">Juan Pablo Ruiz</h3>
-            <p class="team-role">Masters Student</p>
+            <p class="team-role">PhD Student</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
@@ -235,18 +187,6 @@ sections:
             <p class="team-role">Masters Student</p>
             <p class="team-org">Cambridge</p>
           </div>
-          <div class="team-card"
-               data-name="Lan Jiang"
-               data-role="Masters Student"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="">
-            <img class="team-avatar" src="media/team/lan-jiang.jpeg" alt="Lan Jiang">
-            <h3 class="team-name">Lan Jiang</h3>
-            <p class="team-role">Masters Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
           <!-- Research Interns -->
           <div class="team-card"
                data-name="Mare de Wit"
@@ -257,18 +197,6 @@ sections:
                data-website="">
             <img class="team-avatar" src="media/team/mare-de-wit.jpg" alt="Mare de Wit">
             <h3 class="team-name">Mare de Wit</h3>
-            <p class="team-role">Research Intern</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <div class="team-card"
-               data-name="Sara Davies"
-               data-role="Research Intern"
-               data-org="University of Cambridge"
-               data-bio="Bio coming soon."
-               data-interests="Trustworthy AI,Machine Learning"
-               data-website="">
-            <img class="team-avatar" src="media/team/placeholder.svg" alt="Sara Davies">
-            <h3 class="team-name">Sara Davies</h3>
             <p class="team-role">Research Intern</p>
             <p class="team-org">Cambridge</p>
           </div>
