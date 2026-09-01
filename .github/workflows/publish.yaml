@@ -1,8 +1,5 @@
 name: Deploy website to GitHub Pages
 
-env:
-  WC_HUGO_VERSION: '0.140.2'
-
 on:
   # Trigger the workflow every time you push to the `main` branch
   push:
@@ -10,7 +7,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Provide permission to clone the repo and deploy it to GitHub Pages
+# Provide permission to deploy to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -21,37 +18,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build website
+  # Build the Astro site (in ./web) into ./web/dist
   build:
-    # Build always
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          # Fetch history for Hugo's .GitInfo and .Lastmod
-          fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: ${{ env.WC_HUGO_VERSION }}
-          extended: true
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Astro
+        run: npm run build
       - name: Setup Pages
-        id: pages
         uses: actions/configure-pages@v5
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-        run: |
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          # Relative to the repository root (the working-directory default
+          # applies to `run` steps only, not to action inputs).
+          path: web/dist
 
-  # Deploy website to GitHub Pages hosting
+  # Deploy to GitHub Pages
   deploy:
-    # Build always
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
