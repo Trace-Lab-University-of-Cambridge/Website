@@ -365,7 +365,7 @@ sections:
           </a>
           <a href="https://www.nature.com/articles/s41562-024-01991-9" target="_blank" rel="noopener" class="pub-card">
             <span class="pub-year">2024</span>
-            <h3>Building Machines that Think with People</h3>
+            <h3>Building Machines that Learn and Think with People</h3>
             <p class="pub-authors">Collins, K., et al.</p>
             <p class="pub-description">A vision for human-AI collaboration leveraging complementary strengths of cognition and machine learning.</p>
             <p class="pub-venue">Nature Human Behavior</p>
