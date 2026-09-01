@@ -231,20 +231,20 @@ a:hover { color: var(--link-hover); }
 section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
 
 .home-section .section-heading {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.75rem;
   h1 {
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-size: clamp(1.6rem, 2.8vw, 2.15rem);
     font-weight: 700;
     text-align: center;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0;
     position: relative;
-    padding-top: 1.1rem;
+    padding-top: 1.5rem;
 
     &::before {   // short coral rule above section titles
       content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 30px; height: 3px; background: var(--coral); border-radius: 2px;
+      width: 34px; height: 3px; background: var(--coral); border-radius: 2px;
     }
   }
   .section-subheading, p { text-align: center; color: var(--muted); }
@@ -281,28 +281,28 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
   margin: 0 auto;
 
   @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 520px) { grid-template-columns: 1fr; }
+  @media (max-width: 520px) { grid-template-columns: 1fr; .research-card { min-height: 0; } }
 }
 
 .research-card {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 1.4rem 1.6rem;
+  padding: 1.6rem 1.5rem 1.5rem;
   border-radius: var(--r);
   background: var(--tint-sky);
   color: var(--ink);
   text-decoration: none !important;
-  min-height: 11rem;
+  min-height: 13rem;
   transition: transform .28s var(--ease), box-shadow .28s var(--ease);
 
   .card-icon { display: none; }   // retire the ○□◇△ glyphs
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.24rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.08;
-    margin: 0 0 .55rem;
+    line-height: 1.1;
+    margin: 0 0 .6rem;
     color: var(--ink);
   }
   p {
@@ -310,10 +310,27 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
     line-height: 1.5;
     margin: 0;
     color: var(--ink);
-    opacity: .72;
+    opacity: .74;
   }
 
-  &[href]:hover { transform: translateY(-4px); box-shadow: 0 12px 30px -16px rgba(12,27,42,.4); }
+  // link affordance pinned to the bottom of each linked tile
+  &[href]::after {
+    content: 'Explore \2197';
+    margin-top: auto;
+    padding-top: 1.1rem;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--coral-ink);
+    opacity: .85;
+    transition: transform .28s var(--ease);
+  }
+  &[href]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px -18px rgba(3,66,133,.45);
+    &::after { transform: translateX(3px); }
+  }
 }
 // rotate tile tints across the row
 .research-grid-five .research-card:nth-child(4n+1) { background: var(--tint-sky); }
@@ -396,15 +413,18 @@ section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
 }
 
 .affiliated-card {
-  padding: .7rem 1.1rem;
+  padding: .75rem 1.15rem;
   text-align: center;
   min-width: 120px;
-  background: var(--surface);
+  background: var(--paper);
   border: 1px solid var(--hairline);
   border-radius: var(--r-sm);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+
+  &:hover { border-color: var(--hairline-strong); box-shadow: 0 8px 20px -14px rgba(3,66,133,.35); transform: translateY(-2px); }
 
   .affiliated-name { font-size: .82rem; font-weight: 600; color: var(--ink); a { color: var(--ink); &:hover { color: var(--link); } } }
-  .affiliated-org  { font-size: .66rem; color: var(--muted); margin-top: .1rem; }
+  .affiliated-org  { font-family: var(--mono); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: .25rem; }
 }
 
 // ============================================================
