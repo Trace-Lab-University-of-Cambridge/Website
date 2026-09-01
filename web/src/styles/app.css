@@ -65,3 +65,8 @@
 @media (prefers-reduced-motion: reduce) {
   .ptl-bar { transform: none !important; }
 }
+
+/* Graceful scroll for in-page anchors (hero programmes → Research section). */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
