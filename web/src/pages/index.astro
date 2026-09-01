@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+import Masthead from '../components/Masthead.astro';
+import Person from '../components/Person.astro';
+import { formatAuthors } from '../lib/lab';
+import people from '../data/people.yaml';
+import research from '../data/research.yaml';
+import news from '../data/news.yaml';
+import partners from '../data/partners.yaml';
+import publications from '../data/publications.yaml';
+import overrides from '../data/publications_overrides.yaml';
+
+const P = people as any;
+const R = research as { areas: { title: string; url?: string; body: string }[] };
+const N = news as { items: { date: string; html: string }[] };
+const PT = partners as { groups: { label: string; logos: { file?: string; alt: string; url: string; height?: number }[] }[] };
+const PUBS = (publications as any).publications as any[];
+
+// Homepage features the hand-picked papers in publications_overrides.featured,
+// matched by case-insensitive title substring, in that order. Fallback: newest 4.
+const featured: any[] = [];
+for (const needle of (overrides as any).featured ?? []) {
+  const n = String(needle).toLowerCase();
+  const hit = PUBS.find((p) => String(p.title).toLowerCase().includes(n));
+  if (hit && !featured.includes(hit)) featured.push(hit);
+}
+const homePubs = featured.length ? featured : [...PUBS].sort((a, b) => b.year - a.year).slice(0, 4);
+
+const hasAlumni = (P.alumni?.groups ?? []).some((g: any) => g.people && g.people.length);
+---
+<Base>
+  {/* ---------------------------------------------------- Animated stage */}
+  <Masthead />
+
+  {/* ---------------------------------------------------------- Research */}
+  <section class="band" id="research">
+    <div class="wrap rail">
+      <h2 class="rail__label">Research</h2>
+      <div class="rail__body prose">
+        {R.areas.map((a) => (
+          <div class="topic">
+            <h3 class="topic__title">{a.url ? <a href={a.url} rel="noopener">{a.title}</a> : a.title}</h3>
+            <p set:html={a.body} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ------------------------------------------------------------ People */}
+  <section class="band band--tint band--pattern" id="team">
+    <div class="wrap rail">
+      <h2 class="rail__label">People</h2>
+      <div class="rail__body">
+        {(P.groups ?? []).filter((g: any) => g.people?.length).map((g: any) => (
+          <div class="group">
+            <h3 class="group__label">{g.label}</h3>
+            <div class="roster">
+              {g.people.map((m: any) => <Person person={m} />)}
+            </div>
+          </div>
+        ))}
+
+        <div class="group">
+          <h3 class="group__label">Visiting and Affiliated Students</h3>
+          <ul class="namelist">
+            {(P.affiliated ?? []).map((a: any) => (
+              <li>
+                {a.url ? <a href={a.url} rel="noopener">{a.name}</a> : a.name}
+                <span class="namelist__org">{a.org}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3 class="group__label">Collaborators</h3>
+          <ul class="namelist">
+            {(P.collaborators ?? []).map((c: any) => (
+              <li>
+                {c.url ? <a href={c.url} rel="noopener">{c.name}</a> : c.name}
+                <span class="namelist__org">{c.org}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {hasAlumni && <p class="more"><a href="/alumni/">Alumni</a></p>}
+      </div>
+    </div>
+  </section>
+
+  {/* ------------------------------------------------------ Publications */}
+  <section class="band" id="publications">
+    <div class="wrap rail">
+      <h2 class="rail__label">Publications</h2>
+      <div class="rail__body">
+        <ul class="pubs">
+          {homePubs.map((p) => {
+            const { shown, extra } = formatAuthors(p.authors, 8);
+            return (
+              <li class="pub">
+                <span class="pub__year code">{p.year}</span>
+                <div>
+                  <h3 class="pub__title"><a href={p.url} rel="noopener">{p.title}</a></h3>
+                  <p class="pub__authors">
+                    {shown.map((a, i) => (
+                      <>{i > 0 ? ', ' : ''}{a.lab ? <b>{a.name}</b> : a.name}</>
+                    ))}{extra > 0 ? `, and ${extra} others` : ''}
+                  </p>
+                  {p.venue && <p class="pub__venue">{p.venue}</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <p class="more"><a href="/publications/">All publications</a></p>
+      </div>
+    </div>
+  </section>
+
+  {/* -------------------------------------------------------------- News */}
+  <section class="band band--tint" id="news">
+    <div class="wrap rail">
+      <h2 class="rail__label">News</h2>
+      <div class="rail__body">
+        <ul class="news">
+          {N.items.slice(0, 3).map((n) => (
+            <li class="news__item">
+              <span class="news__date code">{n.date}</span>
+              <p set:html={n.html} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {/* ---------------------------------------------------------- Partners */}
+  <section class="band band--pattern" id="partners">
+    <div class="wrap rail">
+      <h2 class="rail__label">Partners</h2>
+      <div class="rail__body">
+        {PT.groups.map((grp) => (
+          <div class="group">
+            <h3 class="group__label">{grp.label}</h3>
+            <div class="logos">
+              {grp.logos.map((l) =>
+                l.file ? (
+                  <a href={l.url} rel="noopener" title={l.alt}>
+                    <img src={`/media/${l.file}`} alt={l.alt} loading="lazy" style={l.height ? `height: ${l.height}px` : undefined} />
+                  </a>
+                ) : (
+                  <a class="logos__name" href={l.url} rel="noopener">{l.alt}</a>
+                )
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ----------------------------------------------------------- Joining */}
+  <section class="cta" id="join">
+    <div class="wrap rail">
+      <h2 class="rail__label">Join</h2>
+      <div class="rail__body">
+        <h2>Work with us</h2>
+        <p>
+          We take students through CHIA's MPhil and PhD programmes in Human-Inspired AI. Name Umang
+          in your application. If you are already at Cambridge, or asking about postdoctoral roles,
+          write to us directly.
+        </p>
+        <p class="cta__actions">
+          <a class="btn" href="/join/">How to apply</a>
+          <a class="btn btn--quiet" href="mailto:usb20@cam.ac.uk">usb20@cam.ac.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

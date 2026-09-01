@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import Person from '../components/Person.astro';
+import people from '../data/people.yaml';
+const groups = ((people as any).alumni?.groups ?? []) as {
+  label: string;
+  style?: string;
+  people: any[];
+}[];
+const any = groups.some((g) => g.people && g.people.length);
+---
+<Base title="Alumni · TRACE Lab" description="Former members of the TRACE Lab at the University of Cambridge.">
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+        <p class="eyebrow">TRACE Lab</p>
+        <h1 class="pagehead__title">Alumni</h1>
+      </div>
+    </div>
+  </header>
+
+  <section class="band band--pattern">
+    <div class="wrap rail">
+      <h2 class="rail__label">Alumni</h2>
+      <div class="rail__body">
+        {any ? (
+          groups.filter((g) => g.people?.length).map((g) => (
+            <div class="group">
+              <h3 class="group__label">{g.label}</h3>
+              {g.style === 'names' ? (
+                <ul class="namelist">
+                  {g.people.map((p) => (
+                    <li>
+                      {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : p.name}
+                      {p.title && <span class="namelist__org">{p.title}</span>}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div class="roster">
+                  {g.people.map((p) => <Person person={p} />)}
+                </div>
+              )}
+            </div>
+          ))
+        ) : (
+          <p class="empty">No alumni are listed yet.</p>
+        )}
+      </div>
+    </div>
+  </section>
+</Base>

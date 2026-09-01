@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+<defs><g id="a"><path fill="#073d74" d="M15.29,77.78L53.28,11.8l17.4,30.22c3.33,5.79,6.15,11.57,9.37,17.14,3.78,6.56,13.7.83,9.91-5.72-3.73-6.47-7.56-12.9-11.19-19.43-5.47-9.84-11.35-21.31-17.19-29.96-3.65-5.41-13.33-5.37-16.61.03-2.73,4.5-6.17,10.9-8.92,15.68L4.77,74.07c-1.32,2.28-4.77,7.09-4.77,9.43h0c0,3.15,2.57,5.72,5.72,5.72h67.99c7.57,0,7.57-11.45,0-11.45H15.29Z"/><path fill="#f67552" d="M105.46,80.46l-2.02-3.5c-1.57-2.73-5.09-3.67-7.82-2.1h0c-2.73,1.57-3.67,5.09-2.09,7.82l2.02,3.5c1.57,2.73,5.09,3.67,7.82,2.09h0c2.73-1.57,3.67-5.09,2.09-7.82Z"/></g></defs>
+<use href="#a" transform="translate(30,20) scale(0.25) rotate(0)" opacity="0.12"/>
+<use href="#a" transform="translate(180,60) scale(0.18) rotate(15)" opacity="0.09"/>
+<use href="#a" transform="translate(350,30) scale(0.22) rotate(-10)" opacity="0.11"/>
+<use href="#a" transform="translate(80,140) scale(0.2) rotate(25)" opacity="0.08"/>
+<use href="#a" transform="translate(260,120) scale(0.15) rotate(-20)" opacity="0.13"/>
+<use href="#a" transform="translate(420,100) scale(0.28) rotate(8)" opacity="0.09"/>
+<use href="#a" transform="translate(15,250) scale(0.2) rotate(-5)" opacity="0.11"/>
+<use href="#a" transform="translate(150,220) scale(0.17) rotate(30)" opacity="0.11"/>
+<use href="#a" transform="translate(320,200) scale(0.23) rotate(-15)" opacity="0.08"/>
+<use href="#a" transform="translate(450,260) scale(0.19) rotate(12)" opacity="0.11"/>
+<use href="#a" transform="translate(60,340) scale(0.24) rotate(-25)" opacity="0.09"/>
+<use href="#a" transform="translate(230,310) scale(0.16) rotate(18)" opacity="0.11"/>
+<use href="#a" transform="translate(380,350) scale(0.21) rotate(-8)" opacity="0.08"/>
+</svg>

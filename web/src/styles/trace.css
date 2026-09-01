@@ -1,0 +1,500 @@
+/* ==========================================================================
+   TRACE Lab — homepage
+   --------------------------------------------------------------------------
+   Palette is the lab's own navy and orange on a cool grey-blue paper. Type is
+   Archivo throughout, with IBM Plex Mono reserved for anything that is a code
+   rather than a word: term codes, years, section labels. That split is the
+   whole typographic system — a name is set in the reading face, a year or a
+   venue is set in the machine face, and you can tell them apart at a glance.
+   ========================================================================== */
+
+:root {
+  --ink:        #0d1b2a;
+  --navy:       #073d74;
+  --navy-deep:  #04264a;
+  --orange:     #f67552;
+  --paper:      #ffffff;
+  --tint:       #f2f5f9;
+  --rule:       #dce4ee;
+  --muted:      #5d6f81;
+
+  --sans: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --wrap: 1160px;
+  --rail: 170px;
+
+  /* Type scale. Seven steps, and nothing between them. Prominence inside a
+     step comes from weight, not from a half-pixel size bump. */
+  --fs-xs:   11.5px;  /* mono labels, codes, venues */
+  --fs-sm:   13px;    /* meta, affiliations, secondary lines */
+  --fs-md:   15px;    /* dense lists, controls, nav */
+  --fs-base: 16.5px;  /* body, and names set in semibold */
+  --fs-lg:   19px;    /* sub-headings */
+  --fs-xl:   26px;    /* section headings */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Author rules outrank the UA stylesheet, so any class that sets `display`
+   would otherwise defeat the hidden attribute the publication filter toggles. */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+img { max-width: 100%; }
+
+a { color: var(--navy); text-decoration: none; }
+a:hover { color: var(--orange); }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--navy); color: #fff; padding: 10px 16px; z-index: 100;
+}
+.skip:focus { left: 16px; top: 12px; }
+
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+
+/* Shared: the machine face, for codes and years. */
+.code {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------- Top bar --- */
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.topbar__inner {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 32px;
+  height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.wordmark { display: flex; align-items: center; }
+.wordmark img { height: 22px; width: auto; display: block; }
+
+.topnav { display: flex; gap: 26px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.topnav::-webkit-scrollbar { display: none; }
+.topnav a {
+  font-size: var(--fs-md); font-weight: 500; color: var(--muted);
+  padding: 4px 0; border-bottom: 1.5px solid transparent;
+}
+.topnav a:hover { color: var(--ink); border-bottom-color: var(--orange); }
+
+/* -------------------------------------------------------------- Masthead --- */
+
+.masthead {
+  position: relative; overflow: hidden;
+  background: var(--navy-deep) url('/media/hero-bg.jpg') center 30% / cover no-repeat;
+  color: #fff;
+  padding: 108px 0 96px;
+}
+/* Navy wash over the photograph — enough contrast for the headline to hold,
+   little enough that the college still reads. */
+.masthead::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(4, 38, 74, 0.93) 0%, rgba(4, 38, 74, 0.82) 45%, rgba(4, 38, 74, 0.62) 100%);
+}
+.masthead__inner { position: relative; z-index: 1; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--fs-xs); font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow--light { color: rgba(255, 255, 255, 0.72); }
+.eyebrow b { color: var(--orange); font-weight: 500; }
+
+.masthead__thesis {
+  max-width: 20ch;
+  margin: 18px 0 0;
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+}
+.masthead__sub {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  font-size: var(--fs-base);
+  color: rgba(255, 255, 255, 0.8);
+}
+.masthead__affil {
+  margin: 40px 0 0;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ------------------------------------------------------- Bands and rails --- */
+
+.band { position: relative; padding: 86px 0; scroll-margin-top: 62px; }
+.band--tint { background: var(--tint); }
+
+/* The TRACE "A", scattered. Opt-in per section: it reads as texture behind a
+   grid of faces or logos, but crossing a paragraph it just makes the text
+   harder to read, so the prose sections stay clean. Never on the navy field,
+   where it fought the photograph. */
+.band--pattern::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('/media/trace-pattern.svg') repeat;
+  background-size: 520px 416px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.band > .wrap { position: relative; }
+.band + .band { border-top: 1px solid transparent; }
+
+.rail { display: grid; grid-template-columns: var(--rail) 1fr; gap: 0 52px; }
+
+/* The section label stays put while its section scrolls — it is a running
+   head, so it should behave like one. */
+.rail__label {
+  position: sticky; top: 92px; align-self: start;
+  font-family: var(--mono);
+  font-size: var(--fs-xs); font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 4px;
+}
+.rail__label--light { color: rgba(255, 255, 255, 0.62); }
+.rail__label::before {
+  content: ''; display: block;
+  width: 22px; height: 2px; margin-bottom: 12px;
+  background: var(--orange);
+}
+
+/* A labelled subdivision inside a section (a roster group, a logo row). */
+.group + .group { margin-top: 58px; }
+.group__label {
+  font-family: var(--mono);
+  font-size: var(--fs-xs); font-weight: 500;
+  letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* -------------------------------------------------------------- Research --- */
+
+/* Prose, not tiles. The geometric marks stay in the masthead where they read
+   as identity; beside a paragraph they read as clip art. */
+.topic + .topic { margin-top: 40px; }
+.topic__title { font-size: var(--fs-lg); margin-bottom: 9px; }
+/* The programme title is the link to its project site — a marker rather than
+   an underline, so the heading still reads as a heading. */
+.topic__title a { color: var(--ink); }
+.topic__title a::after {
+  content: '\2197';
+  font-size: 0.68em; font-weight: 500;
+  color: var(--orange);
+  margin-left: 5px;
+  vertical-align: 1px;
+}
+.topic__title a:hover { color: var(--orange); }
+.topic p { max-width: 70ch; }
+/* Underline links inside prose only — the heading gets the arrow instead. */
+.topic p a { border-bottom: 1px solid var(--rule); }
+.topic p a:hover { border-bottom-color: var(--orange); }
+
+/* -------------------------------------------------------------- Spinouts --- */
+
+.venture {
+  display: grid; grid-template-columns: 62px 1fr; gap: 18px;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+}
+.venture:last-child { border-bottom: 1px solid var(--rule); }
+.venture__year { padding-top: 4px; }
+.venture__name { font-size: var(--fs-lg); }
+.venture__name a { color: var(--ink); }
+.venture__name a:hover { color: var(--orange); }
+.venture__body { margin-top: 5px; max-width: 66ch; font-size: var(--fs-base); }
+.venture__body a { border-bottom: 1px solid var(--rule); }
+.venture__body a:hover { border-bottom-color: var(--orange); }
+.venture__people { margin-top: 5px; font-size: var(--fs-sm); color: var(--muted); }
+
+/* ---------------------------------------------------------------- People --- */
+
+.roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 36px 24px;
+}
+.person__portrait { display: block; width: 92px; }
+.person__portrait img {
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--tint);
+  border: 1px solid var(--rule);
+  transition: border-color 0.18s ease;
+}
+a.person__portrait:hover img { border-color: var(--orange); }
+
+/* Balanced so a long name splits evenly instead of leaving its flag
+   stranded alone on the second line. */
+.person__name { margin-top: 13px; text-wrap: balance; font-size: var(--fs-base); letter-spacing: -0.01em; }
+.person__name a { color: var(--ink); }
+.person__name a:hover { color: var(--orange); }
+
+/* Sized and seated to sit on the name's baseline rather than float above it,
+   with a hairline instead of a ring so they read as punctuation. */
+.flags { display: inline-flex; gap: 4px; margin-left: 8px; vertical-align: baseline; }
+.flag {
+  width: 15px; height: 11px;
+  border-radius: 1.5px;
+  object-fit: cover;
+  border: 0.5px solid rgba(13, 27, 42, 0.18);
+  position: relative; top: 0.5px;
+}
+
+.person__title { font-size: var(--fs-sm); color: var(--muted); margin-top: 2px; }
+
+/* Start term, supervisor, and qualifiers on one line. */
+.person__meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  margin-top: 5px;
+  font-size: var(--fs-sm); color: var(--muted); line-height: 1.4;
+}
+.person__advisor { font-size: var(--fs-sm); }
+.tag {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--muted);
+  background: var(--paper);
+  cursor: help;
+}
+.person__meta .code { cursor: help; }
+
+/* The PI reads as a person, not a tile: portrait beside a line of context. */
+/* Name + institution lists: affiliated students, collaborators. */
+.namelist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 14px 24px;
+}
+.namelist li { font-size: var(--fs-md); }
+.namelist a { color: var(--ink); }
+.namelist a:hover { color: var(--orange); }
+.namelist__org { display: block; font-size: var(--fs-sm); color: var(--muted); }
+
+/* ---------------------------------------------------------------- Alumni --- */
+
+/* A destination line under an alumnus's name, on the /alumni/ page. */
+.person__next { margin-top: 3px; font-size: var(--fs-sm); color: var(--muted); }
+.person__next::before { content: '\2192\00a0'; color: var(--orange); }
+
+/* ---------------------------------------------------------- Publications --- */
+
+.pubs { display: grid; }
+.pub {
+  display: grid; grid-template-columns: 62px 1fr; gap: 18px;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+}
+.pub:last-child { border-bottom: 1px solid var(--rule); }
+.pub__year { padding-top: 4px; }
+.pub__title { font-size: var(--fs-lg); line-height: 1.32; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+.pub__title a { color: var(--ink); }
+.pub__title a:hover { color: var(--orange); }
+.pub__authors { margin-top: 5px; font-size: var(--fs-md); color: var(--muted); }
+.pub__venue { margin-top: 2px; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
+
+.more { margin-top: 22px; }
+.more a { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.03em; }
+.more a::after { content: ' \2192'; }
+
+/* --------------------------------------------------- Publications page ----- */
+
+/* Standalone page: the year is a heading over its own group, so rows drop the
+   per-row year gutter. */
+.pub--row { display: block; }
+.pubyear + .pubyear { margin-top: 38px; }
+.pubyear__label {
+  font-size: var(--fs-xs);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+}
+.pubyear[hidden] { display: none; }
+
+.filter { margin-bottom: 34px; }
+.filter__label {
+  display: block;
+  font-family: var(--mono); font-size: var(--fs-xs); font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.filter__input {
+  width: 100%; max-width: 380px;
+  padding: 9px 12px;
+  font: inherit; font-size: var(--fs-md);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+.filter__input:focus { outline: none; border-color: var(--orange); }
+.filter__count { margin-top: 8px; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
+
+.empty { color: var(--muted); font-size: var(--fs-md); }
+.empty code {
+  font-family: var(--mono); font-size: var(--fs-sm);
+  background: var(--tint); padding: 1px 5px; border-radius: 3px;
+}
+
+/* ----------------------------------------------------------------- Join --- */
+
+/* Native markers: a pseudo-element rule lands on a different subpixel per line
+   and the dashes render at visibly different weights. */
+.topic__points {
+  list-style: disc;
+  padding-left: 19px;
+  max-width: 70ch;
+}
+.topic__points li { margin-top: 8px; color: var(--muted); }
+.topic__points li:first-child { margin-top: 0; }
+.topic__points li::marker { color: var(--orange); }
+.topic__points b { color: var(--ink); font-weight: 600; }
+
+
+.route {
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+}
+.route:last-child { border-bottom: 1px solid var(--rule); }
+.route__name { font-size: var(--fs-lg); margin-bottom: 6px; }
+.route__detail { max-width: 68ch; color: var(--muted); font-size: var(--fs-base); }
+.route__link {
+  display: inline-block; margin-top: 10px;
+  font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.03em;
+}
+.route__link::after { content: ' \2192'; }
+
+.cta .rail__body .topic__points li { color: rgba(255, 255, 255, 0.8); }
+
+/* ------------------------------------------------------------ Page head ---- */
+
+.pagehead { padding: 56px 0 46px; border-bottom: 1px solid var(--rule); }
+.pagehead .rail__label { position: static; }
+.pagehead__title { font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.03em; margin-top: 14px; }
+.pagehead__sub { margin-top: 12px; max-width: 60ch; color: var(--muted); font-size: var(--fs-base); }
+.pagehead__sub a { border-bottom: 1px solid var(--rule); }
+.pagehead__sub a:hover { border-bottom-color: var(--orange); }
+
+/* ------------------------------------------------------------------ News --- */
+
+.news__item {
+  display: grid; grid-template-columns: 118px 1fr; gap: 18px;
+  padding: 20px 0;
+  border-top: 1px solid var(--rule);
+}
+.news__item:last-child { border-bottom: 1px solid var(--rule); }
+.news__date { padding-top: 4px; white-space: nowrap; }
+.news__item p { font-size: var(--fs-base); max-width: 66ch; }
+.news__item a { border-bottom: 1px solid var(--rule); }
+.news__item a:hover { border-bottom-color: var(--orange); }
+
+/* -------------------------------------------------------------- Partners --- */
+
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+.logos__name {
+  font-size: var(--fs-md); color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+.logos__name:hover { color: var(--orange); border-bottom-color: var(--orange); }
+.logos img {
+  height: 32px; width: auto; object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.62;
+  transition: opacity 0.18s ease, filter 0.18s ease;
+}
+.logos a:hover img { filter: none; opacity: 1; }
+
+/* ----------------------------------------------------------------- Join ---- */
+
+.cta { background: var(--navy); color: #fff; padding: 76px 0; }
+.cta .rail__label { color: rgba(255, 255, 255, 0.6); }
+.cta .rail__body { max-width: 720px; }
+.cta h2 { font-size: var(--fs-xl); }
+.cta p { margin-top: 14px; color: rgba(255, 255, 255, 0.8); font-size: var(--fs-base); }
+.cta__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 3px;
+  background: var(--orange);
+  color: var(--navy-deep);
+  font-size: var(--fs-md); font-weight: 600;
+  transition: background-color 0.18s ease;
+}
+.btn:hover { background: #fff; color: var(--navy-deep); }
+.btn--quiet {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  font-family: var(--mono); font-weight: 400; font-size: var(--fs-xs);
+}
+.btn--quiet:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+/* --------------------------------------------------------------- Footer ---- */
+
+.footer { border-top: 1px solid var(--rule); padding: 44px 0; }
+.footer__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px;
+}
+.footer__affil { display: flex; align-items: center; gap: 34px; }
+.footer__affil img { height: 38px; width: auto; object-fit: contain; opacity: 0.75; }
+.footer__affil a:hover img { opacity: 1; }
+.footer__legal { font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
+
+/* ------------------------------------------------------------ Responsive --- */
+
+@media (max-width: 900px) {
+  .rail { grid-template-columns: 1fr; gap: 26px; }
+  .rail__label { position: static; }
+  .masthead { padding: 76px 0 68px; }
+  .band { padding: 60px 0; }
+}
+
+@media (max-width: 640px) {
+  .wrap, .topbar__inner { padding: 0 20px; }
+  .topnav { gap: 16px; }
+  .topnav a { font-size: var(--fs-sm); white-space: nowrap; }
+  .roster { grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 26px 18px; }
+  .person__portrait, .person__portrait img { width: 76px; }
+  .person__portrait img { height: 76px; }
+  .pub, .news__item, .venture { grid-template-columns: 1fr; gap: 6px; }
+  .footer__inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

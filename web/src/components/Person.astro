@@ -1,0 +1,63 @@
+---
+import countries from '../data/countries.yaml';
+const COUNTRIES = countries as Record<string, string>;
+const TAG_LABELS: Record<string, string> = {
+  PT: 'Part-time',
+  CST: 'Department of Computer Science and Technology',
+};
+
+interface PersonData {
+  name: string;
+  photo?: string;
+  url?: string;
+  flags?: string[];
+  title?: string;
+  year?: string | number;
+  advisor?: string;
+  tags?: string[];
+  next?: string;
+}
+const { person } = Astro.props as { person: PersonData };
+const p = person;
+const photo = `/media/team/${p.photo ?? 'placeholder.svg'}`;
+const hasMeta = p.year || p.advisor || (p.tags && p.tags.length);
+---
+<div class="person">
+  {p.url ? (
+    <a class="person__portrait" href={p.url} rel="noopener">
+      <img src={photo} alt={p.name} loading="lazy" width="92" height="92" />
+    </a>
+  ) : (
+    <span class="person__portrait">
+      <img src={photo} alt={p.name} loading="lazy" width="92" height="92" />
+    </span>
+  )}
+
+  <div class="person__body">
+    <h3 class="person__name">
+      {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : p.name}
+      {p.flags && p.flags.length > 0 && (
+        <span class="flags">
+          {p.flags.map((c) => {
+            const country = COUNTRIES[c] ?? c;
+            return <img class="flag" src={`/media/flags/${c}.svg`} alt={country} title={country} width="15" height="11" loading="lazy" />;
+          })}
+        </span>
+      )}
+    </h3>
+
+    {p.title && <p class="person__title">{p.title}</p>}
+
+    {hasMeta && (
+      <p class="person__meta">
+        {p.year && <span class="code">{p.year}</span>}
+        {p.advisor && <span class="person__advisor">w/ {p.advisor}</span>}
+        {(p.tags ?? []).map((t) => (
+          <span class="tag" title={TAG_LABELS[t] ?? undefined}>{t}</span>
+        ))}
+      </p>
+    )}
+
+    {p.next && <p class="person__next">{p.next}</p>}
+  </div>
+</div>

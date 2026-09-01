@@ -1,0 +1,18 @@
+# Country names for flag alt text. Keys match the SVG filenames in
+# static/media/flags/ and the `flags` codes in data/people.yaml.
+bg: Bulgaria
+ca: Canada
+cn: China
+ec: Ecuador
+et: Ethiopia
+id: Indonesia
+in: India
+kr: South Korea
+mx: Mexico
+nl: Netherlands
+sa: Saudi Arabia
+sd: Sudan
+sg: Singapore
+tw: Taiwan
+us: United States
+ye: Yemen

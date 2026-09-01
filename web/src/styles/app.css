@@ -1,0 +1,67 @@
+/* Additions on top of trace.css.
+   The interactive year-timeline for the publications page — kept in Umang's
+   restrained register: hairline bars, the machine face for labels, navy on
+   hover and orange for the active year. */
+
+.pub-timeline {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 92px;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6px;
+}
+.ptl-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.ptl-count {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  margin-bottom: 5px;
+  transition: color 0.18s ease;
+}
+.ptl-bar {
+  width: 100%;
+  max-width: 32px;
+  background: var(--rule);
+  transform-origin: bottom;
+  transform: scaleY(var(--grow, 1));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.18s ease;
+}
+.ptl-col:hover .ptl-bar { background: var(--navy); }
+.ptl-col:hover .ptl-count { color: var(--navy); }
+.ptl-col[aria-pressed='true'] .ptl-bar { background: var(--orange); }
+.ptl-col[aria-pressed='true'] .ptl-count { color: var(--orange); }
+.ptl-year {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.ptl-col[aria-pressed='true'] .ptl-year { color: var(--orange); }
+
+.pub-timeline-hint {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  text-align: right;
+  margin: 0 0 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ptl-bar { transform: none !important; }
+}

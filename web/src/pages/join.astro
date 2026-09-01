@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import join from '../data/join.yaml';
+const J = join as {
+  intro: string;
+  routes: { name: string; detail: string; url?: string; url_label?: string }[];
+  looking_for: string[];
+  contact: string;
+  funding: string;
+};
+---
+<Base title="Join Us · TRACE Lab" description="How to apply to work with the TRACE Lab at the University of Cambridge.">
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+        <p class="eyebrow">TRACE Lab</p>
+        <h1 class="pagehead__title">Join us</h1>
+        <p class="pagehead__sub">{J.intro}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">How to apply</h2>
+      <div class="rail__body">
+        <ul class="routes">
+          {J.routes.map((r) => (
+            <li class="route">
+              <h3 class="route__name">{r.name}</h3>
+              <p class="route__detail" set:html={r.detail} />
+              {r.url && <p><a class="route__link" href={r.url}>{r.url_label ?? r.url}</a></p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--tint">
+    <div class="wrap rail">
+      <h2 class="rail__label">What we look for</h2>
+      <div class="rail__body">
+        <ul class="topic__points">
+          {J.looking_for.map((li) => <li set:html={li} />)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">Funding</h2>
+      <div class="rail__body prose">
+        <div class="topic"><p set:html={J.funding} /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap rail">
+      <h2 class="rail__label">Contact</h2>
+      <div class="rail__body">
+        <h2>Get in touch</h2>
+        <p>{J.contact}</p>
+        <p class="cta__actions">
+          <a class="btn" href="mailto:usb20@cam.ac.uk">usb20@cam.ac.uk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

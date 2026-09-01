@@ -1,0 +1,52 @@
+# Editorial control over the generated publications list.
+#
+# data/publications.yaml is regenerated from OpenAlex and must not be hand-
+# edited. Everything needing a human judgement lives here. Titles match on a
+# case-insensitive substring, so a distinctive fragment is enough.
+
+# ONLY these venues appear on the site. Anything else — preprints, repository
+# deposits, abstracts, book series — is dropped. Add a venue here to admit it.
+allowed_venues:
+  - AAAI
+  - AIES
+  - CHI
+  - EAAMO
+  - ECAI
+  - EMNLP
+  - FAccT
+  - HCOMP
+  - ICASSP
+  - ICLR
+  - ICML
+  - IJCAI
+  - NeurIPS
+  - RO-MAN
+  - UAI
+  - AI and Ethics
+  - IEEE Computer
+  - Nature Human Behaviour
+  - Patterns
+  - Phil. Trans. R. Soc. A
+  - PNAS
+  - "RSS: Data Science and AI"
+  - Science
+  # "Forthcoming at ..." is always kept, without needing an entry here.
+
+# Two records of one work. `drop` is removed; `into` keeps the given venue.
+merge:
+  - into: "RCTs for Frontier AI Governance"
+    drop: "RCTs for Human-AI Evaluation"
+    venue: "Forthcoming at AIES 2026"
+
+# Per-paper venue corrections. OpenAlex files these under Cambridge's
+# repository, which is not a venue.
+venues:
+  "Getting a CLUE": "ICLR"
+  "You shouldn": "ECAI"
+
+# The homepage shows these, in this order.
+featured:
+  - "The next Turing tests"
+  - "Revisiting Rogers"
+  - "Learning Personalized Decision Support Policies"
+  - "Building Machines that Learn and Think with People"

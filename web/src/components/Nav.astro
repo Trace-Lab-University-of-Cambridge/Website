@@ -1,0 +1,24 @@
+---
+// Sticky top bar (ported from layouts/partials/trace/nav.html).
+// Menu mirrors Umang's config/_default/menus.yaml (Home is the wordmark).
+const links = [
+  { name: 'Research', url: '/#research' },
+  { name: 'Team', url: '/#team' },
+  { name: 'Publications', url: '/#publications' },
+  { name: 'News', url: '/#news' },
+  { name: 'Join Us', url: '/join/' },
+];
+const path = Astro.url.pathname;
+---
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="wordmark" href="/" aria-label="TRACE Lab home">
+      <img src="/media/trace-logo.svg" alt="TRACE" height="22" />
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      {links.map((l) => (
+        <a href={l.url} {...(l.url === path ? { 'aria-current': 'page' } : {})}>{l.name}</a>
+      ))}
+    </nav>
+  </div>
+</header>
