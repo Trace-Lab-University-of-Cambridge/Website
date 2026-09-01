@@ -2,6 +2,56 @@
 # Each publication links directly to external source (Google Scholar, journal, etc.)
 
 publications:
+  - title: "The Next Turing Tests: Reimagining Conceptions and Measures of AI"
+    authors: "Hernández-Orallo, J., Collins, K.M., Cheke, L., Weidinger, L., Bhatt, U., Griffiths, T.L., Cave, S."
+    year: 2026
+    venue: "Science"
+    venue_full: "Science"
+    url: "https://doi.org/10.1126/science.aee3176"
+    tags:
+      - AI Evaluation
+      - Cognitive Science
+
+  - title: "Learning to Orchestrate Agents under Uncertainty"
+    authors: "Antony Oliver, M.C., Jiang, L., Anampiu, A.B., Almahmoud, E., Quinzan, F., Bhatt, U."
+    year: 2026
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2605.27073"
+    url: "https://arxiv.org/abs/2605.27073"
+    tags:
+      - Agentic AI
+      - Uncertainty
+
+  - title: "Belief Offloading in Human-AI Interaction"
+    authors: "Guingrich, R.E., Mehta, D., Bhatt, U."
+    year: 2026
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2602.08754"
+    url: "https://arxiv.org/abs/2602.08754"
+    tags:
+      - Human-AI Interaction
+      - Cognitive Science
+
+  - title: "RCTs for Frontier AI Governance: Methodological Challenges and Solutions for Human Uplift Studies"
+    authors: "Paskov, P., Wei, K., Hong, S.Z., Bateyko, D., Roberts-Gaal, X., Ezell, C., Praninskas, G., Chen, V., Bhatt, U., Guest, E."
+    year: 2026
+    venue: "arXiv"
+    venue_full: "arXiv preprint arXiv:2603.11001"
+    url: "https://arxiv.org/abs/2603.11001"
+    tags:
+      - AI Governance
+      - AI Evaluation
+
+  - title: "A Reporting Checklist for Large Language Models in Behavioural Science"
+    authors: "Feuerriegel, S., Barrie, C., Crockett, M.J., Globig, L.K., McLoughlin, K.L., ..."
+    year: 2026
+    venue: "Nature Human Behaviour"
+    venue_full: "Nature Human Behaviour"
+    url: "https://doi.org/10.1038/s41562-026-02492-7"
+    tags:
+      - AI Evaluation
+      - Machine Learning
+
   - title: "When Should We Orchestrate Multiple Agents?"
     authors: "Bhatt, U., Kapoor, S., Upadhyay, M., Sucholutsky, I., Quinzan, F., Collins, K.M., ..."
     year: 2025
