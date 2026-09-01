@@ -1,0 +1,183 @@
+<title>TRACE Type Specimen</title>
+<meta name="description" content="A distinctive 'trace line' direction for the TRACE Lab site, shown in two typefaces — Literata and STIX Two Text — side by side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#FAFAF7; --paper-deep:#F2F1EB;
+    --ink:#1A1A1A; --ink-soft:#33322E; --muted:#6B6A63; --faint:#9A988E;
+    --rule:#E0DFD8; --rule-strong:#CBC9BF;
+    --teal:#0D4A4C; --teal-lift:#1A6B6D; --teal-wash:#EAF0EF;
+    --coral:#F67552; --coral-ink:#B44A2C;
+    --grot:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  .fLit{--serif:"Literata",Georgia,serif}
+  .fStix{--serif:"STIX Two Text","Times New Roman",serif}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--paper); color:var(--ink-soft);
+    font-family:"Literata",Georgia,serif; font-optical-sizing:auto;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+
+  /* top control strip */
+  .strip{max-width:74rem; margin:0 auto; padding:1.6rem 2rem 0}
+  .strip .kick{font-family:var(--grot); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); font-weight:600; display:flex; align-items:center; gap:.55rem}
+  .strip .kick::before{content:""; width:.6rem;height:.6rem; background:var(--coral); clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .strip h1{font-family:var(--grot); font-weight:700; color:var(--ink); font-size:clamp(1.3rem,2.4vw,1.7rem); letter-spacing:-.01em; margin:.7rem 0 .3rem}
+  .strip p{font-family:var(--grot); font-size:.9rem; color:var(--muted); max-width:52ch; margin:0 0 1.4rem; line-height:1.5}
+
+  /* the split */
+  .split{max-width:74rem; margin:0 auto; padding:0 2rem 2rem; display:grid; grid-template-columns:1fr 1fr; gap:0}
+  @media(max-width:820px){ .split{grid-template-columns:1fr} }
+  .col{padding:2.2rem 2.4rem 2.8rem; position:relative}
+  .col + .col{border-left:1px solid var(--rule)}
+  @media(max-width:820px){ .col + .col{border-left:0; border-top:1px solid var(--rule)} }
+  .col .facelabel{font-family:var(--grot); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:2rem; display:flex; justify-content:space-between}
+  .col .facelabel b{color:var(--ink)}
+  .col .facelabel .tag{color:var(--coral-ink)}
+
+  /* trace line spine */
+  .trace{position:relative; padding-left:2.4rem}
+  .trace::before{content:""; position:absolute; left:.32rem; top:.1rem; bottom:.1rem; width:1px; background:linear-gradient(var(--rule-strong),var(--rule-strong)) ; }
+  .origin{position:absolute; left:.32rem; top:-.15rem; transform:translateX(-50%); width:.72rem;height:.72rem; background:var(--coral); clip-path:polygon(50% 0,100% 100%,0 100%)}
+  .node{position:relative}
+  .node::before{content:""; position:absolute; left:calc(-2.4rem + .32rem); top:.55em; transform:translate(-50%,-50%) rotate(45deg); width:.42rem;height:.42rem; background:var(--teal); border:1px solid var(--paper)}
+  .node.end::before{background:var(--coral); clip-path:polygon(50% 100%,100% 0,0 0); border:0; transform:translate(-50%,-50%)}
+
+  /* masthead within a column */
+  .mast{margin-bottom:2.2rem}
+  .mast .lab{font-family:var(--grot); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:600; margin-bottom:.9rem}
+  .acr{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:clamp(2rem,4.4vw,2.7rem); line-height:1.05; letter-spacing:-.01em; margin:0}
+  .acr b{color:var(--teal); font-weight:600}
+  .acr .dot{color:var(--coral); font-weight:700}
+  .mast .q{font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:1.15rem; margin:1rem 0 0; line-height:1.35}
+
+  .blk{margin-bottom:1.9rem}
+  .blk .sec{font-family:var(--grot); font-size:.64rem; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:.5rem; display:flex; gap:.6rem}
+  .blk .sec .num{color:var(--coral-ink)}
+  .blk h3{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:1.28rem; line-height:1.2; margin:0 0 .35rem; letter-spacing:-.005em}
+  .body{font-family:var(--serif); font-size:1.0625rem; line-height:1.62; color:var(--ink-soft); margin:0; max-width:40ch}
+  .body b{color:var(--ink); font-weight:600}
+  .oneline{font-family:var(--serif); color:var(--muted); font-size:1rem; margin:.1rem 0 0; line-height:1.45}
+  a.lnk{color:var(--teal); text-decoration:none; border-bottom:1px solid var(--rule-strong)}
+  a.lnk:hover{border-bottom-color:var(--coral); color:var(--teal-lift)}
+
+  .cite{font-family:var(--serif); font-size:1rem; line-height:1.4}
+  .cite .yr{font-family:var(--grot); font-weight:600; font-size:.78rem; color:var(--coral-ink); font-variant-numeric:tabular-nums; margin-right:.6rem}
+  .cite .t{color:var(--ink); font-weight:500}
+  .cite .a{color:var(--muted); font-style:italic; display:block; margin-top:.15rem; font-size:.92rem}
+  .cite .v{font-family:var(--grot); font-size:.64rem; letter-spacing:.09em; text-transform:uppercase; color:var(--teal); margin-top:.3rem; display:inline-block}
+
+  /* what's new callout */
+  .newbox{background:var(--paper-deep); border-top:1px solid var(--rule)}
+  .newbox .in{max-width:74rem; margin:0 auto; padding:2.2rem 2rem 2.6rem}
+  .newbox .kick{font-family:var(--grot); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:1.3rem}
+  .signs{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem}
+  @media(max-width:760px){ .signs{grid-template-columns:1fr} }
+  .sign h4{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:1.08rem; margin:0 0 .4rem; display:flex; align-items:center; gap:.55rem}
+  .sign h4 .m{width:.6rem;height:.6rem; background:var(--coral); clip-path:polygon(50% 0,100% 100%,0 100%); flex:none}
+  .sign p{font-family:var(--grot); font-size:.86rem; color:var(--muted); line-height:1.55; margin:0}
+  footer{max-width:74rem; margin:0 auto; padding:1.2rem 2rem 3rem; font-family:var(--grot); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+
+  /* logo (small, top-left of strip) */
+  .wm{width:8.5rem; height:auto; display:block; margin-bottom:1.3rem}
+  .wm .lm{fill:#073D74} .wm .lc{fill:var(--coral)}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tw" viewBox="0 0 599.52 90.14">
+    <path class="lm" d="M540.87,1.62c-3.49,0-6.15,2.65-6.15,6.15v74.66c0,3.49,2.65,6.15,6.15,6.15h53.41c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-47.39v-28.15h40.9c2.83,0,5.24-2.25,5.24-5.11s-2.32-5.37-5.24-5.37h-40.9V12.1h46.74c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-52.76Z"/>
+    <path class="lm" d="M440.34,10.93c8.86,0,16.02,3.06,22.81,8.56,1.08.8,2.3,1.16,3.64,1.16,3.35,0,6.02-2.51,6.02-5.89,0-1.91-.86-3.69-2.38-4.86C461.28,2.86,452.03.06,440.47.06c-25.66,0-44.91,19.49-44.91,45.04v.26c0,25.13,18.97,44.78,44.26,44.78,12.6,0,22.3-3.43,31.67-11.71,1.24-1.1,1.95-2.62,1.95-4.29,0-2.99-2.67-5.5-5.63-5.5-1.29,0-2.57.48-3.54,1.34l-.04.03c-7.28,6.14-14.23,9.13-23.9,9.13-18.92,0-31.83-15.79-31.83-34.03v-.26c0-18.2,13-33.91,31.83-33.91Z"/>
+    <path class="lm" d="M41.72,12.62h24.05c2.99,0,5.37-2.54,5.37-5.5s-2.38-5.5-5.37-5.5H5.5C2.46,1.62,0,4.08,0,7.12s2.46,5.5,5.5,5.5h23.92v70.59c0,3.38,2.8,6.02,6.15,6.02s6.15-2.64,6.15-6.02V12.62Z"/>
+    <path class="lm" d="M198.14,78.81l-16.84-21.24-2.24-2.83,2.64-.81c5.14-1.59,9.39-4.04,12.57-7.33,9.17-9.46,8.88-27.07-.25-36.45-6.52-6.38-16-8.54-24.86-8.54h-32.41c-3.49,0-6.15,2.65-6.15,6.15v75.44c0,3.44,2.74,6.02,6.15,6.02s6.02-2.65,6.02-6.02V12.36h25.09c2.8,0,5.51.33,8,.97,12.02,3.06,16.27,15.98,10.06,25.29-1.79,2.68-4.26,4.58-7.06,5.84-2.44,1.11-5.14,1.74-7.85,2-1.04.1-2.09.08-3.11.17-5.18.49-6.69,3.51-3.96,7.91,1.86,2.99,5.18,7.03,7.97,10.47,5.31,6.54,10.46,13.27,15.65,19.91.46.58.96,1.27,1.45,1.82,1.45,1.63,3.15,2.5,5.54,2.5,3.06,0,5.76-2.34,5.76-5.5,0-2.02-.97-3.39-2.18-4.92Z"/>
+    <path class="lm" d="M262.44,77.78l37.99-65.99,17.4,30.22c3.33,5.79,6.15,11.57,9.37,17.14,3.78,6.56,13.7.83,9.91-5.72-3.73-6.47-7.56-12.9-11.19-19.43-5.47-9.84-11.35-21.31-17.19-29.96-3.65-5.41-13.33-5.37-16.61.03-2.73,4.5-6.17,10.9-8.92,15.68l-31.28,54.32c-1.32,2.28-4.77,7.09-4.77,9.43h0c0,3.15,2.57,5.72,5.72,5.72h67.99c7.57,0,7.57-11.45,0-11.45h-58.43Z"/>
+    <path class="lc" d="M352.61,80.46l-2.02-3.5c-1.57-2.73-5.09-3.67-7.82-2.1h0c-2.73,1.57-3.67,5.09-2.09,7.82l2.02,3.5c1.57,2.73,5.09,3.67,7.82,2.09h0c2.73-1.57,3.67-5.09,2.09-7.82Z"/>
+  </symbol>
+</svg>
+
+<div class="strip">
+  <svg class="wm" role="img" aria-label="TRACE"><use href="#tw"/></svg>
+  <div class="kick">Direction — The Trace Line</div>
+  <h1>One system, two voices. Which face carries the page?</h1>
+  <p>Same layout, same content, same colours. The only difference between the columns is the reading typeface. Pick the voice; the rest is settled.</p>
+</div>
+
+<div class="split">
+  <!-- LITERATA -->
+  <div class="col fLit">
+    <div class="facelabel"><span><b>Literata</b></span><span class="tag">warm · book serif</span></div>
+    <div class="trace">
+      <span class="origin" aria-hidden="true"></span>
+      <div class="mast node">
+        <div class="lab">Trustworthy Artificial Intelligence Laboratory</div>
+        <h2 class="acr"><b>TR</b>ustworthy <b>A</b>rtificial<br>intelligen<b>CE</b><span class="dot">.</span></h2>
+        <p class="q">When can AI be trusted in the real world?</p>
+      </div>
+      <div class="blk node">
+        <div class="sec"><span class="num">§01</span> About</div>
+        <p class="body">We build trustworthy AI for settings where the cost of error is high. Drawing from machine learning, <b>human–computer interaction</b>, and social science, we study when AI can be trusted, integrated into decisions, and evaluated where these systems actually run.</p>
+      </div>
+      <div class="blk node">
+        <div class="sec"><span class="num">§02</span> Research</div>
+        <h3>Deployment as a Science</h3>
+        <p class="oneline">Documenting how AI systems behave across real-world contexts. <a class="lnk" href="#">deploymentof.ai ↗</a></p>
+      </div>
+      <div class="blk node end">
+        <div class="sec"><span class="num">§03</span> Selected Publication</div>
+        <p class="cite"><span class="yr">2025</span><span class="t">Personalized Decision Support Policies</span><span class="a">Bhatt, U., Collins, K., Weller, A., et al.</span><span class="v">AAAI 2025</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STIX -->
+  <div class="col fStix">
+    <div class="facelabel"><span><b>STIX Two Text</b></span><span class="tag">cool · journal serif</span></div>
+    <div class="trace">
+      <span class="origin" aria-hidden="true"></span>
+      <div class="mast node">
+        <div class="lab">Trustworthy Artificial Intelligence Laboratory</div>
+        <h2 class="acr"><b>TR</b>ustworthy <b>A</b>rtificial<br>intelligen<b>CE</b><span class="dot">.</span></h2>
+        <p class="q">When can AI be trusted in the real world?</p>
+      </div>
+      <div class="blk node">
+        <div class="sec"><span class="num">§01</span> About</div>
+        <p class="body">We build trustworthy AI for settings where the cost of error is high. Drawing from machine learning, <b>human–computer interaction</b>, and social science, we study when AI can be trusted, integrated into decisions, and evaluated where these systems actually run.</p>
+      </div>
+      <div class="blk node">
+        <div class="sec"><span class="num">§02</span> Research</div>
+        <h3>Deployment as a Science</h3>
+        <p class="oneline">Documenting how AI systems behave across real-world contexts. <a class="lnk" href="#">deploymentof.ai ↗</a></p>
+      </div>
+      <div class="blk node end">
+        <div class="sec"><span class="num">§03</span> Selected Publication</div>
+        <p class="cite"><span class="yr">2025</span><span class="t">Personalized Decision Support Policies</span><span class="a">Bhatt, U., Collins, K., Weller, A., et al.</span><span class="v">AAAI 2025</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="newbox">
+  <div class="in">
+    <div class="kick">What makes this direction TRACE's own</div>
+    <div class="signs">
+      <div class="sign">
+        <h4><span class="m"></span> The trace line</h4>
+        <p>A single line runs the length of the page like a plotter trace or an audit trail; each section is a plotted point. It begins at a coral origin and ends at a coral terminus — the page is literally a trace.</p>
+      </div>
+      <div class="sign">
+        <h4><span class="m"></span> The name, derived</h4>
+        <p>The masthead spells the acronym out of its own phrase — TRustworthy Artificial intelligenCE — so the wordmark's logic is on the page, not just a slogan over a hero image.</p>
+      </div>
+      <div class="sign">
+        <h4><span class="m"></span> Measurement, not marketing</h4>
+        <p>Content is set like a working paper: shoulder labels, section marks, tabular years, cited venues. Teal from the PI's page carries structure; coral is the one mark; blue stays in the wordmark.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>TRACE Lab · University of Cambridge</span>
+  <span>Direction study — The Trace Line · not final</span>
+</footer>
