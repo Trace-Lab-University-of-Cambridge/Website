@@ -1,10 +1,13 @@
 {{ define "main" }}
 <div class="publications-page">
-  <div class="publications-container">
-    <header class="publications-header">
+  <header class="publications-hero">
+    <div class="publications-hero-inner">
+      <p class="pub-eyebrow">Trustworthy Artificial Intelligence Laboratory</p>
       <h1>Publications</h1>
-      <p class="publications-subtitle">Research papers from the TRACE Lab</p>
-    </header>
+      <p class="publications-subtitle">Peer-reviewed papers and preprints from the TRACE Lab.</p>
+    </div>
+  </header>
+  <div class="publications-container">
 
     {{/* Get publications from data file */}}
     {{ $publications := site.Data.publications.publications }}

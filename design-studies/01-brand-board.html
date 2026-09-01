@@ -1,0 +1,385 @@
+<title>TRACE Brand System</title>
+<meta name="description" content="Colour and identity system for the TRACE Lab (Trustworthy AI) at the University of Cambridge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#FFFFFF; --surface:#F5F7FA; --surface-2:#EDF1F5;
+    --hairline:#E1E7EC; --hairline-strong:#CDD6DE;
+    --ink:#0C1B2A; --ink-body:#253340; --muted:#5A6B7A; --faint:#8493A1;
+    --blue:#073D74; --blue-strong:#062E57; --link:#0A4F91;
+    --blue-100:#E7EEF6; --blue-50:#F3F7FB; --field:#062A50;
+    --coral:#F67552; --coral-ink:#C0442A; --coral-100:#FCE9E1;
+    --maxw:1080px;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme:dark){
+      --paper:#0B1420; --surface:#101B2A; --surface-2:#162335;
+      --hairline:#20303f; --hairline-strong:#2c3f52;
+      --ink:#EAF0F6; --ink-body:#C6D2DE; --muted:#93A3B3; --faint:#6E8092;
+      --blue:#5AA0E6; --blue-strong:#7CB4EC; --link:#7CB4EC;
+      --blue-100:#12263f; --blue-50:#0f1e30; --field:#0a1929;
+      --coral:#F67552; --coral-ink:#F79A80; --coral-100:#2a1a15;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1420; --surface:#101B2A; --surface-2:#162335;
+    --hairline:#20303f; --hairline-strong:#2c3f52;
+    --ink:#EAF0F6; --ink-body:#C6D2DE; --muted:#93A3B3; --faint:#6E8092;
+    --blue:#5AA0E6; --blue-strong:#7CB4EC; --link:#7CB4EC;
+    --blue-100:#12263f; --blue-50:#0f1e30; --field:#0a1929;
+    --coral:#F67552; --coral-ink:#F79A80; --coral-100:#2a1a15;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink-body);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px}
+  @media(max-width:640px){ .wrap{padding:0 20px} }
+
+  h1,h2,h3{font-family:var(--serif); color:var(--ink); margin:0; letter-spacing:-.02em; text-wrap:balance; font-weight:600}
+  a{color:var(--link); text-decoration:none}
+
+  .kicker{
+    font-family:var(--mono); font-size:.6875rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted); font-weight:500;
+  }
+  .coral-rule{width:34px; height:3px; background:var(--coral); border-radius:2px; border:0; margin:0}
+
+  /* ---- Masthead ---- */
+  header.mast{border-bottom:1px solid var(--hairline)}
+  .mast-inner{padding:64px 0 44px}
+  .mast-top{display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap; margin-bottom:40px}
+  .mast-top .kicker span{color:var(--faint)}
+  .wordmark{width:min(420px,72vw); height:auto; display:block}
+  .wordmark .lm{fill:var(--blue)}
+  .wordmark .lc{fill:var(--coral)}
+  .mast h1{font-size:clamp(2.1rem,4.6vw,3.2rem); line-height:1.04; margin:26px 0 0; max-width:16ch}
+  .mast .lede{font-size:1.125rem; color:var(--muted); max-width:56ch; margin:18px 0 0; line-height:1.55}
+  .mast .lede b{color:var(--ink); font-weight:600}
+
+  /* ---- Section frame ---- */
+  section{padding:64px 0; border-bottom:1px solid var(--hairline)}
+  .sec-head{display:grid; grid-template-columns:180px 1fr; gap:32px; margin-bottom:40px}
+  @media(max-width:760px){ .sec-head{grid-template-columns:1fr; gap:14px} }
+  .sec-head h2{font-size:1.75rem}
+  .sec-head p{margin:10px 0 0; color:var(--muted); max-width:58ch}
+  .sec-label{display:flex; flex-direction:column; gap:12px}
+
+  /* ---- Color ---- */
+  .swatch-group{margin-bottom:40px}
+  .swatch-group:last-child{margin-bottom:0}
+  .group-name{font-family:var(--mono); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); margin-bottom:16px; display:flex; align-items:center; gap:10px}
+  .group-name::after{content:""; flex:1; height:1px; background:var(--hairline)}
+  .swatches{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px}
+  .sw{border:1px solid var(--hairline); border-radius:8px; overflow:hidden; background:var(--paper)}
+  .sw .chip{height:84px; display:flex; align-items:flex-end; padding:10px}
+  .sw .chip .tick{font-family:var(--mono); font-size:.625rem; letter-spacing:.08em; padding:2px 6px; border-radius:4px; background:rgba(255,255,255,.85); color:#0C1B2A}
+  .sw .meta{padding:12px 12px 14px}
+  .sw .tok{font-family:var(--mono); font-size:.75rem; color:var(--ink); font-weight:500}
+  .sw .hex{font-family:var(--mono); font-size:.6875rem; color:var(--muted); margin-top:2px; text-transform:uppercase}
+  .sw .role{font-size:.8125rem; color:var(--muted); margin-top:8px; line-height:1.4}
+
+  .note{display:flex; gap:12px; align-items:flex-start; margin-top:26px; padding:16px 18px; background:var(--surface); border-radius:8px; font-size:.875rem; color:var(--ink-body); line-height:1.55}
+  .note .b{width:3px; align-self:stretch; background:var(--coral); border-radius:2px; flex:none}
+  .note b{color:var(--ink)}
+
+  /* ---- Type ---- */
+  .type-row{display:grid; grid-template-columns:150px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hairline); align-items:baseline}
+  .type-row:first-of-type{border-top:0; padding-top:0}
+  @media(max-width:640px){ .type-row{grid-template-columns:1fr; gap:10px} }
+  .type-meta .fam{font-weight:600; color:var(--ink); font-size:.9375rem}
+  .type-meta .use{font-family:var(--mono); font-size:.6875rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:6px}
+  .spec-display{font-family:var(--serif); font-size:clamp(2rem,4.4vw,3.1rem); line-height:1.05; color:var(--ink); letter-spacing:-.025em}
+  .spec-body{font-size:1.0625rem; line-height:1.65; color:var(--ink-body); max-width:64ch}
+  .spec-body .u{color:var(--link); border-bottom:1px solid var(--coral); padding-bottom:1px}
+  .spec-mono{font-family:var(--mono); font-size:.8125rem; color:var(--ink); display:flex; flex-wrap:wrap; gap:8px 20px}
+  .spec-mono span{color:var(--muted)}
+  .scale{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 22px; margin-top:6px}
+  .scale b{font-family:var(--serif); color:var(--ink); font-weight:600; line-height:1}
+  .scale i{font-family:var(--mono); font-style:normal; font-size:.625rem; color:var(--faint); letter-spacing:.05em}
+
+  /* ---- Logo ---- */
+  .logo-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  @media(max-width:640px){ .logo-grid{grid-template-columns:1fr} }
+  .logo-cell{border:1px solid var(--hairline); border-radius:10px; padding:34px; display:flex; align-items:center; justify-content:center; min-height:150px}
+  .logo-cell.dark{background:var(--field); border-color:var(--field)}
+  .logo-cell .wordmark{width:min(300px,60vw)}
+  .logo-cell.dark .lm{fill:#fff}
+  .logo-cell .cap{position:absolute}
+  .logo-foot{display:flex; gap:10px 24px; flex-wrap:wrap; margin-top:16px; font-size:.8125rem; color:var(--muted)}
+  .logo-foot .icon{display:inline-flex; align-items:center; gap:10px}
+  .icon-badge{width:38px; height:38px; border-radius:9px; background:var(--blue); display:grid; place-items:center; flex:none}
+  .icon-badge svg{width:22px; height:auto}
+  .icon-badge .lm{fill:#fff}
+
+  /* ---- In use / preview ---- */
+  .demo{border:1px solid var(--hairline); border-radius:12px; overflow:hidden; background:var(--paper); box-shadow:0 8px 24px -14px rgba(12,27,42,.22)}
+  .demo-nav{display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid var(--hairline)}
+  .demo-nav .wordmark{width:120px}
+  .demo-nav nav{display:flex; gap:22px; font-size:.8125rem; font-weight:500}
+  .demo-nav nav a{color:var(--muted)}
+  .demo-nav nav a.active{color:var(--ink); position:relative}
+  .demo-nav nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-19px; height:2px; background:var(--coral)}
+  @media(max-width:560px){ .demo-nav nav{display:none} }
+  .demo-hero{padding:52px 40px 44px; background:linear-gradient(180deg,var(--blue-50),var(--paper))}
+  @media(max-width:560px){ .demo-hero{padding:36px 22px} }
+  .demo-hero .kicker{color:var(--coral-ink)}
+  .demo-hero h3{font-size:clamp(1.8rem,3.6vw,2.6rem); line-height:1.06; margin:14px 0 0; max-width:16ch}
+  .demo-hero p{color:var(--muted); max-width:52ch; margin:16px 0 24px; font-size:1rem}
+  .demo-hero .btns{display:flex; gap:12px; flex-wrap:wrap}
+  .btn{font-family:var(--sans); font-size:.875rem; font-weight:600; padding:10px 18px; border-radius:8px; cursor:pointer; border:1px solid transparent; display:inline-block}
+  .btn.pri{background:var(--blue); color:#fff}
+  .btn.sec{background:transparent; color:var(--blue); border-color:var(--blue)}
+  .demo-body{padding:34px 40px 42px}
+  @media(max-width:560px){ .demo-body{padding:28px 22px} }
+  .demo-body .kicker{display:block; margin-bottom:16px}
+  .rcards{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  @media(max-width:680px){ .rcards{grid-template-columns:1fr} }
+  .rcard{border:1px solid var(--hairline); border-radius:9px; padding:18px; background:var(--surface); transition:box-shadow .25s,transform .25s,border-color .25s}
+  .rcard:hover{box-shadow:0 8px 24px -12px rgba(12,27,42,.22); transform:translateY(-2px); border-color:var(--hairline-strong)}
+  .rcard .tag{font-family:var(--mono); font-size:.625rem; letter-spacing:.06em; text-transform:uppercase; color:var(--link); background:var(--blue-100); padding:3px 7px; border-radius:5px}
+  .rcard h4{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:1.0625rem; margin:14px 0 6px; letter-spacing:-.01em}
+  .rcard p{margin:0; font-size:.8125rem; color:var(--muted); line-height:1.5}
+  .pubs{margin-top:24px; border-top:1px solid var(--hairline)}
+  .pub{display:grid; grid-template-columns:auto 1fr auto; gap:18px; align-items:baseline; padding:14px 0; border-bottom:1px solid var(--hairline)}
+  .pub .yr{font-family:var(--mono); font-size:.75rem; color:var(--coral-ink); font-weight:500}
+  .pub .t{color:var(--ink); font-weight:500; font-size:.9375rem}
+  .pub .t span{color:var(--muted); font-weight:400}
+  .pub .v{font-family:var(--mono); font-size:.6875rem; color:var(--faint); white-space:nowrap}
+  @media(max-width:560px){ .pub{grid-template-columns:auto 1fr} .pub .v{display:none} }
+
+  /* ---- Principles ---- */
+  .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  @media(max-width:640px){ .cols{grid-template-columns:1fr} }
+  .pcard{border:1px solid var(--hairline); border-radius:9px; padding:20px}
+  .pcard.do{background:var(--surface)}
+  .pcard h4{margin:0 0 12px; font-family:var(--mono); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); font-weight:500; display:flex; align-items:center; gap:8px}
+  .pcard.do h4 .m{color:var(--blue)} .pcard.dont h4 .m{color:var(--coral-ink)}
+  .pcard ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px}
+  .pcard li{font-size:.875rem; color:var(--ink-body); line-height:1.45; padding-left:18px; position:relative}
+  .pcard li::before{content:""; position:absolute; left:0; top:.5em; width:6px; height:6px; border-radius:2px; background:var(--blue)}
+  .pcard.dont li::before{background:var(--coral); border-radius:50%}
+
+  footer{padding:40px 0 60px; color:var(--faint); font-size:.8125rem; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  footer .mono{font-family:var(--mono); letter-spacing:.04em}
+
+  @media(prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+
+<!-- Reusable wordmark symbol (real TRACE logo geometry) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trace-wordmark" viewBox="0 0 599.52 90.14">
+    <path class="lm" d="M540.87,1.62c-3.49,0-6.15,2.65-6.15,6.15v74.66c0,3.49,2.65,6.15,6.15,6.15h53.41c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-47.39v-28.15h40.9c2.83,0,5.24-2.25,5.24-5.11s-2.32-5.37-5.24-5.37h-40.9V12.1h46.74c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-52.76Z"/>
+    <path class="lm" d="M440.34,10.93c8.86,0,16.02,3.06,22.81,8.56,1.08.8,2.3,1.16,3.64,1.16,3.35,0,6.02-2.51,6.02-5.89,0-1.91-.86-3.69-2.38-4.86C461.28,2.86,452.03.06,440.47.06c-25.66,0-44.91,19.49-44.91,45.04v.26c0,25.13,18.97,44.78,44.26,44.78,12.6,0,22.3-3.43,31.67-11.71,1.24-1.1,1.95-2.62,1.95-4.29,0-2.99-2.67-5.5-5.63-5.5-1.29,0-2.57.48-3.54,1.34l-.04.03c-7.28,6.14-14.23,9.13-23.9,9.13-18.92,0-31.83-15.79-31.83-34.03v-.26c0-18.2,13-33.91,31.83-33.91Z"/>
+    <path class="lm" d="M41.72,12.62h24.05c2.99,0,5.37-2.54,5.37-5.5s-2.38-5.5-5.37-5.5H5.5C2.46,1.62,0,4.08,0,7.12s2.46,5.5,5.5,5.5h23.92v70.59c0,3.38,2.8,6.02,6.15,6.02s6.15-2.64,6.15-6.02V12.62Z"/>
+    <path class="lm" d="M198.14,78.81l-16.84-21.24-2.24-2.83,2.64-.81c5.14-1.59,9.39-4.04,12.57-7.33,9.17-9.46,8.88-27.07-.25-36.45-6.52-6.38-16-8.54-24.86-8.54h-32.41c-3.49,0-6.15,2.65-6.15,6.15v75.44c0,3.44,2.74,6.02,6.15,6.02s6.02-2.65,6.02-6.02V12.36h25.09c2.8,0,5.51.33,8,.97,12.02,3.06,16.27,15.98,10.06,25.29-1.79,2.68-4.26,4.58-7.06,5.84-2.44,1.11-5.14,1.74-7.85,2-1.04.1-2.09.08-3.11.17-5.18.49-6.69,3.51-3.96,7.91,1.86,2.99,5.18,7.03,7.97,10.47,5.31,6.54,10.46,13.27,15.65,19.91.46.58.96,1.27,1.45,1.82,1.45,1.63,3.15,2.5,5.54,2.5,3.06,0,5.76-2.34,5.76-5.5,0-2.02-.97-3.39-2.18-4.92Z"/>
+    <path class="lm" d="M262.44,77.78l37.99-65.99,17.4,30.22c3.33,5.79,6.15,11.57,9.37,17.14,3.78,6.56,13.7.83,9.91-5.72-3.73-6.47-7.56-12.9-11.19-19.43-5.47-9.84-11.35-21.31-17.19-29.96-3.65-5.41-13.33-5.37-16.61.03-2.73,4.5-6.17,10.9-8.92,15.68l-31.28,54.32c-1.32,2.28-4.77,7.09-4.77,9.43h0c0,3.15,2.57,5.72,5.72,5.72h67.99c7.57,0,7.57-11.45,0-11.45h-58.43Z"/>
+    <path class="lc" d="M352.61,80.46l-2.02-3.5c-1.57-2.73-5.09-3.67-7.82-2.1h0c-2.73,1.57-3.67,5.09-2.09,7.82l2.02,3.5c1.57,2.73,5.09,3.67,7.82,2.09h0c2.73-1.57,3.67-5.09,2.09-7.82Z"/>
+  </symbol>
+</svg>
+
+<header class="mast">
+  <div class="wrap mast-inner">
+    <div class="mast-top">
+      <div class="kicker">Brand &amp; Identity System <span>/ v1 draft</span></div>
+      <div class="kicker">University of Cambridge</div>
+    </div>
+    <svg class="wordmark" role="img" aria-label="TRACE"><use href="#trace-wordmark"/></svg>
+    <h1>The colour and identity system for TRACE Lab.</h1>
+    <p class="lede">A <b>trustworthy-AI research lab</b> presented like scholarship, not a product launch: confident type, hairline structure, and a disciplined palette built on the wordmark's deep blue and coral. This board is rendered in the system it proposes.</p>
+  </div>
+</header>
+
+<!-- COLOR -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><hr class="coral-rule"><span class="kicker">Colour</span></div>
+      <div>
+        <h2>A restrained palette that does structural work</h2>
+        <p>Neutral paper and deep TRACE blue carry the page; coral is a single signal — never a rainbow of category tags. Every text pairing meets WCAG AA contrast.</p>
+      </div>
+    </div>
+
+    <div class="swatch-group">
+      <div class="group-name">Neutrals — ink on paper</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E1E7EC"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--paper</div><div class="hex">#FFFFFF</div><div class="role">Base background</div></div></div>
+        <div class="sw"><div class="chip" style="background:#F5F7FA"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--surface</div><div class="hex">#F5F7FA</div><div class="role">Alt sections, cards</div></div></div>
+        <div class="sw"><div class="chip" style="background:#E1E7EC"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--hairline</div><div class="hex">#E1E7EC</div><div class="role">1px rules &amp; borders</div></div></div>
+        <div class="sw"><div class="chip" style="background:#0C1B2A"><span class="tick" style="background:rgba(12,27,42,.6);color:#fff">Aa</span></div><div class="meta"><div class="tok">--ink</div><div class="hex">#0C1B2A</div><div class="role">Headings / primary</div></div></div>
+        <div class="sw"><div class="chip" style="background:#253340"><span class="tick" style="background:rgba(255,255,255,.9)">Aa</span></div><div class="meta"><div class="tok">--ink-body</div><div class="hex">#253340</div><div class="role">Body text</div></div></div>
+        <div class="sw"><div class="chip" style="background:#5A6B7A"><span class="tick" style="background:rgba(255,255,255,.9)">Aa</span></div><div class="meta"><div class="tok">--muted</div><div class="hex">#5A6B7A</div><div class="role">Secondary text</div></div></div>
+      </div>
+    </div>
+
+    <div class="swatch-group">
+      <div class="group-name">Brand blue</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#073D74"><span class="tick" style="background:rgba(255,255,255,.92)">Aa</span></div><div class="meta"><div class="tok">--blue</div><div class="hex">#073D74</div><div class="role">Brand · buttons · deep fields</div></div></div>
+        <div class="sw"><div class="chip" style="background:#0A4F91"><span class="tick" style="background:rgba(255,255,255,.92)">Aa</span></div><div class="meta"><div class="tok">--link</div><div class="hex">#0A4F91</div><div class="role">Text links (≥7:1)</div></div></div>
+        <div class="sw"><div class="chip" style="background:#062A50"><span class="tick" style="background:rgba(255,255,255,.92)">Aa</span></div><div class="meta"><div class="tok">--field</div><div class="hex">#062A50</div><div class="role">Full deep-blue blocks</div></div></div>
+        <div class="sw"><div class="chip" style="background:#E7EEF6"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--blue-100</div><div class="hex">#E7EEF6</div><div class="role">Tint chips, quiet fills</div></div></div>
+      </div>
+    </div>
+
+    <div class="swatch-group">
+      <div class="group-name">Coral — one signal, ≤5% of a surface</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#F67552"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--coral</div><div class="hex">#F67552</div><div class="role">The accent mark · active state</div></div></div>
+        <div class="sw"><div class="chip" style="background:#C0442A"><span class="tick" style="background:rgba(255,255,255,.92)">Aa</span></div><div class="meta"><div class="tok">--coral-ink</div><div class="hex">#C0442A</div><div class="role">Coral as text (≥4.5:1)</div></div></div>
+        <div class="sw"><div class="chip" style="background:#FCE9E1"><span class="tick">Aa</span></div><div class="meta"><div class="tok">--coral-100</div><div class="hex">#FCE9E1</div><div class="role">Coral tint fill</div></div></div>
+      </div>
+    </div>
+
+    <div class="note"><span class="b"></span><div><b>Why coral is rationed.</b> On the current site coral competes with eight tag colours and animated gradients, so it reads as noise. Given one job — the logo tick, the active nav marker, a key figure — it becomes the lab's signature. Pure coral fails as small text on white, so <b>--coral-ink</b> carries any coral wording.</div></div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><hr class="coral-rule"><span class="kicker">Typography</span></div>
+      <div>
+        <h2>Three voices: scholarship, clarity, data</h2>
+        <p>A serif display for authority, a workhorse sans for reading, and a mono reserved for real data — publication years, tags, counts. Continuous with the PI's page, elevated to a lab brand.</p>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta"><div class="fam">Source Serif 4</div><div class="use">Display · headings</div></div>
+      <div>
+        <div class="spec-display">Trustworthy AI for high-stakes decisions.</div>
+        <div class="scale"><b style="font-size:2.6rem">Aa</b><i>Display 64</i><b style="font-size:1.75rem">Aa</b><i>H2 28</i><b style="font-size:1.3rem">Aa</b><i>H3 21</i></div>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta"><div class="fam">Inter</div><div class="use">Body · UI · navigation</div></div>
+      <div>
+        <p class="spec-body">We build trustworthy artificial-intelligence systems for high-stakes settings like healthcare, education, and public safety. Drawing from machine learning, human-computer interaction, and social science, we investigate when and how AI can be <span class="u">trusted, integrated into decision-making, and evaluated</span> in ecologically valid settings.</p>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta"><div class="fam">JetBrains Mono</div><div class="use">Data · meta · tags</div></div>
+      <div>
+        <div class="spec-mono">
+          <span>YEAR</span>2025&nbsp;&nbsp;2024
+          <span>VENUE</span>AAAI&nbsp;·&nbsp;Nature&nbsp;Human&nbsp;Behaviour
+          <span>TOPIC</span>Trustworthy&nbsp;AI&nbsp;·&nbsp;HCI&nbsp;·&nbsp;Deployment
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><hr class="coral-rule"><span class="kicker">Wordmark</span></div>
+      <div>
+        <h2>One mark, two grounds</h2>
+        <p>The existing wordmark is fixed. It runs in brand blue on light grounds and reverses to white on the deep-blue field; the coral tick is the only element that never changes colour.</p>
+      </div>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-cell"><svg class="wordmark" role="img" aria-label="TRACE on light"><use href="#trace-wordmark"/></svg></div>
+      <div class="logo-cell dark"><svg class="wordmark" role="img" aria-label="TRACE reversed"><use href="#trace-wordmark"/></svg></div>
+    </div>
+    <div class="logo-foot">
+      <span class="icon"><span class="icon-badge"><svg viewBox="0 0 599.52 90.14" role="img" aria-label="TRACE icon"><use href="#trace-wordmark"/></svg></span> Favicon / square lockup</span>
+      <span class="icon">Clear space = height of the “T”. Minimum width 96px on screen.</span>
+    </div>
+  </div>
+</section>
+
+<!-- IN USE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><hr class="coral-rule"><span class="kicker">In use</span></div>
+      <div>
+        <h2>The system, applied</h2>
+        <p>A preview of the homepage front door in the new system — the same content the site ships today, without the glassmorphism and animated gradients.</p>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-nav">
+        <svg class="wordmark" role="img" aria-label="TRACE"><use href="#trace-wordmark"/></svg>
+        <nav><a class="active">Research</a><a>Team</a><a>Publications</a><a>News</a><a>Join</a></nav>
+      </div>
+      <div class="demo-hero">
+        <span class="kicker">Trustworthy Artificial Intelligence Laboratory</span>
+        <h3>When can AI be trusted in the real world?</h3>
+        <p>A University of Cambridge lab studying how AI is deployed, integrated into decisions, and evaluated in high-stakes settings.</p>
+        <div class="btns"><span class="btn pri">Explore research</span><span class="btn sec">Join the lab</span></div>
+      </div>
+      <div class="demo-body">
+        <span class="kicker">Research</span>
+        <div class="rcards">
+          <div class="rcard"><span class="tag">Deployment</span><h4>Deployment as a Science</h4><p>Documenting how AI systems are deployed across diverse real-world contexts.</p></div>
+          <div class="rcard"><span class="tag">Society</span><h4>Human–AI Externalities</h4><p>The broader impacts of AI on individuals and society — intended and not.</p></div>
+          <div class="rcard"><span class="tag">Agents</span><h4>Agent Orchestration</h4><p>Frameworks for AI agents that work alongside humans in complex settings.</p></div>
+        </div>
+        <div class="pubs">
+          <div class="pub"><span class="yr">2025</span><span class="t">Personalized Decision Support Policies <span>· Bhatt, U., et al.</span></span><span class="v">AAAI</span></div>
+          <div class="pub"><span class="yr">2024</span><span class="t">Building Machines that Think with People <span>· Collins, K., et al.</span></span><span class="v">Nature Human Behaviour</span></div>
+          <div class="pub"><span class="yr">2024</span><span class="t">Interactive Evaluations for Interaction Harms <span>· Ibrahim, L., et al.</span></span><span class="v">arXiv</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label"><hr class="coral-rule"><span class="kicker">Principles</span></div>
+      <div>
+        <h2>What the rebrand keeps and drops</h2>
+        <p>The wordmark, colours, and content are honoured; the decoration that signals nothing is removed.</p>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="pcard do">
+        <h4><span class="m">+</span> Keep &amp; build</h4>
+        <ul>
+          <li>Deep blue + coral, developed into a disciplined token system</li>
+          <li>Structure drawn with hairline rules and whitespace</li>
+          <li>Serif display for scholarship; mono for real data only</li>
+          <li>Cambridge worn as credential — lockup, footer, affiliations</li>
+          <li>WCAG AA contrast on every text pairing</li>
+        </ul>
+      </div>
+      <div class="pcard dont">
+        <h4><span class="m">−</span> Retire</h4>
+        <ul>
+          <li>Glassmorphism blur cards and animated gradient heroes</li>
+          <li>Gradient / shimmer headline text</li>
+          <li>Scattered ○ □ ◇ △ ▽ symbol patterns</li>
+          <li>The eight-colour category tag rainbow</li>
+          <li>Pill CTAs with heavy coloured glow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>TRACE Lab · University of Cambridge · trace-lab.ai</span>
+  <span class="mono">BRAND SYSTEM v1 — DRAFT FOR REVIEW</span>
+</footer>

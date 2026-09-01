@@ -1,48 +1,44 @@
 # TRACE Lab Theme
-# Clean, minimal academic design inspired by astroautomata.com
+# Fresh institutional direction — deep blue + coral on paper white
 
 [light]
-  # Primary - Subtle dark blue
-  primary = "#111827"
+  # Primary - TRACE brand blue
+  primary = "#164A9E"
 
-  # Backgrounds - Clean whites with subtle grays
+  # Backgrounds - Paper white with a cool off-white for alternating bands
   background = "#ffffff"
-  home_section_odd = "#fafafa"
+  home_section_odd = "#F6F8FB"
   home_section_even = "#ffffff"
 
-  # Text - High contrast, readable
-  text = "#111827"
-  text_muted = "#6b7280"
+  # Text - Near-black cool ink
+  text = "#191D26"
+  text_muted = "#5B6472"
 
-  # Links - Subtle blue accent
-  link = "#2563eb"
-  link_hover = "#1d4ed8"
+  # Links - Brand blue
+  link = "#0C4FA3"
+  link_hover = "#0A3F86"
 
   # Menu - Clean white navbar
   menu_primary = "#ffffff"
-  menu_text = "#374151"
-  menu_text_active = "#111827"
-  menu_title = "#111827"
+  menu_text = "#5B6472"
+  menu_text_active = "#191D26"
+  menu_title = "#191D26"
 
 [dark]
-  # Primary - Clean accent
-  primary = "#60a5fa"
+  # Site runs light-only; dark kept in sync as a safe fallback
+  primary = "#5AA0E6"
 
-  # Backgrounds - Deep dark
-  background = "#0a0a0a"
-  home_section_odd = "#111111"
-  home_section_even = "#0a0a0a"
+  background = "#0B1420"
+  home_section_odd = "#101B2A"
+  home_section_even = "#0B1420"
 
-  # Text
-  text = "#f3f4f6"
-  text_muted = "#9ca3af"
+  text = "#EAF0F6"
+  text_muted = "#93A3B3"
 
-  # Links
-  link = "#60a5fa"
-  link_hover = "#93c5fd"
+  link = "#7CB4EC"
+  link_hover = "#A6CBF2"
 
-  # Menu
-  menu_primary = "#0a0a0a"
-  menu_text = "#d1d5db"
+  menu_primary = "#0B1420"
+  menu_text = "#C6D2DE"
   menu_text_active = "#ffffff"
   menu_title = "#ffffff"

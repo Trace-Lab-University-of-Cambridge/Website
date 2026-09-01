@@ -1,12 +1,12 @@
 # TRACE Lab Custom Font
-# Clean, modern sans-serif typography
+# Fresh, confident grotesque + monospace for data (rebrand direction)
 name = "Trace"
 
 # Google Fonts
-google_fonts = "family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400"
+google_fonts = "family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Spline+Sans+Mono:wght@400;500;600"
 
 # Font families
-heading_font = "Inter"
-body_font = "Inter"
-nav_font = "Inter"
-mono_font = "JetBrains Mono"
+heading_font = "Familjen Grotesk"
+body_font = "Familjen Grotesk"
+nav_font = "Familjen Grotesk"
+mono_font = "Spline Sans Mono"

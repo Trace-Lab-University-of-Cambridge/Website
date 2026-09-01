@@ -1,0 +1,242 @@
+<title>TRACE Offprint</title>
+<meta name="description" content="A paper-set design direction for the TRACE Lab site — warm paper, deep teal, coral, and a working-paper layout.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#FAFAF7;        /* warm off-white, from Umang's #fafaf8 */
+    --paper-deep:#F2F1EB;   /* inset / alt band */
+    --ink:#1A1A1A;          /* near-black */
+    --ink-soft:#33322E;     /* body */
+    --muted:#6B6A63;        /* secondary, warm grey */
+    --faint:#9A988E;        /* margin notes */
+    --rule:#E0DFD8;         /* hairline */
+    --rule-strong:#CFCDC3;
+    --teal:#0D4A4C;         /* structural voice — headings, links */
+    --teal-lift:#1A6B6D;    /* hover / large */
+    --teal-wash:#EAF0EF;    /* quiet fill */
+    --coral:#F67552;        /* the mark — logo tick, proof marks, rules */
+    --coral-ink:#B44A2C;    /* coral as text (AA on paper) */
+    --serif:"Literata",Georgia,"Times New Roman",serif;
+    --grot:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --measure:34rem;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink-soft);
+    font-family:var(--serif); font-optical-sizing:auto;
+    font-size:1.0625rem; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+
+  /* Page frame: reading column + left margin shoulder */
+  .sheet{max-width:60rem; margin:0 auto; padding:0 2rem 5rem}
+  .row{display:grid; grid-template-columns:9.5rem minmax(0,var(--measure)); gap:2.75rem; align-items:start}
+  @media(max-width:760px){
+    .row{grid-template-columns:1fr; gap:.5rem}
+  }
+  .shoulder{
+    font-family:var(--grot); font-size:.6875rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted); font-weight:600;
+    padding-top:.55rem; line-height:1.5;
+  }
+  .shoulder .n{color:var(--coral-ink)}
+  .shoulder .sub{display:block; color:var(--faint); font-weight:500; letter-spacing:.1em; margin-top:.35rem}
+  @media(max-width:760px){
+    .shoulder{padding-top:0; margin-bottom:.4rem; display:flex; gap:.9rem; align-items:baseline}
+    .shoulder .sub{margin-top:0}
+  }
+
+  h1,h2,h3,h4{font-family:var(--serif); color:var(--ink); font-weight:600; margin:0; letter-spacing:-.006em; text-wrap:balance}
+  a{color:var(--teal); text-decoration:none; border-bottom:1px solid var(--rule-strong); transition:border-color .18s,color .18s}
+  a:hover{color:var(--teal-lift); border-bottom-color:var(--coral)}
+  p{margin:0 0 1.05em}
+  em,i{font-style:italic}
+
+  /* ---- Masthead ---- */
+  header.top{border-top:3px solid var(--ink); margin-top:2.25rem}
+  .mast{padding:2.4rem 0 2.6rem; border-bottom:1px solid var(--rule)}
+  .brandline{display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; margin-bottom:2.4rem}
+  .wordmark{width:min(15rem,52vw); height:auto; display:block}
+  .wordmark .lm{fill:#073D74}
+  .wordmark .lc{fill:var(--coral)}
+  .brandline .imprint{font-family:var(--grot); font-size:.6875rem; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); text-align:right; line-height:1.7}
+  .mast h1{font-size:clamp(2.05rem,4.6vw,3.15rem); line-height:1.08; max-width:15ch}
+  .mast .lede{font-size:1.1875rem; line-height:1.55; color:var(--ink-soft); max-width:38ch; margin:1.1rem 0 0}
+  .mast .lede .drop{color:var(--coral-ink); font-style:italic}
+  .runhead{font-family:var(--grot); font-size:.6875rem; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); font-weight:600; margin-bottom:1.1rem; display:flex; align-items:center; gap:.6rem}
+  .runhead::before{content:""; width:.62rem; height:.62rem; background:var(--coral); clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+  /* ---- Body sections ---- */
+  .band{padding:2.9rem 0; border-bottom:1px solid var(--rule)}
+  .band h2{font-size:1.6rem; line-height:1.15; margin-bottom:.9rem}
+  .band .measure{max-width:var(--measure)}
+
+  /* Research — a set index, not cards */
+  .index{margin:0; padding:0; list-style:none}
+  .index li{padding:1rem 0; border-top:1px solid var(--rule); display:grid; grid-template-columns:1.6rem 1fr; gap:.9rem; align-items:baseline}
+  .index li:first-child{border-top:0; padding-top:.2rem}
+  .index .mk{font-family:var(--grot); font-size:.75rem; font-weight:700; color:var(--teal)}
+  .index h3{font-size:1.14rem; margin-bottom:.2rem; display:flex; align-items:baseline; gap:.5rem}
+  .index h3 .ext{font-family:var(--grot); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--coral-ink); border:0; font-weight:600}
+  .index p{font-size:.95rem; color:var(--muted); margin:0; line-height:1.5}
+
+  /* Publications — offprint list */
+  .pubs{margin:0; padding:0; list-style:none}
+  .pub{display:grid; grid-template-columns:3.2rem 1fr; gap:1rem; padding:.95rem 0; border-top:1px solid var(--rule)}
+  .pub:first-child{border-top:0}
+  .pub .yr{font-family:var(--grot); font-weight:600; font-size:.82rem; color:var(--coral-ink); font-variant-numeric:tabular-nums; padding-top:.15rem}
+  .pub .cite{font-size:1.02rem; line-height:1.4}
+  .pub .cite .t{color:var(--ink); font-weight:500}
+  .pub .cite .a{color:var(--muted); font-style:italic; display:block; margin-top:.15rem; font-size:.92rem}
+  .pub .cite .v{font-family:var(--grot); font-size:.66rem; letter-spacing:.09em; text-transform:uppercase; color:var(--teal); margin-top:.3rem; display:inline-block}
+
+  /* Team — set names, printed roster */
+  .roster{display:flex; flex-wrap:wrap; gap:.35rem .5rem; max-width:var(--measure)}
+  .roster .p{font-size:1.02rem; color:var(--ink); white-space:nowrap}
+  .roster .p .r{color:var(--faint); font-size:.8rem; font-family:var(--grot); letter-spacing:.02em}
+  .roster .sep{color:var(--rule-strong)}
+
+  /* ---- brand key (set apart, colophon style) ---- */
+  .colophon{margin-top:3.2rem; background:var(--paper-deep); border:1px solid var(--rule); border-radius:2px}
+  .colophon .in{padding:2rem 2rem 2.2rem; max-width:60rem; margin:0 auto}
+  .colophon .runhead{color:var(--muted)}
+  .colophon .runhead::before{background:var(--muted)}
+  .keys{display:grid; grid-template-columns:1fr 1fr; gap:2rem}
+  @media(max-width:640px){ .keys{grid-template-columns:1fr; gap:1.4rem} }
+  .swatches{display:flex; gap:.6rem; flex-wrap:wrap}
+  .sw{flex:1 1 4rem; min-width:4rem}
+  .sw .c{height:3.1rem; border-radius:2px; border:1px solid rgba(0,0,0,.08)}
+  .sw .l{font-family:var(--grot); font-size:.6rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-top:.4rem; line-height:1.3}
+  .sw .l b{display:block; color:var(--ink); font-size:.66rem; letter-spacing:.02em}
+  .typekey p{margin:0 0 .5rem}
+  .typekey .big{font-size:1.55rem; color:var(--ink); line-height:1.1}
+  .typekey .big em{color:var(--teal)}
+  .typekey .lab{font-family:var(--grot); font-size:.7rem; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); font-weight:600}
+  .typekey .note{font-size:.86rem; color:var(--muted); line-height:1.5; margin-top:.7rem}
+
+  footer{max-width:60rem; margin:1.4rem auto 0; padding:0 2rem; font-family:var(--grot); font-size:.72rem; letter-spacing:.06em; color:var(--faint); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; text-transform:uppercase}
+
+  @media(prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tw" viewBox="0 0 599.52 90.14">
+    <path class="lm" d="M540.87,1.62c-3.49,0-6.15,2.65-6.15,6.15v74.66c0,3.49,2.65,6.15,6.15,6.15h53.41c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-47.39v-28.15h40.9c2.83,0,5.24-2.25,5.24-5.11s-2.32-5.37-5.24-5.37h-40.9V12.1h46.74c2.91,0,5.24-2.33,5.24-5.24s-2.39-5.24-5.24-5.24h-52.76Z"/>
+    <path class="lm" d="M440.34,10.93c8.86,0,16.02,3.06,22.81,8.56,1.08.8,2.3,1.16,3.64,1.16,3.35,0,6.02-2.51,6.02-5.89,0-1.91-.86-3.69-2.38-4.86C461.28,2.86,452.03.06,440.47.06c-25.66,0-44.91,19.49-44.91,45.04v.26c0,25.13,18.97,44.78,44.26,44.78,12.6,0,22.3-3.43,31.67-11.71,1.24-1.1,1.95-2.62,1.95-4.29,0-2.99-2.67-5.5-5.63-5.5-1.29,0-2.57.48-3.54,1.34l-.04.03c-7.28,6.14-14.23,9.13-23.9,9.13-18.92,0-31.83-15.79-31.83-34.03v-.26c0-18.2,13-33.91,31.83-33.91Z"/>
+    <path class="lm" d="M41.72,12.62h24.05c2.99,0,5.37-2.54,5.37-5.5s-2.38-5.5-5.37-5.5H5.5C2.46,1.62,0,4.08,0,7.12s2.46,5.5,5.5,5.5h23.92v70.59c0,3.38,2.8,6.02,6.15,6.02s6.15-2.64,6.15-6.02V12.62Z"/>
+    <path class="lm" d="M198.14,78.81l-16.84-21.24-2.24-2.83,2.64-.81c5.14-1.59,9.39-4.04,12.57-7.33,9.17-9.46,8.88-27.07-.25-36.45-6.52-6.38-16-8.54-24.86-8.54h-32.41c-3.49,0-6.15,2.65-6.15,6.15v75.44c0,3.44,2.74,6.02,6.15,6.02s6.02-2.65,6.02-6.02V12.36h25.09c2.8,0,5.51.33,8,.97,12.02,3.06,16.27,15.98,10.06,25.29-1.79,2.68-4.26,4.58-7.06,5.84-2.44,1.11-5.14,1.74-7.85,2-1.04.1-2.09.08-3.11.17-5.18.49-6.69,3.51-3.96,7.91,1.86,2.99,5.18,7.03,7.97,10.47,5.31,6.54,10.46,13.27,15.65,19.91.46.58.96,1.27,1.45,1.82,1.45,1.63,3.15,2.5,5.54,2.5,3.06,0,5.76-2.34,5.76-5.5,0-2.02-.97-3.39-2.18-4.92Z"/>
+    <path class="lm" d="M262.44,77.78l37.99-65.99,17.4,30.22c3.33,5.79,6.15,11.57,9.37,17.14,3.78,6.56,13.7.83,9.91-5.72-3.73-6.47-7.56-12.9-11.19-19.43-5.47-9.84-11.35-21.31-17.19-29.96-3.65-5.41-13.33-5.37-16.61.03-2.73,4.5-6.17,10.9-8.92,15.68l-31.28,54.32c-1.32,2.28-4.77,7.09-4.77,9.43h0c0,3.15,2.57,5.72,5.72,5.72h67.99c7.57,0,7.57-11.45,0-11.45h-58.43Z"/>
+    <path class="lc" d="M352.61,80.46l-2.02-3.5c-1.57-2.73-5.09-3.67-7.82-2.1h0c-2.73,1.57-3.67,5.09-2.09,7.82l2.02,3.5c1.57,2.73,5.09,3.67,7.82,2.09h0c2.73-1.57,3.67-5.09,2.09-7.82Z"/>
+  </symbol>
+</svg>
+
+<div class="sheet">
+  <header class="top">
+    <div class="mast">
+      <div class="brandline">
+        <svg class="wordmark" role="img" aria-label="TRACE"><use href="#tw"/></svg>
+        <div class="imprint">Trustworthy Artificial Intelligence Laboratory<br>University of Cambridge · est. 2024</div>
+      </div>
+      <div class="row">
+        <div class="shoulder"><span class="n">A design study</span><span class="sub">Direction: Offprint</span></div>
+        <div>
+          <h1>When can artificial intelligence be trusted in the real world?</h1>
+          <p class="lede">A Cambridge laboratory studying how AI is deployed, integrated into decisions, and evaluated in <span class="drop">high-stakes settings</span> — healthcare, education, public safety.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="row">
+      <div class="shoulder">§ 01<span class="sub">About</span></div>
+      <div class="measure">
+        <p>We build <b>tr</b>ustworthy <b>a</b>rtificial intelligen<b>ce</b> systems for settings where the cost of error is high. Drawing from machine learning, human–computer interaction, and social science, we investigate when and how AI can be trusted, integrated into human decision-making, and evaluated in ecologically valid conditions — not only on benchmarks, but in the places these systems actually run.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="row">
+      <div class="shoulder">§ 02<span class="sub">Research</span></div>
+      <div class="measure">
+        <div class="runhead">Programmes</div>
+        <ul class="index">
+          <li><span class="mk">a</span><div><h3>Deployment as a Science <span class="ext">deploymentof.ai ↗</span></h3><p>Documenting how AI systems are deployed across diverse real-world contexts.</p></div></li>
+          <li><span class="mk">b</span><div><h3>Human–AI Externalities <span class="ext">externalis.ai ↗</span></h3><p>The broader impacts of AI on individuals and society — intended and unintended.</p></div></li>
+          <li><span class="mk">c</span><div><h3>Agent Orchestration <span class="ext">tailorworkflow ↗</span></h3><p>Frameworks for deploying AI agents that work alongside humans in complex environments.</p></div></li>
+          <li><span class="mk">d</span><div><h3>Foundations of Trustworthy AI</h3><p>Systems that are reliable, fair, transparent, and aligned with human values.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="row">
+      <div class="shoulder">§ 03<span class="sub">Selected<br>Publications</span></div>
+      <div class="measure">
+        <ul class="pubs">
+          <li class="pub"><span class="yr">2025</span><div class="cite"><span class="t">Personalized Decision Support Policies</span><span class="a">Bhatt, U., Collins, K., Weller, A., et al.</span><span class="v">AAAI 2025</span></div></li>
+          <li class="pub"><span class="yr">2024</span><div class="cite"><span class="t">Building Machines that Think with People</span><span class="a">Collins, K., Bhatt, U., et al.</span><span class="v">Nature Human Behaviour</span></div></li>
+          <li class="pub"><span class="yr">2024</span><div class="cite"><span class="t">Towards Interactive Evaluations for Interaction Harms in Human–AI Systems</span><span class="a">Ibrahim, L., Bhatt, U., et al.</span><span class="v">arXiv preprint</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="row">
+      <div class="shoulder">§ 04<span class="sub">People</span></div>
+      <div class="measure">
+        <div class="runhead">The Lab</div>
+        <div class="roster">
+          <span class="p">Umang Bhatt <span class="r">Director</span></span><span class="sep">·</span>
+          <span class="p">Elaf Almahmoud</span><span class="sep">·</span>
+          <span class="p">Noah Broestl</span><span class="sep">·</span>
+          <span class="p">Drew Calcagno</span><span class="sep">·</span>
+          <span class="p">Bernardo Villegas</span><span class="sep">·</span>
+          <span class="p">Yung-Hsuan Wu</span><span class="sep">·</span>
+          <span class="p">Kostadin Devedzhiev</span><span class="sep">·</span>
+          <span class="p">Afan Handoyo</span><span class="sep">·</span>
+          <span class="p">Shin Zert Phua</span><span class="sep">·</span>
+          <span class="p">Juan Pablo Ruiz</span><span class="sep">·</span>
+          <span class="p">Ariella Shulman</span><span class="sep">·</span>
+          <span class="p">Joy Wang</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Colophon / brand key -->
+<div class="colophon">
+  <div class="in">
+    <div class="runhead">Colophon — the system on this page</div>
+    <div class="keys">
+      <div>
+        <div class="swatches">
+          <div class="sw"><div class="c" style="background:#FAFAF7"></div><div class="l"><b>Paper</b>#FAFAF7</div></div>
+          <div class="sw"><div class="c" style="background:#1A1A1A"></div><div class="l"><b>Ink</b>#1A1A1A</div></div>
+          <div class="sw"><div class="c" style="background:#0D4A4C"></div><div class="l"><b>Teal</b>#0D4A4C</div></div>
+          <div class="sw"><div class="c" style="background:#F67552"></div><div class="l"><b>Coral</b>#F67552</div></div>
+          <div class="sw"><div class="c" style="background:#E0DFD8"></div><div class="l"><b>Rule</b>#E0DFD8</div></div>
+        </div>
+        <p class="typekey note">Warm paper and near-black ink, as on the PI's own page. Deep <b style="color:var(--teal)">teal</b> is the structural voice — headings, links, rules; <b style="color:var(--coral-ink)">coral</b> is rationed to one mark. The wordmark keeps its blue; nothing else on the page is blue.</p>
+      </div>
+      <div class="typekey">
+        <span class="lab">Literata — the page</span>
+        <p class="big">Trustworthy AI, set like <em>scholarship.</em></p>
+        <span class="lab">Archivo — the labels</span>
+        <p class="note">A book/reading serif paired with a quiet grotesque for labels and navigation — deliberately not the Crimson / Inter / mono stack that reads as generic. No monospace anywhere.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>TRACE Lab · University of Cambridge</span>
+  <span>Design study — Direction: Offprint · not final</span>
+</footer>
