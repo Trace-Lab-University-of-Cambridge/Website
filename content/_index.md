@@ -139,19 +139,6 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
-               data-name="Bernardo Villegas"
-               data-role="PhD Student (co-advised with Anna Korhonen)"
-               data-org="University of Cambridge"
-               data-bio="Bernardo is a PhD student with the TRACE lab researching trustworthy AI systems. He focuses on the intersection of AI research, social science, and tech development and draws from his background in sociology. From Ecuador, Bernardo graduated from Pontifical Catholic University of Ecuador with a degree in Sociology and from the University of Edinburgh with his Master's degree in Data Science with distinction."
-               data-interests="Trustworthy AI,NLP,Social Science"
-               data-website="https://bjv01.github.io">
-            <img class="team-avatar" src="media/team/bernardo-villegas.png" alt="Bernardo Villegas">
-            <h3 class="team-name">Bernardo Villegas</h3>
-            <p class="team-role">PhD Student</p>
-            <p class="team-org">Cambridge</p>
-          </div>
-          <!-- Research Assistant -->
-          <div class="team-card"
                data-name="Kostadin Devedzhiev"
                data-role="PhD Student"
                data-org="University of Cambridge"
@@ -164,27 +151,40 @@ sections:
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
+               data-name="Bernardo Villegas"
+               data-role="PhD Student (co-advised with Anna Korhonen)"
+               data-org="University of Cambridge"
+               data-bio="Bernardo is a PhD student with the TRACE lab researching trustworthy AI systems. He focuses on the intersection of AI research, social science, and tech development and draws from his background in sociology. From Ecuador, Bernardo graduated from Pontifical Catholic University of Ecuador with a degree in Sociology and from the University of Edinburgh with his Master's degree in Data Science with distinction."
+               data-interests="Trustworthy AI,NLP,Social Science"
+               data-website="https://bjv01.github.io">
+            <img class="team-avatar" src="media/team/bernardo-villegas.png" alt="Bernardo Villegas">
+            <h3 class="team-name">Bernardo Villegas</h3>
+            <p class="team-role">PhD Student</p>
+            <p class="team-org">Cambridge</p>
+          </div>
+          <!-- Research Associates -->
+          <div class="team-card"
                data-name="Ariella Shulman"
-               data-role="Masters Student"
+               data-role="Research Associate"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning"
                data-website="https://www.linkedin.com/in/ariella-shulman/">
             <img class="team-avatar" src="media/team/ariella-shulman.png" alt="Ariella Shulman">
             <h3 class="team-name">Ariella Shulman</h3>
-            <p class="team-role">Masters Student</p>
+            <p class="team-role">Research Associate</p>
             <p class="team-org">Cambridge</p>
           </div>
           <div class="team-card"
                data-name="Joy Wang"
-               data-role="Masters Student"
+               data-role="Research Associate"
                data-org="University of Cambridge"
                data-bio="Bio coming soon."
                data-interests="Trustworthy AI,Machine Learning"
                data-website="https://www.linkedin.com/in/xi-joy-wang/">
             <img class="team-avatar" src="media/team/joy-wang.jpg" alt="Joy Wang">
             <h3 class="team-name">Joy Wang</h3>
-            <p class="team-role">Masters Student</p>
+            <p class="team-role">Research Associate</p>
             <p class="team-org">Cambridge</p>
           </div>
           <!-- Research Interns -->

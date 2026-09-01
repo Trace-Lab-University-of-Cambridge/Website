@@ -115,27 +115,7 @@
       });
     })();
 
-    // ---- 4a. Trace-line scroll progress ----------------------------------
-    (function traceProgress() {
-      if (reduced) return;
-      const bar = document.createElement('div');
-      bar.className = 'trace-progress';
-      bar.setAttribute('aria-hidden', 'true');
-      document.body.appendChild(bar);
-      let raf = 0;
-      const update = () => {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        const p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
-        bar.style.setProperty('--p', p.toFixed(4));
-        raf = 0;
-      };
-      const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll, { passive: true });
-      update();
-    })();
-
-    // ---- 4b. Partner logo marquee ----------------------------------------
+    // ---- 4. Partner logo marquee -----------------------------------------
     (function logoMarquee() {
       if (reduced) return;
       document.querySelectorAll('.affiliations-row.supporters-row').forEach((row) => {
