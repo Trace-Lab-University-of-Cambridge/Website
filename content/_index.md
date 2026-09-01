@@ -12,7 +12,7 @@ sections:
       subtitle:
       text: |
         <div class="trace-hero">
-          <img class="trace-hero-art" src="/media/chapel-draw.svg" alt="King's College Chapel, University of Cambridge">
+          <img class="trace-hero-art" src="/media/kings-chapel.jpg" alt="King's College Chapel, University of Cambridge" loading="eager">
           <div class="trace-hero-copy">
             <p class="trace-hero-eyebrow">Trustworthy Artificial Intelligence Laboratory</p>
             <h1 class="trace-hero-title"><span class="acr">TR</span>ustworthy <span class="acr">A</span>rtificial intelligen<span class="acr">CE</span></h1>

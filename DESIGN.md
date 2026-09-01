@@ -8,9 +8,9 @@ Durable visual system for the TRACE Lab website. Product truth: [PRODUCT.md](PRO
 
 **THESIS.** A Cambridge trustworthy-AI lab that looks *fresh and institutional*, not a startup and not a generic serif-on-white academic template. Confident deep-blue colour-blocking, a grotesque type system, and a single coral signal. The wordmark's own logic (TRustworthy Artificial intelligenCE) is expressed in the hero. It refuses the incumbent glassmorphism, animated gradients, shimmer text, and scattered ○□◇△ ornaments.
 
-**OWN-WORLD.** Paper-white ground; a deep TRACE blue field (`#164A9E`, toward the logo navy `#073D74`) that owns the hero and footer; coral (`#F67552`) rationed to one signal (logo tick, active nav, key figures, section rule). **Familjen Grotesk** carries everything; **Spline Sans Mono** carries data/labels only (years, venues, eyebrows). No serif, no decorative monospace.
+**OWN-WORLD.** Paper-white ground; a deep TRACE blue field (`#034285` (from the chapel image), toward the logo navy `#073D74`) that owns the hero and footer; coral (`#F67552`) rationed to one signal (logo tick, active nav, key figures, section rule). **Familjen Grotesk** carries everything; **Spline Sans Mono** carries data/labels only (years, venues, eyebrows). No serif, no decorative monospace.
 
-**SIGNATURE.** The hero centrepiece is **King's College Chapel rendered as a self-drawing white line drawing** — an SVG whose strokes animate on with `stroke-dashoffset` then fill in, literally *tracing* the building. It ties the name to the motion. Reduced-motion shows the finished drawing. Asset: `static/media/chapel-draw.svg` (vectorised from a generated relief via potrace; see `design-studies/`). Origin generated with the user's OpenAI key.
+**SIGNATURE.** The hero pairs the copy (left) with a **King's College Chapel line drawing** (white on the deep-blue field) on the **right**. Static image: `static/media/kings-chapel.jpg` — the generated white-lines-on-blue relief, cropped tight to the chapel; its blue (`#034285`) is the hero field colour so it blends edge-free. Generated with the user's OpenAI key. (An animated self-drawing SVG variant was explored and set aside; see `design-studies/`.)
 
 **STORY.** A visitor grasps in seconds: *a serious Cambridge lab studying when AI can be trusted in the real world* — then scans research, people, publications, and reaches out or applies.
 
@@ -26,7 +26,7 @@ Light-only today (see the force-light block in `custom.scss`). Tokens as CSS cus
 | `--ink` | `#191D26` | Headings / primary text |
 | `--body` | `#333A44` | Body text |
 | `--muted` | `#5B6472` | Secondary text (AA) |
-| `--brand` | `#164A9E` | Hero/footer field, brand blue |
+| `--brand` | `#034285` | Hero/footer field, brand blue |
 | `--brand-deep` | `#0E3A80` | Footer, hover on brand |
 | `--link` | `#0C4FA3` | Text links |
 | `--coral` | `#F67552` | The one signal (marks, active state) |

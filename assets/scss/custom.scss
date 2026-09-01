@@ -25,8 +25,8 @@ html, body { overflow-x: clip; max-width: 100%; }   // guard against any horizon
   --muted:        #5B6472;
   --faint:        #8A93A0;
 
-  --brand:        #164A9E;   // hero field / brand blue
-  --brand-deep:   #0E3A80;
+  --brand:        #034285;   // hero field / brand blue (matches chapel image)
+  --brand-deep:   #022C57;
   --link:         #0C4FA3;
   --link-hover:   #0A3F86;
   --blue-50:      #F2F6FC;
@@ -149,14 +149,14 @@ a:hover { color: var(--link-hover); }
 
 .trace-hero {
   display: grid;
-  grid-template-columns: 1.02fr .98fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2.5rem;
-  min-height: #{"min(76vh, 700px)"};
+  min-height: #{"min(72vh, 660px)"};
   padding: 4.5rem 0 4rem;
   position: relative;
 
-  .trace-hero-copy { position: relative; z-index: 2; min-width: 0; }
+  .trace-hero-copy { position: relative; z-index: 2; min-width: 0; order: 1; }
 
   .trace-hero-eyebrow {
     font-family: var(--mono);
@@ -203,6 +203,7 @@ a:hover { color: var(--link-hover); }
     max-width: 100%;
     min-width: 0;
     align-self: center;
+    order: 2;
     z-index: 1;
     border: 0 !important;
     border-radius: 0 !important;
