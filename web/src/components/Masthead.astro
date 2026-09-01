@@ -89,16 +89,16 @@ const verticals = [
   .stage__copy > :nth-child(3) { animation-delay: 0.14s; }
   .stage__copy > :nth-child(4) { animation-delay: 0.22s; }
 
-  /* Umang's masthead type scale: a restrained thesis, body-size sub. */
   .stage__thesis {
     margin: 18px 0 0;
-    font-size: clamp(28px, 3.2vw, 38px);
+    font-size: clamp(31px, 3.9vw, 47px);
     font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.14;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
     max-width: 20ch;
+    text-wrap: balance;
   }
-  .stage__sub { margin: 20px 0 0; max-width: 58ch; font-size: var(--fs-base); line-height: 1.55; color: rgba(255, 255, 255, 0.8); }
+  .stage__sub { margin: 22px 0 0; max-width: 46ch; font-size: var(--fs-lg); line-height: 1.5; color: rgba(255, 255, 255, 0.82); }
   .stage__affil { margin: 34px 0 0; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.5); }
 
   .stage__index { display: flex; flex-direction: column; }
@@ -108,7 +108,7 @@ const verticals = [
   .lane__fill { position: absolute; inset: 0; background: var(--orange); transform: scaleX(0); transform-origin: left; animation: draw 0.7s cubic-bezier(.16, 1, .3, 1) calc(0.3s + var(--i) * 0.13s) both; }
   .lane__row { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 18px; animation: fade-up 0.6s cubic-bezier(.16, 1, .3, 1) calc(0.42s + var(--i) * 0.13s) both; }
   .lane__num { color: var(--orange); }
-  .lane__label { font-size: clamp(18px, 1.8vw, 23px); font-weight: 600; letter-spacing: -0.02em; transition: color 0.18s ease, transform 0.18s ease; }
+  .lane__label { font-size: clamp(19px, 2.2vw, 27px); font-weight: 600; letter-spacing: -0.02em; transition: color 0.18s ease, transform 0.18s ease; }
   .lane__meta { color: rgba(255, 255, 255, 0.5); }
   .lane:hover .lane__label { color: var(--orange); transform: translateX(4px); }
   .lane:hover .lane__meta { color: rgba(255, 255, 255, 0.8); }
@@ -129,6 +129,13 @@ const verticals = [
     .stage__grid { grid-template-columns: 1fr; gap: 40px; }
     .stage__scroll { display: none; }
     .stage__chapel { right: -22%; width: 150%; -webkit-mask-image: linear-gradient(to top, #000 0 46%, transparent 84%); mask-image: linear-gradient(to top, #000 0 46%, transparent 84%); }
+  }
+
+  /* Phones: the three-column lane row can't fit; drop the meta under the label
+     so nothing collides with the chapel or wraps the programme name. */
+  @media (max-width: 620px) {
+    .lane__row { grid-template-columns: 40px 1fr; column-gap: 14px; row-gap: 3px; }
+    .lane__meta { grid-column: 2; }
   }
 
   @media (prefers-reduced-motion: reduce) {
