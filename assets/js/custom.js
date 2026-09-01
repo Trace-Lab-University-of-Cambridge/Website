@@ -115,28 +115,6 @@
       });
     })();
 
-    // ---- 4. Partner logo marquee -----------------------------------------
-    (function logoMarquee() {
-      if (reduced) return;
-      document.querySelectorAll('.affiliations-row.supporters-row').forEach((row) => {
-        const items = Array.from(row.children);
-        if (items.length < 2) return;
-
-        const track = document.createElement('div');
-        track.className = 'marquee-track';
-        // measure one set width vs container to decide repeats for a full, seamless loop
-        const setWidth = items.reduce((w, el) => w + el.getBoundingClientRect().width + 56, 0); // + gap
-        const need = Math.max(2, Math.ceil((row.getBoundingClientRect().width * 1.4) / setWidth));
-        for (let k = 0; k < need; k++) items.forEach((el) => track.appendChild(el.cloneNode(true)));
-        const half = track.cloneNode(true);           // duplicate the whole track -> translateX(-50%) is seamless
-        Array.from(half.children).forEach((c) => track.appendChild(c));
-
-        row.innerHTML = '';
-        row.appendChild(track);
-        row.classList.add('is-marquee');
-      });
-    })();
-
     // ---- smooth in-page anchor scrolling (kept) --------------------------
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', function (e) {
