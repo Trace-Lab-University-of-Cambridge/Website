@@ -4,30 +4,26 @@ date: 2024-01-01
 type: landing
 
 sections:
-  # Hero - Full screen with background
+  # Hero - Deep blue field with the self-drawing King's College Chapel
   - block: markdown
+    id: home
     content:
       title:
       subtitle:
       text: |
-        <div class="hero-fullscreen">
-          <img src="media/trace-logo-white.svg" alt="TRACE Lab" class="hero-logo">
-          <p class="hero-subtitle">Trustworthy Artificial Intelligence Laboratory</p>
-          <p class="hero-university">University of Cambridge</p>
+        <div class="trace-hero">
+          <img class="trace-hero-art" src="/media/chapel-draw.svg" alt="King's College Chapel, University of Cambridge">
+          <div class="trace-hero-copy">
+            <p class="trace-hero-eyebrow">Trustworthy Artificial Intelligence Laboratory</p>
+            <h1 class="trace-hero-title"><span class="acr">TR</span>ustworthy <span class="acr">A</span>rtificial intelligen<span class="acr">CE</span></h1>
+            <p class="trace-hero-lede">We investigate when and how AI can be trusted, integrated into decision-making, and evaluated in ecologically valid settings.</p>
+            <p class="trace-hero-meta">University of Cambridge · CHIA · King's College</p>
+          </div>
         </div>
     design:
       columns: '1'
-      background:
-        image:
-          filename: hero-bg.jpg
-          filters:
-            brightness: 0.4
-          parallax: false
-          position: center top
-          size: cover
-        text_color_light: true
       spacing:
-        padding: ["120px", "0", "120px", "0"]
+        padding: ["0", "0", "0", "0"]
 
   # About
   - block: markdown

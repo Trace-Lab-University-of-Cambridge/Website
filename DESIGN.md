@@ -2,97 +2,71 @@
 
 <!-- impeccable:design-schema 1 -->
 
-The durable visual system for the TRACE Lab website. Product truth lives in [PRODUCT.md](PRODUCT.md). This file owns colors, type, spacing, and component rules. Tokens here are the source of truth; mirror them into `data/themes/trace.toml`, `data/fonts/trace.toml`, and the SCSS `:root` in `assets/scss/custom.scss`.
+Durable visual system for the TRACE Lab website. Product truth: [PRODUCT.md](PRODUCT.md). Tokens here are the source of truth; mirror into `data/themes/trace.toml`, `data/fonts/trace.toml`, and the `:root` in `assets/scss/custom.scss`.
 
 ## Direction contract
 
-**THESIS.** A Cambridge trustworthy-AI lab presented like a scholarly publication, not a startup landing page: confident type, hairline structure, and disciplined color. It refuses the incumbent glassmorphism, animated gradients, shimmer text, and scattered ○□◇△ ornaments — decoration that signals nothing.
+**THESIS.** A Cambridge trustworthy-AI lab that looks *fresh and institutional*, not a startup and not a generic serif-on-white academic template. Confident deep-blue colour-blocking, a grotesque type system, and a single coral signal. The wordmark's own logic (TRustworthy Artificial intelligenCE) is expressed in the hero. It refuses the incumbent glassmorphism, animated gradients, shimmer text, and scattered ○□◇△ ornaments.
 
-**OWN-WORLD.** Cool near-white and blue-grey paper; deep TRACE blue `#073d74` as the brand field and ink; coral `#f67552` as a single restrained signal (the "trace" mark, active states, key figures — never a rainbow of tag colors). A **serif display** (Source Serif 4) carries scholarship; **Inter** carries clarity; **JetBrains Mono** carries data (years, tags, counts). Structure is drawn with 1px hairline rules and generous whitespace, not boxes and shadows.
+**OWN-WORLD.** Paper-white ground; a deep TRACE blue field (`#164A9E`, toward the logo navy `#073D74`) that owns the hero and footer; coral (`#F67552`) rationed to one signal (logo tick, active nav, key figures, section rule). **Familjen Grotesk** carries everything; **Spline Sans Mono** carries data/labels only (years, venues, eyebrows). No serif, no decorative monospace.
 
-**STORY.** A visitor understands in seconds: *a serious Cambridge lab studying when AI can be trusted in the real world* — then scans research, people, and publications, and reaches out or applies.
+**SIGNATURE.** The hero centrepiece is **King's College Chapel rendered as a self-drawing white line drawing** — an SVG whose strokes animate on with `stroke-dashoffset` then fill in, literally *tracing* the building. It ties the name to the motion. Reduced-motion shows the finished drawing. Asset: `static/media/chapel-draw.svg` (vectorised from a generated relief via potrace; see `design-studies/`). Origin generated with the user's OpenAI key.
 
-**FORM.** Editorial-academic: content-first, sans-driven body with serif display moments, continuous with the PI's personal page but elevated to a lab brand.
+**STORY.** A visitor grasps in seconds: *a serious Cambridge lab studying when AI can be trusted in the real world* — then scans research, people, publications, and reaches out or applies.
 
 ## Color
 
-Light-first (the site runs light-only today; see Dark below). All tokens as CSS custom properties.
-
-### Neutrals — the workhorses (ink on paper)
+Light-only today (see the force-light block in `custom.scss`). Tokens as CSS custom properties in `custom.scss :root`.
 
 | Token | Hex | Role |
 |---|---|---|
 | `--paper` | `#FFFFFF` | Base background |
-| `--surface` | `#F5F7FA` | Alternating sections, cards (cool blue-grey) |
-| `--surface-2` | `#EDF1F5` | Deeper wells, hover on surface |
-| `--hairline` | `#E1E7EC` | 1px rules and borders (default structure) |
-| `--hairline-strong` | `#CDD6DE` | Emphasized dividers |
-| `--ink` | `#0C1B2A` | Headings / primary text (blue-black, not pure black) |
-| `--ink-body` | `#253340` | Body text |
-| `--muted` | `#5A6B7A` | Secondary text (≥4.5:1 on paper) |
-| `--faint` | `#8493A1` | Meta labels only, never body copy |
+| `--surface` | `#F6F8FB` | Alternating bands |
+| `--hairline` | `#E4E8EE` | 1px rules / card borders |
+| `--ink` | `#191D26` | Headings / primary text |
+| `--body` | `#333A44` | Body text |
+| `--muted` | `#5B6472` | Secondary text (AA) |
+| `--brand` | `#164A9E` | Hero/footer field, brand blue |
+| `--brand-deep` | `#0E3A80` | Footer, hover on brand |
+| `--link` | `#0C4FA3` | Text links |
+| `--coral` | `#F67552` | The one signal (marks, active state) |
+| `--coral-ink` | `#B44A2C` | Coral **as text** on light (AA) |
+| `--coral-lite` | `#F79A80` | Coral on the blue field (hero acronym) |
+| tints | `#E4EBF5` sky · `#F4E7E0` blush · `#E3ECE7` mint · `#EEEBDC` sand | Research tiles (greyed, institutional) |
 
-### Brand blue
-
-| Token | Hex | Role |
-|---|---|---|
-| `--blue` | `#073D74` | **Brand.** Primary buttons, deep fields, logo blue |
-| `--blue-strong` | `#062E57` | Hover / pressed on brand |
-| `--link` | `#0A4F91` | Text links (≥7:1 on paper) |
-| `--blue-100` | `#E7EEF6` | Tint chips, quiet fills |
-| `--blue-50` | `#F3F7FB` | Faintest blue wash |
-| `--field` | `#062A50` | Full deep-blue blocks (footer, hero overlay); text is white |
-
-### Coral — single signal, ≤ ~5% of any surface
-
-| Token | Hex | Role |
-|---|---|---|
-| `--coral` | `#F67552` | The accent mark: logo tick, active nav indicator, short accent rules, key figures, link-hover underline |
-| `--coral-ink` | `#C0442A` | Coral **as text** on light (≥4.5:1) — use only when coral must carry words |
-| `--coral-100` | `#FCE9E1` | Coral tint fill |
-
-**Color strategy: Restrained** — neutral paper + brand blue doing the structural work + coral as one signal. This suits a Read/Persuade academic surface. The old per-category tag rainbow (blue/amber/green/violet/pink/cyan/orange/gray) is retired; research/topic tags use ink-on-`--blue-100` or a neutral chip, with coral reserved for the single active/highlighted item.
-
-### Dark (deferred)
-
-Site is light-only for now. A dark scheme is defined for future use: `--paper #0B1420`, `--surface #101B2A`, `--ink #EAF0F6`, blue lifts to `#5AA0E6`, coral stays `#F67552`. Do not enable without removing the light-only override in `custom.scss`.
+**Strategy: Restrained + one committed field.** Neutral paper does the reading work; blue owns the hero/footer as full fields; coral is a single accent. The old eight-colour tag rainbow is retired.
 
 ## Typography
 
-Google Fonts. Update `data/fonts/trace.toml` `google_fonts` to:
-`family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500`
+`data/fonts/trace.toml` → `family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Spline+Sans+Mono:wght@400;500;600`.
 
 | Role | Family | Notes |
 |---|---|---|
-| Display / headings | **Source Serif 4** | Scholarly, warm, authoritative. Hero headline, section titles, pull quotes. Weight 400–600, tracking -0.02em on large sizes. |
-| Body / UI / nav | **Inter** | Clean workhorse; matches the PI page's modern sans. Body 400, UI 500, emphasis 600. |
-| Data / meta | **JetBrains Mono** | Publication years, tags, counts, small indices — real data only, never decorative "tech" labels. 0.75rem, tracked +0.02em, often uppercase. |
+| Display / headings / body / UI | **Familjen Grotesk** | Fresh humanist grotesque. Headings 700, tracking -0.02–-0.035em; body 400. |
+| Data / meta / labels | **Spline Sans Mono** | Years, venues, eyebrows, tags — real data only. ~0.7rem, tracked, uppercase. |
 
-Type scale (fluid where noted):
-- `--fs-display`: `clamp(2.5rem, 5vw, 4rem)` — serif, line-height 1.05
-- `--fs-h1`: `2rem` serif · `--fs-h2`: `1.5rem` serif · `--fs-h3`: `1.125rem` (serif or Inter 600)
-- `--fs-body`: `1.0625rem` / line-height 1.65 · body measure 62–72ch
-- `--fs-small`: `0.875rem` · `--fs-meta`: `0.75rem` mono
-- Tracking floor `-0.03em` on display; body normal.
+Hero title `clamp(2.4rem,5vw,4rem)`; section titles `clamp(1.5rem,2.6vw,2rem)` centred with a short coral rule above; body measure ~62–72ch.
 
-## Space, radius, elevation
+## Layout & components
 
-- Spacing scale (px): `4 8 12 16 24 32 48 64 96 128`. Section vertical rhythm ≥ `64px` desktop; more space above a heading than below.
-- Radius: `--radius 8px`, `--radius-sm 4px`. No 16px "glass" cards, no full-pill unless a genuine tag/button pill.
-- Elevation: border-first. `--shadow-sm 0 1px 2px rgba(12,27,42,.06)`; `--shadow-md 0 8px 24px -10px rgba(12,27,42,.20)` on hover only. No zero-offset colored glows.
-- Content width: `--maxw 1100px`; prose column `--maxw-prose 680px`.
+- **Structure with hairlines and whitespace**, not glass/shadow. Cards use `--surface` fill or a 1px hairline border; shadow only on hover (offset + blur, never a zero-offset glow).
+- **Nav**: fixed, paper, 1px bottom hairline; active link marked with a short coral underline.
+- **Hero**: `.home-section:has(.trace-hero)` full-bleed `--brand`; two-column (copy + self-drawing chapel) → stacks on ≤860px with copy first. Grid children need `min-width:0`.
+- **Buttons**: brand fill / brand-outline; radius `--r` (10px). No gradients, no glow pills.
+- **Research**: `.research-grid-five` = 4 institutional tint tiles; the ○□◇△ `.card-icon` glyphs are hidden.
+- **Publications**: flat bordered cards, coral mono year, mono venue.
+- **Motion**: the one authored moment is the hero chapel draw-on; everything else is quiet hover. Respect `prefers-reduced-motion` (global reset + SVG-internal fallback).
 
-## Component rules
+## Build / constraints
 
-- **Structure with rules, not boxes.** Prefer 1px `--hairline` dividers and whitespace over bordered/shadowed cards. Where a card is warranted (team, research), use `--surface` fill or a 1px hairline border, `--radius`, and shadow only on hover.
-- **Nav.** Fixed, `--paper` background, 1px bottom hairline (no blur backdrop as decoration). Active link marked with a short coral underline/tick, not a color swap alone.
-- **Buttons.** Primary = `--blue` fill, white text, `--radius`, hover `--blue-strong`. Secondary = 1px `--blue` outline, blue text. No gradients.
-- **Links.** `--link` color; hover reveals a coral underline. Underline offset 2px.
-- **Section headings.** Serif, left- or center-aligned per section; optional short coral rule above. No tracked-uppercase eyebrow on every section, and no 01/02/03 numbering unless the order carries meaning.
-- **Tags / topic chips.** Mono, `--blue-100` fill with ink text, or neutral; the single highlighted/active chip may use `--coral-100` + `--coral-ink`.
-- **Motion.** One authored, restrained reveal (short fade+rise, exponential ease-out, from an already-legible default), not per-section shimmer. Respect `prefers-reduced-motion`.
-- **Imagery.** Team photos square, consistent treatment. Partner logos in a calm grayscale-to-color-on-hover row. No decorative symbol scatter.
+- Hugo + Hugo Blox (vendored). SCSS is compiled by **LibSass** in this toolchain: wrap CSS `min()/max()` with mixed units in interpolation (`#{"min(76vh,700px)"}`) — LibSass otherwise tries to compute them and errors. `clamp()` passes through.
+- Editable by non-designers via the documented markdown/YAML/HTML patterns in README.md; keep class names stable.
+- `html, body { overflow-x: clip }` guards against horizontal overflow.
 
-## Anti-references (from the incumbent build — do not reintroduce)
+## Anti-references (do not reintroduce)
 
-Gradient/shimmer text; animated gradient hero overlays; glassmorphism blur cards; `border-left` accent bars > 1px; scattered ○□◇△▽ symbol patterns; per-category tag rainbow; pill CTAs with heavy colored glow.
+Glassmorphism blur cards; animated gradient hero overlays; gradient/shimmer text; scattered ○□◇△▽ symbol patterns; the per-category tag rainbow; heavy glowing pill CTAs; decorative monospace.
+
+## Status
+
+First pass shipped on branch `redesign/brand-exploration` (home, publications, join, project pages restyled). Not yet on `main`, not pushed. Earlier serif/blue exploration lives in `design-studies/`.
