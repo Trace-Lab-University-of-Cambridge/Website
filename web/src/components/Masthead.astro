@@ -18,8 +18,8 @@ const verticals = [
   <img class="stage__chapel" src="/media/kings-chapel-3q.jpg" alt="" aria-hidden="true" />
   <div class="wrap stage__grid">
     <div class="stage__copy">
-      <p class="eyebrow eyebrow--light"><b>TR</b>ustworthy <b>A</b>rtificial intelligen<b>CE</b> Laboratory</p>
-      <h1 class="stage__thesis">Trustworthy AI @ University of Cambridge</h1>
+      <h1 class="stage__thesis"><span class="acr">TR</span>ustworthy <span class="acr">A</span>rtificial intelligen<span class="acr">CE</span></h1>
+      <p class="stage__cam"><span class="at">@</span> University of Cambridge</p>
       <p class="stage__sub">
         We build trustworthy AI for high-stakes settings like healthcare, education, and public
         safety, studying when and how it can be trusted, integrated into decisions, and evaluated
@@ -92,16 +92,29 @@ const verticals = [
   .stage__copy > :nth-child(3) { animation-delay: 0.14s; }
   .stage__copy > :nth-child(4) { animation-delay: 0.22s; }
 
+  /* The wordmark IS the headline: full name with TR / A / CE in coral. */
   .stage__thesis {
-    margin: 18px 0 0;
-    font-size: clamp(31px, 3.9vw, 47px);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
-    max-width: 20ch;
-    text-wrap: balance;
+    margin: 0;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    max-width: 15ch;
+    color: #fff;
   }
-  .stage__sub { margin: 22px 0 0; max-width: 46ch; font-size: var(--fs-lg); line-height: 1.5; color: rgba(255, 255, 255, 0.82); }
+  .stage__thesis .acr { color: var(--coral-lite, #f79a80); }
+
+  .stage__cam {
+    margin: 12px 0 0;
+    font-size: clamp(19px, 2.2vw, 27px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .stage__cam .at { color: var(--coral-lite, #f79a80); font-weight: 400; }
+
+  .stage__sub { margin: 24px 0 0; max-width: 46ch; font-size: var(--fs-lg); line-height: 1.5; color: rgba(255, 255, 255, 0.82); }
   .stage__affil { margin: 34px 0 0; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.5); }
 
   .stage__index { display: flex; flex-direction: column; }
