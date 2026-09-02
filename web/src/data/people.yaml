@@ -64,16 +64,16 @@ groups:
   - id: staff
     label: Staff
     people:
-      - name: Wilson
-        flags: [globe]
-        title: Lab Manager
-        photo: wilson.svg
-        url: https://en.wikipedia.org/wiki/Cast_Away
       - name: Ariella Shulman
         flags: [us]
         title: Research Assistant
         photo: ariella-shulman.png
         url: https://ari-shu.github.io/
+      - name: Wilson
+        flags: [globe]
+        title: Lab Manager
+        photo: wilson.svg
+        url: https://en.wikipedia.org/wiki/Cast_Away
 
 # Alumni, on their own page at /alumni/, grouped by the role people held here
 # — the way STAIR does it. Empty until Umang supplies the names.
