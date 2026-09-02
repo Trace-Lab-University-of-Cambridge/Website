@@ -11,6 +11,7 @@ interface PersonData {
   photo?: string;
   url?: string;
   flags?: string[];
+  emoji?: string;
   title?: string;
   year?: string | number;
   advisor?: string;
@@ -36,7 +37,10 @@ const hasMeta = p.year || p.advisor || (p.tags && p.tags.length);
   <div class="person__body">
     <h3 class="person__name">
       {p.url ? <a href={p.url} rel="noopener">{p.name}</a> : p.name}
-      {p.flags && p.flags.length > 0 && (
+      {p.emoji && (
+        <span class="flags"><span class="flag-emoji" aria-label="globe">{p.emoji}</span></span>
+      )}
+      {!p.emoji && p.flags && p.flags.length > 0 && (
         <span class="flags">
           {p.flags.map((c) => {
             const country = COUNTRIES[c] ?? c;

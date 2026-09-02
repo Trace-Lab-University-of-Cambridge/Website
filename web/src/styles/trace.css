@@ -271,6 +271,8 @@ a.person__portrait:hover img { border-color: var(--orange); }
   position: relative; top: 0.5px;
 }
 
+.flag-emoji { font-size: 13px; line-height: 1; position: relative; top: 0.5px; }
+
 .person__title { font-size: var(--fs-sm); color: var(--muted); margin-top: 2px; }
 
 /* Start term, supervisor, and qualifiers on one line. */
@@ -471,7 +473,7 @@ a.person__portrait:hover img { border-color: var(--orange); }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px;
 }
 .footer__affil { display: flex; align-items: center; gap: 34px; }
-.footer__affil img { height: 56px; width: auto; object-fit: contain; opacity: 0.75; }
+.footer__affil img { height: 80px; width: auto; object-fit: contain; opacity: 0.75; }
 .footer__affil a:hover img { opacity: 1; }
 .footer__legal { font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
 

@@ -70,7 +70,7 @@ groups:
         photo: ariella-shulman.png
         url: https://ari-shu.github.io/
       - name: Wilson
-        flags: [globe]
+        emoji: 🌍
         title: Lab Manager
         photo: wilson.svg
         url: https://en.wikipedia.org/wiki/Cast_Away

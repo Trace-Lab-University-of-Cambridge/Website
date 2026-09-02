@@ -13,8 +13,7 @@ groups:
     logos:
       - { file: logos/mbzuai.png, alt: MBZUAI, url: 'https://mbzuai.ac.ae/' }
       - { file: logos/aims.png, alt: African Institute for Mathematical Sciences, url: 'https://aims.ac.rw/' }
-      - { file: logos/udla.png, alt: Universidad de las Américas, url: 'https://www.udla.edu.ec/', height: 80 }
-      - { file: logos/stanford-law.png, alt: Stanford AI Law Initiative, url: 'https://law.stanford.edu/stanford-ai-law-initiative/' }
+      - { file: logos/udla.png, alt: Universidad de las Américas, url: 'https://www.udla.edu.ec/', height: 120 }
   - label: Foundations
     logos:
       - { file: logos/raii.png, alt: Responsible AI Institute, url: 'https://www.responsible.ai/' }
