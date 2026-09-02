@@ -64,6 +64,11 @@ groups:
   - id: staff
     label: Staff
     people:
+      - name: Wilson
+        flags: [globe]
+        title: Lab Manager
+        photo: wilson.svg
+        url: https://en.wikipedia.org/wiki/Cast_Away
       - name: Ariella Shulman
         flags: [us]
         title: Research Assistant

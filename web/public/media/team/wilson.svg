@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" width="92" height="92">
+  <!-- Background -->
+  <rect width="92" height="92" rx="8" fill="#f0f0f0"/>
+  <!-- Mac mini body -->
+  <rect x="18" y="28" width="56" height="38" rx="6" fill="#d0d0d0"/>
+  <rect x="20" y="30" width="52" height="34" rx="5" fill="#c0c0c0"/>
+  <!-- Top surface sheen -->
+  <rect x="20" y="30" width="52" height="8" rx="5" fill="#d8d8d8"/>
+  <!-- Apple logo placeholder (small circle) -->
+  <circle cx="46" cy="47" r="5" fill="#b0b0b0"/>
+  <circle cx="46" cy="47" r="3.5" fill="#a0a0a0"/>
+  <!-- Power indicator LED -->
+  <circle cx="68" cy="60" r="1.5" fill="#00c853" opacity="0.9"/>
+  <!-- Front edge ports hint -->
+  <rect x="20" y="60" width="6" height="4" rx="1" fill="#b0b0b0"/>
+  <!-- Base/foot -->
+  <rect x="24" y="66" width="44" height="4" rx="2" fill="#b8b8b8"/>
+</svg>
