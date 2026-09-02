@@ -329,7 +329,7 @@ a.person__portrait:hover img { border-color: var(--orange); }
 .pub__venue { margin-top: 2px; font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
 
 .more { margin-top: 22px; }
-.more a { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.03em; }
+.more a { font-family: var(--mono); font-size: var(--fs-sm); letter-spacing: 0.03em; }
 .more a::after { content: ' \2192'; }
 
 /* --------------------------------------------------- Publications page ----- */
