@@ -431,7 +431,7 @@ a.person__portrait:hover img { border-color: var(--orange); }
 }
 .logos__name:hover { color: var(--orange); border-bottom-color: var(--orange); }
 .logos img {
-  height: 32px; width: auto; object-fit: contain;
+  height: 48px; width: auto; object-fit: contain;
   filter: grayscale(1);
   opacity: 0.62;
   transition: opacity 0.18s ease, filter 0.18s ease;
@@ -471,7 +471,7 @@ a.person__portrait:hover img { border-color: var(--orange); }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px;
 }
 .footer__affil { display: flex; align-items: center; gap: 34px; }
-.footer__affil img { height: 38px; width: auto; object-fit: contain; opacity: 0.75; }
+.footer__affil img { height: 56px; width: auto; object-fit: contain; opacity: 0.75; }
 .footer__affil a:hover img { opacity: 1; }
 .footer__legal { font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); }
 

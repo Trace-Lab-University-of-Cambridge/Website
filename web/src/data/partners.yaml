@@ -1,7 +1,7 @@
 # Logo rows under Partners.
 #
 # `file` is optional — an entry without one renders as a text link.
-# `height` overrides the default 32px, for logos whose artwork sits inside a
+# `height` overrides the default 48px, for logos whose artwork sits inside a
 # lot of internal whitespace and would otherwise look undersized.
 groups:
   - label: Industry
