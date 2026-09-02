@@ -24,8 +24,8 @@ routes:
       Part III, MEng, and MPhil students elsewhere in the University take
       projects with us most years, and we take postdoctoral researchers when
       funding allows. Write directly rather than applying through a programme.
-    url: mailto:usb20@cam.ac.uk
-    url_label: usb20@cam.ac.uk
+    url: mailto:trace@chia.cam.ac.uk
+    url_label: trace@chia.cam.ac.uk
 
 looking_for:
   # Quoted: an unquoted colon inside a list item makes YAML read it as a map.
