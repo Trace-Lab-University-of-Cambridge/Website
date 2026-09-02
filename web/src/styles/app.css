@@ -46,7 +46,7 @@
 .ptl-col[aria-pressed='true'] .ptl-count { color: var(--orange); }
 .ptl-year {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: var(--fs-xs);
   letter-spacing: 0.04em;
   color: var(--muted);
   margin-top: 8px;
