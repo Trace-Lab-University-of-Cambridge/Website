@@ -27,11 +27,11 @@
   /* Type scale. Seven steps, and nothing between them. Prominence inside a
      step comes from weight, not from a half-pixel size bump. */
   --fs-xs:   13px;    /* mono labels, codes, venues — minimum size */
-  --fs-sm:   14px;    /* meta, affiliations, secondary lines */
-  --fs-md:   15px;    /* dense lists, controls, nav */
-  --fs-base: 16.5px;  /* body, and names set in semibold */
-  --fs-lg:   19px;    /* sub-headings */
-  --fs-xl:   26px;    /* section headings */
+  --fs-sm:   15px;    /* meta, affiliations, secondary lines */
+  --fs-md:   17px;    /* dense lists, controls, nav */
+  --fs-base: 19px;    /* body, and names set in semibold */
+  --fs-lg:   21px;    /* sub-headings */
+  --fs-xl:   29px;    /* section headings */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
