@@ -69,6 +69,11 @@ groups:
         title: Research Assistant
         photo: ariella-shulman.png
         url: https://ari-shu.github.io/
+      - name: Joy Wang
+        flags: [ca, cn]
+        title: Research Assistant
+        photo: joy-wang.jpg
+        url: https://www.linkedin.com/in/xi-joy-wang/
       - name: Wilson
         emoji: 🌍
         title: Lab Manager
@@ -117,11 +122,6 @@ alumni:
           flags: [mx]
           photo: juan-pablo-ruiz.jpeg
           url: https://www.linkedin.com/in/juan-pablo-ruiz-partida/
-          year: 2026
-        - name: Joy Wang
-          flags: [ca, cn]
-          photo: joy-wang.jpg
-          url: https://www.linkedin.com/in/xi-joy-wang/
           year: 2026
 
     # `style: names` renders a plain name list instead of portraits, the way
