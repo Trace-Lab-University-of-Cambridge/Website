@@ -49,7 +49,6 @@ groups:
       - name: Siddarth Mamidanna
         flags: [us, in]
         advisor: Mateja Jamnik
-        tags: [CST]
         photo: siddarth-mamidanna.jpg
         url: https://siddarth-pm.github.io/
       - name: Devaki Raj
