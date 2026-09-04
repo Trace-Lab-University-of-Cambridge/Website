@@ -4,6 +4,30 @@
 # Source: OpenAlex (see the script's docstring for why not Google Scholar).
 
 publications:
+  - title: "Measuring and Mitigating Overreliance to Build Human-Compatible AI"
+    authors:
+      - "Lujain Ibrahim"
+      - "Katherine M. Collins"
+      - "Sunnie S. Y. Kim"
+      - "Anka Reuel"
+      - "Max Lamparth"
+      - "Kevin Feng"
+      - "Lama Ahmad"
+      - "Prajna Soni"
+      - "Alia El Kattan"
+      - "Merlin Stein"
+      - "Siddharth Swaroop"
+      - "Vishakh Padmakumar"
+      - "Ilia Sucholutsky"
+      - "Andrew Strait"
+      - "Diyi Yang"
+      - "Q. Vera Liao"
+      - "Umang Bhatt"
+    year: 2026
+    venue: "AIES"
+    url: "https://arxiv.org/abs/2509.08010"
+    citations: 0
+
   - title: "A reporting checklist for large language models in behavioural science"
     authors:
       - "Stefan Feuerriegel"
@@ -105,7 +129,7 @@ publications:
       - "Umang Bhatt"
       - "Ella Guest"
     year: 2026
-    venue: "Forthcoming at AIES 2026"
+    venue: "AIES"
     url: "https://doi.org/10.48550/arxiv.2603.11001"
     citations: 0
 
@@ -115,7 +139,7 @@ publications:
       - "Umang Bhatt"
       - "Ilia Sucholutsky"
     year: 2026
-    venue: "Phil. Trans. R. Soc. A"
+    venue: "Philosophical Transactions of the Royal Society A"
     url: "https://doi.org/10.1098/rsta.2025.0149"
     citations: 0
 

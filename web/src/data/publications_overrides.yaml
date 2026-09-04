@@ -26,7 +26,7 @@ allowed_venues:
   - IEEE Computer
   - Nature Human Behaviour
   - Patterns
-  - Phil. Trans. R. Soc. A
+  - Philosophical Transactions of the Royal Society A
   - PNAS
   - "RSS: Data Science and AI"
   - Science
@@ -36,7 +36,7 @@ allowed_venues:
 merge:
   - into: "RCTs for Frontier AI Governance"
     drop: "RCTs for Human-AI Evaluation"
-    venue: "Forthcoming at AIES 2026"
+    venue: "AIES"
 
 # Per-paper venue corrections. OpenAlex files these under Cambridge's
 # repository, which is not a venue.

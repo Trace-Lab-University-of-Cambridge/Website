@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Publications from '../components/Publications.tsx';
 import publications from '../data/publications.yaml';
-const count = ((publications as any).publications ?? []).length;
 ---
 <Base title="Publications · TRACE Lab" description="Papers from the TRACE Lab at the University of Cambridge.">
   <header class="pagehead">
@@ -12,8 +11,7 @@ const count = ((publications as any).publications ?? []).length;
         <p class="eyebrow">TRACE Lab</p>
         <h1 class="pagehead__title">Publications</h1>
         <p class="pagehead__sub">
-          {count} papers. Also on
-          <a href="https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en" rel="noopener">Google Scholar</a>.
+          Also on <a href="https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en" rel="noopener">Google Scholar</a>.
         </p>
       </div>
     </div>
