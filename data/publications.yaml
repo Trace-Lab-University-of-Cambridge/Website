@@ -2,6 +2,16 @@
 # Each publication links directly to external source (Google Scholar, journal, etc.)
 
 publications:
+  - title: "Measuring and Mitigating Overreliance to Build Human-Compatible AI"
+    authors: "Ibrahim, L., Collins, K.M., Kim, S.S.Y., Reuel, A., Lamparth, M., Feng, K., Ahmad, L., Soni, P., El Kattan, A., Stein, M., Swaroop, S., Padmakumar, V., Sucholutsky, I., Strait, A., Yang, D., Liao, Q.V., Bhatt, U."
+    year: 2026
+    venue: "AIES"
+    venue_full: "AAAI/ACM Conference on AI, Ethics, and Society (AIES 2026)"
+    url: "https://arxiv.org/abs/2509.08010"
+    tags:
+      - Human-AI Interaction
+      - AI Evaluation
+
   - title: "The Next Turing Tests: Reimagining Conceptions and Measures of AI"
     authors: "Hernández-Orallo, J., Collins, K.M., Cheke, L., Weidinger, L., Bhatt, U., Griffiths, T.L., Cave, S."
     year: 2026
