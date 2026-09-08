@@ -74,6 +74,7 @@ groups:
         photo: joy-wang.jpg
         url: https://www.linkedin.com/in/xi-joy-wang/
       - name: Asher Chen
+        flags: [cn]
         title: Visiting Postdoc
         photo: asher-chen.png
         url: https://www.linkedin.com/in/angxuan-asher-chen-80535215b/
