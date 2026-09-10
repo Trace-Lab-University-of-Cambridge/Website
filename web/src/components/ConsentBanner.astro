@@ -64,6 +64,17 @@ const enabled = import.meta.env.PROD && !!analytics.ga4;
           try { localStorage.setItem(KEY, choice); } catch (e) { /* ignore */ }
           if (choice === 'granted' && window.gtag) {
             window.gtag('consent', 'update', { analytics_storage: 'granted' });
+
+            /* This page's page_view already went out as a cookieless,
+               consent-denied ping, and GA4 does not attribute those to a user
+               or a session — below the behavioural-modelling thresholds they
+               are simply absent from reports. Granting consent does not
+               replay it, so without this line the one visit that consented is
+               the one visit you never see. Send it again, now that it counts. */
+            window.gtag('event', 'page_view', {
+              page_location: location.href,
+              page_title: document.title,
+            });
           }
           el.hidden = true;
         });

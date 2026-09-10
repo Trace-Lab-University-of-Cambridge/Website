@@ -48,7 +48,15 @@ const enabled = import.meta.env.PROD && !!id;
       }
 
       gtag('js', new Date());
-      gtag('config', gaId);
+
+      /* Visiting any page with ?ga_debug=1 tags this browser's hits for GA4's
+         DebugView (Admin -> DebugView), which shows events as they arrive
+         instead of waiting on the reporting pipeline. It is the only way to
+         tell "GA never received it" apart from "GA received it and chose not
+         to show it", a distinction that is otherwise invisible and cost us an
+         afternoon. Off for everyone who does not ask for it. */
+      var gaDebug = location.search.indexOf('ga_debug=1') !== -1;
+      gtag('config', gaId, gaDebug ? { debug_mode: true } : {});
     </script>
 
     <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
