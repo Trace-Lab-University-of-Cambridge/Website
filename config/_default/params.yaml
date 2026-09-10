@@ -22,11 +22,17 @@ marketing:
     org_name: 'TRACE Lab - University of Cambridge'
     description: 'TRACE Lab (TRustworthy Artificial IntelligenCE Laboratory) at the University of Cambridge builds trustworthy AI systems for high-stakes settings like healthcare, education, and public safety.'
     twitter: ''
+  # NOT LIVE. This file configures the retired Hugo site; the deployed site is
+  # the Astro app in web/ (see .github/workflows/publish.yaml). Analytics now
+  # live in web/src/lib/site.ts and web/src/components/Analytics.astro.
+  # The GA4 ID that used to sit here (G-PS5YFSJ4W6) was never loaded by a
+  # deployed page after the Astro switch, which is why that property has no
+  # history. It has been moved, not deleted.
   analytics:
-    google_analytics: 'G-PS5YFSJ4W6'
+    google_analytics: ''
     baidu_tongji: ''
     google_tag_manager: ''
-    microsoft_clarity: 'XXXXXXXXXX'  # Replace with your Clarity Project ID
+    microsoft_clarity: ''
   verification:
     google: ''
     baidu: ''

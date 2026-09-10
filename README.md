@@ -37,8 +37,15 @@ The site automatically deploys to GitHub Pages when you push to the `main` branc
 ### How it works:
 1. Push changes to `main` branch
 2. GitHub Actions runs `.github/workflows/publish.yaml`
-3. Hugo builds the site
-4. Site is deployed to GitHub Pages
+3. **Astro** builds `web/` into `web/dist`
+4. `web/dist` is deployed to GitHub Pages
+
+> **The live site is the Astro app in `web/`.** The Hugo tree at the repo root
+> (`config/`, `content/`, `layouts/`, `_vendor/`) is the previous generation of
+> the site and is no longer built or deployed — editing it changes nothing that
+> visitors see. Most of the Hugo instructions further down this file are kept
+> for reference only. `netlify.toml` is likewise a leftover; nothing in CI
+> reads it.
 
 ### DNS Configuration
 
@@ -94,6 +101,104 @@ git add -A
 git commit -m "Update Hugo modules"
 git push
 ```
+
+## Analytics & SEO
+
+Both live in the Astro app. Nothing in `config/_default/params.yaml` is wired
+up any more — that file's analytics block is deliberately blank, with a note
+saying so.
+
+### Where things are
+
+| File | What it does |
+|---|---|
+| `web/src/lib/site.ts` | Site title, description, share image, **tracking IDs**. Change IDs here. |
+| `web/src/components/Seo.astro` | Every `<head>` tag a crawler or link preview reads, plus schema.org JSON-LD. |
+| `web/src/components/Analytics.astro` | GA4 tag, Consent Mode defaults, outbound-link events. |
+| `web/src/components/ConsentBanner.astro` | The cookie notice. |
+| `web/public/media/og-card.jpg` | 1200×630 social share card. |
+
+### Google Analytics
+
+GA4 property `G-PS5YFSJ4W6`, loaded on every page in production only — `astro
+dev` sends nothing, so local work does not pollute the numbers.
+
+Override the ID without editing source by setting `PUBLIC_GA_ID`
+(the `PUBLIC_` prefix is what makes Astro expose it to the browser):
+
+```bash
+PUBLIC_GA_ID=G-XXXXXXXXXX npm run build
+```
+
+**Consent.** The tag loads with `analytics_storage: 'denied'`, which does not
+mean no data: GA4 falls back to cookieless pings, so visits, pages and
+referrers still arrive. What is missing until someone accepts is the
+returning-visitor join across sessions. Accepting stores `trace:consent` in
+`localStorage` and upgrades the measurement; declining stores the refusal so
+the notice does not come back.
+
+**Custom events**, on top of GA4's built-in `page_view` and enhanced
+measurement:
+
+| Event | Fires on | Useful parameters |
+|---|---|---|
+| `outbound_click` | any link to another domain | `link_domain`, `link_url`, `link_text`, `link_context` |
+| `contact_click` | `mailto:` and `tel:` links | `method`, `link_context`, `link_text` |
+
+`link_context` says which part of the page the click came from —
+`publication`, `person`, `partner`, `research`, `spinout`, `news`,
+`join-route`, `nav`, `footer`, `cta`. That is what makes "which papers do
+people actually open" answerable rather than a list of bare DOI URLs. The
+mapping is `CLICK_CONTEXTS` in `web/src/lib/site.ts`; add a row when you add a
+section.
+
+To see these in GA4 you must register them once: **Admin → Custom
+definitions → Create custom dimension**, scope Event, for each parameter you
+want to break reports down by. Until you do, the events are counted but the
+parameters are not queryable.
+
+### Google Search Console
+
+Not set up yet, and worth doing: it is the only source of the search queries
+people arrive on, which GA4 does not show. Verify by DNS at your registrar
+(nothing to change here), or by HTML tag:
+
+```bash
+PUBLIC_GOOGLE_SITE_VERIFICATION=<token> npm run build
+```
+
+Then submit `https://trace-lab.ai/sitemap-index.xml`.
+
+### SEO
+
+- Canonical URL, Open Graph and Twitter card tags on every page, from
+  `Seo.astro`. Pages pass `title` / `description` and inherit the rest.
+- `schema.org` graph: `ResearchOrganization` + `WebSite` on all pages, plus an
+  `ItemList` of `ScholarlyArticle` on `/publications/`.
+- `sitemap-index.xml` generated at build with per-page priorities
+  (`astro.config.mjs`); `/404` is excluded.
+- `noindex` is available per page: `<Base noindex={true}>`. Used by `404.astro`.
+
+### Adding analytics to a new page
+
+Nothing to do. Pass better metadata if the defaults are wrong for it:
+
+```astro
+<Base
+  title="Thing · TRACE Lab"
+  description="One sentence, ~155 characters, written for a human reading search results."
+>
+```
+
+### Checking it works
+
+```bash
+cd web && npm run build && npm run preview
+```
+
+Then in the browser's Network tab, filter for `collect` — a GA4 pageview is a
+request to `google-analytics.com/g/collect` carrying `tid=G-...`. GA4's
+Realtime report should show the visit within about half a minute.
 
 ## Project Structure
 
