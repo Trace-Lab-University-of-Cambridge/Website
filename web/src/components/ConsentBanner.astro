@@ -1,0 +1,88 @@
+---
+/* ==========================================================================
+   Cookie notice.
+   --------------------------------------------------------------------------
+   GA4 sets cookies, so under UK PECR it needs an answer before it does. The
+   notice is deliberately small and non-modal: it is a request about
+   measurement, not a gate on reading the site, and a full-screen interstitial
+   over a research page would be a worse trade than the data is worth.
+
+   It renders hidden and is shown by script only when there is no stored
+   answer, so a returning visitor never sees it flash. Declining is one click,
+   the same as accepting — a notice where refusing is harder is not consent.
+
+   Off in dev, alongside the tag it governs.
+   ========================================================================== */
+import { site, analytics } from '../lib/site';
+
+const enabled = import.meta.env.PROD && !!analytics.ga4;
+---
+{enabled && (
+  <Fragment>
+    <aside class="consent" id="consent" role="region" aria-label="Cookie notice" hidden>
+      <p class="consent__text">
+        We use Google Analytics to count visits and see which work gets read.
+        Decline and the counting stays anonymous, with nothing stored on your
+        device.
+        {site.privacyUrl && (
+          <Fragment> <a href={site.privacyUrl}>How we handle data</a>.</Fragment>
+        )}
+      </p>
+      <div class="consent__actions">
+        <button type="button" class="consent__btn" data-consent="granted">Accept</button>
+        <button type="button" class="consent__btn consent__btn--quiet" data-consent="denied">Decline</button>
+      </div>
+    </aside>
+
+    <script is:inline>
+      (function () {
+        var el = document.getElementById('consent');
+        if (!el) return;
+
+        var KEY = 'trace:consent';
+        var stored = null;
+        try { stored = localStorage.getItem(KEY); } catch (e) { /* private mode */ }
+
+        /* No storage means no way to remember an answer, so asking would mean
+           asking on every page load. Stay denied and stay quiet. */
+        var canStore = (function () {
+          try {
+            localStorage.setItem(KEY + ':probe', '1');
+            localStorage.removeItem(KEY + ':probe');
+            return true;
+          } catch (e) { return false; }
+        })();
+
+        if (!stored && canStore) el.hidden = false;
+
+        el.addEventListener('click', function (event) {
+          if (!(event.target instanceof Element)) return;
+          var btn = event.target.closest('button[data-consent]');
+          if (!btn) return;
+          var choice = btn.getAttribute('data-consent');
+
+          try { localStorage.setItem(KEY, choice); } catch (e) { /* ignore */ }
+          if (choice === 'granted' && window.gtag) {
+            window.gtag('consent', 'update', { analytics_storage: 'granted' });
+          }
+          el.hidden = true;
+        });
+
+        /* An answer has to be revocable, or the notice is a one-way door.
+           The footer's "Cookies" button forgets the stored choice and asks
+           again. Withdrawal takes effect for everything after this page: the
+           tag is already loaded, so downgrading storage mid-session cannot
+           un-send what has been sent, and reloading is what clears it. */
+        document.addEventListener('click', function (event) {
+          if (!(event.target instanceof Element)) return;
+          if (!event.target.closest('[data-consent-reopen]')) return;
+          try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+          if (window.gtag) {
+            window.gtag('consent', 'update', { analytics_storage: 'denied' });
+          }
+          el.hidden = false;
+        });
+      })();
+    </script>
+  </Fragment>
+)}

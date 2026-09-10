@@ -3,51 +3,47 @@ import '../styles/trace.css';
 import '../styles/app.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Seo from '../components/Seo.astro';
+import Analytics from '../components/Analytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
 
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  jsonLd?: object | object[];
 }
-const {
-  title = 'TRACE Lab · Trustworthy AI at the University of Cambridge',
-  description = 'The Trustworthy Artificial Intelligence Laboratory at the University of Cambridge. We study how AI systems behave once people and institutions depend on them.',
-} = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ResearchOrganization',
-  name: 'TRACE Lab',
-  alternateName: 'Trustworthy Artificial Intelligence Laboratory',
-  url: 'https://trace-lab.ai',
-  logo: 'https://trace-lab.ai/media/trace-logo.svg',
-  description,
-  parentOrganization: { '@type': 'CollegeOrUniversity', name: 'University of Cambridge', url: 'https://www.cam.ac.uk/' },
-  founder: { '@type': 'Person', name: 'Umang Bhatt', url: 'https://umangsbhatt.github.io' },
-};
+/* Metadata is not defaulted here any more — Seo.astro owns the fallbacks, so
+   there is one copy of the site title and description rather than two that
+   drift. Pages pass what differs and nothing else. */
+const props = Astro.props as Props;
 ---
 <!doctype html>
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary_large_image" />
+
+    <Seo {...props} />
+
     <link rel="icon" href="/media/trace-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/media/icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
     />
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+    {/* Last in <head>: the tag needs its consent defaults set before it
+        loads, but nothing about the page should wait on it. */}
+    <Analytics />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -56,5 +52,6 @@ const jsonLd = {
       <slot />
     </main>
     <Footer />
+    <ConsentBanner />
   </body>
 </html>

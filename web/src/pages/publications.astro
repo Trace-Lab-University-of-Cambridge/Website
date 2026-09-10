@@ -2,8 +2,46 @@
 import Base from '../layouts/Base.astro';
 import Publications from '../components/Publications.tsx';
 import publications from '../data/publications.yaml';
+const PUBS = ((publications as any).publications ?? []) as {
+  title: string;
+  authors?: string[];
+  year: number;
+  venue?: string;
+  url?: string;
+}[];
+
+/* The paper list, as structured data. Search engines will not rank a lab by
+   it, but it is what makes a result for one of these titles resolve to this
+   page rather than to a scraper's copy of it.
+   Author lists are capped: one of these papers carries over a hundred names,
+   and the whole list has to fit in the page's <head>.
+   The count is used here and in the description below, but deliberately not
+   on the page — it was taken off the page in 4bd8791, and a number is worth
+   more in a search result than in a heading anyway. */
+const pubList = {
+  '@type': 'ItemList',
+  name: 'Publications — TRACE Lab',
+  numberOfItems: PUBS.length,
+  itemListElement: PUBS.map((pub, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'ScholarlyArticle',
+      name: pub.title,
+      headline: pub.title,
+      datePublished: String(pub.year),
+      url: pub.url,
+      author: (pub.authors ?? []).slice(0, 10).map((name) => ({ '@type': 'Person', name })),
+      isPartOf: pub.venue ? { '@type': 'Periodical', name: pub.venue } : undefined,
+    },
+  })),
+};
 ---
-<Base title="Publications · TRACE Lab" description="Papers from the TRACE Lab at the University of Cambridge.">
+<Base
+  title="Publications · TRACE Lab"
+  description={`${PUBS.length} papers from the TRACE Lab at the University of Cambridge on trustworthy AI, human-AI interaction, and deployment.`}
+  jsonLd={pubList}
+>
   <header class="pagehead">
     <div class="wrap rail">
       <div aria-hidden="true"></div>

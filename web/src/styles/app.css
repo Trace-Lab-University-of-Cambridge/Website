@@ -70,3 +70,99 @@
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* ------------------------------------------------------------ Cookie notice --
+
+   A card in the bottom-left corner rather than a full-width bar: at 420px it
+   sits in the margin of the reading column instead of amputating the foot of
+   the page.
+
+   Paper, not navy. A navy card was the first instinct, but the masthead is
+   also navy, so over the top of the page the card lost its own edges and read
+   as part of the hero. Light-on-rule separates on every band the site has,
+   and it also draws the right distinction: this is chrome asking a question,
+   not content.
+
+   Accept and Decline are the same size and weight apart from fill — a notice
+   where refusing is the harder click is not asking a question. */
+
+.consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  /* Over the sticky topbar (50), under the skip link (100). */
+  z-index: 80;
+  max-width: 420px;
+  padding: 17px 20px 19px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--orange);
+  border-radius: 3px;
+  box-shadow: 0 12px 36px rgba(4, 38, 74, 0.22);
+}
+
+.consent__text {
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--muted);
+}
+.consent__text a { border-bottom: 1px solid var(--rule); }
+.consent__text a:hover { border-bottom-color: var(--orange); }
+
+.consent__actions { display: flex; gap: 10px; margin-top: 15px; }
+
+.consent__btn {
+  padding: 8px 18px;
+  border: 1px solid var(--orange);
+  border-radius: 3px;
+  background: var(--orange);
+  color: var(--navy-deep);
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.consent__btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.consent__btn--quiet {
+  background: transparent;
+  border-color: var(--rule);
+  color: var(--muted);
+  font-weight: 400;
+}
+.consent__btn--quiet:hover { background: var(--tint); border-color: var(--muted); color: var(--ink); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .consent { animation: consent-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+}
+@keyframes consent-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 520px) {
+  .consent { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+}
+
+/* The footer's way back to the notice. Set like the copyright line beside it,
+   because it is the same kind of small print, not a call to action. */
+.footer__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer__cookies {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: none;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.footer__cookies:hover { color: var(--orange); border-bottom-color: var(--orange); }

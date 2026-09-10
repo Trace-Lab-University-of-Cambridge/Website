@@ -1,0 +1,41 @@
+---
+/* GitHub Pages serves this for any unresolved path, which matters more than
+   it looks: the Hugo site had URLs like /publication/... and /project/...
+   that no longer exist, so anything still linking to them lands here rather
+   than on GitHub's own 404. noindex, because a soft-404 in the index is worse
+   than no page at all. */
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Page not found · TRACE Lab"
+  description="That page does not exist."
+  noindex={true}
+>
+  <header class="pagehead">
+    <div class="wrap rail">
+      <div aria-hidden="true"></div>
+      <div class="rail__body">
+        <p class="eyebrow">Error 404</p>
+        <h1 class="pagehead__title">Page not found</h1>
+        <p class="pagehead__sub">
+          The page you asked for is not here. It may have moved when the site
+          was rebuilt.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap rail">
+      <h2 class="rail__label">Try</h2>
+      <div class="rail__body">
+        <ul class="topic__points">
+          <li><a href="/">The homepage</a> — research, people, news.</li>
+          <li><a href="/publications/">Publications</a> — every paper from the lab.</li>
+          <li><a href="/alumni/">Alumni</a> — where former members went.</li>
+          <li><a href="/join/">Join us</a> — how to apply.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

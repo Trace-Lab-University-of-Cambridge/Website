@@ -1,6 +1,10 @@
 ---
 // Ported from layouts/partials/trace/footer.html
+import { analytics } from '../lib/site';
 const year = new Date().getFullYear();
+
+// Only offered where there is a choice to revisit: no tag in dev, no button.
+const showCookies = import.meta.env.PROD && !!analytics.ga4;
 ---
 <footer class="footer">
   <div class="wrap footer__inner">
@@ -9,6 +13,11 @@ const year = new Date().getFullYear();
       <a href="https://www.chia.cam.ac.uk/" rel="noopener"><img src="/media/chia-logo.png" alt="Centre for Human-Inspired AI" loading="lazy" /></a>
       <a href="https://www.kings.cam.ac.uk/" rel="noopener"><img src="/media/logos/kings.webp" alt="King's College, Cambridge" loading="lazy" /></a>
     </div>
-    <p class="footer__legal">© {year} TRACE Lab, University of Cambridge</p>
+    <div class="footer__meta">
+      <p class="footer__legal">© {year} TRACE Lab, University of Cambridge</p>
+      {showCookies && (
+        <button type="button" class="footer__cookies" data-consent-reopen>Cookies</button>
+      )}
+    </div>
   </div>
 </footer>

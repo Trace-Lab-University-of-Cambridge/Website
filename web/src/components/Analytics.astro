@@ -1,0 +1,116 @@
+---
+/* ==========================================================================
+   Google Analytics 4, behind Consent Mode v2.
+   --------------------------------------------------------------------------
+   Two things worth knowing before editing this.
+
+   First, consent defaults have to be pushed before gtag.js loads, or the tag
+   writes its cookies on the way in and the banner becomes decoration. That is
+   why the first script is inline and unbundled rather than an import.
+
+   Second, `analytics_storage: 'denied'` does not mean no data. GA4 falls back
+   to cookieless pings, so visits, pages and referrers still land in the
+   reports; what is lost is the returning-visitor join across sessions. So the
+   honest default is deny, and an accepted banner upgrades the measurement
+   rather than switching it on.
+
+   Off in `astro dev` — local page loads are not lab traffic.
+   ========================================================================== */
+import { analytics, CLICK_CONTEXTS } from '../lib/site';
+
+const id = analytics.ga4;
+const enabled = import.meta.env.PROD && !!id;
+---
+{enabled && (
+  <Fragment>
+    <script is:inline define:vars={{ gaId: id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        // Hold events this long for the stored-choice check just below, so a
+        // returning visitor who accepted does not get their first pageview
+        // recorded as cookieless.
+        wait_for_update: 500,
+      });
+
+      try {
+        if (localStorage.getItem('trace:consent') === 'granted') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      } catch (e) {
+        // Private browsing throws on localStorage. Staying denied is correct.
+      }
+
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+
+    <script is:inline define:vars={{ contexts: CLICK_CONTEXTS }}>
+      /* Named events for links out.
+         GA4's enhanced measurement already logs outbound clicks, but they all
+         arrive as one `click` event carrying a bare URL, which is close to
+         useless on a site that is mostly links out: a DOI, a co-author's
+         homepage and a partner logo are indistinguishable in the report. This
+         labels each click with the section it came from and what it said, so
+         "which papers do people actually open" becomes answerable.
+
+         If the doubled counting bothers you, turn off "Outbound clicks" under
+         Admin -> Data streams -> Enhanced measurement and keep these. */
+
+      function contextOf(el) {
+        for (var i = 0; i < contexts.length; i++) {
+          if (el.closest(contexts[i][0])) return contexts[i][1];
+        }
+        return 'page';
+      }
+
+      /* Portrait links and logo links hold an image, not words, so fall back
+         to the alt text — which is the person's or the partner's name. */
+      function labelOf(a) {
+        var text = (a.textContent || '').trim();
+        if (text) return text.slice(0, 100);
+        var img = a.querySelector('img[alt]');
+        return img ? (img.getAttribute('alt') || '').slice(0, 100) : '';
+      }
+
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+        if (!(target instanceof Element)) return;
+        var a = target.closest('a[href]');
+        if (!a) return;
+
+        var href = a.getAttribute('href') || '';
+
+        if (href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) {
+          window.gtag('event', 'contact_click', {
+            method: href.indexOf('mailto:') === 0 ? 'email' : 'phone',
+            link_context: contextOf(a),
+            link_text: labelOf(a),
+          });
+          return;
+        }
+
+        var url;
+        try { url = new URL(a.href, location.href); } catch (e) { return; }
+        if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+        // Same-origin navigation is already a pageview.
+        if (url.hostname === location.hostname) return;
+
+        window.gtag('event', 'outbound_click', {
+          link_domain: url.hostname.replace(/^www\./, ''),
+          link_url: url.href,
+          link_text: labelOf(a),
+          link_context: contextOf(a),
+        });
+      }, true);
+    </script>
+  </Fragment>
+)}

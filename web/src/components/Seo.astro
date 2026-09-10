@@ -1,0 +1,116 @@
+---
+/* ==========================================================================
+   Everything a crawler or a link preview reads.
+   --------------------------------------------------------------------------
+   Pulled out of Base.astro so the <head> is one component to audit rather
+   than a block of tags to keep in sync by hand. Pages override what they
+   need and inherit the rest.
+   ========================================================================== */
+import { site, analytics } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /* Site-root-relative, e.g. '/media/og-card.jpg'. Made absolute below —
+     Facebook, LinkedIn and Slack all discard a relative og:image. */
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article' | 'profile';
+  /* Keeps a page out of the index while leaving its links crawlable. Nothing
+     uses it yet; it is here so a draft page has an obvious switch instead of
+     someone hand-writing a robots tag. */
+  noindex?: boolean;
+  /* Extra schema.org objects for this page, merged into the site graph. */
+  jsonLd?: object | object[];
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  image = site.ogImage,
+  imageAlt = site.ogImageAlt,
+  type = 'website',
+  noindex = false,
+  jsonLd,
+} = Astro.props as Props;
+
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const imageAbs = new URL(image, site.url).href;
+
+/* The lab itself, and the site as a thing distinct from the lab — the pair
+   Google wants in order to show a knowledge panel rather than a bare link. */
+const org = {
+  '@type': 'ResearchOrganization',
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  alternateName: site.legalName,
+  url: site.url,
+  logo: `${site.url}/media/trace-logo.svg`,
+  image: imageAbs,
+  description: site.description,
+  parentOrganization: {
+    '@type': 'CollegeOrUniversity',
+    name: 'University of Cambridge',
+    url: 'https://www.cam.ac.uk/',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cambridge',
+    addressCountry: 'GB',
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Umang Bhatt',
+    url: 'https://umangsbhatt.github.io',
+    sameAs: ['https://scholar.google.com/citations?user=qq8bxPkAAAAJ&hl=en'],
+    affiliation: { '@type': 'CollegeOrUniversity', name: 'University of Cambridge' },
+  },
+};
+
+const website = {
+  '@type': 'WebSite',
+  '@id': `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  description: site.description,
+  publisher: { '@id': `${site.url}/#organization` },
+  inLanguage: 'en-GB',
+};
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [org, website, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])],
+};
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+{/* Open Graph — Facebook, LinkedIn, Slack, WhatsApp, iMessage. */}
+<meta property="og:site_name" content={site.name} />
+<meta property="og:locale" content={site.locale} />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageAbs} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={imageAlt} />
+
+{/* The lab has no X account, so no og:site handle — the card still renders. */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageAbs} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+{/* Colours the browser chrome on mobile to the masthead navy. */}
+<meta name="theme-color" content="#04264a" />
+
+{analytics.googleSiteVerification && (
+  <meta name="google-site-verification" content={analytics.googleSiteVerification} />
+)}
+
+<script type="application/ld+json" set:html={JSON.stringify(graph)} is:inline />
