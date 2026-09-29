@@ -78,6 +78,11 @@ groups:
         title: Visiting Postdoc
         photo: asher-chen.png
         url: https://www.linkedin.com/in/angxuan-asher-chen-80535215b/
+      - name: Xuan Kan
+        flags: [cn]
+        title: Lab Coordinator
+        photo: xuan-kan.jpg
+        url: https://www.linkedin.com/in/xuankan
       - name: Wilson
         emoji: 🌍
         title: Lab Manager
