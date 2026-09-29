@@ -281,7 +281,7 @@ a.person__portrait:hover img { border-color: var(--orange); }
   margin-top: 5px;
   font-size: var(--fs-sm); color: var(--muted); line-height: 1.4;
 }
-.person__advisor { font-size: var(--fs-sm); }
+.person__advisor { font-size: var(--fs-xs); }
 .tag {
   font-family: var(--mono); font-size: var(--fs-xs); font-weight: 500;
   letter-spacing: 0.06em;
