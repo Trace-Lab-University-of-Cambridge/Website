@@ -15,54 +15,58 @@
 #            Technology). Expanded to tooltips in the person partial.
 
 groups:
-  - id: pi
-    label: Principal Investigator
+  - id: members
+    label: Lab Members
     people:
       - name: Umang Bhatt
         flags: [us, in]
         title: Assistant Professor of Trustworthy AI · Fellow of King's College
         photo: umang-bhatt.jpg
         url: https://umangsbhatt.github.io
-
-  - id: phd
-    label: PhD Candidates
-    people:
       - name: Elaf Almahmoud
         flags: [sa]
+        title: PhD Candidate
         advisor: Mateja Jamnik
         photo: elaf-almahmoud.png
         url: https://www.linkedin.com/in/elafalmahmoud/
       - name: Noah Broestl
         flags: [us]
+        title: PhD Candidate
         advisor: Adrian Weller
         photo: noah-broestl.jpeg
         url: https://www.linkedin.com/in/noah-broestl-95340113/
       - name: Drew Calcagno
         flags: [us]
+        title: PhD Candidate
         photo: drew-calcagno.png
         url: https://drewcalcagno.com/
       - name: Kostadin Devedzhiev
         flags: [bg]
+        title: PhD Candidate
         advisor: Adrian Weller
         photo: kostadin-devedzhiev.jpg
         url: https://kostadindev.github.io/
       - name: Siddarth Mamidanna
         flags: [us, in]
+        title: PhD Candidate
         advisor: Mateja Jamnik
         photo: siddarth-mamidanna.jpg
         url: https://siddarth-pm.github.io/
       - name: Devaki Raj
         flags: [us, in]
+        title: PhD Candidate
         photo: devaki-raj.jpg
         url: https://www.linkedin.com/in/devaki-raj-31205826/
       - name: Bernardo Villegas
         flags: [ec]
+        title: PhD Candidate
         photo: bernardo-villegas.png
         url: https://bjv01.github.io
-
-  - id: staff
-    label: Staff
-    people:
+      - name: Asher Chen
+        flags: [cn]
+        title: Visiting Postdoc
+        photo: asher-chen.png
+        url: https://www.linkedin.com/in/angxuan-asher-chen-80535215b/
       - name: Ariella Shulman
         flags: [us]
         title: Research Assistant
@@ -73,11 +77,6 @@ groups:
         title: Research Assistant
         photo: joy-wang.jpg
         url: https://www.linkedin.com/in/xi-joy-wang/
-      - name: Asher Chen
-        flags: [cn]
-        title: Visiting Postdoc
-        photo: asher-chen.png
-        url: https://www.linkedin.com/in/angxuan-asher-chen-80535215b/
       - name: Xuan Kan
         flags: [cn]
         title: Lab Coordinator
