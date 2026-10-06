@@ -72,11 +72,6 @@ groups:
         title: Research Assistant
         photo: ariella-shulman.png
         url: https://ari-shu.github.io/
-      - name: Joy Wang
-        flags: [ca, cn]
-        title: Research Assistant
-        photo: joy-wang.jpg
-        url: https://www.linkedin.com/in/xi-joy-wang/
       - name: Xuan Kan
         flags: [cn]
         title: Lab Coordinator
@@ -169,6 +164,9 @@ alumni:
 
 # Visiting and affiliated students: people who work with us from elsewhere.
 affiliated:
+  - name: Joy Wang
+    org: BCG X
+    url: https://www.linkedin.com/in/xi-joy-wang/
   - name: Manoj Kahdan
     org: RWTH Aachen
     url: https://www.linkedin.com/in/kahdan/
