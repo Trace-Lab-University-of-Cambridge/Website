@@ -4,17 +4,11 @@
 # `height` overrides the default 48px, for logos whose artwork sits inside a
 # lot of internal whitespace and would otherwise look undersized.
 groups:
-  - label: Industry
+  - label: ""
     logos:
       - { file: logos/aisi.svg, alt: UK AI Security Institute, url: 'https://www.aisi.gov.uk/' }
       - { file: logos/nhs.svg, alt: NHS, url: 'https://www.nhs.uk/' }
       - { file: logos/accenture.svg, alt: Accenture, url: 'https://www.accenture.com/' }
-  - label: Academic
-    logos:
-      - { file: logos/mbzuai.png, alt: MBZUAI, url: 'https://mbzuai.ac.ae/' }
-      - { file: logos/aims.png, alt: African Institute for Mathematical Sciences, url: 'https://aims.ac.rw/' }
       - { file: logos/udla.png, alt: Universidad de las Américas, url: 'https://www.udla.edu.ec/', height: 120 }
-  - label: Foundations
-    logos:
       - { file: logos/raii.png, alt: Responsible AI Institute, url: 'https://www.responsible.ai/' }
       - { file: logos/fli.png, alt: Future of Life Institute, url: 'https://futureoflife.org/' }
