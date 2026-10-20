@@ -77,6 +77,9 @@ groups:
         title: Lab Coordinator
         photo: xuan-kan.jpg
         url: https://www.linkedin.com/in/xuankan
+      - name: Melisa Hekimhan
+        flags: [tr, ca]
+        title: Programme Coordinator
       - name: Wilson
         emoji: 🌍
         title: Lab Manager
