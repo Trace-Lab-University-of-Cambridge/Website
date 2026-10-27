@@ -80,6 +80,7 @@ groups:
       - name: Melisa Hekimhan
         flags: [tr, ca]
         title: Programme Coordinator
+        photo: melisa-hekimhan.jpg
       - name: Wilson
         emoji: 🌍
         title: Lab Manager
