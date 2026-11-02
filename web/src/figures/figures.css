@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Whitepaper figures: live charts and inlined diagrams.
+   ========================================================================== */
+
+.fig { position: relative; }
+.fig__live svg { display: block; width: 100%; height: auto; }
+.fig svg.diagram { display: block; width: 100%; height: auto; }
+
+/* Legend: one row above the plot, swatch + name, mono-free. */
+.fig__legend {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  margin: 0 0 10px; padding: 0; list-style: none;
+  font-size: var(--fs-sm); color: var(--muted);
+}
+.fig__legend-item { display: inline-flex; align-items: center; gap: 8px; }
+.fig__legend-item[role='button'] { cursor: pointer; border-radius: 3px; padding: 2px 4px; margin: -2px -4px; }
+.fig__legend-item[role='button']:hover { color: var(--ink); background: var(--tint); }
+.fig__legend-item[aria-pressed='false'] { opacity: 0.4; text-decoration: line-through; }
+
+/* Tooltip: paper card, hairline, orange top rule like the site's cards. */
+.fig__tip {
+  position: absolute; z-index: 5;
+  pointer-events: none;
+  max-width: 260px;
+  padding: 8px 11px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--orange);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(4, 38, 74, 0.14);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--ink);
+}
+.fig__tip b { font-weight: 600; }
+.fig__tip .num { font-family: var(--mono); }
+.fig__tip .k { color: var(--muted); }
+.fig__tip[hidden] { display: none; }
+
+/* Crosshair and hover marks are drawn by the charts with these classes. */
+.fig .crosshair { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none; }
+.fig .hover-dot { fill: var(--paper); stroke-width: 2; pointer-events: none; }
+
+/* Panel controls (a filter row above the chart). */
+.fig__controls {
+  display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center;
+  margin: 0 0 12px;
+  font-size: var(--fs-sm); color: var(--muted);
+}
+.fig__controls label { display: inline-flex; align-items: center; gap: 6px; }
+.fig__controls select {
+  font: inherit; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 4px 26px 4px 8px;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235d6f81' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 9px center;
+}
+.fig__controls select:hover { border-color: var(--muted); }
+.fig__controls input[type='range'] { accent-color: var(--orange); }
+.fig__controls input[type='range']::-webkit-slider-runnable-track { background: var(--rule); height: 4px; border-radius: 2px; }
+.fig__controls input[type='range']::-moz-range-track { background: var(--rule); height: 4px; border-radius: 2px; }
+.fig__controls input[type='range']::-moz-range-progress { background: var(--orange); height: 4px; border-radius: 2px; }
+.fig__controls .code { font-family: var(--mono); font-size: var(--fs-xs); color: var(--ink); }
+
+/* The data table behind each chart. */
+/* A wide table scrolls inside its own panel rather than widening the page. */
+.fig__table { margin-top: 10px; font-size: var(--fs-xs); max-width: 100%; overflow-x: auto; }
+.fig__table summary {
+  display: flex; align-items: center; min-height: 44px; /* a thumb-sized target */
+  cursor: pointer;
+  font-family: var(--mono); letter-spacing: 0.04em; color: var(--muted);
+}
+.fig__table summary:hover { color: var(--ink); }
+.fig__table table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.fig__table th, .fig__table td { padding: 4px 8px; border-bottom: 1px solid var(--rule); text-align: right; font-family: var(--mono); }
+.fig__table th[scope='row'], .fig__table th:first-child { text-align: left; font-family: var(--sans); font-weight: 500; }
+.fig__table caption { text-align: left; color: var(--muted); padding-bottom: 6px; }
+
+/* Inlined diagrams: a pointer over a labelled part lifts it. */
+.fig svg.diagram [data-hl] { transition: opacity 0.18s ease; }
+.fig svg.diagram:has([data-hl]:hover) [data-hl]:not(:hover) { opacity: 0.45; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fig svg.diagram [data-hl] { transition: none; }
+}
+
+/* Legend swatches keep their own size: `.fig__live svg` above would stretch them. */
+.fig__live .fig__legend svg { display: inline-block; width: 28px; height: auto; flex: none; }
+
+/* --- Experiment charts (Figures 7, 8, 9: onet_recovery_curves,
+       onet_orchestration, controls_floor). Each is one SVG that replicates
+       the paper's figure; these rules only style the interaction layer. --- */
+.fig__panels { display: grid; grid-template-columns: minmax(0, 1fr); }
+.fig__panels svg { display: block; width: 100%; height: auto; overflow: visible; }
+.fig__panels svg:focus { outline: none; }
+.fig__panels svg:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; border-radius: 2px; }
+.fig__panels .row-hit, .fig__panels .fig-toggle { outline: none; }
+.fig__panels .row-hit:focus-visible { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 2; }
+.fig__panels .fig-toggle { cursor: pointer; }
+.fig__panels .fig-toggle:focus-visible rect:last-child { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 2; }
+.fig__panels .fig-toggle[aria-pressed='false'] { opacity: 0.35; }
+.fig__panels .crosshair { stroke: var(--muted); stroke-dasharray: 3 3; pointer-events: none; }
+.fig__panels .hover-dot { fill: var(--paper); stroke-width: 1.8; pointer-events: none; }
+.fig__tip-title { color: var(--muted); margin-bottom: 4px; }
+.fig__tip-row { display: grid; grid-template-columns: 16px auto 1fr; gap: 6px; align-items: center; white-space: nowrap; }
+.fig__tip-row svg { display: block; }
+.fig__tip-row .num b { font-weight: 600; }
+.fig__tip--paper { max-width: 340px; }
+
+/* Dense inlined diagrams on a phone: below 640px the three wide drawings
+   keep a floor width and scroll sideways inside their own box, so the
+   layout stays the paper's and the labels stay legible (~11px or more);
+   the page itself never scrolls sideways. */
+@media (max-width: 640px) {
+  .fig--diagram[data-fig='hapi_framework'],
+  .fig--diagram[data-fig='hapi_interfaces'],
+  .fig--diagram[data-fig='v3_algorithm_pipeline'] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Floors keep labels at ~11px or more; the fade says there is more. */
+  .fig--diagram[data-fig='hapi_framework'] svg { min-width: 680px; }
+  .fig--diagram[data-fig='hapi_interfaces'] svg { min-width: 660px; }
+  .fig--diagram[data-fig='v3_algorithm_pipeline'] svg { min-width: 920px; }
+  .fig--diagram[data-fig='hapi_framework'],
+  .fig--diagram[data-fig='hapi_interfaces'],
+  .fig--diagram[data-fig='v3_algorithm_pipeline'] {
+    mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+}
+
+/* --- Figures 5–6 (faithful): replicas of the paper's ssg_credit_profiles
+       and onet_transfer, with the paper's key below the figure. --- */
+.fig__paperkey {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 26px;
+  margin: 8px 0 0; font-size: 13px; line-height: 1.35; color: #3d4f63;
+}
+.fig__paperkey > span { display: inline-flex; align-items: center; gap: 8px; }
+.fig__paperkey svg { display: inline-block; width: auto; height: 10px; flex: none; overflow: visible; }
+.fig__live .fig__paperkey svg { display: inline-block; width: auto; height: 10px; }
+.fig__paperkey--grid { display: grid; grid-template-columns: auto auto; justify-content: center; gap: 3px 30px; }
+@media (max-width: 520px) { .fig__paperkey--grid { grid-template-columns: auto; } }
+.fig__live .fig5-hits, .fig__live .fig6-hits { outline: none; }
+.fig__live .fig5-hits:focus-visible, .fig__live .fig6-hits:focus-visible { outline: none; }
+.fig__live svg:has(.fig5-hits:focus-visible), .fig__live svg:has(.fig6-hits:focus-visible) {
+  outline: 2px solid var(--orange); outline-offset: 2px; border-radius: 2px;
+}
+
+/* --- Diagram motion (Figures 1–2: hapi_direction, hapi_framework).
+       The enhancers add a control row and an overlay; with no interaction
+       (and under prefers-reduced-motion) the drawing is the paper's. --- */
+.fig__btn {
+  font: inherit; font-size: var(--fs-sm); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 3px;
+  padding: 4px 10px; cursor: pointer;
+}
+.fig__btn:hover { border-color: var(--muted); background: var(--tint); }
+.fig__btn:focus-visible,
+.fig--animated svg.diagram:focus-visible,
+.fig--animated svg.diagram [data-hl]:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.fig--animated svg.diagram:focus, .fig--animated svg.diagram [data-hl]:focus { outline: none; }
+.fig__hint { font-size: var(--fs-xs); color: var(--muted); }
+.fig__count { font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted); min-width: 4.5em; }
+.fig__caption-live {
+  margin: -4px 0 10px; min-height: 1.5em; padding-left: 10px;
+  border-left: 2px solid var(--orange);
+  font-size: var(--fs-sm); color: var(--muted);
+}
+.fig__caption-live:empty { border-left-color: transparent; }
+
+/* Figure 1: a focused panel runs alone and the other dims, as on hover. */
+.fig svg.diagram.is-solo [data-hl]:not([data-solo]) { opacity: 0.45; }
+
+/* Figure 2: during a step only the active call and its two ends stay at
+   full strength. The hover-lift is off while stepping. */
+.fig--animated[data-fig='hapi_framework'] svg.diagram [data-step],
+.fig--animated[data-fig='hapi_framework'] svg.diagram .step-hit { cursor: pointer; }
+.fig--animated[data-fig='hapi_framework'] svg.diagram .step-hit { pointer-events: stroke; }
+.fig svg.diagram.is-stepping:has([data-hl]:hover) [data-hl]:not(:hover) { opacity: 1; }
+.fig svg.diagram.is-stepping [data-step],
+.fig svg.diagram.is-stepping [data-actor],
+.fig svg.diagram.is-stepping [data-legend] { transition: opacity 0.25s ease; }
+.fig svg.diagram.is-stepping [data-step]:not(.is-on),
+.fig svg.diagram.is-stepping [data-actor]:not(.is-on) { opacity: 0.35; }
+@media (prefers-reduced-motion: reduce) {
+  .fig svg.diagram.is-stepping [data-step],
+  .fig svg.diagram.is-stepping [data-actor],
+  .fig svg.diagram.is-stepping [data-legend] { transition: none; }
+}
+
+/* --- Figure 2 flow: phase label and the "recorded" pulse on the agent. */
+.fig__phase {
+  font-family: var(--mono); font-size: var(--fs-xs);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #b44a2c; /* coral-ink, DESIGN.md */
+}
+.fig svg.diagram .record-pulse.is-pulsing { animation: record-pulse 0.7s ease-out; }
+@keyframes record-pulse {
+  0%   { opacity: 0.9; stroke-width: 2.5; }
+  100% { opacity: 0;   stroke-width: 0.5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fig svg.diagram .record-pulse.is-pulsing { animation: none; }
+}
+
+/* --- Review fixes: focus ring for Figure 1's panels (an SVG <g> draws no
+   outline), and text kept for screen readers only. */
+.fig svg.diagram .focus-ring { stroke: var(--orange); stroke-width: 2; }
+.fig .visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
