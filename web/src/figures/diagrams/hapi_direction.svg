@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="36 6 528 206"
+     font-family="Archivo, sans-serif">
+<!--
+  Web copy of figures/src/hapi_direction.svg in the paper repo. Only the type is changed:
+  Libertinus Serif / Inter -> Archivo, DejaVu Sans Mono -> IBM Plex Mono, bold ->
+  600 (Archivo) / 500 (Plex Mono); a few labels are set slightly smaller so the
+  wider face fits the paper's boxes. Geometry and wording are the paper's.
+  Colours are the paper's roles in the site palette, converted by
+  ~/.claude/jobs/f45a817f/scripts/recolour_diagrams.py (fixed role map, then
+  OKLCH with lightness kept); paper-accent text is #b44a2c for contrast.
+  Ids carry a "hd-" prefix so the inlined drawings never clash; data-hl groups
+  get the hover-lift in figures.css.
+-->
+<defs>
+  <marker id="hd-ah" viewBox="0 0 8 6" markerWidth="7" markerHeight="6" refX="7.5" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 z" fill="#3d4f63"/>
+  </marker>
+  <marker id="hd-ah-accent" viewBox="0 0 8 6" markerWidth="7" markerHeight="6" refX="7.5" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 z" fill="#f67552"/>
+  </marker>
+  <marker id="hd-ah-accent-s" viewBox="0 0 8 6" markerWidth="7" markerHeight="6" refX="0.5" refY="3" orient="auto">
+    <path d="M8,0 L0,3 L8,6 z" fill="#f67552"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="600" height="216" fill="#FFFFFF"/>
+
+<!-- panel divider -->
+<line x1="300" y1="16" x2="300" y2="204" stroke="#dce4ee" stroke-width="1.0"/>
+
+<g data-hl="" data-panel="a">
+  <title>(a) Today: humans drive agents.</title>
+<!-- panel (a): title, people (columns 80 / 150 / 220), agents, edges (drive down, dead end up) -->
+<text x="48" y="28" font-size="12.5" font-weight="600" fill="#0d1b2a">(a) Today</text>
+<g fill="none" stroke="#f67552" stroke-width="1.4">
+  <circle cx="80"  cy="66" r="9"/><path d="M66,92 q14,-19 28,0"/>
+  <circle cx="150" cy="66" r="9"/><path d="M136,92 q14,-19 28,0"/>
+  <circle cx="220" cy="66" r="9"/><path d="M206,92 q14,-19 28,0"/>
+</g>
+<g>
+  <rect x="48"  y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <rect x="118" y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <rect x="188" y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <text x="80"  y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+  <text x="150" y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+  <text x="220" y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+</g>
+<g stroke="#3d4f63" stroke-width="1.2">
+  <line data-chan="down" x1="73"  y1="98" x2="73"  y2="160" marker-end="url(#hd-ah)"/>
+  <line data-chan="down" x1="143" y1="98" x2="143" y2="160" marker-end="url(#hd-ah)"/>
+  <line data-chan="down" x1="213" y1="98" x2="213" y2="160" marker-end="url(#hd-ah)"/>
+</g>
+<g stroke="#5d6f81" stroke-width="1.2" stroke-dasharray="4 4">
+  <line x1="87"  y1="160" x2="87"  y2="118"/>
+  <line x1="157" y1="160" x2="157" y2="118"/>
+  <line x1="227" y1="160" x2="227" y2="118"/>
+</g>
+<g font-size="12" fill="#5d6f81" text-anchor="middle">
+  <text x="87"  y="112">&#215;</text>
+  <text x="157" y="112">&#215;</text>
+  <text x="227" y="112">&#215;</text>
+</g>
+</g>
+
+<g data-hl="" data-panel="b">
+  <title>(b) Human API: calls flow both ways.</title>
+<!-- panel (b): title, people (columns 380 / 450 / 520), agents, and every agent to every person both ways;
+     endpoints fan out by (j-i)*10 so the nine edges never share a point -->
+<text x="348" y="28" font-size="12.5" font-weight="600" fill="#0d1b2a">(b) Human API</text>
+<g fill="none" stroke="#f67552" stroke-width="1.4">
+  <circle cx="380" cy="66" r="9"/><path d="M366,92 q14,-19 28,0"/>
+  <circle cx="450" cy="66" r="9"/><path d="M436,92 q14,-19 28,0"/>
+  <circle cx="520" cy="66" r="9"/><path d="M506,92 q14,-19 28,0"/>
+</g>
+<g>
+  <rect x="348" y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <rect x="418" y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <rect x="488" y="164" width="64" height="32" rx="5" fill="#FFFFFF" stroke="#3d4f63" stroke-width="1.2"/>
+  <text x="380" y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+  <text x="450" y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+  <text x="520" y="184" text-anchor="middle" font-size="10" fill="#3d4f63">agent</text>
+</g>
+<g stroke="#f67552" stroke-width="1.0">
+  <line data-chan="both" x1="380" y1="100" x2="380" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="390" y1="100" x2="440" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="400" y1="100" x2="500" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="440" y1="100" x2="390" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="450" y1="100" x2="450" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="460" y1="100" x2="510" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="500" y1="100" x2="400" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="510" y1="100" x2="460" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+  <line data-chan="both" x1="520" y1="100" x2="520" y2="160"
+        marker-start="url(#hd-ah-accent-s)" marker-end="url(#hd-ah-accent)"/>
+</g>
+</g>
+
+</svg>

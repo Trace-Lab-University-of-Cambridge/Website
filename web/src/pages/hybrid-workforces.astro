@@ -1,0 +1,247 @@
+---
+/* ==========================================================================
+   Whitepaper: Designing for Hybrid Human–AI Workforces.
+   --------------------------------------------------------------------------
+   The body is generated from the paper's LaTeX source (main.tex in the
+   Overleaf project, cloned to ~/repos/hybrid-workforces-overleaf) with
+   pandoc, so the prose here is not edited by hand: regenerate body.html and
+   toc.html with scripts/whitepaper/build.sh instead. Only the masthead and
+   the contact band below are written for the web, the masthead from the cover.
+
+   While the paper is password-protected (WHITEPAPER_PUBLIC in
+   src/papers/hybrid-workforces/config.mjs), the page ships only the
+   encrypted paper made by scripts/whitepaper/lock.mjs; the masthead and the
+   contacts stay readable so a visitor without the password knows whom to ask.
+   ========================================================================== */
+import Base from '../layouts/Base.astro';
+import '../styles/paper.css';
+import { statSync } from 'node:fs';
+import { WHITEPAPER_PUBLIC as isPublic } from '../papers/hybrid-workforces/config.mjs';
+import locked from '../papers/hybrid-workforces/locked.json';
+
+/* The plain paper is git-ignored while it is protected, so it is read only
+   when present: a glob matches nothing rather than failing the build. */
+const raw = import.meta.glob('../papers/hybrid-workforces/{body,toc}.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const body = raw['../papers/hybrid-workforces/body.html'] ?? '';
+const toc = raw['../papers/hybrid-workforces/toc.html'] ?? '';
+if (isPublic && !body) throw new Error('WHITEPAPER_PUBLIC is set but body.html is missing');
+
+const PDF_NAME = 'designing-for-hybrid-human-ai-workforces.pdf';
+/* Shown beside the download buttons; read at build time so it never drifts. */
+const pdfBytes = isPublic ? statSync(`public/media/hybrid-workforces/${PDF_NAME}`).size : locked.pdfBytes;
+const pdfSize = `${(pdfBytes / 1048576).toFixed(1)} MB`;
+
+const title = 'Designing for Hybrid Human–AI Workforces';
+const subtitle = 'A human-centred architecture for the division of labour between humans and agents';
+const description =
+  'A TRACE Lab whitepaper on designing the boundary between human and AI work: the Human API, skill inference for people and agents alike, and dynamic controls on the human share of work.';
+const pdf = `/media/hybrid-workforces/${PDF_NAME}`;
+
+const parts = [
+  {
+    name: 'Human API',
+    body: 'Agents call humans for the knowledge, judgement and authority only humans hold. Each call records its cost, its source and its outcome.',
+  },
+  {
+    name: 'Skill inference',
+    body: 'One taxonomy scores humans and agents alike. Graded work updates capability estimates, with uncertainty shown.',
+  },
+  {
+    name: 'Dynamic controls',
+    body: 'The right human share differs by organisation, domain and task. The organisation sets a minimum share, and a dynamic control adjusts allocation and records its estimated output cost.',
+  },
+];
+
+/* Listed once, at the bottom of the page; the generator drops the paper's own
+   "Questions" paragraph so the addresses are not repeated. */
+const contacts = [
+  { name: 'Kostadin Devedzhiev', email: 'kgd26@cam.ac.uk' },
+  { name: 'Umang Bhatt', email: 'usb20@cam.ac.uk' },
+  { name: 'Ariella Shulman', email: 'as3732@cam.ac.uk' },
+];
+
+const jsonLd = {
+  '@type': 'ScholarlyArticle',
+  '@id': 'https://trace-lab.ai/hybrid-workforces/#article',
+  headline: title,
+  image: 'https://trace-lab.ai/media/og-card.jpg',
+  isAccessibleForFree: true,
+  alternativeHeadline: subtitle,
+  description,
+  datePublished: '2026-10-13',
+  inLanguage: 'en-GB',
+  author: { '@id': 'https://trace-lab.ai/#organization' },
+  publisher: { '@id': 'https://trace-lab.ai/#organization' },
+  url: 'https://trace-lab.ai/hybrid-workforces/',
+  ...(isPublic && { encoding: { '@type': 'MediaObject', contentUrl: `https://trace-lab.ai${pdf}`, encodingFormat: 'application/pdf' } }),
+};
+---
+<Base title={`${title} · TRACE Lab`} description={description} type="article" jsonLd={jsonLd} noindex={!isPublic}>
+  <header class="paperhead">
+    <div class="wrap paperhead__inner">
+      <p class="eyebrow eyebrow--light">Whitepaper <b aria-hidden="true">&bull;</b> <span class="nowrap">Version 1.2</span> <b aria-hidden="true">&bull;</b> <span class="nowrap">13 October 2026</span></p>
+      <h1 class="paperhead__title">Designing for Hybrid Human&#8211;AI Workforces</h1>
+      <p class="paperhead__sub">{subtitle}</p>
+      <p class="paperhead__lead">
+        Organisations are adding agents to workflows that were designed for humans. The boundary
+        between human and machine work is rarely designed, so tasks are handed over whole,
+        capabilities go unmeasured, and the share of work humans keep is an accident of the
+        allocation rule. This report presents three deployment mechanisms for designing that
+        boundary, so that the share of work humans keep is a decision.
+      </p>
+      <ol class="paperhead__parts" role="list">
+        {parts.map((p, i) => (
+          <li class="part">
+            <span class="part__n">{i + 1}</span>
+            <p class="part__name">{p.name}</p>
+            <p>{p.body}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="paperhead__actions">
+        {isPublic ? (
+          <a class="btn" href={pdf} type="application/pdf">Download the PDF <span class="btn__meta">{pdfSize}</span></a>
+        ) : (
+          <button class="btn pdf-download" type="button" hidden data-src={`${pdf}.enc`} data-name={PDF_NAME}>Download the PDF <span class="btn__meta">{pdfSize}</span></button>
+        )}
+      </div>
+      <p class="paperhead__affil">TRACE Lab <span aria-hidden="true">&bull;</span> Centre for Human-Inspired AI <span aria-hidden="true">&bull;</span> University of Cambridge</p>
+    </div>
+  </header>
+
+  {isPublic ? (
+    <div class="wrap paper">
+      <aside class="paper__side">
+        <details class="paper__toc">
+          <summary class="rail__label">Contents</summary>
+          <nav aria-label="Contents" set:html={toc} />
+        </details>
+      </aside>
+      <article class="paper__body prose" set:html={body} />
+    </div>
+  ) : (
+    <div class="wrap paper paper--locked">
+      <aside class="paper__side" hidden>
+        <details class="paper__toc">
+          <summary class="rail__label">Contents</summary>
+          <nav aria-label="Contents" />
+        </details>
+      </aside>
+      <article class="paper__body prose">
+        <form class="lock" id="lock-form">
+          <p class="lock__title">Shared by invitation</p>
+          <p>
+            This paper is not yet public. Enter the password you were given to read it here and
+            download the PDF.
+          </p>
+          <label class="lock__label" for="lock-pw">Password</label>
+          <div class="lock__row">
+            <input id="lock-pw" name="password" type="password" autocomplete="current-password"
+              autocapitalize="none" spellcheck="false" required />
+            <button class="btn" type="submit">Unlock</button>
+          </div>
+          <p class="lock__msg" role="status" aria-live="polite"></p>
+          <p class="lock__help">No password? Write to one of the contacts below.</p>
+          <noscript><p class="lock__msg">Reading this paper needs JavaScript.</p></noscript>
+        </form>
+      </article>
+      <script id="paper-locked" type="application/json" set:html={JSON.stringify(locked)} />
+    </div>
+  )}
+
+  <section class="cta" id="contact">
+    <div class="wrap rail">
+      <h2 class="rail__label">Contact</h2>
+      <div class="rail__body">
+        <h2>Get in touch</h2>
+        <p>Questions about this work are welcome. Write to any of us at the TRACE Lab.</p>
+        <ul class="contacts" role="list">
+          {contacts.map((c) => (
+            <li>
+              <a class="contact" href={`mailto:${c.email}`}>
+                <span class="contact__name">{c.name}</span>
+                <span class="contact__email">{c.email}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="cta__actions">
+          {isPublic ? (
+            <a class="btn" href={pdf} type="application/pdf">Download the PDF <span class="btn__meta">{pdfSize}</span></a>
+          ) : (
+            /* Shown once the paper is unlocked; decrypts the PDF on click. */
+            <button class="btn pdf-download" type="button" hidden data-src={`${pdf}.enc`} data-name={PDF_NAME}>Download the PDF <span class="btn__meta">{pdfSize}</span></button>
+          )}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Native figures: each static figure is upgraded in place to a live SVG
+      built from the experiment data; without JavaScript the image stays. */}
+  <script>
+    import { setupLock } from '../papers/hybrid-workforces/unlock.js';
+    // Runs once the paper's text is in the page: at load when it is public,
+    // after the password when it is locked.
+    const open = () => {
+      (window as any).__paperSpy?.();
+      import('../figures/index.js');
+    };
+    if (document.getElementById('paper-locked')) setupLock(open); else open();
+  </script>
+
+  {/* The contents list ships folded and is opened on a wide screen, where it
+      sits in the rail; on a phone it would push the paper a screen down. */}
+  <script is:inline>
+    (function () {
+      var toc = document.querySelector('.paper__toc');
+      var wide = window.matchMedia('(min-width: 901px)');
+      function fit() { toc.open = wide.matches; }
+      fit();
+      wide.addEventListener('change', fit);
+    })();
+    // Mark the section being read in the contents rail: the last heading
+    // that has passed the 100px line. Started by the module script below
+    // once the paper's text is in the page.
+    window.__paperSpy = function () {
+      var links = {};
+      document.querySelectorAll('.toc a[href^="#"]').forEach(function (a) {
+        links[decodeURIComponent(a.getAttribute('href').slice(1))] = a;
+      });
+      var heads = Object.keys(links).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!heads.length) return;
+      var current = null;
+      function mark(id) {
+        if (id === current) return;
+        if (current) links[current].removeAttribute('aria-current');
+        current = id;
+        if (!id) return;
+        links[id].setAttribute('aria-current', 'true');
+        var nav = links[id].closest('nav');
+        if (nav && nav.scrollHeight > nav.clientHeight) {
+          var r = links[id].getBoundingClientRect(), n = nav.getBoundingClientRect();
+          if (r.top < n.top || r.bottom > n.bottom) links[id].scrollIntoView({ block: 'nearest' });
+        }
+      }
+      function update() {
+        var best = heads[0];       // at the top, the first section is current
+        for (var i = 0; i < heads.length; i++) {
+          if (heads[i].getBoundingClientRect().top <= 100) best = heads[i]; else break;
+        }
+        mark(best.id);
+      }
+      // A scroll listener, throttled to one check per ~frame: 38 rect reads
+      // is cheap. A timer rather than requestAnimationFrame, so the marker is
+      // right when a background tab comes back into view.
+      var queued = false;
+      function onScroll() {
+        if (queued) return;
+        queued = true;
+        setTimeout(function () { queued = false; update(); }, 40);
+      }
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('resize', onScroll, { passive: true });
+      update();
+    };
+  </script>
+</Base>

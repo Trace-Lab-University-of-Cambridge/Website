@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
+import { WHITEPAPER_PUBLIC } from './src/papers/hybrid-workforces/config.mjs';
 
 // Static output → same GitHub Pages deploy story as Hugo today.
 // The yaml() plugin lets components `import data from '../data/*.yaml'`.
@@ -11,7 +12,9 @@ export default defineConfig({
     react(),
     sitemap({
       // A noindex error page has nothing to say to a crawler.
-      filter: (page) => !page.includes('/404'),
+      // The whitepaper stays out while it is password-protected (noindex too).
+      filter: (page) => !page.includes('/404') &&
+        (WHITEPAPER_PUBLIC || !page.includes('/hybrid-workforces')),
       // Build time, i.e. last published rather than last edited. Coarse, but
       // a crawler treats a missing lastmod as "no idea" and recrawls on its
       // own schedule.
