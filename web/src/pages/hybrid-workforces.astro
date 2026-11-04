@@ -40,15 +40,15 @@ const pdf = `/media/hybrid-workforces/${PDF_NAME}`;
 const parts = [
   {
     name: 'Human API',
-    body: 'Agents call humans for the knowledge, judgement and authority only humans hold. Each call records its cost, its source and its outcome.',
+    body: 'Agents request knowledge, judgement and authorised decisions from humans. Each call records its source, its cost and the response.',
   },
   {
     name: 'Skill inference',
-    body: 'One taxonomy scores humans and agents alike. Graded work updates capability estimates, with uncertainty shown.',
+    body: 'Human and agent capabilities are estimated on one shared skill taxonomy. Graded work updates capability estimates, with uncertainty shown.',
   },
   {
     name: 'Dynamic controls',
-    body: 'The right human share differs by organisation, domain and task. The organisation sets a minimum share, and a dynamic control adjusts allocation and records its estimated output cost.',
+    body: 'The right human share can differ by organisation, domain and task. The organisation sets a minimum share, and a dynamic control adjusts allocation and records its estimated output cost.',
   },
 ];
 
@@ -84,10 +84,10 @@ const jsonLd = {
       <p class="paperhead__sub">{subtitle}</p>
       <p class="paperhead__lead">
         Organisations are adding agents to workflows that were designed for humans. The boundary
-        between human and machine work is rarely designed, so tasks are handed over whole,
-        capabilities go unmeasured, and the share of work humans keep is an accident of the
-        allocation rule. This report presents three deployment mechanisms for designing that
-        boundary, so that the share of work humans keep is a decision.
+        between human and machine work is rarely designed. Tasks are often handed over whole,
+        capabilities often go unmeasured, and the share of work humans keep is often set by the
+        allocation rule rather than chosen. This report presents three deployment mechanisms for
+        designing that boundary, so that the share humans keep is a decision.
       </p>
       <ol class="paperhead__parts" role="list">
         {parts.map((p, i) => (
