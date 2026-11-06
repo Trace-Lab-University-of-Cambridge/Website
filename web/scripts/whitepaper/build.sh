@@ -49,6 +49,10 @@ python3 -I "$HERE/post.py" "$TMP/pass.html" "$PAPER/$BASE.aux" "$WEB/src/papers/
 rm -f "$MEDIA"/*.svg
 mv "$STAGE"/* "$MEDIA"/
 cp "$PAPER/$BASE.pdf" "$WEB/src/papers/hybrid-workforces/whitepaper.pdf"
+# While the paper is public the plain PDF is what the page links to.
+if grep -q 'WHITEPAPER_PUBLIC = true' "$WEB/src/papers/hybrid-workforces/config.mjs"; then
+  cp "$PAPER/$BASE.pdf" "$MEDIA/designing-for-hybrid-human-ai-workforces.pdf"
+fi
 if [[ -f "$WEB/.whitepaper-password" ]]; then
   (cd "$WEB" && node scripts/whitepaper/lock.mjs)
 else
