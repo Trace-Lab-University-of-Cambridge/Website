@@ -4,10 +4,7 @@ dist/
 .astro/
 .DS_Store
 
-# Whitepaper: the password and the plain paper stay local while the page is
-# password-protected; only the encrypted form is committed
-# (see src/papers/hybrid-workforces/config.mjs and scripts/whitepaper/lock.mjs).
+# Whitepaper: the paper is public (WHITEPAPER_PUBLIC in
+# src/papers/hybrid-workforces/config.mjs). The password file stays local in
+# case it is ever locked again (scripts/whitepaper/lock.mjs).
 .whitepaper-password
-src/papers/hybrid-workforces/body.html
-src/papers/hybrid-workforces/toc.html
-src/papers/hybrid-workforces/whitepaper.pdf

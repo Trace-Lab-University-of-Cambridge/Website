@@ -5,4 +5,4 @@
 
    To publish openly: commit body.html, toc.html and whitepaper.pdf (remove
    them from web/.gitignore) and set this to true. */
-export const WHITEPAPER_PUBLIC = false;
+export const WHITEPAPER_PUBLIC = true;
